@@ -1,0 +1,6 @@
+[submodule "BetterCallUs-Front"]
+	path = BetterCallUs-Front
+	url = https://github.com/CODE1na/BetterCallUs-Front
+[submodule "BetterCallUs-Back"]
+	path = BetterCallUs-Back
+	url = https://github.com/CODE1na/BetterCallUs-Back
