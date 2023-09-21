@@ -22,10 +22,10 @@ A partir do desafio acadêmico proposto pelo cliente interno, o projeto consiste
 
 ## :dart: Backlogs e Users Stories <a name = backlog></a>
 ### Backlog do produto
-<img src=''>
+<img src='https://github.com/CODE1na/BetterCallUs-Doc/assets/125694331/4834b93b-4904-451a-8be3-d9424703d4e0'>
 
 ### Backlog da sprint
-<img src=''>
+<img src='https://github.com/CODE1na/BetterCallUs-Doc/assets/125694331/0a10f353-4200-4fff-b3a7-b0b566ef76e2'>
 
 ## :desktop_computer: Tecnologias Utilizadas <a name = tecnologias></a>
 <img src='https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white'> <img src='https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white'> <img src='https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white'> <img src='https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=Jira&logoColor=white'> <img src='https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white'>
