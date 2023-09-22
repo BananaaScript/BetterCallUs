@@ -4,3 +4,6 @@
 [submodule "BetterCallUs-Back"]
 	path = BetterCallUs-Back
 	url = https://github.com/CODE1na/BetterCallUs-Back
+[submodule "BetterCallUs-BD"]
+	path = BetterCallUs-BD
+	url = https://github.com/CODE1na/BetterCallUs-BD
