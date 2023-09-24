@@ -14,10 +14,10 @@ Para a entrega da primeira sprint a equipe CODEina desenvolveu o protótipo do s
   
 # :dart: Entrega <a name = 'entrega'></a>
 ### Protótipo
-Para entender os desejos do cliente, foi desenvolvido um protótipo do sistema utilizando a tecnologia *figma*, representando como a interface do projeto vai ser apresentada.
+Para entender os desejos do cliente, foi desenvolvido um protótipo do sistema utilizando a tecnologia *figma*, representando como a interface do projeto será apresentada.
 ![demo](./demo.gif)
 ### Modelo de dados
-Para representar como será as relações de dados do projeto, foi desenvolvido pela equipe um modelo de dados respeitando os requisitos do projeto.
+Para representar como será as relações de dados do projeto, foi desenvolvido pela equipe um modelo de dados respeitando os requisitos do projeto até o momento.
 <img src='https://github.com/CODE1na/BetterCallUs-Doc/assets/125694331/c62293d2-7b01-449b-846e-adc725a7afbc'>
 
 
