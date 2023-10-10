@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+    <link rel="stylesheet" href="../static/styles/enviar.css">
+</head>
+<body>
+    <div>
+        <p>Enviar uma solicitação</p>
+        <textarea rows="15" cols="90"></textarea>
+    </div>
+    <br>
+    <div class="dois">
+        <select name="problema">
+            <option value="volvo">Selecione o tipo de problema</option>
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="fiat">Fiat</option>
+            <option value="audi">Audi</option>
+          </select> 
+          <form action="processa_imagem_perfil.php" method="post" enctype="multipart/form-data">
+            <input type="file" name="image"></label>
+    </div>
+        <br>
+        <br>
+            <input type="submit" value="Enviar">
+        </form>
+</body>
+</html>
