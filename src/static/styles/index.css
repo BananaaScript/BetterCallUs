@@ -42,29 +42,25 @@ footer {
     margin:0 30px
 }
 
-.texto{
+.textohome{
     font-family: "seila";
+    text-align: center;
 }
 /* Barra de busca */
 
-#divBusca{
-    font-family: "seila";
+#divBuscahome{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    flex-wrap: wrap;
+    flex-direction: row;
     height:32px;
     width:260px;
     border:solid 1px;
-    border-radius:15px;
+    border-radius:10px;
   }
   
-  #txtBusca{
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    flex-wrap: wrap;
+  #txtBuscahome{
+    font-family: "seila";
     background-color:transparent;
     padding-left:5px;
     font-style:italic;
@@ -77,35 +73,46 @@ footer {
   /*  Menu de hamburguinho  */
 
   .topnav {
+    top: 80px;
+    right: 15px;
     color:#A35AFF;
     font-family: "seila";
     overflow: hidden;
     position: fixed;
-    top: 0px;
-    right: 0px;
     background-color: #ffffff;
-    ;;
   }
   .topnav #myLinks {
     background-color: #770df9;
     display: none;
   }
   .topnav a {
+    padding-top: 20;
+    padding-left: 5;
+    padding-bottom: 10;
+    padding-right: 5;
     color: white;
-    padding: 28px 28px;
     text-decoration: none;
-    font-size: 17px;
     display: block;
   }
   .topnav a.icon {
+    top: 0;
+    right: 0;
+    text-align: center;
+    padding-top: 23;
     border-radius: 50px;
     background: #A35AFF;
     display: block;
     position: fixed;
-    top: 0;
-    right: 0;
+    height: 35px;
+    width: 60px;
+    top: 10;
+    right: 10;
   }
-  .topnav a:hover {
-    background-color: #ddd;
-    color: black;
+  .topnav a.icon:hover {
+    background-color: #770df9;
+    color: #A35AFF;
+  }
+
+  .topnav a:hover{
+    background-color: #A35AFF;
   }
