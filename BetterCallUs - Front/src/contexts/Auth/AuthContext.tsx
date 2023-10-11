@@ -1,4 +1,4 @@
-import React, { Component, createContext } from 'react';
+import React, { createContext } from 'react';
 import Usuario from '../../types/Usuario';
 
 export type AuthContextType = {

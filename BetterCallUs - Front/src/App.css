@@ -6,3 +6,142 @@ nav a{
   display: inline-block;
   margin: 0 10px;
 }
+
+
+@font-face {
+  font-family: "fonte";
+  src: url("JosefinSans-Regular.ttf");
+}
+
+
+
+
+
+
+
+
+
+
+TELA LOGIN
+
+.bodyLogin {
+  background: rgb(217,109,216);
+  background: linear-gradient(90deg, rgba(217,109,216,1) 4%, rgba(115,174,222,1) 100%);
+  padding: 1%;
+
+}
+
+.box {
+  border-style: hidden;
+  border-width: 5px;
+  margin: 2.6%;
+  margin-left: 30%;
+  margin-right: 30%;
+
+  background-color: aliceblue;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.box .tituloLogin {
+  font-family: fonte;
+  font-weight: bold;
+  font-size: 48px;
+}
+
+.box p {
+  font-family: fonte;
+  font-size: 16px;
+  margin-right: 50%;
+
+}
+
+.inputLogin {
+  margin: 2%;
+  width: 75%;
+  font-size: medium;
+
+  padding: 2%;
+  border-radius: 20px;
+  border-color: blueviolet;
+
+
+}
+
+.buttonLogin {
+  margin: 10%;
+  width: 50%;
+  font-size: 24px;
+
+  padding: 6px;
+  border-radius: 20px;
+  background-color: #352D42;
+  color: aliceblue;
+}
+
+
+
+
+
+
+
+
+
+
+TELA ENVIAR TICKET
+
+
+.bodyTicket {
+  font-family: "seila";
+}
+
+.problemaTicket {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: white;
+}
+
+.problemaTicket p {
+  font-size: 24px;
+  font-family: fonte;
+  font-weight: bold;
+}
+
+.problemaTicket textarea {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  border-radius: 20px;
+  border-color: blueviolet;
+  border-width: 3px;
+  padding: 1%;
+}
+
+.recursosTicket {
+  max-width: 75%;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  margin-left: 10%;
+}
+
+.dadosTicket {
+  display: flex;
+  align-items: first baseline;
+  flex-direction: row;
+
+}
+
+.dadosTicket select {
+  padding: 2%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+
