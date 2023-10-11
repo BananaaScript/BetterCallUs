@@ -6,3 +6,77 @@ nav a{
   display: inline-block;
   margin: 0 10px;
 }
+
+
+
+
+
+
+@font-face {
+  font-family: "fonte";
+  src: url("JosefinSans-Regular.ttf");
+}
+
+
+
+
+
+
+.bodyLogin {
+  background: rgb(217,109,216);
+  background: linear-gradient(90deg, rgba(217,109,216,1) 4%, rgba(115,174,222,1) 100%);
+  padding: 1%;
+
+}
+
+.box {
+  border-style: hidden;
+  border-width: 5px;
+  margin: 2.6%;
+  margin-left: 30%;
+  margin-right: 30%;
+
+  background-color: aliceblue;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.box .tituloLogin {
+  font-family: fonte;
+  font-weight: bold;
+  font-size: 48px;
+}
+
+.box p {
+  font-family: fonte;
+  font-size: 16px;
+  margin-right: 50%;
+
+}
+
+.inputLogin {
+  margin: 2%;
+  width: 75%;
+  font-size: medium;
+
+  padding: 2%;
+  border-radius: 20px;
+  border-color: blueviolet;
+
+
+}
+
+.buttonLogin {
+  margin: 10%;
+  width: 50%;
+  font-size: 24px;
+
+  padding: 6px;
+  border-radius: 20px;
+  background-color: #352D42;
+  color: aliceblue;
+}
+

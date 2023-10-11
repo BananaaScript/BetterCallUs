@@ -29,11 +29,19 @@ export default function Login() {
   }
 
   return (
-    <div>
-      <h2>LOGIN</h2>
-      <input type='text' value={email} onChange={handleEmail} placeholder="Digite seu email" />
-      <input type='password' value={senha} onChange={handleSenha} placeholder="Digite sua senha" />
-      <button onClick={handleLogin}>Logar</button>
+    <div className='bodyLogin'>
+        <div className="box">
+          <p className="tituloLogin">Log-in</p>
+
+          <p>E-MAIL:</p>
+          <input className='inputLogin' type='text' value={email} onChange={handleEmail} placeholder="Digite seu email" />
+          <p>SENHA:</p>
+          <input className='inputLogin' type='password' value={senha} onChange={handleSenha} placeholder="Digite sua senha" />
+
+          <button className='buttonLogin' onClick={handleLogin}>LOGIN</button>
+    
+      </div>
     </div>
+
   );
 }

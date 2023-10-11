@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
-import './App.css';
+import './App.css'
 import { Link, Route, Routes, useNavigate } from 'react-router-dom';
 import Home from './pages/Home';  
 import { Private } from './pages/Private'
 import { RequireAuth } from './contexts/Auth/RequireAuth';
 import { AuthContext } from './contexts/Auth/AuthContext';
+
 
 
 function App(){
