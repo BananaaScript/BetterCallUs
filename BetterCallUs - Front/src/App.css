@@ -8,10 +8,6 @@ nav a{
 }
 
 
-
-
-
-
 @font-face {
   font-family: "fonte";
   src: url("JosefinSans-Regular.ttf");
@@ -21,6 +17,12 @@ nav a{
 
 
 
+
+
+
+
+
+TELA LOGIN
 
 .bodyLogin {
   background: rgb(217,109,216);
@@ -79,4 +81,67 @@ nav a{
   background-color: #352D42;
   color: aliceblue;
 }
+
+
+
+
+
+
+
+
+
+
+TELA ENVIAR TICKET
+
+
+.bodyTicket {
+  font-family: "seila";
+}
+
+.problemaTicket {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: white;
+}
+
+.problemaTicket p {
+  font-size: 24px;
+  font-family: fonte;
+  font-weight: bold;
+}
+
+.problemaTicket textarea {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  border-radius: 20px;
+  border-color: blueviolet;
+  border-width: 3px;
+  padding: 1%;
+}
+
+.recursosTicket {
+  max-width: 75%;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  margin-left: 10%;
+}
+
+.dadosTicket {
+  display: flex;
+  align-items: first baseline;
+  flex-direction: row;
+
+}
+
+.dadosTicket select {
+  padding: 2%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
 
