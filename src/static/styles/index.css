@@ -48,11 +48,11 @@ footer {
 }
 /* Barra de busca */
 
-#divBuscahome{
+.divBuscahome{
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
     height:32px;
     width:260px;
     border:solid 1px;
@@ -97,13 +97,14 @@ footer {
   .topnav a.icon {
     top: 0;
     right: 0;
+    font-size:25;
     text-align: center;
-    padding-top: 23;
+    padding-top: 21;
     border-radius: 50px;
     background: #A35AFF;
     display: block;
     position: fixed;
-    height: 35px;
+    height: 37px;
     width: 60px;
     top: 10;
     right: 10;
