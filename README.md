@@ -7,6 +7,17 @@ Para a entrega da primeira sprint a equipe CODEina desenvolveu o protótipo do s
 - Demonstrar visualmente para o cliente como possivelmente será o sistema;
 - Demonstrar o modelo de dados do projeto.
 
+## 📑 Backlog da sprint
+### :open_book: Dicionário:
+**Dificuldade:** Baseada no *planning poker*, a dificuldade considera uma estimativa de tempo e empenho para uma determinada tarefa.<br>
+**Prioridade:** A prioridade define a atenção que o item do backlog merece, sendo: 
+<br>**Valor 4**: É obrigatório e o principal a ser feito 
+<br>**Valor 3**: É obrigatório porém necessário 
+<br>**Valor 2**: É preferível porém tem algum valor no produto
+<br>**Valor 1**: É opcional e normalmente a última a ser feita
+
+<img src='https://github.com/CODE1na/BetterCallUs/assets/125694331/412ccdba-c8f8-4024-a15d-b39ffc67e35b'>
+
 ### :desktop_computer:Teconologias utilizadas na sprint
 <img src='https://img.shields.io/badge/Adobe%20Photoshop-31A8FF?style=for-the-badge&logo=Adobe%20Photoshop&logoColor=black'> <img src='https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white'> <img src='https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white'> <img src='https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white'> <img src='https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white'>
 ### :hourglass: Data de desenvolvimento da sprint
