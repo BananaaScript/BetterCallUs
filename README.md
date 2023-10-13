@@ -20,15 +20,19 @@ A partir do desafio acadêmico proposto pelo cliente interno, o projeto consiste
 
 | :arrow_up: [Voltar ao topo](#topo) |
 
-## :dart: Backlogs e Users Stories <a name = backlog></a>
+## :dart: Backlog <a name = backlog></a>
+### :open_book: Dicionário:
+**Dificuldade:** Baseada no *planning poker*, a dificuldade considera uma estimativa de tempo e empenho para uma determinada tarefa.<br>
+**Prioridade:** A prioridade define a atenção que o item do backlog merece, sendo: 
+<br>**Valor 4**: É obrigatório e o principal a ser feito 
+<br>**Valor 3**: É obrigatório porém necessário 
+<br>**Valor 2**: É preferível porém tem algum valor no produto
+<br>**Valor 1**: É opcional e normalmente a última a ser feita
 ### Backlog do produto
-<img src='https://github.com/CODE1na/BetterCallUs-Doc/assets/125694331/4834b93b-4904-451a-8be3-d9424703d4e0'>
-
-### Backlog da sprint
-<img src='https://github.com/CODE1na/BetterCallUs-Doc/assets/125694331/0a10f353-4200-4fff-b3a7-b0b566ef76e2'>
+<img src='https://github.com/CODE1na/BetterCallUs/assets/125694331/03347901-4dbd-4472-a88a-c725a9f5eb24'>
 
 ## :desktop_computer: Tecnologias Utilizadas <a name = tecnologias></a>
-<img src='https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white'> <img src='https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white'> <img src='https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white'> <img src='https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=Jira&logoColor=white'> <img src='https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white'>
+<img src='https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white'> <img src='https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white'> <img src='https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white'> <img src='https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=Jira&logoColor=white'> <img src='https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white'> <img src='https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E'> <img src='https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white'> <img src='https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white'> <img src='https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white'> <img src='https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB'> <img src='https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white'>
 
 
 ## :busts_in_silhouette: Equipe<a name = equipe></a>
