@@ -1,0 +1,45 @@
+.quadrado {
+    width: 275px; 
+    height: 275px; 
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    margin: 30px 30px;
+    box-shadow: 5px 5px 20px rgba(21, 11, 22, 0.2);
+  }
+
+.botoes{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: #F1EEF5;
+}
+
+.iconebotao{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.icone{
+    width: 60px;
+}
+
+.textobotao{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
