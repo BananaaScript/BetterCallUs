@@ -18,27 +18,30 @@ nav a{
 
 
 
-
-
-
-
 .bodyLogin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: rgb(217,109,216);
-  background: linear-gradient(90deg, rgba(217,109,216,1) 4%, rgba(115,174,222,1) 100%);
+  background: linear-gradient(90deg, rgb(245, 111, 243) 4%, rgb(92, 179, 250) 100%);
   padding: 10%;
+  background-size: 150% 10%;
+  animation: degrade 5s infinite alternate ;
+}
 
+@keyframes degrade{
+  0%{background-position-x: 0% }
+  100%{background-position-x: 100% }
 }
 
 .boxLogin {
-  border-style: hidden;
-  border-width: 5px;
-  margin: 2.6%;
-  margin-left: 30%;
-  margin-right: 30%;
-  background-color: #352D42;
-
-  background-color: aliceblue;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 750px;
+  width: 800px;
+  background-color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -54,8 +57,6 @@ nav a{
 .boxLogin p {
   font-family: fonte;
   font-size: 16px;
-  margin-right: 50%;
-
 }
 
 .inputLogin {
@@ -72,19 +73,18 @@ nav a{
 
 .buttonLogin {
   margin: 10%;
-  width: 50%;
+  width: 300px;
+  max-width: 90%;
   font-size: 24px;
-
   padding: 6px;
   border-radius: 20px;
-  background-color: #352D42;
+  background: linear-gradient(90deg, #352D42, #2B3946);
   color: aliceblue;
 }
 
-
-
-
-
+.esquerda{
+  font-size: 2000px;
+}
 
 
 
@@ -168,7 +168,6 @@ nav a{
   padding-right: 5%;
   padding-top: 1%;
   padding-bottom: 1%;
-  margin-top: -10%;
 
   font-size: 24px;
   border-color: blueviolet;
@@ -177,5 +176,6 @@ nav a{
   text-align: center;
   border-radius: 20px;
   border-width: 1px;
+  cursor: pointer;
 
 }
