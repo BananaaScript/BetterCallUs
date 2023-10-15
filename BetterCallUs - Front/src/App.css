@@ -139,7 +139,9 @@ nav a{
 
 .dadosTicket {
   display: flex;
-  align-items: first baseline;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
   flex-direction: column;
 
 }
@@ -184,5 +186,16 @@ nav a{
   border-radius: 20px;
   border-width: 1px;
   cursor: pointer;
+}
 
+#opcoes {
+  max-width: 100%;
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
