@@ -7,14 +7,13 @@ export const Ticket = () => {
     return(
         <div className='bodyTicket'>
             <div className='problemaTicket'>
-                <p>Enviar uma solicitação</p>
+                <h1>Enviar uma solicitação</h1>
                 <textarea placeholder='Descreva aqui seu problema' rows={15} cols={90}></textarea>
             </div>
             <br />
 
             <div className='recursosTicket'>
                 <div className='dadosTicket'>
-                    <div className='row'>
                         <select id='opcoes'>
                             <option value="" disabled selected>Selecione o tipo de problema</option>
                             <option value="Prob.Hardware">Falha de Hardware</option>
@@ -24,10 +23,9 @@ export const Ticket = () => {
                             <option value="Outro">Outro</option>
                         </select> 
 
-                        <button><form action="processa_imagem_perfil.php" method="post" encType="multipart/form-data"> Anexar arquivo
+                        <form action="processa_imagem_perfil.php" method="post" encType="multipart/form-data">
                             <input type="file" name="image"></input>  
-                        </form></button>
-                    </div>
+                        </form>
                 </div>
             </div>
             <button className='buttonTicket'>Enviar</button>

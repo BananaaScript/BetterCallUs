@@ -16,6 +16,28 @@ nav a{
 
 
 
+#logo{
+  width: 200px;
+  pointer-events: none;
+}
+
+.cabeca{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.cabecao{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+
 
 
 .bodyLogin {
@@ -102,6 +124,8 @@ nav a{
 
 .bodyTicket {
   font-family: "fonte";
+  justify-content: center;
+  align-items: center;
 }
 
 .problemaTicket {
@@ -130,10 +154,11 @@ nav a{
 }
 
 .recursosTicket {
-  max-width: 75%;
   display: flex;
+  max-width: 75%;
   align-items: center;
-  justify-items: center;
+  justify-content: center;
+  text-align: center;
   margin-left: 10%;
 }
 
@@ -142,7 +167,8 @@ nav a{
   align-items: center;
   text-align: center;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: row;
+  margin: 5% 0;
 }
 
 .dadosTicket select {
@@ -174,7 +200,9 @@ nav a{
 }
 
 #opcoes {
+  width: 300px;
   max-width: 100%;
+  margin: 0 5%;
 }
 
 .row{

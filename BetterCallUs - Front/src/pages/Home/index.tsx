@@ -4,7 +4,7 @@ import './syles/FAQ.css'
 export default class Home extends Component {
     render(){
         return(
-            <>Home
+            <>
                 <div className='botoes'>
                     <button className="quadrado">
                         <div className='iconebotao'></div>

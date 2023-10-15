@@ -19,13 +19,13 @@ function App(){
 
   return (
     <div className="App">
-    <header>
-        <h1>Header do Site</h1>
-        <nav>
-          <Link to='/'>Home</Link>
-          <Link to='/ticket'>Ticket</Link>
+    <header className='cabeca'>
+        <div className='cabecao'>
+          <button><Link to='/'>Home</Link></button>
+          <Link to='/'><img id='logo' src='logo.png'/></Link>
+          <button><Link to='/ticket'>Ticket</Link></button>
           {auth.usuario && <button onClick={handleLogout}>Sair</button>}
-        </nav>
+        </div>
     </header>
 
     <Routes>
