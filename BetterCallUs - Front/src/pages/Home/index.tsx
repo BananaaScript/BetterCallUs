@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './FAQ.css';
+import './syles/FAQ.css'
 import icon1 from "./img/icones/icon1.png"
 
 export default class Home extends Component {
@@ -8,7 +8,7 @@ export default class Home extends Component {
             <>Home
                 <div className='botoes'>
                     <button className="quadrado">
-                        <div className='iconebotao'><img className='icone' src={icon1} alt="icon1"/></div>
+                        <div className='iconebotao'></div>
                         <div className='textobotao'>Problemas referentes a Mal atendimento</div>
                     </button>
 
