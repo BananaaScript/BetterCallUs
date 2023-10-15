@@ -35,4 +35,9 @@ Demos início no desenvolvimento da funcionalidade de abertura de ticket do sist
 Foi iniciado o desenvolvimento da funcionalidade de reportar problemas integrado com o banco de dados
 <img src='https://github.com/CODE1na/BetterCallUs/assets/125694331/cd5b1473-6661-4593-800a-a7f80c587456'>
 
+<hr>
+
+## Códigos das entregas
+Os códigos podem ser conferidos em <a href='https://github.com/CODE1na/BetterCallUs/tree/frontend-codeina'>FrontEndCODEina</a> e <a href='https://github.com/CODE1na/BetterCallUs/tree/backend-codeina'>BackEndCODEina</a>
+
 | :arrow_up: [Voltar ao topo](#topo) | :arrow_left: [voltar para documentação](https://github.com/CODE1na/BetterCallUs-Doc)
