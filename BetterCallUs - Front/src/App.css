@@ -1,0 +1,215 @@
+.App {
+  text-align: center;
+}
+
+nav a{
+  display: inline-block;
+  margin: 0 10px;
+}
+
+
+@font-face {
+  font-family: "fonte";
+  src: url("JosefinSans-Regular.ttf");
+}
+
+
+
+
+#logo{
+  width: 200px;
+  pointer-events: none;
+}
+
+.cabeca{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.cabecao{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+
+
+
+.bodyLogin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(217,109,216);
+  background: linear-gradient(90deg, rgb(245, 111, 243) 4%, rgb(92, 179, 250) 100%);
+  padding: 10%;
+  background-size: 150% 10%;
+  animation: degrade 2s infinite alternate ;
+}
+
+@keyframes degrade{
+  0%{background-position-x: 0% }
+  100%{background-position-x: 100% }
+}
+
+.boxLogin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 680px;
+  width: 800px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 5px 5px 20px rgba(21, 11, 22, 0.3);
+}
+
+#tituloLogin{
+  font-family: fonte;
+  font-size: 45px;
+  font-weight: bold;
+  margin-bottom: 2%;
+}
+
+.boxLogin p {
+  font-family: fonte;
+  font-size: 16px;
+}
+
+.inputLogin {
+  height: 4%;
+  width: 75%;
+  font-size: medium;
+
+  padding: 2%;
+  border-radius: 20px;
+  border-color: blueviolet;
+
+
+}
+
+.buttonLogin {
+  margin: 10%;
+  height: 60px;
+  width: 300px;
+  max-width: 90%;
+  font-size: 22px;
+  padding: 6px;
+  border-radius: 200px;
+  background: linear-gradient(90deg, #352D42, #2B3946);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+#esquerda{
+  margin-left: -65%;
+  margin-top: 5%;
+  margin-bottom: 2%;
+  font-size: 22px;
+}
+
+
+
+
+
+
+
+
+.bodyTicket {
+  font-family: "fonte";
+  justify-content: center;
+  align-items: center;
+}
+
+.problemaTicket {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: white;
+}
+
+.problemaTicket p {
+  font-size: 24px;
+  font-family: fonte;
+  font-weight: bold;
+}
+
+.problemaTicket textarea {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  border-radius: 20px;
+  border-color: blueviolet;
+  border-width: 3px;
+  padding: 1%;
+}
+
+.recursosTicket {
+  display: flex;
+  max-width: 75%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-left: 10%;
+}
+
+.dadosTicket {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  flex-direction: row;
+  margin: 5% 0;
+}
+
+.dadosTicket select {
+  padding: 2%;
+  border-color: blueviolet;
+  text-align: center;
+  border-radius: 20px;
+  border-width: 2px;
+  width: 145%;
+}
+
+.buttonTicket {
+  display: flex;
+  margin-left: 65%;
+  text-align: center;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+
+  font-size: 24px;
+  border-color: blueviolet;
+  background-color: blueviolet;
+  color: white;
+  text-align: center;
+  border-radius: 20px;
+  border-width: 1px;
+  cursor: pointer;
+}
+
+#opcoes {
+  width: 300px;
+  max-width: 100%;
+  margin: 0 5%;
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 3px solid red;
+}

@@ -1,0 +1,83 @@
+<link rel="stylesheet" href="../static/styles/index.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="Menu">
+    <div class="topnav">
+        <div id="myLinks">
+          <a href="tela1.html">Configuração de Conta</a>
+          <a href="enviar.html">Minhas Chamadas</a>
+          <a href="#index">Sair</a>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+        </a>
+      </div>
+</div>
+<div class="voltar">
+  <a href="tela1.html">Voltar</a>
+  <a href="voltar" class="voltar2"></a>
+</div>
+<div class="cabeca">
+    <button>me mama</button>
+    <img class="logo" src="../static/img/better call us.png">
+    <button>me mama</button>
+</div>
+<div class="Textohome">
+    <h1>Página de dúvidas - Better Call Us!
+    </h1>
+</div>
+<div class="search-container">
+  <input type="text" id="search-input" placeholder="Pesquisar...">
+</div>
+<div class="content">
+  <!-- Seu conteúdo da página vai aqui -->
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+</div>
+
+<script>const searchInput = document.getElementById('search-input');
+  const paragraphs = document.querySelectorAll('.content p');
+  
+  searchInput.addEventListener('input', function () {
+      const searchTerm = searchInput.value.toLowerCase();
+  
+      paragraphs.forEach(paragraph => {
+          const text = paragraph.textContent.toLowerCase();
+  
+          if (text.includes(searchTerm)) {
+              paragraph.style.display = 'block';
+          } else {
+              paragraph.style.display = 'none';
+          }
+      });
+  });</script>
+<footer>
+    <br><div class="botoes">
+        <div>• e-mail: bettercallus.code@gmail.com</div>
+        <div>
+        <a href="https://www.youtube.com/watch?v=K3LvvwW5alg&pp=ygUkbyBtYWlvciBpbmltaWdvIGRhIGdlbGFkZWlyYSB0c3VuYW1p" target="_blank">
+            <img class="botao" src="../static/img/botoes/insta.png">
+        </a>
+        <a href="https://www.youtube.com/watch?v=K3LvvwW5alg&pp=ygUkbyBtYWlvciBpbmltaWdvIGRhIGdlbGFkZWlyYSB0c3VuYW1p" target="_blank">
+            <img class="botao" src="../static/img/botoes/github.png">
+        </a>
+        <a href="https://www.youtube.com/watch?v=K3LvvwW5alg&pp=ygUkbyBtYWlvciBpbmltaWdvIGRhIGdlbGFkZWlyYSB0c3VuYW1p" target="_blank">
+            <img class="botao" src="../static/img/botoes/twitter.png">
+        </a>
+        </div>
+        <div>• WhatsApp/telefone 4002-8922: </div>
+    </div>
+    <br><hr>
+    <br><div>©CODEÍNA 2023- Todos os Direitos Reservados</div><br>
+</footer>
+
+<script>
+    function myFunction() {
+      var x = document.getElementById("myLinks");
+      if (x.style.display === "block") {
+        x.style.display = "none";
+      } else {
+        x.style.display = "block";
+      }
+    }
+    </script>

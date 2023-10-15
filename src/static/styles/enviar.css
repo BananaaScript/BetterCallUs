@@ -1,0 +1,22 @@
+@font-face {
+    font-family: "seila";
+    src: url("../fonts/JosefinSans-Regular.ttf");
+}
+
+body {
+    background-color: white;
+    font-family: "seila";
+    text-align: center;
+    justify-content: center;
+}
+
+.fundo2 {
+    background-color: #F1EEF5;
+}
+
+.dois {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
