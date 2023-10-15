@@ -32,11 +32,10 @@ export default function Login() {
     <div>
       <div className='bodyLogin'>
         <div className="boxLogin">
-          <p className="tituloLogin">Log-in</p>
-
-          <p>E-MAIL:</p>
+          <p id="tituloLogin">Log-in</p>
+          <p id='esquerda'>E-MAIL:</p>
           <input className='inputLogin' type='text' value={email} onChange={handleEmail} placeholder="Digite seu email" />
-          <p>SENHA:</p>
+          <p id='esquerda'>SENHA:</p>
           <input className='inputLogin' type='password' value={senha} onChange={handleSenha} placeholder="Digite sua senha" />
 
           <button className='buttonLogin' onClick={handleLogin}>LOGIN</button>

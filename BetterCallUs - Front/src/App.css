@@ -18,48 +18,51 @@ nav a{
 
 
 
-
-
-
-
 .bodyLogin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: rgb(217,109,216);
-  background: linear-gradient(90deg, rgba(217,109,216,1) 4%, rgba(115,174,222,1) 100%);
+  background: linear-gradient(90deg, rgb(245, 111, 243) 4%, rgb(92, 179, 250) 100%);
   padding: 10%;
+  background-size: 150% 10%;
+  animation: degrade 2s infinite alternate ;
+}
 
+@keyframes degrade{
+  0%{background-position-x: 0% }
+  100%{background-position-x: 100% }
 }
 
 .boxLogin {
-  border-style: hidden;
-  border-width: 5px;
-  margin: 2.6%;
-  margin-left: 30%;
-  margin-right: 30%;
-  background-color: #352D42;
-
-  background-color: aliceblue;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 680px;
+  width: 800px;
+  background-color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  box-shadow: 5px 5px 20px rgba(21, 11, 22, 0.3);
 }
 
-.boxLogin .tituloLogin {
+#tituloLogin{
   font-family: fonte;
+  font-size: 45px;
   font-weight: bold;
-  font-size: 48px;
+  margin-bottom: 2%;
 }
 
 .boxLogin p {
   font-family: fonte;
   font-size: 16px;
-  margin-right: 50%;
-
 }
 
 .inputLogin {
-  margin: 2%;
+  height: 4%;
   width: 75%;
   font-size: medium;
 
@@ -72,19 +75,23 @@ nav a{
 
 .buttonLogin {
   margin: 10%;
-  width: 50%;
-  font-size: 24px;
-
+  height: 60px;
+  width: 300px;
+  max-width: 90%;
+  font-size: 22px;
   padding: 6px;
-  border-radius: 20px;
-  background-color: #352D42;
-  color: aliceblue;
+  border-radius: 200px;
+  background: linear-gradient(90deg, #352D42, #2B3946);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
 }
 
-
-
-
-
+#esquerda{
+  margin-left: -65%;
+  margin-top: 5%;
+  margin-bottom: 2%;
+  font-size: 22px;
+}
 
 
 
@@ -168,7 +175,6 @@ nav a{
   padding-right: 5%;
   padding-top: 1%;
   padding-bottom: 1%;
-  margin-top: -10%;
 
   font-size: 24px;
   border-color: blueviolet;
@@ -177,5 +183,6 @@ nav a{
   text-align: center;
   border-radius: 20px;
   border-width: 1px;
+  cursor: pointer;
 
 }

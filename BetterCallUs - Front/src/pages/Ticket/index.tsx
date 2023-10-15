@@ -25,14 +25,11 @@ export const Ticket = () => {
                         <option value="Prob.Conexao">Problemas de Conexão</option>
                         <option value="Prob.Cabeamento">Problema no Cabeamento</option>
                         <option value="Outro">Outro</option>
-
                     </select> 
 
                 </div>
             </div>
-            <button className='buttonTicket' >Enviar</button>
-
-            
+            <button className='buttonTicket'>Enviar</button>
         </div>
     )
 
