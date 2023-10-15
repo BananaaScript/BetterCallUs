@@ -15,16 +15,21 @@ nav a{
 
 
 
-TELA LOGIN
+
+
+
+
+
+
 
 .bodyLogin {
   background: rgb(217,109,216);
   background: linear-gradient(90deg, rgba(217,109,216,1) 4%, rgba(115,174,222,1) 100%);
-  padding: 1%;
+  padding: 10%;
 
 }
 
-.box {
+.boxLogin {
   border-style: hidden;
   border-width: 5px;
   margin: 2.6%;
@@ -40,13 +45,13 @@ TELA LOGIN
   flex-direction: column;
 }
 
-.box .tituloLogin {
+.boxLogin .tituloLogin {
   font-family: fonte;
   font-weight: bold;
   font-size: 48px;
 }
 
-.box p {
+.boxLogin p {
   font-family: fonte;
   font-size: 16px;
   margin-right: 50%;
@@ -85,11 +90,11 @@ TELA LOGIN
 
 
 
-TELA ENVIAR TICKET
+
 
 
 .bodyTicket {
-  font-family: "seila";
+  font-family: "fonte";
 }
 
 .problemaTicket {
@@ -128,14 +133,49 @@ TELA ENVIAR TICKET
 .dadosTicket {
   display: flex;
   align-items: first baseline;
-  flex-direction: row;
+  flex-direction: column;
 
+}
+
+.dadosTicket p {
+  font-size: 16px;
+  font-weight: bold;
+
+}
+
+.dadosTicket {
+  padding: 1%;
+}
+
+.dadosTicket form {
+  padding: 2%;
 }
 
 .dadosTicket select {
   padding: 2%;
-  margin-left: 5%;
-  margin-right: 5%;
+  border-color: blueviolet;
+  text-align: center;
+  border-radius: 20px;
+  border-width: 2px;
+  width: 145%;
 }
 
+.buttonTicket {
+  display: flex;
+  margin-left: 65%;
+  text-align: center;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  margin-top: -10%;
 
+  font-size: 24px;
+  border-color: blueviolet;
+  background-color: blueviolet;
+  color: white;
+  text-align: center;
+  border-radius: 20px;
+  border-width: 1px;
+
+}
