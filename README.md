@@ -13,8 +13,8 @@ A partir do desafio acadêmico proposto pelo cliente interno, o projeto consiste
 ### :checkered_flag: Entregas das Sprints
 | Links | Período | Status |
 |:-----:|:----------:|:---------:|
-| <a href='https://github.com/CODE1na/BetterCallUs-Doc/blob/Sprint1/README.md'>Sprint 1</a> | 04/09/2023 - 24/09/2023 | Entregue :heavy_check_mark: |
-| Sprint 2 | 25/09/2023 - 15/10/2023 | Pendente :hourglass: |  
+| <a href='https://github.com/CODE1na/BetterCallUs/blob/Sprint1/README.md'>Sprint 1</a> | 04/09/2023 - 24/09/2023 | Entregue :heavy_check_mark: |
+| <a href='https://github.com/CODE1na/BetterCallUs/blob/Sprint2/README.md'>Sprint 2 </a>| 25/09/2023 - 15/10/2023 | Entregue :heavy_check_mark: |  
 | Sprint 3 | 16/10/2023 - 05/11/2023 | Pendente :hourglass: | 
 | Sprint 4 | 06/11/2023 - 26/11/2023 | Pendente :hourglass: |  
 
