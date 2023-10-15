@@ -29,8 +29,9 @@ export default function Login() {
   }
 
   return (
-    <div className='bodyLogin'>
-        <div className="box">
+    <div>
+      <div className='bodyLogin'>
+        <div className="boxLogin">
           <p className="tituloLogin">Log-in</p>
 
           <p>E-MAIL:</p>
@@ -40,8 +41,10 @@ export default function Login() {
 
           <button className='buttonLogin' onClick={handleLogin}>LOGIN</button>
     
+        </div>
       </div>
-    </div>
 
+    </div>
+    
   );
 }
