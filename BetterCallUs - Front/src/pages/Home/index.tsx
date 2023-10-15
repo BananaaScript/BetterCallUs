@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './syles/FAQ.css'
-import icon1 from "./img/icones/icon1.png"
 
 export default class Home extends Component {
     render(){

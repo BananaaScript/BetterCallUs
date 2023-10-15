@@ -1,6 +1,7 @@
 .quadrado {
     width: 275px; 
-    height: 275px; 
+    height: 275px;
+    font-family: fonte;
     background-color: #ffffff;
     color: #000000;
     border: none;
@@ -43,3 +44,8 @@
     align-items: center;
     text-align: center;
 }
+
+@font-face {
+    font-family: "fonte";
+    src: url("./fonts/JosefinSans-Regular.ttf");
+  }
