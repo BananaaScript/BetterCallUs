@@ -47,8 +47,11 @@ footer {
     text-align: center;
 }
 /* Barra de busca */
+.search-container {
+  margin: 20px;
+}
 
-.divBuscahome{
+#search-input {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -57,9 +60,6 @@ footer {
     width:260px;
     border:solid 1px;
     border-radius:10px;
-  }
-  
-  #txtBuscahome{
     font-family: "seila";
     background-color:transparent;
     padding-left:5px;

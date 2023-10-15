@@ -25,9 +25,32 @@
     <h1>Página de dúvidas - Better Call Us!
     </h1>
 </div>
-<div class="divBuscahome">
-    <input type="text" id="txtBuscahome" placeholder="Não encontrou seu problema?"/>
-  </div>
+<div class="search-container">
+  <input type="text" id="search-input" placeholder="Pesquisar...">
+</div>
+<div class="content">
+  <!-- Seu conteúdo da página vai aqui -->
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+</div>
+
+<script>const searchInput = document.getElementById('search-input');
+  const paragraphs = document.querySelectorAll('.content p');
+  
+  searchInput.addEventListener('input', function () {
+      const searchTerm = searchInput.value.toLowerCase();
+  
+      paragraphs.forEach(paragraph => {
+          const text = paragraph.textContent.toLowerCase();
+  
+          if (text.includes(searchTerm)) {
+              paragraph.style.display = 'block';
+          } else {
+              paragraph.style.display = 'none';
+          }
+      });
+  });</script>
 <footer>
     <br><div class="botoes">
         <div>• e-mail: bettercallus.code@gmail.com</div>
