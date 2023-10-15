@@ -117,3 +117,23 @@ footer {
   .topnav a:hover{
     background-color: #A35AFF;
   }
+
+    /*  Voltar  */
+
+    .voltar {
+    color:aliceblue;
+    font-family: "seila";
+    overflow: hidden;
+    position: fixed;
+    font-size:25;
+    text-align: center;
+    background: #A35AFF;
+    display: block;
+    position: fixed;
+    height: 20px;
+    width: 200px;
+    padding-top: 10;
+    padding-bottom: 20;
+    top: 10;
+    left: 10;
+  }
