@@ -6,10 +6,10 @@ require('dotenv').config();
 const port = 3001
 const app = express();
 const pool = mysql.createPool({
-    host: localhost,
-    database: sqltestedb,
-    user: sqltestador,
-    password: meusegredo1,
+    host: "localhost",
+    database: "sqltestedb",
+    user: "sqltestador",
+    password: "meusegredo1",
     connectionLimit: 10,
 });
 
