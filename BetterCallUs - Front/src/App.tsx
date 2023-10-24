@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import './App.css'
+import './styles/App.css'
 import { Link, Route, Routes, useNavigate } from 'react-router-dom';
 import Home from './pages/Home';  
 import { RequireAuth } from './contexts/Auth/RequireAuth';

@@ -10,10 +10,8 @@ nav a{
 
 @font-face {
   font-family: "fonte";
-  src: url("JosefinSans-Regular.ttf");
+  src: url("./fonts/JosefinSans-Regular.ttf");
 }
-
-
 
 
 #logo{
