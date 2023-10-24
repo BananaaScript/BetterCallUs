@@ -1,6 +1,8 @@
 import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../contexts/Auth/AuthContext';
 import { useNavigate } from 'react-router-dom';
+import './syles/Login.css'
+
 
 export default function Login() {
   const [email, setEmail] = useState("");
