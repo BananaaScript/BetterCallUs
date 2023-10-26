@@ -1,42 +1,4 @@
-.App {
-    text-align: center;
-  }
-  
-  nav a{
-    display: inline-block;
-    margin: 0 10px;
-  }
-  
-  
-  @font-face {
-    font-family: "fonte";
-    src: url("./fonts/JosefinSans-Regular.ttf");
-  }
-  
-  
-  #logo{
-    width: 200px;
-    pointer-events: none;
-  }
-  
-  .cabeca{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    flex-direction: row;
-  }
-  
-  .cabecao{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    flex-direction: row;
-  }
-  
-  
-  
+
   
   .bodyLogin {
     display: flex;

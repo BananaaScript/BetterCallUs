@@ -17,24 +17,33 @@ function App(){
   }
 
   return (
-    <div className="App">
-    <header className='cabeca'>
-        <div className='cabecao'>
-          <button><Link to='/'>Home</Link></button>
-          <Link to='/'><img id='logo' src='logo.png'/></Link>
-          <button><Link to='/ticket'>Ticket</Link></button>
-          {auth.usuario && <button onClick={handleLogout}>Sair</button>}
-        </div>
-    </header>
+    <div>
+      <div className='headAPP'>
 
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/ticket" element={<RequireAuth><Ticket /></RequireAuth>} />
-    </Routes>
-  </div>
+          <div className='buttonAPP'>
+          <Link to='/ticket'><button>Enviar ticket</button></Link>
+            
+          </div>
+
+          <div className='logoApp'>
+            <Link to='/'><img id='logo' src='logo.png'/></Link>
+          </div>
+
+          <div className='menuAPP'>
+            {auth.usuario && <button onClick={handleLogout}>Sair</button>}
+          </div>
+      </div>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/ticket" element={<RequireAuth><Ticket /></RequireAuth>} />
+      </Routes>
+    </div>
+    
   )
 }
 
 
 
 export default App;
+

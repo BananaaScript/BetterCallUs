@@ -11,3 +11,45 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: "fonte";
+  src: url("./fonts/JosefinSans-Regular.ttf");
+}
+
+
+.headAPP {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+
+
+}
+
+.buttonAPP {
+  display: flex;
+  align-items: center;
+  justify-content: last baseline;
+}
+
+.buttonAPP button {
+  display: flex;
+  align-items: center;
+  justify-content: baseline;
+}
+
+.logoApp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15px;
+}
+
+img#logo {
+  max-width: 250px;
+}
+
+.menuAPP {
+  display: flex;
+  align-items: center;
+}
