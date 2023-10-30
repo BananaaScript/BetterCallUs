@@ -46,7 +46,7 @@ function App(){
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/ticket" element={<RequireAuth><Ticket /></RequireAuth>} />
-        <Route path="/Chamadassup" element={<Chamadassup></Chamadassup>} />
+        <Route path="/Chamadassup" element={<RequireAuth><Chamadassup /></RequireAuth>} />
       </Routes>
     </div>
     
