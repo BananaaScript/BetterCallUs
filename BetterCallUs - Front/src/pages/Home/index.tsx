@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './syles/FAQ.css'
+import './styles/FAQ.css'
 
 export default class Home extends Component {
     render(){

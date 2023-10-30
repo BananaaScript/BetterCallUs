@@ -1,5 +1,5 @@
 import  Login from '../login'
-import './syles/Ticket.css'
+import './styles/Ticket.css'
 
 
 export const Ticket = () => {
