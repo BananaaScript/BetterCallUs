@@ -21,6 +21,8 @@ code {
 .headAPP {
   display: flex;
   justify-content: center;
+  align-items: center;
+  text-align: center;
   flex-direction: row;
 
 
@@ -52,4 +54,36 @@ img#logo {
 .menuAPP {
   display: flex;
   align-items: center;
+}
+
+/* Estilos para o botão do menu hamburguer */
+#menuToggle {
+  display: block;
+  position: relative;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+}
+
+#menuToggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+}
+
+#menuToggle span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: #cdcdcd;
+  border-radius: 3px;
+  z-index: 1;
 }

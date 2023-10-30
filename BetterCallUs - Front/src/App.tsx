@@ -18,9 +18,8 @@ function App(){
   }
 
   return (
-    <div>
+    <div className='safada'>
       <div className='headAPP'>
-
           <div className='buttonAPP'>
           <Link to='/ticket'><button>Enviar ticket</button></Link>
             

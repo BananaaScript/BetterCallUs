@@ -6,29 +6,43 @@ export const Chamadassup = () => {
 
     return(
         <div className='bodyTicket'>
-            <div className='problemaTicket'>
-                <h1>Enviar uma solicitação</h1>
-                <textarea placeholder='Descreva aqui seu problema' rows={15} cols={90}></textarea>
+            <div className="sidenav">
+                <p className='linha'>
+                    <p>Chamada01</p>
+                    <p>(Não respondido)</p>
+                </p>
+                <hr></hr>
+                <p className='linha'>
+                    <p>Chamada02</p>
+                    <p>(Não respondido)</p>
+                </p>
+                <hr></hr>
+                <p className='linha'>
+                    <p>Chamada03</p>
+                    <p>(Não respondido)</p>
+                </p>
+                <hr></hr>
+                <p className='linha'>
+                    <p>Chamada04</p>
+                    <p>(Não respondido)</p>
+                </p>
+                <hr></hr>
+                <p className='linha'>
+                    <p>Chamada05</p>
+                    <p>(Não respondido)</p>
+                </p>
+                <hr></hr>
+                <p className='linha'>
+                    <p>Chamada06</p>
+                    <p>(Não respondido)</p>
+                </p>
+                <hr></hr>
             </div>
-            <br />
-
-            <div className='recursosTicket'>
-                <div className='dadosTicket'>
-                        <select id='opcoes'>
-                            <option value="" disabled selected>Selecione o tipo de problema</option>
-                            <option value="Prob.Hardware">Falha de Hardware</option>
-                            <option value="Prob.Software">Falha de Software</option>
-                            <option value="Prob.Conexao">Problemas de Conexão</option>
-                            <option value="Prob.Cabeamento">Problema no Cabeamento</option>
-                            <option value="Outro">Outro</option>
-                        </select> 
-
-                        <form action="processa_imagem_perfil.php" method="post" encType="multipart/form-data">
-                            <input type="file" name="image"></input>  
-                        </form>
-                </div>
+            <div className="main">
+                <h2>Sidenav Example</h2>
+                <p>This sidenav is always shown.</p>
             </div>
-            <button className='buttonTicket'>Enviar</button>
+
         </div>
     )
 
