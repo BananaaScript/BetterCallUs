@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Registro de Problemas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        #problemForm {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+        }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            padding: 5px;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        #problemList {
+            background-color: #fff;
+            margin: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ccc;
+        }
+
+        th {
+            background-color: #333;
+            color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sistema de Registro de Problemas</h1>
+    </header>
+    <div id="problemForm">
+        <h2>Registrar um Problema</h2>
+        <form id="registroProblema">
+            <label for="descricao">Descrição do Problema:</label>
+            <textarea id="descricao" required></textarea>
+            <button type="submit">Registrar</button>
+        </form>
+    </div>
+    <div id="problemList">
+        <h2>Problemas Registrados</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Descrição</th>
+                </tr>
+            </thead>
+            <tbody id="listaProblemas">
+            </tbody>
+        </table>
+    </div>
+    <script src="registro_problemas.js"></script>
+</body>
+</html>
