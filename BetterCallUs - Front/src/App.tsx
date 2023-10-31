@@ -45,19 +45,27 @@ function App() {
         <Route path="/Chamadassup" element={<RequireAuth><Chamadassup /></RequireAuth>} />
       </Routes>
 
-      {isChamadassupPage && (
-        <div className="sidebar">
-          <p>safada</p>
-          <p>safada</p>
-        </div>
-      )}
 
       {isChamadassupPage ? null : (
         <footer>
-          <p>safada</p>
-          <p>safada</p>
-          <p>safada</p>
-          <p>safada</p>
+          <div className='cima'>
+
+            <div className='parte1'>
+            <p>e-mail: bettercallus.code@gmail.com</p>   
+            </div>
+
+            <div className='parte2'>
+              <p>smt</p>
+              </div>
+
+              <div className='parte3'>
+              <p>WhatsApp/ Telefone: 4002-8922</p>
+              </div>
+
+          </div>
+
+          <hr></hr>
+          <p>©CODEÍNA 2023 - Todos os Direitos Reservados</p>
         </footer>
       )}
     </div>

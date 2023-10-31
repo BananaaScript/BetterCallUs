@@ -32,6 +32,7 @@ code {
   text-align: center;
   align-items: center;
   flex: 1;
+  
 }
 
 .buttonAPP button {
@@ -43,6 +44,8 @@ code {
   font-family: fonte ;
   font-size: xx-large;
   color: antiquewhite ;
+  cursor: pointer;
+
 }
 
 .logoApp {
@@ -70,7 +73,7 @@ img#logo {
     border-radius: 50%;
     background-color:blueviolet;
     border-style: hidden;
-    
+    cursor: pointer;
 }
 
 
@@ -94,4 +97,54 @@ img#logo {
     gap: 10%;
   }
   
+}
+
+footer {
+  color: white;
+  background-color: blueviolet;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.cima{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.parte1{
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 1% 2%;
+  background-color: rgb(112, 16, 202);
+  border-radius: 1000px;
+}
+
+.parte2{
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.parte3{
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 1% 2%;
+  background-color: rgb(112, 16, 202);
+  border-radius: 1000px;
 }
