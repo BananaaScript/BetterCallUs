@@ -8,7 +8,6 @@ export const Chamadassup = () => {
 
   return (
     <div className='bodyTicket'>
-      <div className="container">
         <div className="sidenav">
           <p className='linha'>
             <p>Chamada01</p>
@@ -60,16 +59,12 @@ export const Chamadassup = () => {
             <Link to='/ticket'><button>admin</button></Link>
             {/* Inclua outros elementos do cabeçalho conforme necessário */}
           </div>
-
-          <h1>aaaaaaaa</h1>
-          <h1>aaaaaaaa</h1>
-          <h1>aaaaaaaa</h1>
-          <h1>aaaaaaaa</h1>
-          <h1>aaaaaaaa</h1>
-          <h1>aaaaaaaa</h1>
-          <h1>aaaaaaaa</h1>
         </div>
-      </div>
+        <div className='notepad'>
+            <h1>Meu Bloco de Notas</h1>
+            <textarea id="textArea" placeholder="Digite suas notas aqui..."></textarea>
+        </div>
     </div>
+    
   )
 }

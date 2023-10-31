@@ -67,6 +67,8 @@ function App() {
           <hr></hr>
           <p>©CODEÍNA 2023 - Todos os Direitos Reservados</p>
         </footer>
+
+        
       )}
     </div>
   )
