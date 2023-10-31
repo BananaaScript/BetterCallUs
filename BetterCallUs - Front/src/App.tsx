@@ -33,19 +33,23 @@ function App(){
 
           <div className='menuAPP'>
             <button>
-             MENU
+              MENU
             </button>
 
           </div>
       </div>
           <Link to='/Chamadassup'><button>suporte</button></Link>
           <Link to='/ticket'><button>admin</button></Link>
+          <Link to='/edituser'><button>edit</button></Link>
           {auth.usuario && <button onClick={handleLogout}>Sair</button>}
+          
+          
 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/ticket" element={<RequireAuth><Ticket /></RequireAuth>} />
         <Route path="/Chamadassup" element={<RequireAuth><Chamadassup /></RequireAuth>} />
+        <Route path="/Menu/editaruser" element={<RequireAuth><menu /></RequireAuth>} />
       </Routes>
     </div>
     
