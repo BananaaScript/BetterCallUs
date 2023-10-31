@@ -5,88 +5,42 @@
     align-items: center;
   }
   
-  .problemaTicket {
+  body {
+    font-family: "Lato", sans-serif;
+  }
+  
+  .sidenav {
+    height: 100%;
+    width: 400px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    overflow-x: hidden;
+    padding-top: 20px;
+    font-size: 20px;
+  }
+  
+  .main {
     display: flex;
+    margin-left: 400px; /* Same as the width of the sidenav */
+    text-align: center;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: white;
   }
-  
-  .problemaTicket p {
-    font-size: 24px;
-    font-family: fonte;
-    font-weight: bold;
-  }
-  
-  .problemaTicket textarea {
+
+  .linha {
+    margin: 40px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 80%;
-    border-radius: 20px;
-    border-color: blueviolet;
-    border-width: 3px;
-    padding: 1%;
-  }
-  
-  .recursosTicket {
-    display: flex;
-    max-width: 75%;
-    align-items: center;
     justify-content: center;
     text-align: center;
-    margin-left: 10%;
-  }
-  
-  .dadosTicket {
-    display: flex;
     align-items: center;
-    text-align: center;
-    justify-content: center;
-    flex-direction: row;
-    margin: 5% 0;
+    flex-direction: column;
   }
   
-  .dadosTicket select {
-    padding: 2%;
-    border-color: blueviolet;
-    text-align: center;
-    border-radius: 20px;
-    border-width: 2px;
-    width: 145%;
-  }
-  
-  .buttonTicket {
-    display: flex;
-    margin-left: 65%;
-    text-align: center;
-    padding-left: 5%;
-    padding-right: 5%;
-    padding-top: 1%;
-    padding-bottom: 1%;
-  
-    font-size: 24px;
-    border-color: blueviolet;
-    background-color: blueviolet;
-    color: white;
-    text-align: center;
-    border-radius: 20px;
-    border-width: 1px;
-    cursor: pointer;
-  }
-  
-  #opcoes {
-    width: 300px;
-    max-width: 100%;
-    margin: 0 5%;
-  }
-  
-  .row{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    border: 3px solid red;
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
   }

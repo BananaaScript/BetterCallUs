@@ -1,35 +1,75 @@
+import React from 'react';
+import Login from '../../../pages/login';
+import { Link } from 'react-router-dom';
 import './styles/Ticket.css'
-import  Login from '../../../pages/login'
 
 export const Chamadassup = () => {
-    Login()
+  // Chame Login() aqui se necessário
 
-    return(
-        <div className='bodyTicket'>
-            <div className='problemaTicket'>
-                <h1>Enviar uma solicitação</h1>
-                <textarea placeholder='Descreva aqui seu problema' rows={15} cols={90}></textarea>
-            </div>
-            <br />
-
-            <div className='recursosTicket'>
-                <div className='dadosTicket'>
-                        <select id='opcoes'>
-                            <option value="" disabled selected>Selecione o tipo de problema</option>
-                            <option value="Prob.Hardware">Falha de Hardware</option>
-                            <option value="Prob.Software">Falha de Software</option>
-                            <option value="Prob.Conexao">Problemas de Conexão</option>
-                            <option value="Prob.Cabeamento">Problema no Cabeamento</option>
-                            <option value="Outro">Outro</option>
-                        </select> 
-
-                        <form action="processa_imagem_perfil.php" method="post" encType="multipart/form-data">
-                            <input type="file" name="image"></input>  
-                        </form>
-                </div>
-            </div>
-            <button className='buttonTicket'>Enviar</button>
+  return (
+    <div className='bodyTicket'>
+      <div className="container">
+        <div className="sidenav">
+          <p className='linha'>
+            <p>Chamada01</p>
+            <p>(Não respondido)</p>
+          </p>
+          <hr></hr>
+          <p className='linha'>
+            <p>Chamada02</p>
+            <p>(Não respondido)</p>
+          </p>
+          <hr></hr>
+          <p className='linha'>
+            <p>Chamada03</p>
+            <p>(Não respondido)</p>
+          </p>
+          <hr></hr>
+          <p className='linha'>
+            <p>Chamada04</p>
+            <p>(Não respondido)</p>
+          </p>
+          <hr></hr>
+          <p className='linha'>
+            <p>Chamada05</p>
+            <p>(Não respondido)</p>
+          </p>
+          <hr></hr>
+          <p className='linha'>
+            <p>Chamada06</p>
+            <p>(Não respondido)</p>
+          </p>
+          <hr></hr>
         </div>
-    )
 
+        <div className="main">
+          {/* Header específico para a página Chamadassup */}
+          <div className='headAPP'>
+            <div className='buttonAPP'>
+              <Link to='/ticket'><button>Enviar ticket</button></Link>
+            </div>
+            <div className='logoApp'>
+              <Link to='/'><img id='logo' alt='logo' src='logo.png' /></Link>
+            </div>
+            <div className='menuAPP'>
+              <button>
+                MENU
+              </button>
+            </div>
+            <Link to='/Chamadassup'><button>suporte</button></Link>
+            <Link to='/ticket'><button>admin</button></Link>
+            {/* Inclua outros elementos do cabeçalho conforme necessário */}
+          </div>
+
+          <h1>aaaaaaaa</h1>
+          <h1>aaaaaaaa</h1>
+          <h1>aaaaaaaa</h1>
+          <h1>aaaaaaaa</h1>
+          <h1>aaaaaaaa</h1>
+          <h1>aaaaaaaa</h1>
+          <h1>aaaaaaaa</h1>
+        </div>
+      </div>
+    </div>
+  )
 }

@@ -21,35 +21,130 @@ code {
 .headAPP {
   display: flex;
   justify-content: center;
-  flex-direction: row;
-
-
+  text-align: center;
+  align-items: center;
+  max-width: 100%;
 }
 
 .buttonAPP {
   display: flex;
+  justify-content: center;
+  text-align: center;
   align-items: center;
-  justify-content: last baseline;
+  flex: 1;
+  
 }
 
 .buttonAPP button {
-  display: flex;
-  align-items: center;
-  justify-content: baseline;
+  width: 250px;
+  background-color: blueviolet;
+  border-width: 25px;
+  border-style: solid;
+  border-color: blueviolet;
+  font-family: fonte ;
+  font-size: xx-large;
+  color: antiquewhite ;
+  cursor: pointer;
+
 }
 
 .logoApp {
   display: flex;
-  align-items: center;
   justify-content: center;
-  margin: 15px;
+  text-align: center;
+  align-items: center;
+  flex: 1;
 }
 
 img#logo {
   max-width: 250px;
 }
 
-.menuAPP {
+.menuAPP{
   display: flex;
+  justify-content: center;
+  text-align: center;
   align-items: center;
+  flex: 1;
+}
+.menuAPP button {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color:blueviolet;
+    border-style: hidden;
+    cursor: pointer;
+}
+
+
+
+
+@media screen and (max-width: 840px) {
+  .headAPP {
+    flex-direction: column-reverse;
+  }
+  .menuAPP {
+    margin-right: 0px;
+    margin-left: 75%;
+  }
+  .buttonAPP {
+    margin: 0px;
+  }
+}
+
+@media screen and (min-width:841px) and (max-width:1365px) {
+  .headAPP{
+    gap: 10%;
+  }
+  
+}
+
+footer {
+  color: white;
+  background-color: blueviolet;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.cima{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.parte1{
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 1% 2%;
+  background-color: rgb(112, 16, 202);
+  border-radius: 1000px;
+}
+
+.parte2{
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.parte3{
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 1% 2%;
+  background-color: rgb(112, 16, 202);
+  border-radius: 1000px;
 }
