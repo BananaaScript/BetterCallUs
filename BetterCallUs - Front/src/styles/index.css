@@ -19,32 +19,33 @@ code {
 
 
 .headAPP {
+  margin: 25px ;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
   flex-direction: row;
-
+  align-items: center;
+  justify-content: center; 
+  text-align: center;
+  gap: 25%;
 
 }
 
 .buttonAPP {
-  display: flex;
-  align-items: center;
-  justify-content: last baseline;
+
 }
 
 .buttonAPP button {
-  display: flex;
-  align-items: center;
-  justify-content: baseline;
+  width: 100% ;
+  background-color: blueviolet;
+  border-width: 25px;
+  border-style: solid;
+  border-color: blueviolet;
+  font-family: fonte ;
+  font-size: xx-large;
+  color: antiquewhite ;
 }
 
 .logoApp {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 15px;
+
 }
 
 img#logo {
@@ -54,6 +55,16 @@ img#logo {
 .menuAPP {
   display: flex;
   align-items: center;
+  margin-right: 5%;
+}
+
+.menuAPP button {
+
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color:blueviolet;
+    border-style: hidden;
 }
 
 /* Estilos para o botão do menu hamburguer */
@@ -86,4 +97,14 @@ img#logo {
   background: #cdcdcd;
   border-radius: 3px;
   z-index: 1;
+}
+
+@media screen and (max-width: 767px) {
+  .headAPP {
+    flex-direction: column-reverse;
+  }
+  .menuAPP {
+    margin-right: 0px;
+    margin-left: 75%;
+  }
 }

@@ -18,10 +18,12 @@ function App(){
   }
 
   return (
-    <div className='safada'>
+    <div className='bodyAPP'>
+      
       <div className='headAPP'>
+
           <div className='buttonAPP'>
-          <Link to='/ticket'><button>Enviar ticket</button></Link>
+            <Link to='/ticket'><button>Enviar ticket</button></Link>
             
           </div>
 
@@ -30,17 +32,15 @@ function App(){
           </div>
 
           <div className='menuAPP'>
-            {auth.usuario && <button onClick={handleLogout}>Sair</button>}
-          </div>
+            <button>
+             MENU
+            </button>
 
-          <div className='menuAPP'>
-          <Link to='/Chamadassup'><button>suporte</button></Link>
-          </div>
-
-          <div className='menuAPP'>
-          <Link to='/ticket'><button>admin</button></Link>
           </div>
       </div>
+          <Link to='/Chamadassup'><button>suporte</button></Link>
+          <Link to='/ticket'><button>admin</button></Link>
+          {auth.usuario && <button onClick={handleLogout}>Sair</button>}
 
       <Routes>
         <Route path="/" element={<Home />} />
