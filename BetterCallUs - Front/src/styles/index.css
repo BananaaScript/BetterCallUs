@@ -30,11 +30,12 @@ code {
 }
 
 .buttonAPP {
+  margin-left: 50px;
 
 }
 
 .buttonAPP button {
-  width: 100% ;
+  width: 200px;
   background-color: blueviolet;
   border-width: 25px;
   border-style: solid;
@@ -53,9 +54,11 @@ img#logo {
 }
 
 .menuAPP {
+
   display: flex;
   align-items: center;
-  margin-right: 5%;
+  margin-left: 75px;
+  margin-right: 75px;
 }
 
 .menuAPP button {
@@ -99,7 +102,7 @@ img#logo {
   z-index: 1;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 840px) {
   .headAPP {
     flex-direction: column-reverse;
   }
@@ -107,4 +110,14 @@ img#logo {
     margin-right: 0px;
     margin-left: 75%;
   }
+  .buttonAPP {
+    margin: 0px;
+  }
+}
+
+@media screen and (min-width:841px) and (max-width:1365px) {
+  .headAPP{
+    gap: 10%;
+  }
+  
 }
