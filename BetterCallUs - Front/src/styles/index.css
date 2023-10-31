@@ -19,23 +19,23 @@ code {
 
 
 .headAPP {
-  margin: 25px ;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center; 
+  justify-content: center;
   text-align: center;
-  gap: 25%;
-
+  align-items: center;
+  max-width: 100%;
 }
 
 .buttonAPP {
-  margin-left: 50px;
-
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  flex: 1;
 }
 
 .buttonAPP button {
-  width: 200px;
+  width: 250px;
   background-color: blueviolet;
   border-width: 25px;
   border-style: solid;
@@ -46,61 +46,35 @@ code {
 }
 
 .logoApp {
-
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  flex: 1;
 }
 
 img#logo {
   max-width: 250px;
 }
 
-.menuAPP {
-
+.menuAPP{
   display: flex;
+  justify-content: center;
+  text-align: center;
   align-items: center;
-  margin-left: 75px;
-  margin-right: 75px;
+  flex: 1;
 }
-
 .menuAPP button {
-
     width: 100px;
     height: 100px;
     border-radius: 50%;
     background-color:blueviolet;
     border-style: hidden;
+    
 }
 
-/* Estilos para o botão do menu hamburguer */
-#menuToggle {
-  display: block;
-  position: relative;
-  top: 20px;
-  left: 20px;
-  cursor: pointer;
-}
 
-#menuToggle input {
-  display: block;
-  width: 40px;
-  height: 32px;
-  position: absolute;
-  top: -7px;
-  left: -5px;
-  cursor: pointer;
-  opacity: 0;
-  z-index: 2;
-}
 
-#menuToggle span {
-  display: block;
-  width: 33px;
-  height: 4px;
-  margin-bottom: 5px;
-  position: relative;
-  background: #cdcdcd;
-  border-radius: 3px;
-  z-index: 1;
-}
 
 @media screen and (max-width: 840px) {
   .headAPP {
