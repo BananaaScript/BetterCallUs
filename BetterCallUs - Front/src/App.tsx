@@ -6,6 +6,7 @@ import { RequireAuth } from './contexts/Auth/RequireAuth';
 import { AuthContext } from './contexts/Auth/AuthContext';
 import { Ticket } from './pages/Ticket';
 import { Chamadassup } from './2.SUPORTE/pages/Chamadassup';
+import { Edituser } from './pages/Menu/editaruser';
 
 function App() {
   const auth = useContext(AuthContext);
@@ -17,10 +18,11 @@ function App() {
   }
 
   const isChamadassupPage = window.location.pathname === '/Chamadassup';
+  const isEdituserPage = window.location.pathname === '/edituser';
 
   return (
     <div className='bodyAPP'>
-      {isChamadassupPage ? null : (
+      {isEdituserPage ? null : isChamadassupPage ? null : (
         <div className='headAPP'>
           <div className='buttonAPP'>
             <Link to='/ticket'><button>Enviar ticket</button></Link>
@@ -35,17 +37,19 @@ function App() {
           </div>
         </div>
       )}
-      <Link to='/Chamadassup'><button>suporte</button></Link>
+          <Link to='/Chamadassup'><button>suporte</button></Link>
+          <Link to='/edituser'><button>Edituser</button></Link>
           <Link to='/ticket'><button>admin</button></Link>
           {auth.usuario && <button onClick={handleLogout}>Sair</button>}
 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/ticket" element={<RequireAuth><Ticket /></RequireAuth>} />
+        <Route path='/edituser' element={<RequireAuth><Edituser /></RequireAuth>} />
         <Route path="/Chamadassup" element={<RequireAuth><Chamadassup /></RequireAuth>} />
       </Routes>
 
-
+      
       {isChamadassupPage ? null : (
         <footer>
           <div className='cima'>
@@ -59,7 +63,7 @@ function App() {
               </div>
 
               <div className='parte3'>
-              <p>WhatsApp/ Telefone: 4002-8922</p>
+              <p>WhatsApp/ Telefone: (**) ****-****</p>
               </div>
 
           </div>

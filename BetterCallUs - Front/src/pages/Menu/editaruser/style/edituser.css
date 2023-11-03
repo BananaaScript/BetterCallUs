@@ -1,0 +1,52 @@
+
+.bodyEditUser {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+    
+}
+
+.bodyEditUser h3 {
+    font-size: x-large;
+}
+
+.inputEditUser {
+    width: 50%;
+    padding: 2%;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: blueviolet;
+    margin: 1%;
+  
+  
+  }
+
+.voltarEditUser {
+    display: flex ;
+    align-items: center;
+    
+    margin-left: 15%;
+    margin-top: 3%;
+    padding: 2%;
+    border-radius: 200px;
+    border-style: solid;
+    background: linear-gradient(90deg, #352D42, #2B3946);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    
+}
+
+.buttonEditUser {
+
+    
+    margin: 1%;
+    width: 50%;
+    font-size: xx-large;
+    padding: 6px;
+    border-radius: 200px;
+    background: linear-gradient(90deg, #352D42, #2B3946);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+  }
