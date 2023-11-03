@@ -39,8 +39,8 @@ export const Ticket = () => {
                 </div>
             </div>
 
-            
-                <button className='buttonTicket'>Enviar</button>
+                <a href="/"><button className='buttonTicket'>Enviar</button></a>
+                
                 
             
         </div>

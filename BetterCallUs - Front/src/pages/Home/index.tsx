@@ -5,6 +5,9 @@ export default class Home extends Component {
     render(){
         return(
             <>
+                <div className='pesquisaAPP'>
+                    <input type="text" placeholder='Procure um problema abaixo '/>
+                </div>
                 <div className='problemasHome'>
 
                     <h3>Tipo de Problemas de rede</h3>

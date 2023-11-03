@@ -53,6 +53,7 @@ code {
   justify-content: center;
   text-align: center;
   align-items: center;
+  flex-direction: column;
   flex: 1;
 }
 
@@ -76,6 +77,21 @@ img#logo {
     cursor: pointer;
 }
 
+.menuAPP button hr {
+  width: 35px;
+  padding: 2px;
+  background-color: antiquewhite;
+  border-radius: 20px;
+  border-style: solid;
+  border-color: antiquewhite;
+}
+
+.pesquisaAPP {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
 
 
 
@@ -90,6 +106,7 @@ img#logo {
   .buttonAPP {
     margin: 0px;
   }
+
 }
 
 @media screen and (min-width:841px) and (max-width:1365px) {

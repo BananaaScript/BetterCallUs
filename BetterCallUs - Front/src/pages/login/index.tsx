@@ -32,8 +32,13 @@ export default function Login() {
 
   return (
     <div>
+      
       <div className='bodyLogin'>
+        
+        
         <div className="boxLogin">
+        <a href="/"><button >Voltar</button></a>
+        
           <p id="tituloLogin">Log-in</p>
           <p id='esquerda'>E-MAIL:</p>
           <input className='inputLogin' type='text' value={email} onChange={handleEmail} placeholder="Digite seu email" />
@@ -41,8 +46,10 @@ export default function Login() {
           <input className='inputLogin' type='password' value={senha} onChange={handleSenha} placeholder="Digite sua senha" />
 
           <button className='buttonLogin' onClick={handleLogin}>LOGIN</button>
+          
     
         </div>
+        
       </div>
 
     </div>

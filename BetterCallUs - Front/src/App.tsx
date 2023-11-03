@@ -22,20 +22,28 @@ function App() {
 
   return (
     <div className='bodyAPP'>
-      {isEdituserPage ? null : isChamadassupPage ? null : (
-        <div className='headAPP'>
+      { isEdituserPage ? null : isChamadassupPage ? null : (
+        <div>
+          <div className='headAPP'>
           <div className='buttonAPP'>
             <Link to='/ticket'><button>Enviar ticket</button></Link>
           </div>
           <div className='logoApp'>
             <Link to='/'><img id='logo' alt='logo' src='logo.png' /></Link>
+            
           </div>
           <div className='menuAPP'>
             <button>
-              MENU
+              <hr />
+              <hr />
+              <hr />
             </button>
           </div>
+          
         </div>
+
+        </div>  
+
       )}
           <Link to='/Chamadassup'><button>suporte</button></Link>
           <Link to='/edituser'><button>Edituser</button></Link>

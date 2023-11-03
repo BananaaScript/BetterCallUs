@@ -23,7 +23,8 @@ export const Edituser = () => {
             <input className='inputEditUser' type='text'  placeholder="CPF Atual: *********" />
             <input className='inputEditUser' type='text'  placeholder="RG Atual: ********* **** ********" />
             
-            <button className="buttonEditUser" >Salvar</button>
+            <a href="/" className="aEditUser"><button className="buttonEditUser" >Salvar</button></a>
+            
             
             
             
