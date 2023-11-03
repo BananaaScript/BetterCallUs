@@ -7,7 +7,7 @@ export default class Home extends Component {
             <>
                 <div className='problemasHome'>
 
-                    <h3>Tipo de problema 01</h3>
+                    <h3>Tipo de Problemas de rede</h3>
 
                     <div className='botoes'>
                         <button className="quadrado">
@@ -38,7 +38,7 @@ export default class Home extends Component {
                     </div>
                 </div>
                 <div className='problemasHome'>
-                    <h3>Tipo de Problema 02</h3>
+                    <h3>Tipo de Problemas de software</h3>
 
                     <div className='botoes'>
                     <button className="quadrado">
@@ -68,7 +68,7 @@ export default class Home extends Component {
                     </div>
                 </div>
                 <div className='problemasHome'>   
-                    <h3>Tipo de Problema 03</h3>
+                    <h3>Tipo de Problemas de segurança</h3>
 
                     <div className='botoes'>
                     <button className="quadrado">
