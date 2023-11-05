@@ -22,7 +22,6 @@ A partir do desafio acadêmico proposto pelo cliente interno, o projeto consiste
 
 ## :dart: Backlog <a name = backlog></a>
 ### :open_book: Dicionário:
-**Dificuldade:** Baseada no *planning poker*, a dificuldade considera uma estimativa de tempo e empenho para uma determinada tarefa.<br>
 **Prioridade:** A prioridade define a atenção que o item do backlog merece, sendo: 
 <br>**Valor 4**: Obrigatoria, a primeira a ser feita. Aquilo que tem mais valor aos olhos do cliente.
 <br>**Valor 3**: Necessaria, muito importante e relevante. Aquilo que tem um valor menor aos olhos do cliente.
