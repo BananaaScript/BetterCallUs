@@ -10,11 +10,10 @@ Para a terceira *sprint*, a equipe desenvolveu um sistema de SLA, a possibilidad
 ### :open_book: Dicionário:
 **Dificuldade:** Baseada no *planning poker*, a dificuldade considera uma estimativa de tempo e empenho para uma determinada tarefa.<br>
 **Prioridade:** A prioridade define a atenção que o item do backlog merece, sendo: 
-<br>**Valor 4**: É obrigatório e o principal a ser feito 
-<br>**Valor 3**: É obrigatório porém necessário 
-<br>**Valor 2**: É preferível porém tem algum valor no produto
-<br>**Valor 1**: É opcional e normalmente a última a ser feita
-
+<br>**Valor 4**: Obrigatoria, a primeira a ser feita. Aquilo que tem mais valor aos olhos do cliente.
+<br>**Valor 3**: Necessaria, muito importante e relevante. Aquilo que tem um valor menor aos olhos do cliente.
+<br>**Valor 2**: Relevante, mas não é necessario. Se houver tempo deve ser feito.
+<br>**Valor 1**: Dispensavel, não prejudica o projeto com sua falta.
 
 <hr>
 
