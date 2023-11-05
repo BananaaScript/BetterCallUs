@@ -64,7 +64,6 @@ export const Chamadassup = () => {
           <div className='dois'>
           <Link to='/Chamadassup'><button>suporte</button></Link>
           <Link to='/edituser'><button>Edituser</button></Link>
-          <Link to='/ticket'><button>admin</button></Link>
           </div>
 
         </div>

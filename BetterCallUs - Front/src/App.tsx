@@ -43,7 +43,6 @@ function App() {
           <div className='dois'>
           <Link to='/Chamadassup'><button>suporte</button></Link>
           <Link to='/edituser'><button>Edituser</button></Link>
-          <Link to='/ticket'><button>admin</button></Link>
           {auth.usuario && <button onClick={handleLogout}>Sair</button>}
           </div>
 
