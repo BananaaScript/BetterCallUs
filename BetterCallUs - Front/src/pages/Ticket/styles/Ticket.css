@@ -3,6 +3,7 @@
     font-family: "fonte";
     justify-content: center;
     align-items: center;
+    margin-bottom: 75px;
   }
   
   .problemaTicket {
@@ -25,7 +26,7 @@
     justify-content: center;
     width: 80%;
     border-radius: 20px;
-    border-color: blueviolet;
+    border-color: #8a3beb;
     border-width: 3px;
     padding: 1%;
   }
@@ -50,7 +51,7 @@
   
   .dadosTicket select {
     padding: 2%;
-    border-color: blueviolet;
+    border-color: #8a3beb;
     text-align: center;
     border-radius: 20px;
     border-width: 2px;
@@ -67,8 +68,8 @@
     padding-bottom: 1%;
   
     font-size: 24px;
-    border-color: blueviolet;
-    background-color: blueviolet;
+    border-color: #8a3beb;
+    background-color: #8a3beb;
     color: white;
     text-align: center;
     border-radius: 20px;

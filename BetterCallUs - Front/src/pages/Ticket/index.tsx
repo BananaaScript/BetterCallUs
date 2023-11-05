@@ -1,8 +1,12 @@
-import  Login from '../login'
+
+import  Login from '../login';
+import { Link } from 'react-router-dom';
 import './styles/Ticket.css'
+import { link } from 'fs';
 
 
 export const Ticket = () => {
+
     Login()
 
     return(
@@ -17,11 +21,16 @@ export const Ticket = () => {
                 <div className='dadosTicket'>
                         <select id='opcoes'>
                             <option value="" disabled selected>Selecione o tipo de problema</option>
-                            <option value="Prob.Hardware">Falha de Hardware</option>
-                            <option value="Prob.Software">Falha de Software</option>
-                            <option value="Prob.Conexao">Problemas de Conexão</option>
-                            <option value="Prob.Cabeamento">Problema no Cabeamento</option>
-                            <option value="Outro">Outro</option>
+                            <option value="Prob.Rede">Problemas de rede</option>
+                            <option value="Prob.Software">Problemas de software </option>
+                            <option value="Prob.Seguranca">Problemas de segurança</option>
+                            <option value="Prob.Virus">Vírus e malware</option>
+                            <option value="Prob.Atualizacao">Problemas de atualização de software</option>
+                            <option value="Prob.Hardware">Falhas de hardware</option>
+                            <option value="Prob.Resfriamento">Problemas de resfriamento</option>
+                            <option value="Prob.Audio">Problemas com equipamentos de áudio e vídeo</option>
+                            <option value="Prob.Impressão">Problemas de impressão</option>
+                            <option value="Outro">------ Outro ------</option>
                         </select> 
 
                         <form action="processa_imagem_perfil.php" method="post" encType="multipart/form-data">
@@ -29,7 +38,11 @@ export const Ticket = () => {
                         </form>
                 </div>
             </div>
-            <button className='buttonTicket'>Enviar</button>
+
+                <a href="/"><button className='buttonTicket'>Enviar</button></a>
+                
+                
+            
         </div>
     )
 

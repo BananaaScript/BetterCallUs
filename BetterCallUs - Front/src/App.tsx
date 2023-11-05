@@ -6,6 +6,7 @@ import { RequireAuth } from './contexts/Auth/RequireAuth';
 import { AuthContext } from './contexts/Auth/AuthContext';
 import { Ticket } from './pages/Ticket';
 import { Chamadassup } from './2.SUPORTE/pages/Chamadassup';
+import { Edituser } from './pages/Menu/editaruser';
 
 function App() {
   const auth = useContext(AuthContext);
@@ -17,11 +18,14 @@ function App() {
   }
 
   const isChamadassupPage = window.location.pathname === '/Chamadassup';
+  const isEdituserPage = window.location.pathname === '/edituser';
 
   return (
     <div className='bodyAPP'>
-      {isChamadassupPage ? null : (
-        <div className='headAPP'>
+      { isEdituserPage ? null : isChamadassupPage ? null : (
+        <div>
+          <div className='headAPP'>
+          <div className='um'>
           <div className='buttonAPP'>
             <Link to='/ticket'><button>Enviar ticket</button></Link>
           </div>
@@ -30,22 +34,33 @@ function App() {
           </div>
           <div className='menuAPP'>
             <button>
-              MENU
+              <hr />
+              <hr />
+              <hr />
             </button>
+            </div>
           </div>
-        </div>
-      )}
-      <Link to='/Chamadassup'><button>suporte</button></Link>
+          <div className='dois'>
+          <Link to='/Chamadassup'><button>suporte</button></Link>
+          <Link to='/edituser'><button>Edituser</button></Link>
           <Link to='/ticket'><button>admin</button></Link>
           {auth.usuario && <button onClick={handleLogout}>Sair</button>}
+          </div>
+
+        </div>
+
+        </div>  
+
+      )}
 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/ticket" element={<RequireAuth><Ticket /></RequireAuth>} />
+        <Route path='/edituser' element={<RequireAuth><Edituser /></RequireAuth>} />
         <Route path="/Chamadassup" element={<RequireAuth><Chamadassup /></RequireAuth>} />
       </Routes>
 
-
+      
       {isChamadassupPage ? null : (
         <footer>
           <div className='cima'>
@@ -59,7 +74,7 @@ function App() {
               </div>
 
               <div className='parte3'>
-              <p>WhatsApp/ Telefone: 4002-8922</p>
+              <p>WhatsApp/ Telefone: (**) ****-****</p>
               </div>
 
           </div>
@@ -67,6 +82,8 @@ function App() {
           <hr></hr>
           <p>©CODEÍNA 2023 - Todos os Direitos Reservados</p>
         </footer>
+
+        
       )}
     </div>
   )

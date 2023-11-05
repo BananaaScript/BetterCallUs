@@ -4,6 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     background: rgb(217,109,216);
     background: linear-gradient(90deg, rgb(245, 111, 243) 4%, rgb(92, 179, 250) 100%);
     padding: 10%;
@@ -15,7 +16,7 @@
     0%{background-position-x: 0% }
     100%{background-position-x: 100% }
   }
-  
+
   .boxLogin {
     display: flex;
     justify-content: center;
@@ -31,6 +32,16 @@
     box-shadow: 5px 5px 20px rgba(21, 11, 22, 0.3);
   }
   
+  .boxLogin a {
+    margin-right: 85%;
+  }
+
+  .boxLogin a button {
+    border-color: aliceblue;
+    border-style: solid;
+  }
+
+
   #tituloLogin{
     font-family: fonte;
     font-size: 45px;
@@ -49,6 +60,7 @@
     font-size: medium;
   
     padding: 2%;
+    border-style: solid;
     border-radius: 20px;
     border-color: blueviolet;
   

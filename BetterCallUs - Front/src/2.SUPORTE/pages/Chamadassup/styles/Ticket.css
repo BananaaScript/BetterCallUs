@@ -1,8 +1,6 @@
 
 .bodyTicket {
-    font-family: "fonte";
-    justify-content: center;
-    align-items: center;
+  font-family: "fonte";
   }
   
   body {
@@ -24,10 +22,8 @@
   
   .main {
     display: flex;
-    margin-left: 400px; /* Same as the width of the sidenav */
+    margin-left: 400px;
     text-align: center;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
   }
 
@@ -43,4 +39,4 @@
   @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
-  }
+  } 
