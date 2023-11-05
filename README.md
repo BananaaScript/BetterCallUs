@@ -24,10 +24,10 @@ A partir do desafio acadêmico proposto pelo cliente interno, o projeto consiste
 ### :open_book: Dicionário:
 **Dificuldade:** Baseada no *planning poker*, a dificuldade considera uma estimativa de tempo e empenho para uma determinada tarefa.<br>
 **Prioridade:** A prioridade define a atenção que o item do backlog merece, sendo: 
-<br>**Valor 4**: É obrigatório e o principal a ser feito 
-<br>**Valor 3**: É obrigatório porém necessário 
-<br>**Valor 2**: É preferível porém tem algum valor no produto
-<br>**Valor 1**: É opcional e normalmente a última a ser feita
+<br>**Valor 4**: Obrigatoria, a primeira a ser feita. Aquilo que tem mais valor aos olhos do cliente.
+<br>**Valor 3**: Necessaria, muito importante e relevante. Aquilo que tem um valor menor aos olhos do cliente.
+<br>**Valor 2**: Relevante, mas não é necessario. Se houver tempo deve ser feito.
+<br>**Valor 1**: Dispensavel, não prejudica o projeto com sua falta.
 ### Backlog do produto
 <img src='https://github.com/CODE1na/BetterCallUs/assets/125694331/03347901-4dbd-4472-a88a-c725a9f5eb24'>
 
@@ -39,13 +39,14 @@ A partir do desafio acadêmico proposto pelo cliente interno, o projeto consiste
 CODEina é uma equipe de desenvolvimento de softwares, composta por estudantes cursando desenvolvimento de software multiplataforma na faculdade de tecnologia <a href='https://fatecsjc-prd.azurewebsites.net/'>FATEC de São José dos Campos</a>, formada para a resolução de projetos acadêmicos chamados API (Aprendizagem por projetos integrados) no qual propõe aos alunos projetos que auxiliam na entrada do mercado de trabalho.
 | Função | Nome | LinkedIn | Github |
 |:------:|:-----:|:----------:|:---------:|
-|Scrum Master| Gabriel Henrique Siqueira |<a href='https://www.linkedin.com/in/gabriel-siqueira-54b535279/'><img src='https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white'></a>|<a href='https://github.com/GaSiqueira'> <img src='https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white'></a>
-|Product Owner| Gustavo Castilho |<a href='https://www.linkedin.com/in/gustavo-castilho-70b538279/'><img src='https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white'></a>|<a href='https://github.com/GustavoCastilhoLucena'> <img src='https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white'></a>
+
+|Scrum Master| Gustavo Castilho |<a href='https://www.linkedin.com/in/gustavo-castilho-70b538279/'><img src='https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white'></a>|<a href='https://github.com/GustavoCastilhoLucena'> <img src='https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white'></a>
+|Product Owner| Douglas Medeiros |<a href='https://www.linkedin.com/in/douglas-ferrini-medeiros-02b735270'><img src='https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white'></a>|<a href='https://www.github.com/DouglasMedeiros1'> <img src='https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white'></a>
 |Dev Team| Juan Santos |<a href='https://www.linkedin.com/in/juan-santos-b78724279/'><img src='https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white'></a>|<a href='https://github.com/JuanSantosVale'> <img src='https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white'></a>
 |Dev Team| Kaue Riki |<a href='https://www.linkedin.com/in/kau%C3%AA-riki-70b518273/'><img src='https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white'></a>|<a href='https://github.com/kaueriki'> <img src='https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white'></a>
 |Dev Team| Lucca Vilela |<a href='https://www.linkedin.com/in/lucca-vilela-b90730232/'><img src='https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white'></a>|<a href='https://github.com/luccavilela'> <img src='https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white'></a>
 |Dev Team| Bruno Fernandes |<a href='https://www.linkedin.com/in/bruno-campos-97560b231/'><img src='https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white'></a>|<a href='https://www.github.com/BrunoFerCam'> <img src='https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white'></a>
-|Dev Team| Douglas Medeiros |<a href='https://www.linkedin.com/in/douglas-ferrini-medeiros-02b735270'><img src='https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white'></a>|<a href='https://www.github.com/DouglasMedeiros1'> <img src='https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white'></a>
+|Dev Team| Gabriel Henrique Siqueira |<a href='https://www.linkedin.com/in/gabriel-siqueira-54b535279/'><img src='https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white'></a>|<a href='https://github.com/GaSiqueira'> <img src='https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white'></a>
 |Dev Team| Vitor Leandro |<a href='https://www.linkedin.com/in/vitor-leandro-81451b263/'><img src='https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white'></a>|<a href='https://www.github.com/haikizinho'> <img src='https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white'></a>
 |Dev Team| Miguel Conde |<a href='https://www.linkedin.com/in/miguel-conde-santos-a67313271/'><img src='https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white'></a>|<a href='https://github.com/miguelcondesantos'> <img src='https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white'></a>
 
