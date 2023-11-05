@@ -64,8 +64,8 @@
     padding: 5px;
     text-align: center;
     border-radius: 20px;
-    border-color: blueviolet;
+    border-color: #A35AFF;
     border-style: solid;
-    cursor: pointer;
+    height: 40px;
   }
   

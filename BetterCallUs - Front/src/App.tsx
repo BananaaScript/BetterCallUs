@@ -25,12 +25,12 @@ function App() {
       { isEdituserPage ? null : isChamadassupPage ? null : (
         <div>
           <div className='headAPP'>
+          <div className='um'>
           <div className='buttonAPP'>
             <Link to='/ticket'><button>Enviar ticket</button></Link>
           </div>
           <div className='logoApp'>
             <Link to='/'><img id='logo' alt='logo' src='logo.png' /></Link>
-            
           </div>
           <div className='menuAPP'>
             <button>
@@ -38,17 +38,20 @@ function App() {
               <hr />
               <hr />
             </button>
+            </div>
           </div>
-          
+          <div className='dois'>
+          <Link to='/Chamadassup'><button>suporte</button></Link>
+          <Link to='/edituser'><button>Edituser</button></Link>
+          <Link to='/ticket'><button>admin</button></Link>
+          {auth.usuario && <button onClick={handleLogout}>Sair</button>}
+          </div>
+
         </div>
 
         </div>  
 
       )}
-          <Link to='/Chamadassup'><button>suporte</button></Link>
-          <Link to='/edituser'><button>Edituser</button></Link>
-          <Link to='/ticket'><button>admin</button></Link>
-          {auth.usuario && <button onClick={handleLogout}>Sair</button>}
 
       <Routes>
         <Route path="/" element={<Home />} />
