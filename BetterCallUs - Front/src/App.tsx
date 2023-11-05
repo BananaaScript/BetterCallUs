@@ -69,7 +69,7 @@ function App() {
             </div>
 
             <div className='parte2'>
-              <p>smt</p>
+            <Link to='/'><img id='logo' alt='logo' src='logo.png' /></Link>
               </div>
 
               <div className='parte3'>
