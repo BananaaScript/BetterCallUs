@@ -4,9 +4,13 @@ import { Link, Route, Routes, useNavigate } from 'react-router-dom';
 import Home from './pages/Home';  
 import { RequireAuth } from './contexts/Auth/RequireAuth';
 import { AuthContext } from './contexts/Auth/AuthContext';
-import { Ticket } from './pages/Ticket';
 import { Chamadassup } from './2.SUPORTE/pages/Chamadassup';
 import { Edituser } from './pages/Menu/editaruser';
+import  TicketFunction  from './pages/Ticket';
+
+
+
+
 
 function App() {
   const auth = useContext(AuthContext);
@@ -54,7 +58,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/ticket" element={<RequireAuth><Ticket /></RequireAuth>} />
+        <Route path="/ticket" element={<RequireAuth><TicketFunction /></RequireAuth>} />
         <Route path='/edituser' element={<RequireAuth><Edituser /></RequireAuth>} />
         <Route path="/Chamadassup" element={<RequireAuth><Chamadassup /></RequireAuth>} />
       </Routes>
@@ -69,7 +73,7 @@ function App() {
             </div>
 
             <div className='parte2'>
-            <Link to='/'><img id='logo' alt='logo' src='logo.png' /></Link>
+              
               </div>
 
               <div className='parte3'>
