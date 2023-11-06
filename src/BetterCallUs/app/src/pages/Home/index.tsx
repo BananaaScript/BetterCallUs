@@ -15,27 +15,27 @@ export default class Home extends Component {
                     <div className='botoes'>
                         <button className="quadrado">
                             <div className='iconebotao'></div>
-                            <div className='textobotao'>Problemas referentes a Mal atendimento</div>
+                            <div className='textobotao'>*******</div>
                         </button>
 
                         <button className="quadrado">
                             <div className='iconebotao'></div>
-                            <div className='textobotao'>Como acelerar um computador lento?</div>
+                            <div className='textobotao'>*******</div>
                         </button>
 
                         <button className="quadrado">
                             <div className='iconebotao'></div>
-                            <div className='textobotao'>Como escolher o melhor computador para programação?</div>
+                            <div className='textobotao'>*******</div>
                         </button>
 
                         <button className="quadrado">
                             <div className='iconebotao'></div>
-                            <div className='textobotao'>Qual é a diferença entre memória RAM e memória de armazenamento?</div>
+                            <div className='textobotao'>*******</div>
                         </button>
 
                         <button className="quadrado">
                             <div className='iconebotao'></div>
-                            <div className='textobotao'>Como faço para atualizar os drivers do meu computador?</div>
+                            <div className='textobotao'>*******</div>
                         </button>
 
                     </div>
@@ -46,27 +46,27 @@ export default class Home extends Component {
                     <div className='botoes'>
                     <button className="quadrado">
                         <div className='iconebotao'></div>
-                        <div className='textobotao'>O que é overclocking?</div>
+                        <div className='textobotao'>*******</div>
                     </button>
 
                     <button className="quadrado">
                         <div className='iconebotao'></div>
-                        <div className='textobotao'>Como aprender a programar?</div>
+                        <div className='textobotao'>*******</div>
                     </button>
 
                     <button className="quadrado">
                         <div className='iconebotao'></div>
-                        <div className='textobotao'>Qual a diferença entre programação front-end e back-end?</div>
+                        <div className='textobotao'>*******</div>
                     </button>
 
                     <button className="quadrado">
                         <div className='iconebotao'></div>
-                        <div className='textobotao'>Qual é a diferença entre uma CPU e uma GPU?</div>
+                        <div className='textobotao'>*******</div>
                     </button>
 
                     <button className="quadrado">
                         <div className='iconebotao'></div>
-                        <div className='textobotao'>O que é um disco rígido (HDD) e um disco de estado sólido (SSD)?</div>
+                        <div className='textobotao'>*******</div>
                     </button>
                     </div>
                 </div>
@@ -76,27 +76,27 @@ export default class Home extends Component {
                     <div className='botoes'>
                     <button className="quadrado">
                         <div className='iconebotao'></div>
-                        <div className='textobotao'>Como escolher o melhor tipo de armazenamento para o meu computador?</div>
+                        <div className='textobotao'>*******</div>
                     </button>
 
                     <button className="quadrado">
                         <div className='iconebotao'></div>
-                        <div className='textobotao'>Como faço para atualizar a placa de vídeo do meu computador?</div>
+                        <div className='textobotao'>*******</div>
                     </button>
 
                     <button className="quadrado">
                         <div className='iconebotao'></div>
-                        <div className='textobotao'>Qual é a diferença entre software livre e software comercial?</div>
+                        <div className='textobotao'>*******</div>
                     </button>
 
                     <button className="quadrado">
                         <div className='iconebotao'></div>
-                        <div className='textobotao'>O que é um sistema operacional de código aberto?</div>
+                        <div className='textobotao'>*******</div>
                     </button>
 
                     <button className="quadrado">
                         <div className='iconebotao'></div>
-                        <div className='textobotao'>O que é um sistema de gerenciamento de conteúdo (CMS)?</div>
+                        <div className='textobotao'>*******</div>
                     </button>
                     
                     </div>
@@ -110,27 +110,27 @@ export default class Home extends Component {
 
                     <button className="quadrado">
                         <div className='iconebotao'></div>
-                        <div className='textobotao'>O que é uma placa de captura e para que serve?</div>
+                        <div className='textobotao'>*******</div>
                     </button>
 
                     <button className="quadrado">
                         <div className='iconebotao'></div>
-                        <div className='textobotao'>O que é um cavalo de Troia (trojan) e como funciona?</div>
+                        <div className='textobotao'>*******</div>
                     </button>
 
                     <button className="quadrado">
                         <div className='iconebotao'></div>
-                        <div className='textobotao'>Qual a melhor maneira de se proteger contra virus e malwares ?</div>
+                        <div className='textobotao'>*******</div>
                     </button>
 
                     <button className="quadrado">
                         <div className='iconebotao'></div>
-                        <div className='textobotao'>Qual a importância da VPN ?</div>
+                        <div className='textobotao'>*******</div>
                     </button>
 
                     <button className="quadrado">
                         <div className='iconebotao'></div>
-                        <div className='textobotao'>Como proteger minha privacidade online?</div>
+                        <div className='textobotao'>*******</div>
                     </button>
                     </div>
             

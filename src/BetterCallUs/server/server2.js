@@ -11,7 +11,7 @@ app.use(cors());
 const dbConfig = {
   host: 'localhost',
   user: 'root',
-  password: 'Gst4v0!!',
+  password: 'fatec',
   database: 'teste',
 };
 
