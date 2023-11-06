@@ -40,11 +40,6 @@ Para a terceira *sprint*, a equipe desenvolveu um sistema de SLA, a possibilidad
 
 ### :hourglass: Data de desenvolvimento da sprint
 | 16/10/23 - 05/11/23 | **<a href='https://github.com/CODE1na/BetterCallUs-Doc/tree/main#projeto'>Visualizar entregas**</a> |
-  
-# :dart: Entregas <a name = 'entrega'></a>
-### Interface do Suporte 
-### Interface do sistema atualizada
-
 
 <hr>
 
