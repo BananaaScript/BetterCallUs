@@ -74,7 +74,7 @@ function App() {
             </div>
 
             <div className='parte2'>
-              <p>smt</p>
+              <p>*Redes Sociais*</p>
               </div>
 
               <div className='parte3'>
