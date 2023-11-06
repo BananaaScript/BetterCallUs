@@ -31,6 +31,7 @@ function App() {
       { isEdituserPage ? null : isChamadassupPage ? null : (
         <div>
           <div className='headAPP'>
+          <div className='um'>
           <div className='buttonAPP'>
             <Link to='/ticket'><button>Enviar ticket</button></Link>
           </div>
@@ -45,17 +46,19 @@ function App() {
               <hr />
             </button>
           </div>
+          </div>
           
         </div>
 
-        </div>  
-
-      )}
+          <div className='dois'>
           <Link to='/Chamadassup'><button>suporte</button></Link>
           <Link to='/edituser'><button>Edituser</button></Link>
           <Link to='/ticket'><button>admin</button></Link>
           {auth.usuario && <button onClick={handleLogout}>Sair</button>}
-
+        </div>
+        </div>
+        
+      )}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/ticket" element={<RequireAuth><TicketFunction /></RequireAuth>} />
