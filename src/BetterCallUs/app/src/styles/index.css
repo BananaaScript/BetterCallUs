@@ -20,10 +20,9 @@ code {
 
 .headAPP {
   display: flex;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
+  flex-direction: column;
   max-width: 100%;
+  width: 100%;
 }
 
 .buttonAPP {
@@ -32,19 +31,28 @@ code {
   text-align: center;
   align-items: center;
   flex: 1;
+  width: 180px;
+  height: 60px;
+
   
 }
 
 .buttonAPP button {
-  width: 250px;
-  background-color: blueviolet;
+  width: 180px;
+  height: 60px;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  background-color: #A35AFF;
   border-width: 25px;
   border-style: solid;
-  border-color: blueviolet;
+  border-color: #A35AFF;
   font-family: fonte ;
   font-size: xx-large;
   color: antiquewhite ;
   cursor: pointer;
+  font-size: 100%;
+  
 
 }
 
@@ -55,10 +63,12 @@ code {
   align-items: center;
   flex-direction: column;
   flex: 1;
+  margin-top: 20px;
 }
 
 img#logo {
   max-width: 250px;
+  width: 150px;
 }
 
 .menuAPP{
@@ -69,12 +79,13 @@ img#logo {
   flex: 1;
 }
 .menuAPP button {
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
-    background-color:blueviolet;
+    background-color: #A35AFF;
     border-style: hidden;
     cursor: pointer;
+    
 }
 
 .menuAPP button hr {
@@ -85,6 +96,27 @@ img#logo {
   border-style: solid;
   border-color: antiquewhite;
 }
+
+
+.um{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.dois{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 20px;
+}
+
+
+
 
 .pesquisaAPP {
   display: flex;
