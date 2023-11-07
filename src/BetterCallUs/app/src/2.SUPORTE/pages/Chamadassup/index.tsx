@@ -24,7 +24,7 @@ interface Ticket {
 }
 
 export const Chamadassup = () => {
-  // Chame Login() aqui se necessário
+  Login()
 
 // ==============Sistema de Ticket==========================
   const [tickets, setTickets] = useState<Ticket[]>([]);
@@ -162,30 +162,7 @@ const updateChamados = () => {
       ))}
       </div>
       <div className="main">
-          {/* Header específico para a página Chamadassup */}
-          <div className='headAPP'>
-          <div className='um'>
-          <div className='buttonAPP'>
-            <Link to='/ticket'><button>Enviar ticket</button></Link>
-          </div>
-          <div className='logoApp'>
-            <Link to='/'><img id='logo' alt='logo' src='logo.png' /></Link>
-          </div>
-          <div className='menuAPP'>
-            <button>
-              <hr />
-              <hr />
-              <hr />
-            </button>
-            </div>
-          </div>
-          <div className='dois'>
-          <Link to='/Chamadassup'><button>suporte</button></Link>
-          <Link to='/edituser'><button>Edituser</button></Link>
-          <Link to='/ticket'><button>admin</button></Link>
-        </div>
-            {/* Inclua outros elementos do cabeçalho conforme necessário */}
-          </div>
+
         <div>
           <h1 className='SLAName'>SLA</h1>
             <table>
@@ -210,7 +187,7 @@ const updateChamados = () => {
               </td>
               </tr>
           ))}
-          </tbody>
+            </tbody>
           </table>
           <h2>Adicionar</h2>
           <select

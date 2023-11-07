@@ -28,7 +28,6 @@ function App() {
 
   return (
     <div className='bodyAPP'>
-      { isEdituserPage ? null : isChamadassupPage ? null : (
         <div>
           <div className='headAPP'>
           <div className='um'>
@@ -58,7 +57,6 @@ function App() {
         </div>
         </div>
         
-      )}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/ticket" element={<RequireAuth><TicketFunction /></RequireAuth>} />
@@ -68,7 +66,6 @@ function App() {
       </Routes>
 
       
-      {isChamadassupPage ? null : (
         <footer>
           <div className='cima'>
 
@@ -90,8 +87,6 @@ function App() {
           <p>©CODEÍNA 2023 - Todos os Direitos Reservados</p>
         </footer>
 
-        
-      )}
     </div>
   )
 }
