@@ -18,30 +18,42 @@
   Você deve executar todas as linhas do arquivo **bdTicket.sql** e **bdSLA.sql** dentro do MySQL Workbench, selecionando todo as linhas dentro do arquivo, para saber como abrir o arquivo acesse [aqui](https://pt.wikihow.com/Abrir-um-Arquivo-SQL) e para executar o script inteiro você deve clicar e segurar, um atrás do outro, e soltar no útimo o botão, **ctrl + shift + enter**.
 
 ### JavaScript
-  Primeiramente, você deve, no gerenciador de arquivos, depois de baixado, abrir a pasta **server** e no endereço superior apagar o endereço da pasta, digitar **cmd** e clicar em **enter**, agora dentro da janela voce deve digitar o seguinte comando e aguardar:
+#### Primeiramente, abra o cmd da pasta do projeto e digite:
+```
+cd .\Sprint-4\BetterCallUs\src\BetterCallUs\app\App.tsx
+```
+  E em seguida:
 ```
 npm install
 ```
 
-  Agora você deve acessar a pasta **app**, e dentro dela, clicar no endereço superior apagar o endereço da pasta, digitar **cmd** e clicar em **enter**, agora dentro da janela voce deve digitar o seguinte comando e aguardar:
+#### Agora abra outros 2 cmds tambem na pasta do projeto e digite em ambos:
+```
+cd .\Sprint-4\BetterCallUs\src\BetterCallUs\server\
+```
+  E em seguida:
 ```
 npm install
 ```
 
-  Volte então para a janela que você abriu dentro da pasta **server**, digite o seguinte código e aguarde:
+#### Para prosseguir abra os 2 ultimos cmds que foram criados (Aqueles acima que abriram a pasta server) e digite:
+
+No primeiro:
 ```
-node server.js
+node .\server.js
 ```
 
-  Novamente, abra outra janela **cmd** como feito anteriormente dentro da mesma pasta **server**, envie o seguinte código e aguarde:
+No segundo:
 ```
-node server2.js
+node .\server2.js
 ```
 
-  Então agora deve-se voltar para a janela que foi aberta a partir da pasta **app**, digitar o seguinte comando e aguardar:
+#### Por ultimo digite no primeiro cmd criado:
+
 ```
-npm run start
+npm start
 ```
+
 
   A página deve abrir automaticamente no navegador, caso ela não tenha sida aberta automaticamente, voce pode acessar ela por [aqui](http://localhost:3000).
 
