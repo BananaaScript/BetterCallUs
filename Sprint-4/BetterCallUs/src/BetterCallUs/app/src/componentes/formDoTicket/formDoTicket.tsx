@@ -43,17 +43,17 @@ function FormDoTicket({
   
   return (
     <div className='FormDoTicket'>
-      <div className='form'>
+      <div className='id'>
         <label htmlFor='id'>ID</label>
         <input type='text' value={id.toString()} name='id' disabled />
-        <label htmlFor='sumario'>Sumário</label>
-        <input
+        </div>
+        <label htmlFor='sumario'></label>
+        <textarea
           name='sumario'
-          type='text'
           value={tSumario}
           onChange={(e) => setTSumario(e.target.value)}
           disabled={soLeitura}
-        ></input>
+        ></textarea>
 
         <select
           id='opcoes'
@@ -111,7 +111,6 @@ function FormDoTicket({
         </button>
 
       </div>
-    </div>
   );
 }
 
