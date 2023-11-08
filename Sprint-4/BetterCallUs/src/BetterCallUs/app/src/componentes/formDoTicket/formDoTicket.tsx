@@ -54,7 +54,7 @@ function FormDoTicket({
           onChange={(e) => setTSumario(e.target.value)}
           disabled={soLeitura}
         ></textarea>
-
+        <div className='parte2'>
         <select
           id='opcoes'
           name='prioridade'
@@ -74,7 +74,17 @@ function FormDoTicket({
           <option value="Prob.Impressão">Problemas de impressão</option>
           <option value="Outro">------ Outro ------</option>
         </select>
-
+        <a href="/">
+        <button 
+          className='buttonTicket'
+          onClick={() => {
+            noEnvio(id, tSumario, tPrioridade, tStatus, dataDeCriacao, dataDeAtualizacao);
+          }}
+        >
+          Enviar
+        </button>
+        </a>
+        </div>
         <select
           name='status'
           value={tStatus}
@@ -100,16 +110,6 @@ function FormDoTicket({
           value={formatDate(dataDeAtualizacao)} 
           disabled
         ></input>
-
-        <button 
-          className='buttonTicket'
-          onClick={() => {
-            noEnvio(id, tSumario, tPrioridade, tStatus, dataDeCriacao, dataDeAtualizacao);
-          }}
-        ><a href="/">
-          Enviar
-          </a>
-        </button>
 
       </div>
   );
