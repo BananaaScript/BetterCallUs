@@ -12,8 +12,11 @@ import  TicketFunction  from './pages/Ticket';
 import { Chamadassup } from './2.SUPORTE/pages/Chamadassup';
 import { Adm } from './1.ADMIN/Home/'
 import { Edituser } from './pages/Menu/editaruser';
-import { Histuser } from './pages/Menu/historico'
+import { Histuser } from './pages/Menu/historico';
 import { RegistroConta } from './pages/Registro';
+import logoInsta from './styles/img/logoInsta.png';
+import logoTiktok from './styles/img/logoTiktok.png';
+import logoTwitter from './styles/img/logoTwitter.png'
 
 
 function App() {
@@ -82,7 +85,9 @@ function App() {
             </div>
 
             <div className='parte2'>
-              <p>*Redes Sociais*</p>
+              <a href="https://www.instagram.com/bettercallus.code/?next=%2F"> <img src={logoInsta} alt="Instagram" title="Logo Instagram" /></a>
+              <a href="https://www.tiktok.com/@bettercallus.code"> <img src={logoTiktok} alt="Tiktok" /></a>
+              <a href="https://twitter.com/better_code_us"> <img src={logoTwitter} alt="Twitter" /></a>
               </div>
 
               <div className='parte3'>
