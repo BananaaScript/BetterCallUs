@@ -1,162 +1,141 @@
-import React, { Component } from 'react';
-import './styles/FAQ.css'
+import Login from "../../App"
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import '../Home/styles/adm.css'
 
-export default class Home extends Component {
-    render(){
+export const Adm = () => {
+    Login()
+
+
+const [chamados, setChamados] = useState<Array<{ id: number; prioridade: string; area: string; tempoderesposta: number}>>([]);
+const [prioridade, setPrioridade] = useState('');
+const [area, setArea] = useState('');
+
+useEffect(() => {
+  axios.get('http://localhost:3002/chamados')
+    .then((response) => {
+      setChamados(response.data);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+}, []);
+
+const handleCreate = () => {
+  axios.post('http://localhost:3002/chamados', { prioridade, area })
+    .then(() => {
+      setPrioridade('');
+      setArea('');
+      updateChamados();
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+};
+
+
+const handleDelete = (id: number) => {
+  axios.delete(`http://localhost:3002/chamados/${id}`)
+    .then(() => {
+      updateChamados();
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+};
+
+const updateChamados = () => {
+  axios.get('http://localhost:3002/chamados')
+    .then((response) => {
+      setChamados(response.data);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+};
+    
+    
+
         return(
-            <>
-                <div className='botoes'>
-                    <button className="quadrado">
-                        <div className='iconebotao'></div>
-                        <div className='textobotao'>Problemas referentes a Mal atendimento</div>
-                    </button>
+            <div className="bodyAdm">
+                <div className="privAdm">
+                    <h3>Bem vindo! Selecione uma das opções abaixo: </h3>
+                    <div className="opcAdm">
+                        <button className="btnAdm">
+                            Editar Privilegios
+                        </button>
+                        <button className="btnAdm">
+                            Definir Service Level Agreement (SLA)
+                        </button>
+                        <button className="btnAdm">
+                            Adicionar tópicos ao FAQ
+                        </button>
+                    </div>
 
-                    <button className="quadrado">
-                        <div className='iconebotao'></div>
-                        <div className='textobotao'>Como acelerar um computador lento?</div>
-                    </button>
-
-                    <button className="quadrado">
-                        <div className='iconebotao'></div>
-                        <div className='textobotao'>Como escolher o melhor computador para programação?</div>
-                    </button>
-
-                    <button className="quadrado">
-                        <div className='iconebotao'></div>
-                        <div className='textobotao'>Qual é a diferença entre memória RAM e memória de armazenamento?</div>
-                    </button>
-
-                    <button className="quadrado">
-                        <div className='iconebotao'></div>
-                        <div className='textobotao'>Como faço para atualizar os drivers do meu computador?</div>
-                    </button>
-
-                    <button className="quadrado">
-                        <div className='iconebotao'></div>
-                        <div className='textobotao'>O que é overclocking?</div>
-                    </button>
-
-                    <button className="quadrado">
-                        <div className='iconebotao'></div>
-                        <div className='textobotao'>Como aprender a programar?</div>
-                    </button>
-
-                    <button className="quadrado">
-                        <div className='iconebotao'></div>
-                        <div className='textobotao'>Qual a diferença entre programação front-end e back-end?</div>
-                    </button>
-
-                    <button className="quadrado">
-                        <div className='iconebotao'></div>
-                        <div className='textobotao'>Qual é a diferença entre uma CPU e uma GPU?</div>
-                    </button>
-
-                    <button className="quadrado">
-                        <div className='iconebotao'></div>
-                        <div className='textobotao'>O que é um disco rígido (HDD) e um disco de estado sólido (SSD)?</div>
-                    </button>
-
-                    <button className="quadrado">
-                        <div className='iconebotao'></div>
-                        <div className='textobotao'>Como escolher o melhor tipo de armazenamento para o meu computador?</div>
-                    </button>
-
-                    <button className="quadrado">
-                        <div className='iconebotao'></div>
-                        <div className='textobotao'>Como faço para atualizar a placa de vídeo do meu computador?</div>
-                    </button>
-
-                    <button className="quadrado">
-                        <div className='iconebotao'></div>
-                        <div className='textobotao'>Qual é a diferença entre software livre e software comercial?</div>
-                    </button>
-
-                    <button className="quadrado">
-                        <div className='iconebotao'></div>
-                        <div className='textobotao'>O que é um sistema operacional de código aberto?</div>
-                    </button>
-
-                    <button className="quadrado">
-                        <div className='iconebotao'></div>
-                        <div className='textobotao'>O que é um sistema de gerenciamento de conteúdo (CMS)?</div>
-                    </button>
-
-                    <button className="quadrado">
-                        <div className='iconebotao'></div>
-                        <div className='textobotao'>O que é um sistema de controle de versão?</div>
-                    </button>
-
-                    <button className="quadrado">
-                        <div className='iconebotao'></div>
-                        <div className='textobotao'>Como faço para atualizar o sistema operacional do meu computador?</div>
-                    </button>
-
-                    <button className="quadrado">
-                        <div className='iconebotao'></div>
-                        <div className='textobotao'>Windows x Linux, qual o melhor ?</div>
-                    </button>
-
-                    <button className="quadrado">
-                        <div className='iconebotao'></div>
-                        <div className='textobotao'>Como faço para desfragmentar o disco rígido do meu computador?</div>
-                    </button>
-
-                    <button className="quadrado">
-                        <div className='iconebotao'></div>
-                        <div className='textobotao'>Qual é a diferença entre uma linguagem compilada e interpretada?</div>
-                    </button>
-
-                    <button className="quadrado">
-                        <div className='iconebotao'></div>
-                        <div className='textobotao'>O que é uma API (Interface de Programação de Aplicativos) e como usá-la?</div>
-                    </button>
-                    
-                    <button className="quadrado">
-                        <div className='iconebotao'></div>
-                        <div className='textobotao'>O que é o paradigma de programação funcional?</div>
-                    </button>
-
-                    <button className="quadrado">
-                        <div className='iconebotao'></div>
-                        <div className='textobotao'>Como faço para depurar (debug) um programa em Python?</div>
-                    </button>
-
-                    <button className="quadrado">
-                        <div className='iconebotao'></div>
-                        <div className='textobotao'>Qual linguagem escolher na hora de programar ?</div>
-                    </button>
-
-                    <button className="quadrado">
-                        <div className='iconebotao'></div>
-                        <div className='textobotao'>Como faço para atualizar a BIOS da minha placa-mãe?</div>
-                    </button>
-
-                    <button className="quadrado">
-                        <div className='iconebotao'></div>
-                        <div className='textobotao'>O que é uma placa de captura e para que serve?</div>
-                    </button>
-
-                    <button className="quadrado">
-                        <div className='iconebotao'></div>
-                        <div className='textobotao'>O que é um cavalo de Troia (trojan) e como funciona?</div>
-                    </button>
-
-                    <button className="quadrado">
-                        <div className='iconebotao'></div>
-                        <div className='textobotao'>Qual a melhor maneira de se proteger contra virus e malwares ?</div>
-                    </button>
-
-                    <button className="quadrado">
-                        <div className='iconebotao'></div>
-                        <div className='textobotao'>Qual a importância da VPN ?</div>
-                    </button>
-
-                    <button className="quadrado">
-                        <div className='iconebotao'></div>
-                        <div className='textobotao'>Como proteger minha privacidade online?</div>
-                    </button>
                 </div>
-            </>
-        )
-    }
-}
+
+                <div className="slaAdm">
+                    <h1 className='SLAName'>SLA</h1>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Tempo de Resposta</th>
+                                    <th>Prioridade</th>
+                                    <th>Área</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {chamados.map((chamado) => (
+                                    <tr key={chamado.id}>
+                                        <td>{chamado.id}</td>
+                                        <td>Horas: {chamado.tempoderesposta}</td>
+                                        <td>{chamado.prioridade}</td>
+                                        <td>{chamado.area}</td>
+                                        <td>
+                                            <button className='SLAButton' onClick={() => handleDelete(chamado.id)}>Excluir</button>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                        <h2>Adicionar</h2>
+                            <select
+                                className='SLASelect'
+                                value={prioridade}
+                                onChange={(e) => setPrioridade(e.target.value)}
+                            >
+                                <option value="">Prioridade</option>
+                                <option value="Alta">Alta</option>
+                                <option value="Média">Média</option>
+                                <option value="Baixa">Baixa</option>
+                            </select>
+      
+                            <select
+                                className='SLASelect'
+                                value={area}
+                                onChange={(e) => setArea(e.target.value)}
+                            >
+                                <option value="">Área</option>
+                                <option value="Problema de Conexão">Problema de Conexão</option>
+                                <option value="Falha de Software">Falha de Software</option>
+                                <option value="Problema de Segurança">Problema de Segurança</option>
+                                <option value="Vírus e Malware">Vírus e Malware</option>
+                                <option value="Falha de Hardware">Falha de Hardware</option>
+                                <option value="Dúvidas de Programação">Dúvidas de Programação</option>
+                                <option value="Problemas de Impressão">Problemas de Impressão</option>
+                                <option value="Outro">Outro</option>
+                            </select>
+
+                            <button className='SLAButton' onClick={handleCreate} disabled={area === "" || prioridade === ""}>Adicionar</button>
+                    
+
+                </div>
+            </div>
+
+
+
+
+            )
+        }

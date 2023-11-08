@@ -123,23 +123,10 @@ function TicketFunction(){
                       noEnvio={enviarRequisicaoDeSalvamento}
                 >
                 </FormDoTicket>
-{/*                 <textarea
-                    placeholder='Descreva aqui seu problema' 
-                    rows={15} 
-                    cols={90}
-                    name='sumario'
-                    value={tSumario}
-                    onChange={(e) => setTSumario(e.target.value)}
-                    disabled={soLeitura}
-                >
 
-                </textarea> */}
             </div>
             <br />
 
-                
-                
-            
         </div>
     )
 

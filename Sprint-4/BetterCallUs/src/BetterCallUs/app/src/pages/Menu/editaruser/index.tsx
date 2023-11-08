@@ -3,15 +3,18 @@ import Login from "../../login"
 
 import './style/edituser.css'
 
+
+export default function Voltar () {
+    window.history.back();
+};
+
 export const Edituser = () => {
-    const voltar = () => {
-        window.history.back();
-    };
+    Login()
     
 
         return(
         <>
-        <button className="voltarEditUser" onClick={voltar}>Voltar</button>
+        <button className="voltarEditUser" onClick={Voltar}>Voltar</button>
         <div className="bodyEditUser">
 
             
