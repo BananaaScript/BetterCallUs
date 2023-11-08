@@ -101,13 +101,14 @@ function FormDoTicket({
           disabled
         ></input>
 
-        <button
+        <button 
           className='buttonTicket'
           onClick={() => {
             noEnvio(id, tSumario, tPrioridade, tStatus, dataDeCriacao, dataDeAtualizacao);
           }}
-        >
+        ><a href="/">
           Enviar
+          </a>
         </button>
 
       </div>
