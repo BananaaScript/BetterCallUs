@@ -1,0 +1,28 @@
+textarea[name='sumario'] {
+  width: 800px;
+  border: 2px solid rgb(149, 20, 188);
+  border-radius: 10px;
+  font-size: 14px;
+  resize: none;
+  height:200px; 
+}
+
+.problemaTicket{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+h1{
+  font-size: 20px;
+}
+
+.FormDoTicket{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
