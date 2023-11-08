@@ -7,6 +7,9 @@ import './styles/Login.css'
 export default function Login() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
+  const [privi, setPrivi] = useState("");
+  const emailRegex:RegExp = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i; 
+  const senhaRegex:RegExp = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#])[0-9a-zA-Z$*&@#]{8,}$/
   const auth = useContext(AuthContext);
   const navigate = useNavigate()
 
@@ -18,14 +21,27 @@ export default function Login() {
     setSenha(e.target.value);
   }
 
+  const handlePrivi = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setPrivi(e.target.value)
+  } 
+
   const handleLogin = async () => {
-    if (email && senha) {
-      const logado = await auth.login(email, senha);
-      if (logado) {
-        navigate('/')
+    if(email === '' || senha === '' || privi === ''){
+      alert('Todos os campos devem ser preenchidos, tente novamente')
+    }
+    if(emailRegex.test(email) === false){
+      alert('Email incorreto, tente novamente')
+    }
+    if(senhaRegex.test(senha) === false){
+      alert('Senha deve conter 8 caracteres mínimos, uma letra maiúscula e símbolos e números')
+    }
+    if (email !== ''&& emailRegex.test(email) && senha !== '' && senhaRegex.test(senha) && privi !== '') {
+      const logado = await auth.login(email, senha, privi);
+      if (logado && privi === 'suporte') {
+        navigate('/Chamadassup')
       } 
-      else {
-        alert('Putz, que pena né? Verifique suas credenciais');
+      if(logado && privi === 'cliente'){
+        navigate('/');
       }
     }
   }
@@ -44,7 +60,12 @@ export default function Login() {
           <input className='inputLogin' type='text' value={email} onChange={handleEmail} placeholder="Digite seu email" />
           <p id='esquerda'>SENHA:</p>
           <input className='inputLogin' type='password' value={senha} onChange={handleSenha} placeholder="Digite sua senha" />
-
+          <p id='esquerda'>Privilégio</p>
+          <select value={privi} onChange={handlePrivi} placeholder='Selecione seu privilégio'>
+            <option value = "">Selecione</option>
+            <option value= "cliente">Cliente</option>
+            <option value= "suporte">Suporte</option>
+          </select>
           <button className='buttonLogin' onClick={handleLogin}>LOGIN</button>
           
     

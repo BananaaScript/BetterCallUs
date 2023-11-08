@@ -21,7 +21,7 @@ export const UseAPI = () => ({
         return response.data;
     },
     logout: async () => {
-        alert("💀")
+        alert("Você foi desconectado💀")
         return{status: true}
         const response = await api.post('/logout');
         return response.data;
