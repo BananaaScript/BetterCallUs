@@ -27,6 +27,7 @@ code {
 
 .buttonAPP {
   display: flex;
+  max-width: 100%;
   justify-content: center;
   text-align: center;
   align-items: center;
@@ -39,6 +40,7 @@ code {
 
 .buttonAPP button {
   width: 180px;
+  max-width: 180px;
   height: 60px;
   justify-content: center;
   text-align: center;
@@ -58,6 +60,7 @@ code {
 
 .logoApp {
   display: flex;
+  max-width: 100%;
   justify-content: center;
   text-align: center;
   align-items: center;
@@ -67,18 +70,19 @@ code {
 }
 
 img#logo {
-  max-width: 250px;
   width: 150px;
 }
 
 .menuAPP{
   display: flex;
+  max-width: 100%;
   justify-content: center;
   text-align: center;
   align-items: center;
   flex: 1;
 }
 .menuAPP button {
+    max-width: 100%;
     width: 70px;
     height: 70px;
     border-radius: 50%;
@@ -133,7 +137,6 @@ img#logo {
   }
   .menuAPP {
     margin-right: 0px;
-    margin-left: 75%;
   }
   .buttonAPP {
     margin: 0px;
