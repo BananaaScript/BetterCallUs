@@ -22,17 +22,17 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 680px;
-    width: 800px;
+    height: 480px;
+    width: 600px;
+    max-width: 100%;
     background-color: #ffffff;
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
     box-shadow: 5px 5px 20px rgba(21, 11, 22, 0.3);
   }
   
   .boxLogin a {
+    margin-top: 2%;
     margin-right: 85%;
   }
 
@@ -46,7 +46,7 @@
     font-family: fonte;
     font-size: 45px;
     font-weight: bold;
-    margin-bottom: 2%;
+    margin-bottom: 0%;
   }
   
   .boxLogin p {
@@ -84,7 +84,7 @@
     margin-left: -65%;
     margin-top: 5%;
     margin-bottom: 2%;
-    font-size: 22px;
+    font-size: 18px;
   }
   
   
