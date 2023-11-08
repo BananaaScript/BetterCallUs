@@ -13,9 +13,9 @@ A partir do desafio acadêmico proposto pelo cliente interno, o projeto consiste
 ### :checkered_flag: Entregas das Sprints
 | Links | Período | Status |
 |:-----:|:----------:|:---------:|
-| <a href='https://github.com/CODE1na/BetterCallUs/blob/Sprint1/README.md'>Sprint 1</a> | 04/09/2023 - 24/09/2023 | Entregue :heavy_check_mark: |
+| <a href='https://github.com/CODE1na/BetterCallUs/blob/Sprint1/README.md'>Sprint 1 </a> | 04/09/2023 - 24/09/2023 | Entregue :heavy_check_mark: |
 | <a href='https://github.com/CODE1na/BetterCallUs/blob/Sprint2/README.md'>Sprint 2 </a>| 25/09/2023 - 15/10/2023 | Entregue :heavy_check_mark: |  
-| Sprint 3 | 16/10/2023 - 05/11/2023 | Pendente :hourglass: | 
+| <a href='https://github.com/CODE1na/BetterCallUs/blob/Sprint03/README.md'>Sprint 3 </a> | 16/10/2023 - 05/11/2023 | Entregue :heavy_check_mark: | 
 | Sprint 4 | 06/11/2023 - 26/11/2023 | Pendente :hourglass: |  
 
 | :arrow_up: [Voltar ao topo](#topo) |
@@ -40,7 +40,7 @@ CODEina é uma equipe de desenvolvimento de softwares, composta por estudantes c
 |:------:|:-----:|:----------:|:---------:|
 |Product Owner| Douglas Medeiros |<a href='https://www.linkedin.com/in/douglas-ferrini-medeiros-02b735270'><img src='https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white'></a>|<a href='https://www.github.com/DouglasMedeiros1'> <img src='https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white'></a>
 |Scrum Master| Gustavo Castilho |<a href='https://www.linkedin.com/in/gustavo-castilho-70b538279/'><img src='https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white'></a>|<a href='https://github.com/GustavoCastilhoLucena'> <img src='https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white'></a>
-|Dev Team| Juan Santos |<a href='https://www.linkedin.com/in/juan-santos-b78724279/'><img src='https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white'></a>|<a href='https://github.com/JuanSantosVale'> <img src='https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white'></a>
+|Dev Team| Caio Almeida |<a href='https://www.linkedin.com/'><img src='https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white'></a>|<a href='https://github.com/Caio-Almeida4'> <img src='https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white'></a>
 |Dev Team| Kaue Riki |<a href='https://www.linkedin.com/in/kau%C3%AA-riki-70b518273/'><img src='https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white'></a>|<a href='https://github.com/kaueriki'> <img src='https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white'></a>
 |Dev Team| Lucca Vilela |<a href='https://www.linkedin.com/in/lucca-vilela-b90730232/'><img src='https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white'></a>|<a href='https://github.com/luccavilela'> <img src='https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white'></a>
 |Dev Team| Bruno Fernandes |<a href='https://www.linkedin.com/in/bruno-campos-97560b231/'><img src='https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white'></a>|<a href='https://www.github.com/BrunoFerCam'> <img src='https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white'></a>
