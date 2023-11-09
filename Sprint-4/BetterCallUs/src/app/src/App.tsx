@@ -16,7 +16,8 @@ import { Histuser } from './pages/Menu/historico';
 import { RegistroConta } from './pages/Registro';
 import logoInsta from './styles/img/logoInsta.png';
 import logoTiktok from './styles/img/logoTiktok.png';
-import logoTwitter from './styles/img/logoTwitter.png'
+import logoTwitter from './styles/img/logoTwitter.png';
+import logoGithub from './styles/img/logoGithub.png';
 
 
 function App() {
@@ -85,6 +86,7 @@ function App() {
             </div>
 
             <div className='parte2'>
+              <a href="https://github.com/CODE1na/BetterCallUs"> <img src={logoGithub} alt="Github" title="Logo Github" /></a>
               <a href="https://www.instagram.com/bettercallus.code/?next=%2F"> <img src={logoInsta} alt="Instagram" title="Logo Instagram" /></a>
               <a href="https://www.tiktok.com/@bettercallus.code"> <img src={logoTiktok} alt="Tiktok" /></a>
               <a href="https://twitter.com/better_code_us"> <img src={logoTwitter} alt="Twitter" /></a>
