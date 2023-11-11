@@ -60,3 +60,30 @@ app.delete('/chamados/:id', async (req, res) => {
 app.listen(port, () => {
   console.log(`Servidor rodando em http://localhost:${port}`);
 });
+
+app.put('/chamados/:id', async (req, res) => {
+  const { id } = req.params;
+  const { prioridade, area, titulo, sumario, status } = req.body;
+
+  const connection = await connect();
+
+  try {
+    const [existingTicket] = await connection.execute('SELECT * FROM chamado WHERE id = ?', [id]);
+
+    if (!existingTicket || existingTicket.length === 0) {
+      return res.status(404).json({ message: 'Chamado não encontrado' });
+    }
+
+    await connection.execute(
+      'UPDATE chamado SET prioridade = ?, area = ?, titulo = ?, sumario = ?, status = ? WHERE id = ?',
+      [prioridade, area, titulo, sumario, status, id]
+    );
+
+    res.json({ message: 'Chamado atualizado com sucesso' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Erro ao atualizar o chamado' });
+  } finally {
+    connection.end();
+  }
+});

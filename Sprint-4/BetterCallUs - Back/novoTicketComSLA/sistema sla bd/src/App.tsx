@@ -9,6 +9,7 @@ function App() {
   const [titulo, setTitulo] = useState('');
   const [sumario, setSumario] = useState('');
   const [status, setStatus] = useState('');
+  const [editingTicketId, setEditingTicketId] = useState<number | null>(null);
 
   useEffect(() => {
     axios.get('http://localhost:3001/chamados')
@@ -21,25 +22,60 @@ function App() {
   }, []);
 
   const handleCreate = () => {
-    axios.post('http://localhost:3001/chamados', { prioridade, area, titulo, sumario, status, })
-      .then(() => {
+    if (editingTicketId === null){
+      axios.post('http://localhost:3001/chamados', { prioridade, area, titulo, sumario, status, })
+        .then(() => {
+          setPrioridade('');
+          setArea('');
+          setTitulo('');
+          setSumario('');
+          setStatus('');
+          updateChamados();
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }
+    else{
+      axios
+      .put(`http://localhost:3001/chamados/${editingTicketId}`, {
+        prioridade,
+        area,
+        titulo,
+        sumario,
+        status,
+      }).then(() => {
         setPrioridade('');
         setArea('');
         setTitulo('');
         setSumario('');
         setStatus('');
+        setEditingTicketId(null);
         updateChamados();
       })
       .catch((error) => {
         console.error(error);
       });
+
+    }
   };
 
+  const handleEdit = (id: number) => {
+    const ticketToEdit = chamados.find((chamado) => chamado.id === id);
+    if (ticketToEdit) {
+      setEditingTicketId(id);
+      setPrioridade(ticketToEdit.prioridade);
+      setArea(ticketToEdit.area);
+      setTitulo(ticketToEdit.titulo);
+      setSumario(ticketToEdit.sumario);
+      setStatus(ticketToEdit.status);
+    }
+  };
 
   const handleDelete = (id: number) => {
     axios.delete(`http://localhost:3001/chamados/${id}`)
-      .then(() => {
-        updateChamados();
+      .then((response) => {
+        setChamados(response.data);
       })
       .catch((error) => {
         console.error(error);
@@ -69,7 +105,8 @@ function App() {
             <th>Tempo de Resposta</th>
             <th>Prioridade</th>
             <th>Área</th>
-            <th>Ações</th>
+            <th>Deletar</th>
+            <th>Editar</th>
           </tr>
         </thead>
         <tbody>
@@ -84,6 +121,9 @@ function App() {
               <td>{chamado.area}</td>
               <td>
                 <button onClick={() => handleDelete(chamado.id)}>Excluir</button>
+              </td>
+              <td>
+                <button onClick={() => handleEdit(chamado.id)}>Editar</button>
               </td>
             </tr>
           ))}
