@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react"
 import { AuthContext } from "./AuthContext"
-import Usuario from "../../types/Usuario"
+import Conta from "../../types/Conta"
 import { UseAPI } from "../../hooks/useAPI";
 
 export const AuthProvider = ({children}: {children: JSX.Element}) =>{
-    const [usuario, setUser] = useState<Usuario | null>(null);
+    const [usuario, setUser] = useState<Conta | null>(null);
     const api = UseAPI()
 
     useEffect(() => {

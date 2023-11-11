@@ -1,8 +1,8 @@
 import React, { createContext } from 'react';
-import Usuario from '../../types/Usuario';
+import Conta from '../../types/Conta';
 
 export type AuthContextType = {
-    usuario: Usuario | null;
+    usuario: Conta | null;
     login: (email:string, senha:string, privilegio?: string) => Promise<boolean>
     logout: () => void
 }
