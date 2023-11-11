@@ -2,7 +2,6 @@ import {useState} from 'react';
 import Conta from '../../types/Conta';
 
 export const RegistroConta = () =>{
-    const [contas, setContas] = useState<Conta[]>([]);
     const [nome, setNome] = useState('');
     const [cpf, setCPF] = useState('');
     const [senha, setSenha] = useState('');
@@ -16,11 +15,11 @@ export const RegistroConta = () =>{
         setNomeError('');
         setCPFError('');
         setPrivilegioError('');
-        const padraoNome = /^[A-Za-z\s]+$/;
+        const padraoNome:RegExp = /^[A-Za-z\s]+$/;
+        const padraoCpf:RegExp = /^\d+$/
 
-        if (nome !== '' && nome.match(padraoNome) && nome.trim() !== '' && cpf !== '' && /^\d+$/.test(cpf) && cpf.length == 11 && senha !== '' && privilegio !== ''){
+        if (nome !== '' && padraoNome.test(nome) && nome.trim() !== '' && cpf !== '' && padraoCpf.test(cpf) && cpf.length == 11 && senha !== '' && privilegio !== ''){
         const novaConta = new Conta(nome, cpf, senha, privilegio);
-        setContas((prevContas) => [...prevContas, novaConta]);
         setNome('');
         setCPF('');
         setSenha('');
@@ -32,7 +31,7 @@ export const RegistroConta = () =>{
               setNomeError('Coloque um nome com apenas letras e espaços.');
             }
 
-            if (cpf === '' || !/^\d+$/.test(cpf) || cpf.length !== 11){
+            if (cpf === '' || padraoCpf.test(cpf) === false || cpf.length !== 11){
                 setCPFError('CPF invalido, insira um CPF válido.');
             }
             if (privilegio === ''){
@@ -62,23 +61,14 @@ export const RegistroConta = () =>{
         <div>
           <label>Privilégio:</label>
           <select value={privilegio} onChange={(e) => setPrivilegio(e.target.value)}>
-            <option value="">Selecione</option>
-            <option value="cliente">Cliente</option>
-            <option value="suporte">Suporte</option>
+            <option value="">Selecione</option> {/* EM QUESTÃO SOBRE O PRIVILÉGIO, 0 É CLIENTE, 1 É SUPORTE E 2 É ADMINISTRADOR */}
+            <option value="0">Cliente</option>
+            <option value="1">Suporte</option> 
           </select>
         </div>
         <button type="button" onClick={registrarConta}>
           Registrar
         </button>
-  
-        <h2>Contas Registradas</h2>
-        <ul>
-          {contas.map((conta, index) => (
-            <li key={index}>
-              Nome: {conta.nome}, CPF: {conta.cpf}, Privilégio: {conta.privilegio}
-            </li>
-          ))}
-        </ul>
            {campoError && <div style={{color: 'red'}}>{campoError}</div>}
            {nomeError && <div style={{color: 'red'}}>{nomeError}</div>}
            {cpfError && <div style={{color: 'red'}}>{cpfError}</div>}

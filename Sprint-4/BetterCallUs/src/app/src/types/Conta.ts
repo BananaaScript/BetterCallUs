@@ -1,8 +1,8 @@
 export default class Conta{
-    nome: string;
-    cpf: string;
-    senha: string;
-    privilegio: string;
+    public nome: string;
+    private cpf: string;
+    public senha: string;
+    public privilegio: string;
 
     constructor(nome: string, cpf: string, senha: string, privilegio: string) {
         this.nome = nome;
