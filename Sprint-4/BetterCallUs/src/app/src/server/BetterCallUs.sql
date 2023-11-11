@@ -3,35 +3,38 @@ USE BetterCallUs;
 
 CREATE TABLE IF NOT EXISTS Cliente (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(50) NOT NULL,
-    email VARCHAR(50) NOT NULL,
-    telefone VARCHAR(20) NOT NULL,
-    nivel_prioridade INT NOT NULL,
-    cpf VARCHAR(11) NOT NULL,
+    nome VARCHAR(50),
+    email VARCHAR(50),
+    senha VARCHAR(100),
+    telefone VARCHAR(20),
+    nivel_prioridade INT,
+    cpf VARCHAR(11),
     nome_social VARCHAR(50),
     UNIQUE KEY uq_cpf_rg (cpf)
 );
 
 CREATE TABLE IF NOT EXISTS ADM (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(50) NOT NULL,
-    email VARCHAR(50) NOT NULL,
-    departamento VARCHAR(50) NOT NULL,
-    nivel_prioridade INT NOT NULL
+    nome VARCHAR(50),
+    email VARCHAR(50),
+    senha VARCHAR(100),
+    departamento VARCHAR(50),
+    nivel_prioridade INT
 );
 
 CREATE TABLE IF NOT EXISTS Suporte (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(50) NOT NULL,
-    email VARCHAR(50) NOT NULL,
-    nivel_prioridade INT NOT NULL
+    nome VARCHAR(50),
+    email VARCHAR(50),
+    senha VARCHAR(100),
+    nivel_prioridade INT
 );
 
 CREATE TABLE IF NOT EXISTS Login (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    email VARCHAR(50) NOT NULL UNIQUE,
-    senha VARCHAR(100) NOT NULL,
-    user_id INT NOT NULL,
+    email VARCHAR(50) UNIQUE,
+    senha VARCHAR(100),
+    user_id INT,
     FOREIGN KEY (user_id) REFERENCES Cliente(id) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (user_id) REFERENCES ADM(id) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (user_id) REFERENCES Suporte(id) ON DELETE CASCADE ON UPDATE CASCADE
@@ -42,12 +45,12 @@ CREATE TABLE IF NOT EXISTS Ticket (
     cliente_id INT,
     suporte_id INT,
     adm_id INT,
-    assunto VARCHAR(100) NOT NULL,
-    descricao TEXT NOT NULL,
-    prioridade INT NOT NULL,
-    area_problema VARCHAR(100) NOT NULL,
-    status ENUM('Aberto', 'Em Andamento', 'Finalizado') NOT NULL,
-    data_envio DATETIME NOT NULL,
+    assunto VARCHAR(100),
+    descricao TEXT,
+    prioridade INT,
+    area_problema VARCHAR(100),
+    status ENUM('Aberto', 'Em Andamento', 'Finalizado'),
+    data_envio DATETIME,
     data_finalizacao DATETIME,
     historico TEXT,
     FOREIGN KEY (cliente_id) REFERENCES Cliente(id),
@@ -58,28 +61,27 @@ CREATE TABLE IF NOT EXISTS Ticket (
 CREATE TABLE IF NOT EXISTS SLA (
     id INT AUTO_INCREMENT PRIMARY KEY,
     ticket_id INT,
-    tempo_resposta INT NOT NULL,
-    prioridade INT NOT NULL,
-    categoria_problema VARCHAR(50) NOT NULL,
+    tempo_resposta INT,
+    prioridade INT,
+    categoria_problema VARCHAR(50),
     FOREIGN KEY (ticket_id) REFERENCES Ticket(id)
-);
-
-CREATE TABLE IF NOT EXISTS Problemas (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    categoria VARCHAR(50) NOT NULL,
-    descricao TEXT NOT NULL,
-    FOREIGN KEY (categoria) REFERENCES CategoriasProblemas(nome)
-);
-
-CREATE TABLE IF NOT EXISTS Respostas (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    problema_id INT,
-    resposta_texto TEXT NOT NULL,
-    contador_respostas INT NOT NULL,
-    FOREIGN KEY (problema_id) REFERENCES Problemas(id)
 );
 
 CREATE TABLE IF NOT EXISTS CategoriasProblemas (
     nome VARCHAR(100) PRIMARY KEY
 );
 
+CREATE TABLE IF NOT EXISTS Problemas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    categoria VARCHAR(50),
+    descricao TEXT,
+    FOREIGN KEY (categoria) REFERENCES CategoriasProblemas(nome)
+);
+
+CREATE TABLE IF NOT EXISTS Respostas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    problema_id INT,
+    resposta_texto TEXT,
+    contador_respostas INT,
+    FOREIGN KEY (problema_id) REFERENCES Problemas(id)
+);
