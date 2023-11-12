@@ -11,7 +11,7 @@ app.use(cors());
 const dbConfig = {
     host: 'localhost',
     user: 'root',
-    password: 'fatec',
+    password: '',
     database:'bettercallus'
 }
 
@@ -46,10 +46,10 @@ app.get('/registroAdm', async(req, res) => {
 })
 
 app.post('/registroAdm', async(req, res) => {
-    const {nome, cpf, senha, privilegio} = req.body;
+    const {nome, cpf, senha, privilegio, departamento} = req.body;
     
     const connection = await connect();
-    await connection.execute('INSERT INTO ADM (nome, cpf, senha, privilegio) VALUES(?, ?, ?, ?)', [nome, cpf, senha, privilegio]);
+    await connection.execute('INSERT INTO ADM (nome, cpf, senha, privilegio, departamento) VALUES(?, ?, ?, ?, ?)', [nome, cpf, senha, privilegio, departamento]);
 
     res.json({message: 'Registro feito com sucesso'});
 })
@@ -65,10 +65,10 @@ app.get('/registroCliente', async (req, res) => {
 })
 
 app.post('/registroCliente', async(req, res) => {
-    const {nome, cpf, senha, privilegio} = req.body;
+    const {nome, cpf, senha, privilegio, email, telefone, nomeSocial} = req.body;
 
     const connection = await connect();
-    await connection.execute('INSERT INTO cliente(nome, cpf, senha, privilegio) VALUES (?, ?, ?, ?)', [nome, cpf, senha, privilegio]);
+    await connection.execute('INSERT INTO cliente(nome, cpf, senha, privilegio, email, telefone, nomeSocial) VALUES (?, ?, ?, ?, ?, ?, ?)', [nome, cpf, senha, privilegio, email, telefone, nomeSocial]);
 
     res.json({message: 'Registro feito com sucesso'});
 })

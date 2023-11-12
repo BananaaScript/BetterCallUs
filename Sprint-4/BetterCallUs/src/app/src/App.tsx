@@ -13,11 +13,11 @@ import { Chamadassup } from './2.SUPORTE/pages/Chamadassup';
 import { Adm } from './1.ADMIN/Home/'
 import { Edituser } from './pages/Menu/editaruser';
 import { Histuser } from './pages/Menu/historico';
-import { RegistroConta } from './pages/Registro';
 import logoInsta from './styles/img/logoInsta.png';
 import logoTiktok from './styles/img/logoTiktok.png';
 import logoTwitter from './styles/img/logoTwitter.png';
 import logoGithub from './styles/img/logoGithub.png';
+import Cadastro from './pages/Registro';
 
 
 function App() {
@@ -73,7 +73,7 @@ function App() {
         <Route path='/histuser' element={<RequireAuth><Histuser /></RequireAuth>} />
         <Route path="/Chamadassup" element={<RequireAuth><Chamadassup /></RequireAuth>} />
         <Route path="/Administrador" element={<RequireAuth><Adm /></RequireAuth>} />
-        <Route path="/registro" element={<RequireAuth><RegistroConta></RegistroConta></RequireAuth>} />
+        <Route path="/Cadastro" element={<RequireAuth><Cadastro></Cadastro></RequireAuth>} />
 
       </Routes>
 

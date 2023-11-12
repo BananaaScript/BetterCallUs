@@ -1,33 +1,32 @@
-CREATE DATABASE IF NOT EXISTS BetterCallUs;
-USE BetterCallUs;
+CREATE DATABASE IF NOT EXISTS bettercallus;
+USE bettercallus;
 
-CREATE TABLE IF NOT EXISTS Cliente (
+CREATE TABLE IF NOT EXISTS cliente (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(50),
-    email VARCHAR(50),
-    senha VARCHAR(100),
-    telefone VARCHAR(20),
-    nivel_prioridade INT,
     cpf VARCHAR(11),
-    nome_social VARCHAR(50),
-    UNIQUE KEY uq_cpf_rg (cpf)
+    senha VARCHAR(100),
+    privilegio int,
+    email VARCHAR(50),
+    telefone VARCHAR(20),
+    nomeSocial VARCHAR(50)
 );
 
 CREATE TABLE IF NOT EXISTS ADM (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(50),
-    email VARCHAR(50),
+    cpf varchar(11),
     senha VARCHAR(100),
-    departamento VARCHAR(50),
-    nivel_prioridade INT
+    privilegio int,
+    departamento VARCHAR(50)
 );
 
-CREATE TABLE IF NOT EXISTS Suporte (
+CREATE TABLE IF NOT EXISTS suporte (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(50),
-    email VARCHAR(50),
+    cpf varchar(11),
     senha VARCHAR(100),
-    nivel_prioridade INT
+    privilegio int
 );
 
 CREATE TABLE IF NOT EXISTS Login (
@@ -85,3 +84,8 @@ CREATE TABLE IF NOT EXISTS Respostas (
     contador_respostas INT,
     FOREIGN KEY (problema_id) REFERENCES Problemas(id)
 );
+
+
+select * from cliente;
+select * from suporte;
+select * from ADM;
