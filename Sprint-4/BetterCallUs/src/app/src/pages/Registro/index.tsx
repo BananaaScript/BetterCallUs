@@ -1,15 +1,27 @@
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import Conta from '../../types/Conta';
+import axios from 'axios';
 
 export const RegistroConta = () =>{
+    const [contas, setContas] = useState<Array<{nome:string; cpf:string; senha:string; privilegio:string }>>([])
     const [nome, setNome] = useState('');
     const [cpf, setCPF] = useState('');
     const [senha, setSenha] = useState('');
-    const [cpfError, setCPFError] = useState('');
     const [privilegio, setPrivilegio] = useState('');
+    const [cpfError, setCPFError] = useState('');
     const [privilegioError, setPrivilegioError] = useState('');
     const [campoError, setCampoError] = useState('');
     const [nomeError, setNomeError] = useState('');
+
+    useEffect(() =>{
+      axios.get('http://localhost:3001/registros')
+        .then((response) =>{
+          setContas(response.data);
+        })
+        .catch((error) =>{
+          console.log(error)
+        });
+    }, [])
 
     const registrarConta = () =>{
         setNomeError('');
@@ -20,11 +32,18 @@ export const RegistroConta = () =>{
 
         if (nome !== '' && padraoNome.test(nome) && nome.trim() !== '' && cpf !== '' && padraoCpf.test(cpf) && cpf.length == 11 && senha !== '' && privilegio !== ''){
         const novaConta = new Conta(nome, cpf, senha, privilegio);
-        setNome('');
-        setCPF('');
-        setSenha('');
-        setPrivilegio('');
-        console.log('Conta registrada', novaConta)  
+        axios.post('http://localhost:3001/registros', {nome, cpf, senha, privilegio, })
+          .then(() =>{
+            setNome('');
+            setCPF('');
+            setSenha('');
+            setPrivilegio('');
+          })
+          .catch((error) => {
+            console.error(error)
+          })
+
+        /* console.log('Conta registrada', novaConta)  */ 
         }
         else{
             if(nome === '' || !nome.match(padraoNome) || nome.trim() == '' ){
