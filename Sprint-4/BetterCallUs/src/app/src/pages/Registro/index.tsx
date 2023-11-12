@@ -1,6 +1,7 @@
 import {useEffect, useState} from 'react';
 import Conta from '../../types/Conta';
 import axios from 'axios';
+import { response } from 'express';
 
 export const RegistroConta = () =>{
     const [contas, setContas] = useState<Array<{nome:string; cpf:string; senha:string; privilegio:string }>>([])
@@ -13,8 +14,29 @@ export const RegistroConta = () =>{
     const [campoError, setCampoError] = useState('');
     const [nomeError, setNomeError] = useState('');
 
+    /* UseEffect get do Cliente*/
     useEffect(() =>{
-      axios.get('http://localhost:3001/registros')
+      axios.get('http://localhost:3001/registroCliente')
+        .then((response) =>{
+          setContas(response.data);
+        })
+        .catch((error) =>{
+          console.log(error)
+        });
+    }, [])
+    /* UseEffect get do Suporte */
+    useEffect(() =>{
+      axios.get('http://localhost:3001/registroSup')
+        .then((response) =>{
+          setContas(response.data);
+        })
+        .catch((error) =>{
+          console.error(error)
+        })
+    }, [])
+    /* UseEffect get do Adm */
+    useEffect(() =>{
+      axios.get('http://localhost:3001/registroAdm')
         .then((response) =>{
           setContas(response.data);
         })
@@ -30,9 +52,8 @@ export const RegistroConta = () =>{
         const padraoNome:RegExp = /^[A-Za-z\s]+$/;
         const padraoCpf:RegExp = /^\d+$/
 
-        if (nome !== '' && padraoNome.test(nome) && nome.trim() !== '' && cpf !== '' && padraoCpf.test(cpf) && cpf.length == 11 && senha !== '' && privilegio !== ''){
-        const novaConta = new Conta(nome, cpf, senha, privilegio);
-        axios.post('http://localhost:3001/registros', {nome, cpf, senha, privilegio, })
+        if (nome !== '' && padraoNome.test(nome) && nome.trim() !== '' && cpf !== '' && padraoCpf.test(cpf) && cpf.length == 11 && senha !== '' && privilegio === '0'){
+        axios.post('http://localhost:3001/registroCliente', {nome, cpf, senha, privilegio, })
           .then(() =>{
             setNome('');
             setCPF('');
@@ -44,6 +65,30 @@ export const RegistroConta = () =>{
           })
 
         /* console.log('Conta registrada', novaConta)  */ 
+        }
+        if (nome !== '' && padraoNome.test(nome) && nome.trim() !== '' && cpf !== '' && padraoCpf.test(cpf) && cpf.length == 11 && senha !== '' && privilegio === '1'){
+          axios.post('http://localhost:3001/registroSup', {nome, cpf, senha, privilegio, })
+            .then(() =>{
+              setNome('');
+              setCPF('');
+              setSenha('');
+              setPrivilegio('');
+            })
+            .catch((error) =>{
+              console.error(error)
+            })
+        }
+        if (nome !== '' && padraoNome.test(nome) && nome.trim() !== '' && cpf !== '' && padraoCpf.test(cpf) && cpf.length == 11 && senha !== '' && privilegio === '2'){
+          axios.post('http://localhost:3001/registroAdm', {nome, cpf, senha, privilegio, })
+            .then(() =>{
+              setNome('');
+              setCPF('');
+              setSenha('');
+              setPrivilegio('');
+            })
+            .catch((error) =>{
+              console.error(error)
+            })
         }
         else{
             if(nome === '' || !nome.match(padraoNome) || nome.trim() == '' ){
@@ -83,6 +128,7 @@ export const RegistroConta = () =>{
             <option value="">Selecione</option> {/* EM QUESTÃO SOBRE O PRIVILÉGIO, 0 É CLIENTE, 1 É SUPORTE E 2 É ADMINISTRADOR */}
             <option value="0">Cliente</option>
             <option value="1">Suporte</option> 
+            <option value="2">Administrador</option>
           </select>
         </div>
         <button type="button" onClick={registrarConta}>

@@ -12,7 +12,7 @@ const dbConfig = {
     host: 'localhost',
     user: 'root',
     password: 'fatec',
-    database:'testecadastro'
+    database:'bettercallus'
 }
 
 async function connect(){
@@ -20,19 +20,55 @@ async function connect(){
     return connection;
 }
 
-app.get('/registros', async (req, res) => {
+app.get('/registroSup', async(req, res) => {
     const connection = await connect();
-    const[rows] = await connection.execute('SELECT * FROM cadastro')
+    const[rows] = await connection.execute('SELECT * FROM suporte')
     connection.end();
 
     res.json(rows)
 })
 
-app.post('/registros', async(req, res) => {
+app.post('/registroSup', async(req, res) => {
+    const {nome, cpf, senha, privilegio} = req.body;
+    
+    const connection = await connect();
+    await connection.execute('INSERT INTO suporte (nome, cpf, senha, privilegio) VALUES(?, ?, ?, ?)', [nome, cpf, senha, privilegio]);
+
+    res.json({message: 'Registro feito com sucesso'});
+})
+
+app.get('/registroAdm', async(req, res) => {
+    const connection = await connect();
+    const[rows] = await connection.execute('SELECT * FROM ADM')
+    connection.end();
+
+    res.json(rows)
+})
+
+app.post('/registroAdm', async(req, res) => {
+    const {nome, cpf, senha, privilegio} = req.body;
+    
+    const connection = await connect();
+    await connection.execute('INSERT INTO ADM (nome, cpf, senha, privilegio) VALUES(?, ?, ?, ?)', [nome, cpf, senha, privilegio]);
+
+    res.json({message: 'Registro feito com sucesso'});
+})
+
+
+
+app.get('/registroCliente', async (req, res) => {
+    const connection = await connect();
+    const[rows] = await connection.execute('SELECT * FROM cliente')
+    connection.end();
+
+    res.json(rows)
+})
+
+app.post('/registroCliente', async(req, res) => {
     const {nome, cpf, senha, privilegio} = req.body;
 
     const connection = await connect();
-    await connection.execute('INSERT INTO cadastro (nome, cpf, senha, privilegio) VALUES (?, ?, ?, ?)', [nome, cpf, senha, privilegio]);
+    await connection.execute('INSERT INTO cliente(nome, cpf, senha, privilegio) VALUES (?, ?, ?, ?)', [nome, cpf, senha, privilegio]);
 
     res.json({message: 'Registro feito com sucesso'});
 })
