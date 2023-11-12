@@ -1,15 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
+import moment from 'moment-timezone'
 
 function App() {
-  const [chamados, setChamados] = useState<Array<{ id: number; prioridade: string; area: string; titulo: string; sumario: string; status: string; tempoderesposta: number}>>([]);
-  const [prioridade, setPrioridade] = useState('');
+  const [chamados, setChamados] = useState<Array<{ id: number; area: string; titulo: string; sumario: string; status: string; tempoderesposta: number; estado: string, datacriacao: string; dataatualizacao: string;}>>([]);
   const [area, setArea] = useState('');
   const [titulo, setTitulo] = useState('');
   const [sumario, setSumario] = useState('');
   const [status, setStatus] = useState('');
+  
+/*   const [estadoChamado, setEstadoChamado] = useState('');*/
   const [editingTicketId, setEditingTicketId] = useState<number | null>(null);
+
+  const formatarData = (data: string) => {
+    return moment(data).tz('America/Sao_Paulo').format('YYYY-MM-DD HH:mm:ss');
+  };
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      updateChamados();
+    }, 5000);
+    return () => clearInterval(intervalId);
+  }, []);
 
   useEffect(() => {
     axios.get('http://localhost:3001/chamados')
@@ -22,10 +34,11 @@ function App() {
   }, []);
 
   const handleCreate = () => {
+    const novoEstado = 'aberto'
+
     if (editingTicketId === null){
-      axios.post('http://localhost:3001/chamados', { prioridade, area, titulo, sumario, status, })
+      axios.post('http://localhost:3001/chamados', { area, titulo, sumario, status, estado: novoEstado })
         .then(() => {
-          setPrioridade('');
           setArea('');
           setTitulo('');
           setSumario('');
@@ -39,13 +52,11 @@ function App() {
     else{
       axios
       .put(`http://localhost:3001/chamados/${editingTicketId}`, {
-        prioridade,
         area,
         titulo,
         sumario,
         status,
       }).then(() => {
-        setPrioridade('');
         setArea('');
         setTitulo('');
         setSumario('');
@@ -64,7 +75,6 @@ function App() {
     const ticketToEdit = chamados.find((chamado) => chamado.id === id);
     if (ticketToEdit) {
       setEditingTicketId(id);
-      setPrioridade(ticketToEdit.prioridade);
       setArea(ticketToEdit.area);
       setTitulo(ticketToEdit.titulo);
       setSumario(ticketToEdit.sumario);
@@ -103,8 +113,10 @@ function App() {
             <th>Sumario</th>
             <th>Status</th>
             <th>Tempo de Resposta</th>
-            <th>Prioridade</th>
+            <th>Data de Criação</th>
+            <th>Data de Atualização</th>
             <th>Área</th>
+            <th>Estado</th>
             <th>Deletar</th>
             <th>Editar</th>
           </tr>
@@ -117,8 +129,10 @@ function App() {
               <td>{chamado.sumario}</td>
               <td>{chamado.status}</td>
               <td>Horas: {chamado.tempoderesposta}</td>
-              <td>{chamado.prioridade}</td>
+              <td>{formatarData(chamado.datacriacao)}</td>
+              <td>{formatarData(chamado.dataatualizacao)}</td>
               <td>{chamado.area}</td>
+              <td>{chamado.estado}</td>
               <td>
                 <button onClick={() => handleDelete(chamado.id)}>Excluir</button>
               </td>
@@ -130,16 +144,6 @@ function App() {
         </tbody>
       </table>
       <h2>Adicionar</h2>
-      <select
-        value={prioridade}
-        onChange={(e) => setPrioridade(e.target.value)}
-      >
-        <option value="">Prioridade</option>
-        <option value="Alta">Alta</option>
-        <option value="Média">Média</option>
-        <option value="Baixa">Baixa</option>
-      </select>
-      
       <select
         value={area}
         onChange={(e) => setArea(e.target.value)}
@@ -176,7 +180,7 @@ function App() {
         <option value="Em andamento">Em andamento</option>
         <option value="Finalizado">Finalizado</option>
       </select>
-      <button onClick={handleCreate} disabled={area === "" || prioridade === "" || titulo === "" || sumario=== "" || status === ""}>Adicionar</button>
+      <button onClick={handleCreate} disabled={area === "" || titulo === "" || sumario=== "" || status === ""}>Adicionar</button>
     </div>
   );
 }
