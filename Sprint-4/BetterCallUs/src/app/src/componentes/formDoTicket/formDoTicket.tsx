@@ -67,11 +67,8 @@ function FormDoTicket({
           <option value="Prob.Software">Problemas de software </option>
           <option value="Prob.Seguranca">Problemas de segurança</option>
           <option value="Prob.Virus">Vírus e malware</option>
-          <option value="Prob.Atualizacao">Problemas de atualização de software</option>
           <option value="Prob.Hardware">Falhas de hardware</option>
-          <option value="Prob.Resfriamento">Problemas de resfriamento</option>
-          <option value="Prob.Audio">Problemas com equipamentos de áudio e vídeo</option>
-          <option value="Prob.Impressão">Problemas de impressão</option>
+          <option value="Prob.Audio">Problemas de áudio e vídeo</option>
           <option value="Outro">------ Outro ------</option>
         </select>
         <a href="/">
