@@ -5,10 +5,12 @@ import { response } from 'express';
 import "../styles/registro.css"
 
 export const CadastroSuporte = () =>{
-    const [contas, setContas] = useState<Array<{nome:string; cpf:string; senha:string; privilegio:string }>>([])
+    const [contas, setContas] = useState<Array<{nome:string; cpf:string; senha:string;privilegio:string; email:string }>>([])
     const [nome, setNome] = useState('');
     const [cpf, setCPF] = useState('');
     const [senha, setSenha] = useState('');
+    const [email, setEmail] = useState('');
+    const [emailError, setEmailError] = useState('');
     const [cpfError, setCPFError] = useState('');
     const [campoError, setCampoError] = useState('');
     const [nomeError, setNomeError] = useState('');
@@ -30,13 +32,15 @@ export const CadastroSuporte = () =>{
         setCPFError('');
         const padraoNome:RegExp = /^[A-Za-z\s]+$/;
         const padraoCpf:RegExp = /^\d+$/
+        const padraoEmail:RegExp = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
 
-        if (nome !== '' && padraoNome.test(nome) && nome.trim() !== '' && cpf !== '' && padraoCpf.test(cpf) && cpf.length == 11 && senha !== '' && privilegio === '1'){
-            axios.post('http://localhost:3001/registroSup', {nome, cpf, senha, privilegio, })
+        if (nome !== '' && padraoNome.test(nome) && nome.trim() !== '' && cpf !== '' && padraoCpf.test(cpf) && cpf.length == 11 && senha !== '' && padraoEmail.test(email) && privilegio === '1'){
+            axios.post('http://localhost:3001/registroSup', {nome, cpf, senha, privilegio, email, })
                 .then(()=>{
                     setNome('');
                     setCPF('');
                     setSenha('');
+                    setEmail('');
                 })
                 .catch((error) =>{
                     console.error(error)
@@ -49,30 +53,38 @@ export const CadastroSuporte = () =>{
             if (cpf === '' || padraoCpf.test(cpf) === false || cpf.length !== 11){
                 setCPFError('CPF invalido, insira um CPF válido.');
             }
-            if (cpf === '' || padraoCpf.test(cpf) === false || cpf.length !== 11){
-                setCPFError('CPF invalido, insira um CPF válido.');
-            }  
+            if (email === '' || padraoEmail.test(email) == false){
+                setEmailError('forma do email incorreta, tente novamente.');
+            }
+            if (nome === '' || cpf === '' || senha === ''){
+                setCampoError('Preencha todos os campos')
+            }
         }
     }
     return(
         <div>
         <h2>Registro de conta suporte</h2>
         <div>
-            <label>Nome: </label>
+            <label>Nome: </label><br />
             <input type='text' value={nome} onChange={(e) => setNome(e.target.value)} />
         </div>
         <div>
-            <label>CPF: </label>
+            <label>Email: </label><br />
+            <input type='email' value={email} onChange={(e) => setEmail(e.target.value)} />
+        </div>
+        <div>
+            <label>CPF: </label><br />
             <input type='text' maxLength={11} value={cpf} onChange={(e) => setCPF(e.target.value)} />
         </div>
         <div>
-            <label>Senha: </label>
-            <input type='text' value={senha} onChange={(e) => setSenha(e.target.value)} />
+            <label>Senha: </label><br />
+            <input type='password' value={senha} onChange={(e) => setSenha(e.target.value)} />
         </div>
         <button type='button' onClick={registrarConta}>Registrar</button>
             {campoError && <div style={{color: 'red'}}>{campoError}</div>}
             {nomeError && <div style={{color: 'red'}}>{nomeError}</div>}
             {cpfError && <div style={{color: 'red'}}>{cpfError}</div>}
+            {emailError && <div style={{color: 'red'}}>{emailError}</div>}
         </div>
     )
 }

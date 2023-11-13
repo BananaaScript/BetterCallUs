@@ -9,6 +9,8 @@ export const CadastroAdm = () =>{
     const [nome, setNome] = useState('');
     const [cpf, setCPF] = useState('');
     const [senha, setSenha] = useState('');
+    const [email, setEmail] = useState('');
+    const [emailError, setEmailError] = useState('');
     const [departamento, setDepartamento] = useState('');
     const [cpfError, setCPFError] = useState('');
     const [campoError, setCampoError] = useState('');
@@ -30,12 +32,14 @@ export const CadastroAdm = () =>{
         setCPFError('');
         const padraoNome:RegExp = /^[A-Za-z\s]+$/;
         const padraoCpf:RegExp = /^\d+$/
+        const padraoEmail:RegExp = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
         
-        if (nome !== '' && padraoNome.test(nome) && nome.trim() !== '' && cpf !== '' && padraoCpf.test(cpf) && cpf.length == 11 && departamento !== '' && senha !== '' && privilegio === '2'){
-        axios.post('http://localhost:3001/registroAdm', {nome, cpf, senha, privilegio, departamento})
+        if (nome !== '' && padraoNome.test(nome) && nome.trim() !== '' && cpf !== '' && padraoCpf.test(cpf) && cpf.length == 11 && departamento !== '' && senha !== '' && padraoEmail.test(email) &&privilegio === '2'){
+        axios.post('http://localhost:3001/registroAdm', {nome, cpf, senha, privilegio, email, departamento})
             .then(() =>{
                 setNome('');
                 setCPF('');
+                setEmail('');
                 setSenha('');
                 setDepartamento('');
             })
@@ -56,6 +60,9 @@ export const CadastroAdm = () =>{
             if (nome === '' || senha === '' || cpf === '' || departamento === ''){
                   setCampoError('Todos os campos devem ser preenchidos.')
             }
+            if (email === '' || padraoEmail.test(email) == false){
+                setEmailError('forma do email incorreta, tente novamente.');
+            }
         }
     }
     return(
@@ -66,12 +73,16 @@ export const CadastroAdm = () =>{
             <input type='text' value={nome} onChange={(e) => setNome(e.target.value)} />
         </div>
         <div>
+            <label>Email: </label><br />
+            <input type='email' value={email} onChange={(e) => setEmail(e.target.value)} />
+        </div>
+        <div>
             <label>CPF: </label><br />
             <input type='text' maxLength={11} value={cpf} onChange={(e) => setCPF(e.target.value)} />
         </div>
         <div>
             <label>Senha: </label><br />
-            <input type='text' value={senha} onChange={(e) => setSenha(e.target.value)} />
+            <input type='password' value={senha} onChange={(e) => setSenha(e.target.value)} />
         </div>
         <div>
             <label>Departamento: </label><br />
@@ -82,6 +93,7 @@ export const CadastroAdm = () =>{
             {campoError && <div style={{color: 'red'}}>{campoError}</div>}
             {nomeError && <div style={{color: 'red'}}>{nomeError}</div>}
             {cpfError && <div style={{color: 'red'}}>{cpfError}</div>}
+            {emailError && <div style={{color: 'red'}}>{emailError}</div>}
 
         </div>
     )

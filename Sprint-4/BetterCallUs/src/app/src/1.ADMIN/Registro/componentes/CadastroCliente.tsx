@@ -10,6 +10,7 @@ export const CadastroCliente = () =>{
     const [cpf, setCPF] = useState('');
     const [senha, setSenha] = useState('');
     const [email,setEmail] = useState('');
+    const [emailError, setEmailError] = useState('');
     const [telefone, setTelefone] = useState('');
     const [nomeSocial, setNomeSocial] = useState('');
     const [cpfError, setCPFError] = useState('');
@@ -33,8 +34,9 @@ export const CadastroCliente = () =>{
         setCPFError('');
         const padraoNome:RegExp = /^[A-Za-z\s]+$/;
         const padraoCpf:RegExp = /^\d+$/
+        const padraoEmail:RegExp = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
 
-        if (nome !== '' && padraoNome.test(nome) && nome.trim() !== '' && cpf !== '' && padraoCpf.test(cpf) && cpf.length == 11 && senha !== '' && email !== '' && telefone !== '' && nomeSocial !== '' &&privilegio === '0'){
+        if (nome !== '' && padraoNome.test(nome) && nome.trim() !== '' && cpf !== '' && padraoCpf.test(cpf) && cpf.length == 11 && senha !== '' && email !== '' && padraoEmail.test(email) &&telefone !== '' && nomeSocial !== '' &&privilegio === '0'){
         axios.post('http://localhost:3001/registroCliente', {nome, cpf, senha, privilegio, email, telefone, nomeSocial, })
             .then(()=>{
                 setNome('');
@@ -61,6 +63,10 @@ export const CadastroCliente = () =>{
             if (nome === '' || senha === '' || cpf === '' || email === '' || telefone === '' || nomeSocial === ''){
                 setCampoError('Todos os campos devem ser preenchidos.')
             }
+
+            if (email === '' || padraoEmail.test(email) == false){
+                setEmailError('forma do email incorreta, tente novamente.');
+            }
         }
         } 
     
@@ -68,33 +74,34 @@ export const CadastroCliente = () =>{
         <div>
         <h2>Registro de conta cliente</h2>
         <div>
-            <label>Nome: </label>
+            <label>Nome: </label><br />
             <input type='text' value={nome} onChange={(e) => setNome(e.target.value)} />
         </div>
         <div>
-            <label>Nome Social: </label>
+            <label>Nome Social: </label><br />
             <input type='text' value={nomeSocial} onChange={(e) => setNomeSocial(e.target.value)} />
         </div>
         <div>
-            <label>Email: </label>
+            <label>Email: </label><br />
             <input type='email' value={email} onChange={(e) => setEmail(e.target.value)} />
         </div>
         <div>
-            <label>Telefone: </label>
+            <label>Telefone: </label><br />
             <input type='text' value={telefone} onChange={(e) => setTelefone(e.target.value)} />
         </div>
         <div>
-            <label>CPF: </label>
+            <label>CPF: </label><br />
             <input type='text' maxLength={11} value={cpf} onChange={(e) => setCPF(e.target.value)} />
         </div>
         <div>
-            <label>Senha: </label>
-            <input type='text' value={senha} onChange={(e) => setSenha(e.target.value)} />
+            <label>Senha: </label><br />
+            <input type='password' value={senha} onChange={(e) => setSenha(e.target.value)} />
         </div>
         <button type='button' onClick={registrarConta}>Registrar</button>
             {campoError && <div style={{color: 'red'}}>{campoError}</div>}
             {nomeError && <div style={{color: 'red'}}>{nomeError}</div>}
             {cpfError && <div style={{color: 'red'}}>{cpfError}</div>}
+            {emailError && <div style={{color: 'red'}}>{emailError}</div>}
         </div>
     )
 }

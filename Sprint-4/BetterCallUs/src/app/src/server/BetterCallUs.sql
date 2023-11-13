@@ -9,7 +9,8 @@ CREATE TABLE IF NOT EXISTS cliente (
     privilegio int,
     email VARCHAR(50),
     telefone VARCHAR(20),
-    nomeSocial VARCHAR(50)
+    nomeSocial VARCHAR(50),
+    UNIQUE KEY uq_cpf_rg (cpf)
 );
 
 CREATE TABLE IF NOT EXISTS ADM (
@@ -18,7 +19,9 @@ CREATE TABLE IF NOT EXISTS ADM (
     cpf varchar(11),
     senha VARCHAR(100),
     privilegio int,
-    departamento VARCHAR(50)
+    email varchar(30),
+    departamento VARCHAR(50),
+    UNIQUE KEY uq_cpf_rg (cpf)
 );
 
 CREATE TABLE IF NOT EXISTS suporte (
@@ -26,7 +29,9 @@ CREATE TABLE IF NOT EXISTS suporte (
     nome VARCHAR(50),
     cpf varchar(11),
     senha VARCHAR(100),
-    privilegio int
+    privilegio int,
+    email varchar(30),
+    UNIQUE KEY uq_cpf_rg (cpf)
 );
 
 CREATE TABLE IF NOT EXISTS Login (

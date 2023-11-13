@@ -11,7 +11,7 @@ app.use(cors());
 const dbConfig = {
     host: 'localhost',
     user: 'root',
-    password: 'fatec',
+    password: 'adm123',
     database:'bettercallus'
 }
 
@@ -19,6 +19,8 @@ async function connect(){
     const connection = await mysql.createConnection(dbConfig);
     return connection;
 }
+
+/* Registro suporte */
 
 app.get('/registroSup', async(req, res) => {
     const connection = await connect();
@@ -29,13 +31,17 @@ app.get('/registroSup', async(req, res) => {
 })
 
 app.post('/registroSup', async(req, res) => {
-    const {nome, cpf, senha, privilegio} = req.body;
+    const {nome, cpf, senha, privilegio, email} = req.body;
     
     const connection = await connect();
-    await connection.execute('INSERT INTO suporte (nome, cpf, senha, privilegio) VALUES(?, ?, ?, ?)', [nome, cpf, senha, privilegio]);
+    await connection.execute('INSERT INTO suporte (nome, cpf, senha, privilegio, email) VALUES(?, ?, ?, ?, ?)', [nome, cpf, senha, privilegio, email]);
 
     res.json({message: 'Registro feito com sucesso'});
 })
+
+
+/* Registro ADM */
+
 
 app.get('/registroAdm', async(req, res) => {
     const connection = await connect();
@@ -46,15 +52,15 @@ app.get('/registroAdm', async(req, res) => {
 })
 
 app.post('/registroAdm', async(req, res) => {
-    const {nome, cpf, senha, privilegio, departamento} = req.body;
+    const {nome, cpf, senha, privilegio, email, departamento} = req.body;
     
     const connection = await connect();
-    await connection.execute('INSERT INTO ADM (nome, cpf, senha, privilegio, departamento) VALUES(?, ?, ?, ?, ?)', [nome, cpf, senha, privilegio, departamento]);
+    await connection.execute('INSERT INTO ADM (nome, cpf, senha, privilegio, email, departamento) VALUES(?, ?, ?, ?, ?, ?)', [nome, cpf, senha, privilegio, email, departamento]);
 
     res.json({message: 'Registro feito com sucesso'});
 })
 
-
+/* Registro clientes */
 
 app.get('/registroCliente', async (req, res) => {
     const connection = await connect();
@@ -75,3 +81,7 @@ app.post('/registroCliente', async(req, res) => {
 app.listen(port, () =>{
     console.log(`Servidor rodando em: http://localhost:${port}`);
 })
+
+
+
+/* Registro de equipamentos */
