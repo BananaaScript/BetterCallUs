@@ -110,27 +110,27 @@ export default class Home extends Component {
 
                     <button className="quadrado">
                         <div className='iconebotao'></div>
-                        <div className='textobotao'>*******</div>
+                        <div className='textobotao'>Como saber se meu computador está com virus ?</div>
                     </button>
 
                     <button className="quadrado">
                         <div className='iconebotao'></div>
-                        <div className='textobotao'>*******</div>
+                        <div className='textobotao'>Como se proteger contra virus e malwares</div>
                     </button>
 
                     <button className="quadrado">
                         <div className='iconebotao'></div>
-                        <div className='textobotao'>*******</div>
+                        <div className='textobotao'>Como livrar meu computador de virus</div>
                     </button>
 
                     <button className="quadrado">
                         <div className='iconebotao'></div>
-                        <div className='textobotao'>*******</div>
+                        <div className='textobotao'>Como virus podem afetar meu computador?</div>
                     </button>
 
                     <button className="quadrado">
                         <div className='iconebotao'></div>
-                        <div className='textobotao'>*******</div>
+                        <div className='textobotao'>O que pode causar virus no meu computador?</div>
                     </button>
 
                     </div>
@@ -141,27 +141,27 @@ export default class Home extends Component {
                     <div className='botoes'>
                     <button className="quadrado">
                         <div className='iconebotao'></div>
-                        <div className='textobotao'>*******</div>
+                        <div className='textobotao'>Computador não está ligando</div>
                     </button>
 
                     <button className="quadrado">
                         <div className='iconebotao'></div>
-                        <div className='textobotao'>*******</div>
+                        <div className='textobotao'>Teclado/Mouse não estão funcionando/Falhas de usb</div>
                     </button>
 
                     <button className="quadrado">
                         <div className='iconebotao'></div>
-                        <div className='textobotao'>*******</div>
+                        <div className='textobotao'>Falha no HD</div>
                     </button>
 
                     <button className="quadrado">
                         <div className='iconebotao'></div>
-                        <div className='textobotao'>*******</div>
+                        <div className='textobotao'>O computador está aquecendo demais</div>
                     </button>
 
                     <button className="quadrado">
                         <div className='iconebotao'></div>
-                        <div className='textobotao'>*******</div>
+                        <div className='textobotao'>O computador está fazendo muito barulho</div>
                     </button>
                     
                     </div>
@@ -174,22 +174,22 @@ export default class Home extends Component {
                     <div className='botoes'>
                     <button className="quadrado">
                         <div className='iconebotao'></div>
-                        <div className='textobotao'>*******</div>
+                        <div className='textobotao'>A tela não acende quando o computador liga.</div>
                     </button>
 
                     <button className="quadrado">
                         <div className='iconebotao'></div>
-                        <div className='textobotao'>*******</div>
+                        <div className='textobotao'>Dispositivos bluetooth não conectando.</div>
                     </button>
 
                     <button className="quadrado">
                         <div className='iconebotao'></div>
-                        <div className='textobotao'>*******</div>
+                        <div className='textobotao'>O som não está saindo.</div>
                     </button>
 
                     <button className="quadrado">
                         <div className='iconebotao'></div>
-                        <div className='textobotao'>*******</div>
+                        <div className='textobotao'></div>
                     </button>
 
                     <button className="quadrado">
