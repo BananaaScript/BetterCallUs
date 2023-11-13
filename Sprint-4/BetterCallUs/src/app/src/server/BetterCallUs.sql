@@ -90,7 +90,14 @@ CREATE TABLE IF NOT EXISTS Respostas (
     FOREIGN KEY (problema_id) REFERENCES Problemas(id)
 );
 
+CREATE TABLE IF NOT EXISTS equipamentos(
+	id INT auto_increment primary key,
+    nome varchar(50),
+    descricao varchar(100)
+);
+
 
 select * from cliente;
 select * from suporte;
 select * from ADM;
+select * from equipamentos;

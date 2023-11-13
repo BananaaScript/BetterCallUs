@@ -85,3 +85,20 @@ app.listen(port, () =>{
 
 
 /* Registro de equipamentos */
+
+app.get('/registroEquip', async (req, res) => {
+    const connection = await connect();
+    const[rows] = await connection.execute('SELECT * FROM equipamentos')
+    connection.end();
+
+    res.json(rows)
+})
+
+app.post('/registroEquip', async(req, res) => {
+    const {nome, descricao} = req.body;
+
+    const connection = await connect();
+    await connection.execute('INSERT INTO equipamentos(nome, descricao) VALUES (?, ?)', [nome, descricao]);
+
+    res.json({message: 'Registro feito com sucesso'});
+})
