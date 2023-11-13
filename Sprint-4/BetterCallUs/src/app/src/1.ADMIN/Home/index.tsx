@@ -2,6 +2,7 @@ import Login from "../../App"
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import '../Home/styles/adm.css'
+import { link } from "fs";
 
 export const Adm = () => {
     Login()
@@ -54,16 +55,22 @@ const updateChamados = () => {
     });
 };
     
-    
+const pagCadastro = () => {
+  window.location.href = "/Cadastro";
+}
+
 
         return(
             <div className="bodyAdm">
                 <div className="privAdm">
                     <h3>Bem vindo! Selecione uma das opções abaixo: </h3>
                     <div className="opcAdm">
-                        <button className="btnAdm">
+                      
+                        <button className="btnAdm" onClick={pagCadastro}>
                             Editar Privilegios
                         </button>
+                      
+
                         <button className="btnAdm">
                             Definir Service Level Agreement (SLA)
                         </button>

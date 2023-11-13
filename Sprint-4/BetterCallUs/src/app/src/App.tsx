@@ -17,7 +17,7 @@ import logoInsta from './styles/img/logoInsta.png';
 import logoTiktok from './styles/img/logoTiktok.png';
 import logoTwitter from './styles/img/logoTwitter.png';
 import logoGithub from './styles/img/logoGithub.png';
-import Cadastro from './pages/Registro';
+import Cadastro from './1.ADMIN/Registro';
 
 
 function App() {
@@ -62,6 +62,7 @@ function App() {
           <Link to='/Administrador'><button>Acessar Interface de Administrador</button></Link>
           <Link to='/edituser'><button>Editar Creedenciais</button></Link>
           <Link to='/Histuser'><button>Historico de Chamadas</button></Link>
+          
           {auth.usuario && <button onClick={handleLogout}>Sair</button>}
         </div>
         </div>
