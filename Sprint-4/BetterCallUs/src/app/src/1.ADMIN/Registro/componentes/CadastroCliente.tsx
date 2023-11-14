@@ -5,7 +5,7 @@ import { response } from 'express';
 import "../styles/registro.css"
 
 export const CadastroCliente = () =>{
-    const [contas, setContas] = useState<Array<{nome:string; cpf:string; senha:string; privilegio:string; email:string; telefone:string; nomeSocial:string }>>([])
+    const [contas, setContas] = useState<Array<Cliente>>([])
     const [nome, setNome] = useState('');
     const [cpf, setCPF] = useState('');
     const [senha, setSenha] = useState('');
@@ -30,6 +30,8 @@ export const CadastroCliente = () =>{
 
     const registrarConta = () =>{
         const privilegio = '0'
+        let Ccliente = new Cliente(nome, cpf, senha, privilegio, email, telefone, nomeSocial)
+        contas.push(Ccliente)
         setNomeError('');
         setCPFError('');
         const padraoNome:RegExp = /^[A-Za-z\s]+$/;
@@ -37,7 +39,7 @@ export const CadastroCliente = () =>{
         const padraoEmail:RegExp = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
 
         if (nome !== '' && padraoNome.test(nome) && nome.trim() !== '' && cpf !== '' && padraoCpf.test(cpf) && cpf.length == 11 && senha !== '' && email !== '' && padraoEmail.test(email) &&telefone !== '' && nomeSocial !== '' &&privilegio === '0'){
-        axios.post('http://localhost:3001/registroCliente', {nome, cpf, senha, privilegio, email, telefone, nomeSocial, })
+            axios.post('http://localhost:3001/registroCliente', {nome, cpf, senha, privilegio, email, telefone, nomeSocial, })
             .then(()=>{
                 setNome('');
                 setNomeSocial('');
@@ -68,7 +70,27 @@ export const CadastroCliente = () =>{
                 setEmailError('forma do email incorreta, tente novamente.');
             }
         }
-        } 
+        }
+        
+        const deletar = (cpf:string) =>{
+            axios.delete(`http://localhost:3001/registroCliente/${cpf}`)
+                .then((response) =>{
+                    updateContas();
+                })
+                .catch((error) =>{
+                    console.error(error)
+                })
+        }
+
+        const updateContas = () => {
+            axios.get('http://localhost:3001/registroCliente')
+              .then((response) => {
+                setContas(response.data);
+              })
+              .catch((error) => {
+                console.error(error);
+              });
+          };
     
     return(
         <div className='bodyCad'>
@@ -102,6 +124,37 @@ export const CadastroCliente = () =>{
             {nomeError && <div style={{color: 'red'}}>{nomeError}</div>}
             {cpfError && <div style={{color: 'red'}}>{cpfError}</div>}
             {emailError && <div style={{color: 'red'}}>{emailError}</div>}
+        
+        <div>
+            <h2>Lista de clientes</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>cpf</th>
+                        <th>email</th>
+                        <th>telefone</th>
+                        <th>nomeSocial</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {contas.map((cliente)=>(
+                            <tr>
+                                <td>{cliente.nome}</td>
+                                <td>{cliente.cpf}</td>
+                                <td>{cliente.email}</td>
+                                <td>{cliente.telefone}</td>
+                                <td>{cliente.nomeSocial}</td>
+                                <td>
+                                    <button onClick={() => deletar(cliente.cpf)}>Excluir</button>
+                                </td>
+                            </tr>
+                        ))}
+                </tbody>
+                </table>
         </div>
+        </div>
+        
     )
 }
