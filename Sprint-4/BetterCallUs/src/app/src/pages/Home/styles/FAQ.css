@@ -67,4 +67,17 @@
     border-color: blueviolet;
     border-style: solid;
   }
-  
+
+
+
+
+  .conteudo-escondido {
+    display: none;
+  }
+
+
+
+
+  #conteudo {
+    margin: 0 40px;
+  }
