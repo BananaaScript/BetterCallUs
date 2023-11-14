@@ -8,8 +8,6 @@ function App() {
   const [titulo, setTitulo] = useState('');
   const [sumario, setSumario] = useState('');
   const [status, setStatus] = useState('');
-  
-/*   const [estadoChamado, setEstadoChamado] = useState('');*/
   const [editingTicketId, setEditingTicketId] = useState<number | null>(null);
 
   const formatarData = (data: string) => {
@@ -84,13 +82,14 @@ function App() {
 
   const handleDelete = (id: number) => {
     axios.delete(`http://localhost:3001/chamados/${id}`)
-      .then((response) => {
-        setChamados(response.data);
+      .then(() => {
+        updateChamados(); 
       })
       .catch((error) => {
         console.error(error);
       });
   };
+  
 
   const updateChamados = () => {
     axios.get('http://localhost:3001/chamados')

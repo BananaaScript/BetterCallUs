@@ -7,6 +7,7 @@ CREATE TABLE chamado (
     titulo VARCHAR(50),
     estado VARCHAR(10) DEFAULT 'aberto',
     sumario TEXT,
+    equipamento VARCHAR(100) DEFAULT 'nenhum'
     status ENUM('Em aguardo', 'Em andamento', 'Finalizado'),
     datacriacao DATETIME DEFAULT CURRENT_TIMESTAMP,
     dataatualizacao DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
