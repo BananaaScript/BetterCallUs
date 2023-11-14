@@ -112,14 +112,27 @@ app.get('/registroEquip', async (req, res) => {
 })
 
 app.post('/registroEquip', async(req, res) => {
-    const {nome, descricao} = req.body;
+    const {numeroSerie, nome, descricao} = req.body;
 
     const connection = await connect();
-    await connection.execute('INSERT INTO equipamentos(nome, descricao) VALUES (?, ?)', [nome, descricao]);
+    await connection.execute('INSERT INTO equipamentos(numeroSerie, nome, descricao) VALUES (?, ?, ?)', [numeroSerie, nome, descricao]);
 
     res.json({message: 'Registro feito com sucesso'});
 })
 
+
+app.delete('/registroEquip/:numeroSerie', async (req, res) => {
+    const { numeroSerie } = req.params;
+  
+    const connection = await connect();
+    await connection.execute('DELETE FROM equipamentos WHERE numeroSerie = ?', [numeroSerie]);
+    connection.end();
+  
+    res.json({ message: 'Equipamento excluído com sucesso' });
+  });
+
+
+/* print da rota do server */
 app.listen(port, () =>{
     console.log(`Servidor rodando em: http://localhost:${port}`);
 })

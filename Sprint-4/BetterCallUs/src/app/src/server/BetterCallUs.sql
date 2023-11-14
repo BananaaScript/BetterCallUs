@@ -92,8 +92,10 @@ CREATE TABLE IF NOT EXISTS Respostas (
 
 CREATE TABLE IF NOT EXISTS equipamentos(
 	id INT auto_increment primary key,
+    numeroSerie varchar(10),
     nome varchar(50),
-    descricao varchar(100)
+    descricao varchar(100),
+    unique key nSerie (numeroSerie)
 );
 
 
