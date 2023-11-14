@@ -98,6 +98,8 @@ CREATE TABLE IF NOT EXISTS equipamentos(
     unique key nSerie (numeroSerie)
 );
 
+INSERT INTO ADM (`nome`, `cpf`, `senha`, `privilegio`, `email`, `departamento`) 
+VALUES ('O_Gay', '11111111111', '123!@#qweQWE', 2, 'adm@gmail.com', 'sim');
 
 select * from cliente;
 select * from suporte;

@@ -85,10 +85,9 @@ function App() {
         <Route path="/ticket" element={<RequireAuth><TicketFunction /></RequireAuth>} />
         <Route path='/edituser' element={<RequireAuth><Edituser /></RequireAuth>} />
         <Route path='/histuser' element={<RequireAuth><Histuser /></RequireAuth>} />
-        <Route path="/Chamadassup" element={<RequireAuth><Chamadassup /></RequireAuth>} />
-        <Route path="/Administrador" element={<RequireAuth><Adm /></RequireAuth>} />
+        <Route path="/Chamadassup" element={<RequireAuth>{auth.tabela === 'SUP' ? <Chamadassup /> : <Chamadassup />}</RequireAuth>} />
+        <Route path="/Administrador" element={<RequireAuth>{auth.tabela === 'ADM' ? <Adm /> : <Chamadassup />}</RequireAuth>} />
         <Route path="/Cadastro" element={<RequireAuth><Cadastro></Cadastro></RequireAuth>} />
-
       </Routes>
 
       

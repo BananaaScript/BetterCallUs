@@ -5,6 +5,7 @@ import { UseAPI } from "../../hooks/useAPI";
 
 export const AuthProvider = ({children}: {children: JSX.Element}) =>{
     const [usuario, setUser] = useState<Conta | null>(null);
+    const [tabela, setTable] = useState<string | null>(localStorage.getItem('authTable') || null);
     const api = UseAPI()
 
     useEffect(() => {
@@ -25,6 +26,7 @@ export const AuthProvider = ({children}: {children: JSX.Element}) =>{
         const data = await api.login(email, senha);
         if(data.usuario && data.token){
             setUser(data.usuario)
+            setTable(data.tabela);
             setToken(data.token)
             return true
         }
@@ -38,11 +40,12 @@ export const AuthProvider = ({children}: {children: JSX.Element}) =>{
     const logout = async() =>{
         await api.logout()
         setUser(null)
+        setTable("")
         setToken("")
     }
 
     return(
-        <AuthContext.Provider value={{usuario, login, logout}}>
+        <AuthContext.Provider value={{usuario, tabela, login, logout}}>
             {children}
         </AuthContext.Provider>
     )

@@ -11,7 +11,7 @@ app.use(cors());
 const dbConfig = {
     host: 'localhost',
     user: 'root',
-    password: 'adm123',
+    password: 'fatec',
     database:'bettercallus'
 }
 
@@ -130,6 +130,48 @@ app.delete('/registroEquip/:numeroSerie', async (req, res) => {
   
     res.json({ message: 'Equipamento excluído com sucesso' });
   });
+
+/* Validar Token */
+app.post('/validate', async (req, res) => {
+    const { token } = req.body;
+    res.json({ token });
+});
+
+/* Verificar Conta */
+app.post('/login', async (req, res) => {
+    const { email, senha } = req.body;
+
+    try {
+        const connection = await connect();
+
+        /* Verificar Cliente */
+        const [clienteRows] = await connection.execute('SELECT * FROM cliente WHERE email = ? AND senha = ?', [email, senha]);
+        if (clienteRows.length > 0) {
+            connection.end();
+            return res.json({ usuario: clienteRows, tabela: 'cliente' });
+        }
+
+        /* Verificar ADM */
+        const [admRows] = await connection.execute('SELECT * FROM ADM WHERE email = ? AND senha = ?', [email, senha]);
+        if (admRows.length > 0) {
+            connection.end();
+            return res.json({ usuario: admRows, tabela: 'ADM' });
+        }
+
+        /* Verificar Suporte */
+        const [suporteRows] = await connection.execute('SELECT * FROM suporte WHERE email = ? AND senha = ?', [email, senha]);
+        if (suporteRows.length > 0) {
+            connection.end();
+            return res.json({ usuario: suporteRows, tabela: 'suporte' });
+        }
+
+        connection.end();
+        res.status(401).json({ error: 'Credenciais inválidas' });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Erro interno no servidor' });
+    }
+});
 
 
 /* print da rota do server */
