@@ -48,23 +48,23 @@ export default class Home extends Component {
 
                     <div className='botoes'>
                         
-                    <Botao textoBotao="Clique Aqui 1" conteudo={
+                    <Botao textoBotao="Sistema Operacional Incompatível" conteudo={
                     <div>Conteúdo do Botão 1</div>
                     } />
 
-                    <Botao textoBotao="Clique Aqui 1" conteudo={
+                    <Botao textoBotao="Problemas com Atualização de Software" conteudo={
                     <div>Conteúdo do Botão 1</div>
                     } />
 
-                    <Botao textoBotao="Clique Aqui 1" conteudo={
+                    <Botao textoBotao="Computador com desempenho lento" conteudo={
                     <div>Conteúdo do Botão 1</div>
                     } />
 
-                    <Botao textoBotao="Clique Aqui 1" conteudo={
+                    <Botao textoBotao="Como ter uma boa gestão de Armazenamento ?" conteudo={
                     <div>Conteúdo do Botão 1</div>
                     } />
 
-                    <Botao textoBotao="Clique Aqui 1" conteudo={
+                    <Botao textoBotao="Problemas ao tentar abrir um programa" conteudo={
                     <div>Conteúdo do Botão 1</div>
                     } />
 
@@ -78,23 +78,23 @@ export default class Home extends Component {
 
                     <div className='botoes'>
                         
-                    <Botao textoBotao="Clique Aqui 1" conteudo={
+                    <Botao textoBotao="Como criar senhas fortes ?" conteudo={
                     <div>Conteúdo do Botão 1</div>
                     } />
 
-                    <Botao textoBotao="Clique Aqui 1" conteudo={
+                    <Botao textoBotao="Problemas de Firewall" conteudo={
                     <div>Conteúdo do Botão 1</div>
                     } />
 
-                    <Botao textoBotao="Clique Aqui 1" conteudo={
+                    <Botao textoBotao="Autenticação de dois fatores e outras formas de verificação" conteudo={
                     <div>Conteúdo do Botão 1</div>
                     } />
 
-                    <Botao textoBotao="Clique Aqui 1" conteudo={
+                    <Botao textoBotao="Invandiram minha conta, e agora ?" conteudo={
                     <div>Conteúdo do Botão 1</div>
                     } />
 
-                    <Botao textoBotao="Clique Aqui 1" conteudo={
+                    <Botao textoBotao="Segurança de rede" conteudo={
                     <div>Conteúdo do Botão 1</div>
                     } />
 
@@ -107,23 +107,23 @@ export default class Home extends Component {
 
                     <div className='botoes'>
                         
-                    <Botao textoBotao="Clique Aqui 1" conteudo={
+                    <Botao textoBotao="Como saber se meu computador está com vírus ?" conteudo={
                     <div>Conteúdo do Botão 1</div>
                     } />
 
-                    <Botao textoBotao="Clique Aqui 1" conteudo={
+                    <Botao textoBotao="Como se proteger contra virus e malwares" conteudo={
                     <div>Conteúdo do Botão 1</div>
                     } />
 
-                    <Botao textoBotao="Clique Aqui 1" conteudo={
+                    <Botao textoBotao="Como livrar meu computador de vírus e ameaças" conteudo={
                     <div>Conteúdo do Botão 1</div>
                     } />
 
-                    <Botao textoBotao="Clique Aqui 1" conteudo={
+                    <Botao textoBotao="Como virus podem afetar meu computador ?" conteudo={
                     <div>Conteúdo do Botão 1</div>
                     } />
 
-                    <Botao textoBotao="Clique Aqui 1" conteudo={
+                    <Botao textoBotao="O que pode causar virus no meu computador ?" conteudo={
                     <div>Conteúdo do Botão 1</div>
                     } />
 
@@ -137,23 +137,23 @@ export default class Home extends Component {
 
                     <div className='botoes'>
                         
-                    <Botao textoBotao="Clique Aqui 1" conteudo={
+                    <Botao textoBotao="Computador não liga" conteudo={
                     <div>Conteúdo do Botão 1</div>
                     } />
 
-                    <Botao textoBotao="Clique Aqui 1" conteudo={
+                    <Botao textoBotao="Dispositivos USB não conectam" conteudo={
                     <div>Conteúdo do Botão 1</div>
                     } />
 
-                    <Botao textoBotao="Clique Aqui 1" conteudo={
+                    <Botao textoBotao="Como saber a saúde do meu HD/SSD ?" conteudo={
                     <div>Conteúdo do Botão 1</div>
                     } />
 
-                    <Botao textoBotao="Clique Aqui 1" conteudo={
+                    <Botao textoBotao="O computador está aquecendo muito" conteudo={
                     <div>Conteúdo do Botão 1</div>
                     } />
 
-                    <Botao textoBotao="Clique Aqui 1" conteudo={
+                    <Botao textoBotao="O computador está fazendo muito barulho" conteudo={
                     <div>Conteúdo do Botão 1</div>
                     } />
 
@@ -167,23 +167,23 @@ export default class Home extends Component {
                     
                     <div className='botoes'>
                         
-                    <Botao textoBotao="Clique Aqui 1" conteudo={
+                    <Botao textoBotao="O computador não dá video ao ligar" conteudo={
                     <div>Conteúdo do Botão 1</div>
                     } />
 
-                    <Botao textoBotao="Clique Aqui 1" conteudo={
+                    <Botao textoBotao="Computador sem áudio" conteudo={
                     <div>Conteúdo do Botão 1</div>
                     } />
 
-                    <Botao textoBotao="Clique Aqui 1" conteudo={
+                    <Botao textoBotao="Como atualizar meus drivers de video ?" conteudo={
                     <div>Conteúdo do Botão 1</div>
                     } />
 
-                    <Botao textoBotao="Clique Aqui 1" conteudo={
+                    <Botao textoBotao="Como atualizar meus drivers de áudio ?" conteudo={
                     <div>Conteúdo do Botão 1</div>
                     } />
 
-                    <Botao textoBotao="Clique Aqui 1" conteudo={
+                    <Botao textoBotao="Riscos ou Artefatos na tela" conteudo={
                     <div>Conteúdo do Botão 1</div>
                     } />
 
