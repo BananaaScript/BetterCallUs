@@ -78,11 +78,17 @@ app.post('/registroCliente', async(req, res) => {
 
     res.json({message: 'Registro feito com sucesso'});
 })
-app.listen(port, () =>{
-    console.log(`Servidor rodando em: http://localhost:${port}`);
-})
 
-
+app.delete('/registroCliente/:cpf', async (req, res) => {
+    const { id } = req.params;
+  
+    const connection = await connect();
+    await connection.execute('DELETE FROM cliente WHERE id = ?', [id]);
+    connection.end();
+  
+    res.json({ message: 'Cliente excluído com sucesso' });
+  });
+  
 
 /* Registro de equipamentos */
 
@@ -101,4 +107,8 @@ app.post('/registroEquip', async(req, res) => {
     await connection.execute('INSERT INTO equipamentos(nome, descricao) VALUES (?, ?)', [nome, descricao]);
 
     res.json({message: 'Registro feito com sucesso'});
+})
+
+app.listen(port, () =>{
+    console.log(`Servidor rodando em: http://localhost:${port}`);
 })

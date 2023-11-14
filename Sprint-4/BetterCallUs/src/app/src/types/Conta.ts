@@ -1,6 +1,6 @@
 export default class Conta{
     public nome: string;
-    private cpf: string;
+    public cpf: string;
     public senha: string;
     public privilegio: string;
     public email:string

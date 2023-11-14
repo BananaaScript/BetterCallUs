@@ -29,6 +29,7 @@ const Cadastro = () =>{
                 {tipoCadastro === 'suporte' && <CadastroSuporte/>}
                 {tipoCadastro === 'adm' && <CadastroAdm/>}
                 {tipoCadastro === 'equipamento' && <CadastroEquipamento />}
+
         
             </div>
         </div>
