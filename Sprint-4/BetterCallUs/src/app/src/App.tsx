@@ -77,15 +77,6 @@ function App() {
           </div>
           
         </div>
-
-          <div className='dois'>
-          
-          
-          
-          
-          
-          
-        </div>
         </div>
         
       <Routes>
