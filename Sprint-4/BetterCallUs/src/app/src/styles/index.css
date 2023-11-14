@@ -206,3 +206,20 @@ footer {
   background-color: rgb(112, 16, 202);
   border-radius: 1000px;
 }
+
+.menuHome {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  position: absolute;
+  margin-top: 425px;
+  margin-right: 0px;
+}
+
+.opcMenuHome button {
+  margin: 1px;
+  width: 120px;
+  padding: 1px;
+  color: aliceblue;
+  border-radius: 20px;
+}

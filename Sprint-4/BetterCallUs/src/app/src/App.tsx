@@ -20,6 +20,7 @@ import logoGithub from './styles/img/logoGithub.png';
 import Cadastro from './1.ADMIN/Registro';
 
 
+
 function App() {
   const auth = useContext(AuthContext);
   const navigate = useNavigate();
@@ -28,6 +29,16 @@ function App() {
   const handleLogout = async () => {
     await auth.logout();
     navigate('/');
+  }
+
+  const [menuAberto, setMenuAberto] = useState(false);
+  const abrirMenu = () => {
+    setMenuAberto(!menuAberto);
+  };
+
+  const fecharMenu = () => {
+    abrirMenu();
+    handleLogout();
   }
 
   const isChamadassupPage = window.location.pathname === '/Chamadassup';
@@ -46,24 +57,34 @@ function App() {
             <Link to='/'><img id='logo' alt='logo' src='logo.png' /></Link>
             
           </div>
-          <div className='menuAPP'>
-            <button>
+          <div className='menuAPP'>      
+             
+            <button onClick={abrirMenu}>
               <hr />
               <hr />
               <hr />
             </button>
+            {menuAberto && (
+              <div className='menuHome'>
+                <div className='opcMenuHome'><Link to='/Chamadassup'><button onClick={abrirMenu}>Acessar Interface de Suporte</button></Link></div>
+                <div className='opcMenuHome'><Link to='/Administrador'><button onClick={abrirMenu}>Acessar Interface de Administrador</button></Link></div>
+                <div className='opcMenuHome'><Link to='/edituser'><button onClick={abrirMenu}>Editar Creedenciais</button></Link></div>
+                <div className='opcMenuHome'><Link to='/Histuser'><button onClick={abrirMenu}>Historico de Chamadas</button></Link></div>
+                <div className='opcMenuHome'>{auth.usuario && <button onClick={fecharMenu}>Sair</button>}</div>
+              </div>
+               )}
           </div>
           </div>
           
         </div>
 
           <div className='dois'>
-          <Link to='/Chamadassup'><button>Acessar Interface de Suporte</button></Link>
-          <Link to='/Administrador'><button>Acessar Interface de Administrador</button></Link>
-          <Link to='/edituser'><button>Editar Creedenciais</button></Link>
-          <Link to='/Histuser'><button>Historico de Chamadas</button></Link>
           
-          {auth.usuario && <button onClick={handleLogout}>Sair</button>}
+          
+          
+          
+          
+          
         </div>
         </div>
         
