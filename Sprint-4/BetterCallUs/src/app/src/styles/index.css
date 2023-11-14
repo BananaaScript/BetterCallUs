@@ -34,7 +34,6 @@ code {
   flex: 1;
   width: 180px;
   height: 60px;
-
   
 }
 
@@ -54,7 +53,8 @@ code {
   color: antiquewhite ;
   cursor: pointer;
   font-size: 100%;
-  
+  border-radius: 5%;
+
 
 }
 
@@ -85,7 +85,7 @@ img#logo {
     max-width: 100%;
     width: 70px;
     height: 70px;
-    border-radius: 50%;
+    border-radius: 10%;
     background-color: #A35AFF;
     border-style: hidden;
     cursor: pointer;
@@ -210,5 +210,29 @@ footer {
   width: 120px;
   padding: 1px;
   color: aliceblue;
-  border-radius: 20px;
+  font-family: fonte ;
+  border-radius: 12%;
+}
+
+/* SuaAnimacao.css */
+.menu-animacao-enter {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.menu-animacao-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.menu-animacao-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.menu-animacao-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 300ms, transform 300ms;
 }
