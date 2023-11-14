@@ -30,6 +30,7 @@ export const CadastroEquipamento = () =>{
             .then(()=>{
                 setNome('');
                 setDescricao('');
+                setNumeroSerie('');
             })
             .catch((error) =>{
                 console.error(error)
