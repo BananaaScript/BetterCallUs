@@ -11,7 +11,7 @@ app.use(cors());
 const dbConfig = {
   host: 'localhost',
   user: 'root',
-  password: 'Gst4v0!!',
+  password: 'fatec',
   database: 'novoteste',
 };
 
@@ -20,8 +20,10 @@ async function connect() {
   return connection;
 }
 
+
+
 const calcularEstado = (dataAtualizacao, prioridade) => {
-  const limiteHoras = 3;
+  const limiteHoras = 2;
   const dataAtualizacaoTimestamp = new Date(dataAtualizacao).getTime();
   const agoraTimestamp = new Date().getTime();
   const diferencaHoras = (agoraTimestamp - dataAtualizacaoTimestamp) / (1000 * 60 * 60);
@@ -31,7 +33,7 @@ const calcularEstado = (dataAtualizacao, prioridade) => {
 
 app.get('/chamados', async (req, res) => {
   const connection = await connect();
-  const [rows] = await connection.execute('SELECT * FROM chamado');
+  const [rows] = await connection.execute('SELECT * FROM chamado ORDER BY tempoderesposta ASC');
   connection.end();
 
   const chamadosComEstado = rows.map((chamado) => ({
@@ -46,6 +48,36 @@ tempoderesposta = 3
 
 app.post('/chamados', async (req, res) => {
   const { area, titulo, sumario, status, estado } = req.body; 
+
+  let tempoderesposta;
+
+  switch (area) {
+    case 'Problema de Conexão':
+      tempoderesposta = 1;
+      break;
+    case 'Falha de Software':
+      tempoderesposta = 2;
+      break;
+    case 'Problema de Segurança':
+      tempoderesposta = 3;
+      break;
+    case 'Vírus e Malware':
+      tempoderesposta = 4;
+      break;
+    case 'Falha de Hardware':
+      tempoderesposta = 5;
+      break;
+    case 'Dúvidas de Programação':
+      tempoderesposta = 6;
+      break;
+    case 'Problemas de Impressão':
+      tempoderesposta = 7;
+      break;
+
+    default:
+      tempoderesposta = 8; 
+  }
+
 
   const connection = await connect();
   await connection.execute('INSERT INTO chamado (area, titulo, sumario, status, estado, tempoderesposta) VALUES (?, ?, ?, ?, ?, ?)', [area || null, titulo, sumario, status, estado, tempoderesposta]);
