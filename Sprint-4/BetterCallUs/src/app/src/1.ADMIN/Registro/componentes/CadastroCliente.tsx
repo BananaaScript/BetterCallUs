@@ -30,8 +30,8 @@ export const CadastroCliente = () =>{
 
     const registrarConta = () =>{
         const privilegio = '0'
-        let Ccliente = new Cliente(nome, cpf, senha, privilegio, email, telefone, nomeSocial)
-        contas.push(Ccliente)
+        let ContaCliente = new Cliente(nome, cpf, senha, privilegio, email, telefone, nomeSocial)
+        contas.push(ContaCliente)
         setNomeError('');
         setCPFError('');
         const padraoNome:RegExp = /^[A-Za-z\s]+$/;

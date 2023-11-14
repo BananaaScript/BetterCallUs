@@ -39,6 +39,16 @@ app.post('/registroSup', async(req, res) => {
     res.json({message: 'Registro feito com sucesso'});
 })
 
+app.delete('/registroSup/:cpf', async (req, res) => {
+    const { cpf } = req.params;
+  
+    const connection = await connect();
+    await connection.execute('DELETE FROM suporte WHERE cpf = ?', [cpf]);
+    connection.end();
+  
+    res.json({ message: 'Suporte excluído com sucesso' });
+  });
+
 
 /* Registro ADM */
 
@@ -59,6 +69,7 @@ app.post('/registroAdm', async(req, res) => {
 
     res.json({message: 'Registro feito com sucesso'});
 })
+
 
 /* Registro clientes */
 

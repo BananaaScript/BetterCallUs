@@ -3,9 +3,10 @@ import Cliente from '../../../types/Conta';
 import axios from 'axios';
 import { response } from 'express';
 import "../styles/registro.css"
+import Conta from '../../../types/Conta';
 
 export const CadastroSuporte = () =>{
-    const [contas, setContas] = useState<Array<{nome:string; cpf:string; senha:string;privilegio:string; email:string }>>([])
+    const [contas, setContas] = useState<Array<Conta>>([])
     const [nome, setNome] = useState('');
     const [cpf, setCPF] = useState('');
     const [senha, setSenha] = useState('');
@@ -28,6 +29,8 @@ export const CadastroSuporte = () =>{
 
     const registrarConta = () =>{
         const privilegio = '1'
+        let ContaSup = new Conta(nome, cpf, senha, privilegio, email)
+        contas.push(ContaSup)
         setNomeError('');
         setCPFError('');
         const padraoNome:RegExp = /^[A-Za-z\s]+$/;
@@ -61,6 +64,25 @@ export const CadastroSuporte = () =>{
             }
         }
     }
+    const deletar = (cpf:string) =>{
+        axios.delete(`http://localhost:3001/registroSup/${cpf}`)
+            .then((response) =>{
+                updateContas();
+            })
+            .catch((error) =>{
+                console.error(error)
+            })
+    }
+    const updateContas = () => {
+        axios.get('http://localhost:3001/registroSup')
+          .then((response) => {
+            setContas(response.data);
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+      };
+
     return(
         <div className='bodyCad'>
         <h2>Registro de conta suporte</h2>
@@ -85,6 +107,32 @@ export const CadastroSuporte = () =>{
             {nomeError && <div style={{color: 'red'}}>{nomeError}</div>}
             {cpfError && <div style={{color: 'red'}}>{cpfError}</div>}
             {emailError && <div style={{color: 'red'}}>{emailError}</div>}
+
+        <div>
+            <h2>Lista de suporte</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>cpf</th>
+                        <th>email</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {contas.map((suporte)=>(
+                            <tr key={suporte.cpf}>
+                                <td>{suporte.nome}</td>
+                                <td>{suporte.cpf}</td>
+                                <td>{suporte.email}</td>
+                                <td>
+                                    <button onClick={() => deletar(suporte.cpf)}>Excluir</button>
+                                </td>
+                            </tr>
+                        ))}
+                </tbody>
+                </table>
+        </div>
         </div>
     )
 }

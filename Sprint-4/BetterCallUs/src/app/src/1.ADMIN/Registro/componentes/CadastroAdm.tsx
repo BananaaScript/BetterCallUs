@@ -5,7 +5,7 @@ import { response } from 'express';
 import "../styles/registro.css"
 
 export const CadastroAdm = () =>{
-    const [contas, setContas] = useState<Array<{nome:string; cpf:string; senha:string; privilegio:string; departamento:string }>>([])
+    const [contas, setContas] = useState<Array<ADM>>([])
     const [nome, setNome] = useState('');
     const [cpf, setCPF] = useState('');
     const [senha, setSenha] = useState('');
@@ -28,6 +28,8 @@ export const CadastroAdm = () =>{
 
     const registrarConta = () =>{
         const privilegio = '2'
+        let ContaAdm = new ADM(nome, cpf, senha, privilegio, email, departamento)
+        contas.push(ContaAdm)
         setNomeError('');
         setCPFError('');
         const padraoNome:RegExp = /^[A-Za-z\s]+$/;
@@ -94,6 +96,30 @@ export const CadastroAdm = () =>{
             {nomeError && <div style={{color: 'red'}}>{nomeError}</div>}
             {cpfError && <div style={{color: 'red'}}>{cpfError}</div>}
             {emailError && <div style={{color: 'red'}}>{emailError}</div>}
+
+        <div>
+            <h2>Lista de administradores</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>cpf</th>
+                        <th>email</th>
+                        <th>Departamento</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {contas.map((adm)=>(
+                            <tr key={adm.cpf}>
+                                <td>{adm.nome}</td>
+                                <td>{adm.cpf}</td>
+                                <td>{adm.email}</td>
+                                <td>{adm.departamento}</td>
+                            </tr>
+                        ))}
+                </tbody>
+                </table>
+        </div>
 
         </div>
     )
