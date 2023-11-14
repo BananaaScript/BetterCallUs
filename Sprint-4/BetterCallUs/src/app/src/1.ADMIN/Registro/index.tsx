@@ -24,11 +24,13 @@ const Cadastro = () =>{
                 <button className="buttonCadUser" onClick={() => EscolherCadastro('equipamento')} >Equipamentos</button>
             </div>
             
-
-            {tipoCadastro === 'cliente' && <CadastroCliente/>}
-            {tipoCadastro === 'suporte' && <CadastroSuporte/>}
-            {tipoCadastro === 'adm' && <CadastroAdm/>}
-            {tipoCadastro === 'equipamento' && <CadastroEquipamento />}
+            <div className="opcCadUser">
+                {tipoCadastro === 'cliente' && <CadastroCliente/>}
+                {tipoCadastro === 'suporte' && <CadastroSuporte/>}
+                {tipoCadastro === 'adm' && <CadastroAdm/>}
+                {tipoCadastro === 'equipamento' && <CadastroEquipamento />}
+        
+            </div>
         </div>
     )
 }

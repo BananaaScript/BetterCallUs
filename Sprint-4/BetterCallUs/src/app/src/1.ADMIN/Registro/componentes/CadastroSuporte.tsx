@@ -62,25 +62,25 @@ export const CadastroSuporte = () =>{
         }
     }
     return(
-        <div>
+        <div className='bodyCad'>
         <h2>Registro de conta suporte</h2>
         <div>
             <label>Nome: </label><br />
-            <input type='text' value={nome} onChange={(e) => setNome(e.target.value)} />
+            <input className='inputCadUser' type='text' value={nome} onChange={(e) => setNome(e.target.value)} />
         </div>
         <div>
             <label>Email: </label><br />
-            <input type='email' value={email} onChange={(e) => setEmail(e.target.value)} />
+            <input className='inputCadUser' type='email' value={email} onChange={(e) => setEmail(e.target.value)} />
         </div>
         <div>
             <label>CPF: </label><br />
-            <input type='text' maxLength={11} value={cpf} onChange={(e) => setCPF(e.target.value)} />
+            <input className='inputCadUser' type='text' maxLength={11} value={cpf} onChange={(e) => setCPF(e.target.value)} />
         </div>
         <div>
             <label>Senha: </label><br />
-            <input type='password' value={senha} onChange={(e) => setSenha(e.target.value)} />
+            <input className='inputCadUser' type='password' value={senha} onChange={(e) => setSenha(e.target.value)} />
         </div>
-        <button type='button' onClick={registrarConta}>Registrar</button>
+        <button className='buttonCadUser' type='button' onClick={registrarConta}>Registrar</button>
             {campoError && <div style={{color: 'red'}}>{campoError}</div>}
             {nomeError && <div style={{color: 'red'}}>{nomeError}</div>}
             {cpfError && <div style={{color: 'red'}}>{cpfError}</div>}

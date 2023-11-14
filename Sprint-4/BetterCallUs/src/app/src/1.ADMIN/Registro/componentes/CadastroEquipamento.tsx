@@ -41,17 +41,17 @@ export const CadastroEquipamento = () =>{
         }
     }
     return(
-        <div>
+        <div className="bodyCad">
         <h2>Registro de equipamento</h2>
         <div>
             <label>Nome: </label><br />
-            <input type='text' value={nome} onChange={(e) => setNome(e.target.value)} />
+            <input className='inputCadUser' type='text' value={nome} onChange={(e) => setNome(e.target.value)} />
         </div>
         <div>
             <label>Descrição: </label><br />
-            <input type='text' value={descricao} onChange={(e) => setDescricao(e.target.value)} />
+            <input className='inputCadUser' type='text' value={descricao} onChange={(e) => setDescricao(e.target.value)} />
         </div>
-        <button type='button' onClick={RegistrarEquipamento}>Registrar</button>
+        <button className="buttonCadUser" type='button' onClick={RegistrarEquipamento}>Registrar</button>
             {campoError && <div style={{color: 'red'}}>{campoError}</div>}
             {nomeError && <div style={{color: 'red'}}>{nomeError}</div>}
         </div>

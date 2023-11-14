@@ -104,27 +104,7 @@ export const Chamadassup = () => {
 //===============================================
 
   return (
-    <div className='bodyTicket' >
-      <div className='colunaTicket'>
-      {tickets.map((ticket, index) => (
-        <div className="sidenav" key={index} style={{ border: '1px solid black' }}>
-          <p className='linha'>
-          <p>sumario: {ticket.sumario}</p>
-          <p>prioridade: {ticket.prioridade}</p>
-          <p>status: {ticket.status}</p>
-          </p>
-        </div>
-      ))}
-      </div>
-      <div className="main">
+      <p>pokas</p>
 
-        
-      </div>
-
-{/*         <div className='notepad'>
-            <h1>Meu Bloco de Notas</h1>
-            <textarea id="textArea" placeholder="Digite suas notas aqui..."></textarea>
-        </div> */}
-    </div>
 )
 }
