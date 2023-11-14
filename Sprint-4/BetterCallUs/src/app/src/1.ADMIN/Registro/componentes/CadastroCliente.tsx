@@ -140,7 +140,7 @@ export const CadastroCliente = () =>{
                 </thead>
                 <tbody>
                     {contas.map((cliente)=>(
-                            <tr>
+                            <tr key={cliente.cpf}>
                                 <td>{cliente.nome}</td>
                                 <td>{cliente.cpf}</td>
                                 <td>{cliente.email}</td>
