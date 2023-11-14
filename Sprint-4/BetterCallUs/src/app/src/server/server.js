@@ -80,10 +80,10 @@ app.post('/registroCliente', async(req, res) => {
 })
 
 app.delete('/registroCliente/:cpf', async (req, res) => {
-    const { id } = req.params;
+    const { cpf } = req.params;
   
     const connection = await connect();
-    await connection.execute('DELETE FROM cliente WHERE id = ?', [id]);
+    await connection.execute('DELETE FROM cliente WHERE cpf = ?', [cpf]);
     connection.end();
   
     res.json({ message: 'Cliente excluído com sucesso' });

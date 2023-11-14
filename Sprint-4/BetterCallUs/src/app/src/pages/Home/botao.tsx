@@ -13,6 +13,9 @@ const Botao: React.FC<BotaoProps> = ({ conteudo, textoBotao }) => {
     setIsContentVisible(!isContentVisible);
   };
 
+
+
+  
   return (
     <>
       <button className="quadrado" onClick={toggleContent}>

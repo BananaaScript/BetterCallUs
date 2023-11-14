@@ -80,4 +80,13 @@
 
   #conteudo {
     margin: 0 40px;
+    background-color: white;
+    border: solid blueviolet 6px;
+  }
+
+  .textoproblema {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    margin: 80px;
   }
