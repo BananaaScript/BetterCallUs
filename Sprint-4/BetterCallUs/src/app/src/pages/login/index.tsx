@@ -9,7 +9,6 @@ export default function Login() {
   const [senha, setSenha] = useState("");
   const [privi, setPrivi] = useState("");
   const emailRegex:RegExp = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i; 
-  const senhaRegex:RegExp = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#])[0-9a-zA-Z$*&@#]{8,}$/
   const auth = useContext(AuthContext);
   const navigate = useNavigate()
 
@@ -32,10 +31,7 @@ export default function Login() {
     if(emailRegex.test(email) === false){
       alert('Email incorreto, tente novamente')
     }
-    if(senhaRegex.test(senha) === false){
-      alert('Senha deve conter 8 caracteres mínimos, uma letra maiúscula e símbolos e números')
-    }
-    if (email !== ''&& emailRegex.test(email) && senha !== '' && senhaRegex.test(senha) && privi !== '') {
+    if (email !== ''&& emailRegex.test(email) && senha !== '' &&  privi !== '') {
       const logado = await auth.login(email, senha, privi);
       if (logado && privi === 'suporte') {
         navigate('/Chamadassup')

@@ -28,8 +28,6 @@ export const CadastroAdm = () =>{
 
     const registrarConta = () =>{
         const privilegio = '2'
-        let ContaAdm = new ADM(nome, cpf, senha, privilegio, email, departamento)
-        contas.push(ContaAdm)
         setNomeError('');
         setCPFError('');
         const padraoNome:RegExp = /^[A-Za-z\s]+$/;
@@ -37,13 +35,16 @@ export const CadastroAdm = () =>{
         const padraoEmail:RegExp = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
         
         if (nome !== '' && padraoNome.test(nome) && nome.trim() !== '' && cpf !== '' && padraoCpf.test(cpf) && cpf.length == 11 && departamento !== '' && senha !== '' && padraoEmail.test(email) &&privilegio === '2'){
-        axios.post('http://localhost:3001/registroAdm', {nome, cpf, senha, privilegio, email, departamento})
-            .then(() =>{
-                setNome('');
-                setCPF('');
-                setEmail('');
-                setSenha('');
-                setDepartamento('');
+            let ContaAdm = new ADM(nome, cpf, senha, privilegio, email, departamento)
+            contas.push(ContaAdm)
+            
+            axios.post('http://localhost:3001/registroAdm', {nome, cpf, senha, privilegio, email, departamento})
+                .then(() =>{
+                    setNome('');
+                    setCPF('');
+                    setEmail('');
+                    setSenha('');
+                    setDepartamento('');
             })
             .catch((error) =>{
                 console.error(error)

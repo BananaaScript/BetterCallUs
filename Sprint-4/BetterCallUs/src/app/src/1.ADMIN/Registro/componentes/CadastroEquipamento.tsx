@@ -22,10 +22,10 @@ export const CadastroEquipamento = () =>{
 
     const RegistrarEquipamento = () =>{
         const padraoNome:RegExp = /^[A-Za-z\s]+$/;
-        let CadEquip = new equipamento(numeroSerie, nome, descricao)
-        equipamentos.push(CadEquip)
         
         if (nome !== '' && padraoNome.test(nome) && descricao !== '' && numeroSerie !== ''){
+            let CadEquip = new equipamento(numeroSerie, nome, descricao)
+            equipamentos.push(CadEquip)
             axios.post('http://localhost:3001/registroEquip', {numeroSerie ,nome, descricao, })
             .then(()=>{
                 setNome('');
