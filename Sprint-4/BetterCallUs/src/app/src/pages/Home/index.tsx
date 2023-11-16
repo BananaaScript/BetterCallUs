@@ -112,23 +112,136 @@ export default class Home extends Component {
                     <div className='botoes'>
                         
                     <Botao textoBotao="Sistema Operacional Incompatível" conteudo={
-                    <div className='textoproblema'>Conteúdo do Botão 1</div>
+                    <div className='textoproblema'><p><strong>Sistema Operacional Incompatível</strong></p>
+
+                    <p>Se você está enfrentando problemas de incompatibilidade do sistema operacional, é importante abordar a questão para garantir um funcionamento adequado do seu computador. Aqui estão algumas etapas que podem ajudar a lidar com problemas de incompatibilidade do sistema operacional:</p>
+                    
+                    <p>1. <strong>Verifique os Requisitos do Sistema:</strong> Certifique-se de que o sistema operacional instalado atende aos requisitos mínimos do seu hardware. Se necessário, considere atualizar ou fazer downgrade do sistema operacional.</p><br/>
+                    
+                    <p>2. <strong>Atualize Drivers:</strong> Mantenha os drivers do seu hardware atualizados. Drivers desatualizados podem causar incompatibilidades. Visite o site do fabricante para baixar as versões mais recentes.</p><br/>
+                    
+                    <p>3. <strong>Compatibilidade de Aplicativos:</strong> Verifique se os aplicativos que você utiliza são compatíveis com a versão do sistema operacional. Alguns programas podem precisar de atualizações para funcionar corretamente.</p><br/>
+                    
+                    <p>4. <strong>Considere Atualizar o Sistema Operacional:</strong> Se o seu hardware suportar, considere atualizar para a versão mais recente do sistema operacional. Isso pode resolver problemas de incompatibilidade e oferecer recursos adicionais.</p><br/>
+                    
+                    <p>5. <strong>Execute em Modo de Compatibilidade:</strong> Em alguns casos, é possível executar aplicativos em um modo de compatibilidade que simula um ambiente mais antigo. Isso pode ajudar a contornar problemas de incompatibilidade.</p><br/>
+                    
+                    <p>6. <strong>Verifique Configurações de Virtualização:</strong> Se você estiver utilizando máquinas virtuais, verifique as configurações de virtualização no BIOS. Ative essa opção se necessário para melhorar a compatibilidade.</p><br/>
+                    
+                    <p>7. <strong>Consulte Comunidades Online:</strong> Caso esteja enfrentando desafios específicos, consulte fóruns online e comunidades de usuários. Outros usuários podem ter encontrado soluções para problemas semelhantes.</p><br/>
+                    
+                    <p>8. <strong>Busque Assistência Profissional:</strong> Se as incompatibilidades persistirem, considerar a ajuda de um profissional de suporte técnico pode ser a melhor opção. Eles podem oferecer orientação personalizada para o seu cenário específico.</p><br/>
+                    
+                    <p>Ao abordar problemas de incompatibilidade do sistema operacional de maneira proativa, você garante um ambiente de computação mais estável e eficiente.</p><br/>
+                    </div>
                     } />
 
                     <Botao textoBotao="Problemas com Atualização de Software" conteudo={
-                    <div className='textoproblema'>Conteúdo do Botão 1</div>
+                    <div className='textoproblema'><p><strong>Problemas com Atualização de Software</strong></p>
+
+                    <p>Manter seu software atualizado é fundamental para garantir a segurança e o desempenho adequado do seu computador. Se você está enfrentando problemas com as atualizações, siga estas orientações para solucionar as questões:</p>
+                    
+                    <p>1. <strong>Conexão com a Internet:</strong> Certifique-se de estar conectado à internet para baixar e instalar as atualizações. Verifique sua conexão e tente novamente.</p><br/>
+                    
+                    <p>2. <strong>Configurações do Windows Update:</strong> No Windows, verifique se as configurações do Windows Update estão corretas. Acesse as configurações e certifique-se de que as atualizações automáticas estão habilitadas.</p><br/>
+                    
+                    <p>3. <strong>Espaço em Disco Insuficiente:</strong> Verifique se há espaço suficiente em disco para realizar as atualizações. Remova arquivos desnecessários para liberar espaço, se necessário.</p><br/>
+                    
+                    <p>4. <strong>Problemas de Conflito:</strong> Alguns programas podem entrar em conflito com o processo de atualização. Desative temporariamente o antivírus e programas de terceiros antes de tentar novamente.</p><br/>
+                    
+                    <p>5. <strong>Erro na Atualização:</strong> Se você receber mensagens de erro durante o processo de atualização, anote o código do erro e pesquise online ou entre em contato com o suporte técnico para obter ajuda.</p><br/>
+                    
+                    <p>6. <strong>Atualizações Manuais:</strong> Se as atualizações automáticas falharem, considere realizar atualizações manuais baixando os pacotes diretamente do site oficial do software ou sistema operacional.</p><br/>
+                    
+                    <p>7. <strong>Reinicie o Computador:</strong> Após a instalação das atualizações, reinicie o computador para garantir que as alterações sejam aplicadas corretamente.</p><br/>
+                    
+                    <p>8. <strong>Restauração do Sistema:</strong> Se as atualizações causarem problemas persistentes, você pode considerar a restauração do sistema para um ponto anterior à instalação das atualizações.</p><br/>
+                    
+                    <p>Se os problemas persistirem, entre em contato com o suporte técnico do sistema operacional ou do software específico. Manter seu sistema e programas atualizados é vital para garantir a segurança e a eficiência do seu computador.</p><br/>
+                    </div>
                     } />
 
                     <Botao textoBotao="Computador com desempenho lento" conteudo={
-                    <div className='textoproblema'>Conteúdo do Botão 1</div>
+                    <div className='textoproblema'><p><strong>Computador com Desempenho Lento</strong></p>
+
+                    <p>Se o seu computador está apresentando lentidão, há diversas razões que podem contribuir para esse problema. Siga estas dicas para melhorar o desempenho do seu sistema:</p>
+                    
+                    <p>1. <strong>Verifique a Presença de Vírus ou Malware:</strong> Faça uma verificação completa do sistema com um antivírus confiável para garantir que seu computador não esteja infectado.</p><br/>
+                    
+                    <p>2. <strong>Libere Espaço em Disco:</strong> Remova arquivos e programas desnecessários para liberar espaço em disco. A falta de espaço pode impactar negativamente o desempenho.</p><br/>
+                    
+                    <p>3. <strong>Desinstale Programas Não Utilizados:</strong> Desinstale aplicativos que não são mais necessários. Programas em segundo plano podem consumir recursos do sistema.</p><br/>
+                    
+                    <p>4. <strong>Gerencie os Programas Iniciados com o Computador:</strong> Limite a quantidade de programas que iniciam junto com o sistema. Utilize o Gerenciador de Tarefas para controlar os aplicativos em segundo plano.</p><br/>
+                    
+                    <p>5. <strong>Atualize os Drivers:</strong> Mantenha os drivers do seu hardware atualizados para garantir compatibilidade e desempenho otimizado.</p><br/>
+                    
+                    <p>6. <strong>Aumente a Memória RAM:</strong> Considere adicionar mais memória RAM ao seu computador. Isso pode melhorar significativamente a capacidade de processamento.</p><br/>
+                    
+                    <p>7. <strong>Utilize um Disco SSD:</strong> Se possível, substitua o disco rígido por um SSD. SSDs oferecem tempos de leitura e gravação mais rápidos, melhorando a velocidade geral do sistema.</p><br/>
+                    
+                    <p>8. <strong>Desative Efeitos Visuais:</strong> Reduza ou desative efeitos visuais no sistema operacional para aliviar a carga sobre a GPU e a CPU.</p><br/>
+                    
+                    <p>9. <strong>Agende Manutenções Regulares:</strong> Realize manutenções programadas, como limpeza de arquivos temporários e desfragmentação de disco, para otimizar o desempenho.</p><br/>
+                    
+                    <p>10. <strong>Considere uma Atualização de Hardware:</strong> Se o seu computador ainda estiver lento após essas medidas, pode ser necessário considerar a atualização de componentes de hardware, como processador ou placa de vídeo.</p><br/>
+                    
+                    <p>Ao seguir essas orientações, você pode melhorar significativamente o desempenho do seu computador e garantir uma experiência mais fluida e eficiente.</p><br/>
+                    </div>
                     } />
 
-                    <Botao textoBotao="Como ter uma boa gestão de Armazenamento ?" conteudo={
-                    <div className='textoproblema'>Conteúdo do Botão 1</div>
+                    <Botao textoBotao="Como ter uma boa gestão de Armazenamento?" conteudo={
+                    <div className='textoproblema'><p><strong>Como Ter uma Boa Gestão de Armazenamento</strong></p>
+
+                    <p>Gerenciar eficientemente o armazenamento do seu computador é fundamental para manter o desempenho e a organização dos seus dados. Aqui estão algumas dicas para garantir uma boa gestão de armazenamento:</p>
+                    
+                    <p>1. <strong>Avaliação Regular de Arquivos:</strong> Faça uma revisão periódica dos seus arquivos. Remova documentos, fotos ou vídeos desnecessários para liberar espaço.</p><br/>
+                    
+                    <p>2. <strong>Utilização de Armazenamento em Nuvem:</strong> Considere utilizar serviços de armazenamento em nuvem para guardar documentos importantes, liberando espaço no disco local.</p><br/>
+                    
+                    <p>3. <strong>Desinstalação de Aplicativos Não Utilizados:</strong> Remova programas que não são mais necessários. Isso não apenas libera espaço, mas também melhora o desempenho do sistema.</p><br/>
+                    
+                    <p>4. <strong>Limpeza de Downloads:</strong> Verifique a pasta de downloads e exclua arquivos que não são mais necessários. Downloads antigos podem ocupar espaço significativo.</p><br/>
+                    
+                    <p>5. <strong>Uso de Discos Externos:</strong> Transfira arquivos grandes, como vídeos ou backups, para discos externos. Isso ajuda a manter espaço livre no disco principal.</p><br/>
+                    
+                    <p>6. <strong>Configuração de Políticas de Retenção:</strong> Configure políticas para retenção automática de emails e arquivos temporários. Isso evita acúmulo desnecessário de dados.</p><br/>
+                    
+                    <p>7. <strong>Monitoramento de Espaço Disponível:</strong> Esteja atento ao espaço disponível no seu disco rígido. Mantenha-se informado para tomar medidas antes que o armazenamento atinja a capacidade máxima.</p><br/>
+                    
+                    <p>8. <strong>Organização de Pastas e Subpastas:</strong> Mantenha seus arquivos organizados em pastas e subpastas. Isso facilita a localização e a identificação do conteúdo.</p><br/>
+                    
+                    <p>9. <strong>Exclusão Segura de Arquivos:</strong> Ao excluir arquivos sensíveis, utilize métodos seguros para evitar recuperação não autorizada, especialmente ao lidar com informações confidenciais.</p><br/>
+                    
+                    <p>10. <strong>Investimento em Armazenamento Adicional:</strong> Se necessário, considere investir em dispositivos de armazenamento adicionais, como discos rígidos externos ou SSDs, para expandir a capacidade de armazenamento.</p><br/>
+                    
+                    <p>Ao seguir essas práticas, você garante uma gestão eficiente do armazenamento do seu computador, promovendo organização, desempenho otimizado e a longevidade do seu sistema.</p><br/>
+                    </div>
                     } />
 
                     <Botao textoBotao="Problemas ao tentar abrir um programa" conteudo={
-                    <div className='textoproblema'>Conteúdo do Botão 1</div>
+                    <div className='textoproblema'><p><strong>Problemas ao Tentar Abrir um Programa</strong></p>
+
+                    <p>Se você está enfrentando dificuldades ao tentar abrir um programa no seu computador, siga estas orientações para solucionar o problema:</p>
+                    
+                    <p>1. <strong>Reinicie o Computador:</strong> Às vezes, problemas temporários podem ser resolvidos reiniciando o sistema. Reinicie o computador e tente abrir o programa novamente.</p><br/>
+                    
+                    <p>2. <strong>Verifique a Conexão com a Internet:</strong> Se o programa requer uma conexão com a internet, verifique se você está conectado. Problemas de conexão podem impedir o carregamento adequado do programa.</p><br/>
+                    
+                    <p>3. <strong>Atualize o Programa:</strong> Certifique-se de que o programa está atualizado para a versão mais recente. Atualizações frequentemente corrigem bugs e melhoram a estabilidade.</p><br/>
+                    
+                    <p>4. <strong>Verifique os Requisitos do Sistema:</strong> Confira se o programa é compatível com o sistema operacional do seu computador e se atende aos requisitos de hardware necessários.</p><br/>
+                    
+                    <p>5. <strong>Desative Antivírus Temporariamente:</strong> Em alguns casos, programas antivírus podem interferir no funcionamento normal de outros softwares. Tente desativar temporariamente o antivírus e veja se o problema persiste.</p><br/>
+                    
+                    <p>6. <strong>Execute como Administrador:</strong> Tente abrir o programa com privilégios de administrador. Clique com o botão direito no ícone do programa e escolha "Executar como Administrador".</p><br/>
+                    
+                    <p>7. <strong>Verifique por Mensagens de Erro:</strong> Se houver mensagens de erro, anote-as. Essas mensagens podem fornecer informações úteis para entender e resolver o problema.</p><br/>
+                    
+                    <p>8. <strong>Reinstale o Programa:</strong> Se todas as tentativas falharem, considere desinstalar e reinstalar o programa. Isso pode corrigir problemas relacionados a arquivos corrompidos.</p><br/>
+                    
+                    <p>Se, após seguir essas orientações, o problema persistir, entre em contato com o suporte técnico do programa ou do sistema operacional para assistência adicional.</p><br/>
+                    </div>
                     } />
 
                     </div>
