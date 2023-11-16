@@ -412,13 +412,13 @@ export default class Home extends Component {
 
                     <p>Se o seu computador não está reproduzindo vídeo ao ser ligado, siga estas etapas para solucionar o problema:</p>
                 
-                    <p>1. <strong>Verifique Conexões do Monitor:</strong> Assegure-se de que o cabo do monitor está corretamente conectado à placa de vídeo ou à saída de vídeo da placa-mãe.<br/></p>
+                    <p>1. <strong>Verifique Conexões do Monitor:</strong> Assegure-se de que o cabo do monitor está corretamente conectado à placa de vídeo ou à saída de vídeo da placa-mãe.</p>
                 
-                    <p>2. <strong>Teste com Outro Monitor:</strong> Se possível, conecte o computador a outro monitor para descartar problemas com o monitor atual.<br/></p>
+                    <p>2. <strong>Teste com Outro Monitor:</strong> Se possível, conecte o computador a outro monitor para descartar problemas com o monitor atual.</p>
                 
-                    <p>3. <strong>Verificação de Alimentação:</strong> Certifique-se de que o computador está recebendo energia adequada e que todos os componentes estão corretamente conectados.<br/></p>
+                    <p>3. <strong>Verificação de Alimentação:</strong> Certifique-se de que o computador está recebendo energia adequada e que todos os componentes estão corretamente conectados.</p>
                 
-                    <p>4. <strong>Atualização de Drivers Gráficos:</strong> Acesse o Gerenciador de Dispositivos, identifique a placa gráfica e atualize os drivers para a versão mais recente.<br/></p>
+                    <p>4. <strong>Atualização de Drivers Gráficos:</strong> Acesse o Gerenciador de Dispositivos, identifique a placa gráfica e atualize os drivers para a versão mais recente.</p>
                 
                     <p>Se mesmo assim o problema persistir, entre em contato com nossa equipe de suporte técnico. Estamos aqui para ajudar a restaurar a reprodução de vídeo em seu computador.<br/></p></div>
                     } />
@@ -467,7 +467,8 @@ export default class Home extends Component {
                     <Botao textoBotao="Riscos ou Artefatos na tela" conteudo={
                     <div className='textoproblema'><p><strong>O Que São Riscos ou Artefatos na Tela?</strong></p>
 
-                    <p>Refere-se a imperfeições visuais, como linhas, manchas ou distorções, durante a operação normal. Pode ser causado por problemas de hardware ou software.</p>
+                    <p>Refere-se a imperfeições visuais, como linhas, manchas ou distorções, durante a operação normal. Pode ser causado por problemas de hardware ou software.</p><br/>
+
                     <p><strong>Causas Comuns:</strong></p>
                     <p>
                         1. <strong>Hardware Defeituoso:</strong> Danos físicos, mau funcionamento de componentes ou conectores soltos.
@@ -475,7 +476,8 @@ export default class Home extends Component {
                         2. <strong>Problemas de Software:</strong> Drivers desatualizados, conflitos ou instabilidade do sistema operacional.</p>
                     <p>
                         3. <strong>Problemas de Conectividade:</strong> Cabos soltos, conexões instáveis ou incompatibilidades entre dispositivos.
-                    </p>
+                    </p><br/>
+
                     <p><strong>Identificação:</strong></p>
                     <p>
                         1. <strong>Examine Fisicamente o Dispositivo:</strong> Verifique danos físicos evidentes na tela.
@@ -485,7 +487,8 @@ export default class Home extends Component {
                     </p>
                     <p>
                         3. <strong>Atualize Drivers e Software:</strong> Mantenha tudo atualizado para garantir compatibilidade e estabilidade.
-                    </p>
+                    </p><br/>
+
                     <p><strong>Soluções Possíveis:</strong></p>
                     <p>
                         1. <strong>Verificação de Hardware:</strong> Procure assistência técnica para danos físicos.
@@ -495,7 +498,8 @@ export default class Home extends Component {
                     </p>
                     <p>
                         3. <strong>Teste de Conectividade:</strong> Verifique cabos e conexões, trocando por melhores, se necessário.
-                    </p>
+                    </p><br/>
+                    
                     <p><strong>Contate nosso Suporte Técnico:</strong></p>
                     <p>
                         Se as soluções mencionadas não resolverem, entre em contato conosco. Estamos aqui para garantir uma experiência tecnológica sem complicações.
