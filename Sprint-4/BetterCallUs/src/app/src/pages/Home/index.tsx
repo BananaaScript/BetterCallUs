@@ -230,24 +230,101 @@ export default class Home extends Component {
                     
                     <div className='botoes'>
                         
-                    <Botao textoBotao="O computador não dá video ao ligar" conteudo={
-                    <div className='textoproblema'>Conteúdo do Botão 1</div>
+                    <Botao textoBotao="O computador não reproduz video ao ligar" conteudo={
+                    <div className='textoproblema'><p><strong>Resolvendo Problemas: Computador não Reproduz Vídeo ao Ligar</strong></p>
+
+                    <p>Se o seu computador não está reproduzindo vídeo ao ser ligado, siga estas etapas para solucionar o problema:</p>
+                
+                    <p>1. <strong>Verifique Conexões do Monitor:</strong> Assegure-se de que o cabo do monitor está corretamente conectado à placa de vídeo ou à saída de vídeo da placa-mãe.<br/></p>
+                
+                    <p>2. <strong>Teste com Outro Monitor:</strong> Se possível, conecte o computador a outro monitor para descartar problemas com o monitor atual.<br/></p>
+                
+                    <p>3. <strong>Verificação de Alimentação:</strong> Certifique-se de que o computador está recebendo energia adequada e que todos os componentes estão corretamente conectados.<br/></p>
+                
+                    <p>4. <strong>Atualização de Drivers Gráficos:</strong> Acesse o Gerenciador de Dispositivos, identifique a placa gráfica e atualize os drivers para a versão mais recente.<br/></p>
+                
+                    <p>Se mesmo assim o problema persistir, entre em contato com nossa equipe de suporte técnico. Estamos aqui para ajudar a restaurar a reprodução de vídeo em seu computador.<br/></p></div>
                     } />
 
-                    <Botao textoBotao="Computador sem áudio" conteudo={
-                    <div className='textoproblema'>Conteúdo do Botão 1</div>
+                    <Botao textoBotao="Computador não reproduz áudio" conteudo={
+                    <div className='textoproblema'><p><strong>Resolvendo Problemas: Computador não Reproduz Áudio</strong></p>
+
+                    <p>Se o seu computador está enfrentando problemas para reproduzir áudio, siga estas etapas para solucionar o problema:</p>
+                
+                    <p>1. <strong>Verifique Conexões e Cabos:</strong> Certifique-se de que todos os cabos de áudio estejam corretamente conectados às portas correspondentes.<br/></p>
+                
+                    <p>2. <strong>Volume e Configurações de Áudio:</strong> Verifique se o volume não está no nível mínimo e confira as configurações de áudio no painel de controle.<br/></p>
+                
+                    <p>3. <strong>Atualize os Drivers de Áudio:</strong> Acesse o Gerenciador de Dispositivos, identifique a placa de som e atualize os drivers para a versão mais recente.<br/></p>
+                
+                    <p>4. <strong>Verificação de Dispositivos de Saída:</strong> Certifique-se de que o dispositivo de saída de áudio correto está selecionado nas configurações do sistema.<br/></p>
+                
+                    <p>Se o problema persistir, entre em contato com nossa equipe de suporte técnico. Estamos aqui para ajudar a restaurar a funcionalidade de áudio em seu computador.<br/></p></div>
                     } />
 
                     <Botao textoBotao="Como atualizar meus drivers de video ?" conteudo={
-                    <div className='textoproblema'>Conteúdo do Botão 1</div>
+                    <div className='textoproblema'> <p><strong>Atualizando Drivers de Áudio para Melhor Desempenho</strong></p>
+
+                    <p>Manter seus drivers de áudio atualizados é crucial para garantir uma experiência sonora sem falhas. Siga estas etapas para realizar a atualização:</p>
+                
+                    <p>1. <strong>Identifique o Modelo da Placa de Som:</strong> Acesse o Gerenciador de Dispositivos e encontre o modelo da sua placa de som.<br/></p>
+                
+                    <p>2. <strong>Visite o Site do Fabricante:</strong> Navegue até o site do fabricante da placa de som e procure pela seção de suporte ou downloads.<br/></p>
+                
+                    <p>3. <strong>Baixe e Instale os Drivers Mais Recentes:</strong> Faça o download dos drivers mais recentes compatíveis com o seu sistema operacional e siga as instruções de instalação.<br/></p>
+                
+                    <p>Em caso de dúvidas ou dificuldades durante o processo, nossa equipe de suporte técnico está à disposição para ajudar. Queremos assegurar que você aproveite ao máximo a qualidade sonora do seu dispositivo.<br/></p></div>
                     } />
 
                     <Botao textoBotao="Como atualizar meus drivers de áudio ?" conteudo={
-                    <div className='textoproblema'>Conteúdo do Botão 1</div>
+                    <div className='textoproblema'>
+                    <p><strong>Como Atualizar Meus Drivers de Áudio?</strong></p>
+                
+                    <p>Drivers de áudio desatualizados podem causar problemas de reprodução. Siga estes passos para garantir um som de alta qualidade em seu dispositivo:</p>
+                    <p>1. <strong>Identifique o Modelo da Placa de Som:</strong> Acesse o Gerenciador de Dispositivos e encontre o modelo da sua placa de som.</p>
+                    <p>2. <strong>Visite o Site do Fabricante:</strong> Acesse o site do fabricante da placa de som e procure pela seção de suporte ou downloads.</p>
+                    <p>3. <strong>Baixe e Instale os Drivers Mais Recentes:</strong> Faça o download dos drivers mais recentes compatíveis com o seu sistema operacional e siga as instruções de instalação.</p>
+                    <p>Não hesite em contatar nossa equipe de suporte técnico caso encontre dificuldades durante esse processo. Estamos aqui para garantir que você desfrute de uma experiência sonora sem interrupções.</p></div>
                     } />
 
                     <Botao textoBotao="Riscos ou Artefatos na tela" conteudo={
-                    <div className='textoproblema'>Conteúdo do Botão 1</div>
+                    <div className='textoproblema'><p><strong>O Que São Riscos ou Artefatos na Tela?</strong></p>
+
+                    <p>Refere-se a imperfeições visuais, como linhas, manchas ou distorções, durante a operação normal. Pode ser causado por problemas de hardware ou software.</p>
+                    <p><strong>Causas Comuns:</strong></p>
+                    <p>
+                        1. <strong>Hardware Defeituoso:</strong> Danos físicos, mau funcionamento de componentes ou conectores soltos.
+                    </p><p>
+                        2. <strong>Problemas de Software:</strong> Drivers desatualizados, conflitos ou instabilidade do sistema operacional.</p>
+                    <p>
+                        3. <strong>Problemas de Conectividade:</strong> Cabos soltos, conexões instáveis ou incompatibilidades entre dispositivos.
+                    </p>
+                    <p><strong>Identificação:</strong></p>
+                    <p>
+                        1. <strong>Examine Fisicamente o Dispositivo:</strong> Verifique danos físicos evidentes na tela.
+                    </p>
+                    <p>
+                        2. <strong>Teste com Diferentes Conteúdos:</strong> Observe se os artefatos aparecem com tipos específicos de conteúdo.
+                    </p>
+                    <p>
+                        3. <strong>Atualize Drivers e Software:</strong> Mantenha tudo atualizado para garantir compatibilidade e estabilidade.
+                    </p>
+                    <p><strong>Soluções Possíveis:</strong></p>
+                    <p>
+                        1. <strong>Verificação de Hardware:</strong> Procure assistência técnica para danos físicos.
+                    </p>
+                    <p>
+                        2. <strong>Atualização de Drivers:</strong> Mantenha os drivers relacionados à exibição atualizados.
+                    </p>
+                    <p>
+                        3. <strong>Teste de Conectividade:</strong> Verifique cabos e conexões, trocando por melhores, se necessário.
+                    </p>
+                    <p><strong>Contate nosso Suporte Técnico:</strong></p>
+                    <p>
+                        Se as soluções mencionadas não resolverem, entre em contato conosco. Estamos aqui para garantir uma experiência tecnológica sem complicações.
+                    </p>
+                
+                </div>
                     } />
 
                     </div>
