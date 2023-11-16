@@ -141,24 +141,149 @@ export default class Home extends Component {
 
                     <div className='botoes'>
                         
-                    <Botao textoBotao="Como criar senhas fortes ?" conteudo={
-                    <div className='textoproblema'>Conteúdo do Botão 1</div>
+                    <Botao textoBotao="Como criar senhas fortes?" conteudo={
+                    <div className='textoproblema'><p><strong>Como Criar Senhas Fortes?</strong></p>
+
+                    <p>Senhas fortes são essenciais para proteger suas contas online e garantir a segurança dos seus dados. Siga estas diretrizes para criar senhas robustas e mais resistentes a ataques:</p>
+                    
+                    <p>1. <strong>Comprimento Significativo:</strong> Opte por senhas longas, com pelo menos 12 caracteres. Quanto maior, mais difícil de ser quebrada.</p><br/>
+                    
+                    <p>2. <strong>Mistura de Caracteres:</strong> Combine letras maiúsculas e minúsculas, números e caracteres especiais. Essa diversidade torna a senha mais complexa.</p><br/>
+                    
+                    <p>3. <strong>Avoid Palavras Comuns:</strong> Evite usar palavras óbvias, como nomes, datas de nascimento ou sequências simples. Essas são fáceis de adivinhar.</p><br/>
+                    
+                    <p>4. <strong>Não Use Informações Pessoais:</strong> Evite incorporar informações pessoais, como nomes de familiares, em suas senhas. Essas informações podem ser facilmente descobertas.</p><br/>
+                    
+                    <p>5. <strong>Evite Sequências e Padrões:</strong> Não use sequências óbvias, como "123456" ou "qwerty". Isso inclui evitar teclas adjacentes no teclado.</p><br/>
+                    
+                    <p>6. <strong>Sem Senhas Únicas para Várias Contas:</strong> Crie senhas exclusivas para cada conta. Isso evita que uma violação comprometa todas as suas contas.</p><br/>
+                    
+                    <p>7. <strong>Atualize Regularmente:</strong> Mude suas senhas periodicamente. Isso reduz o risco em caso de exposição não autorizada.</p><br/>
+                    
+                    <p>8. <strong>Use Frases Complexas:</strong> Crie senhas a partir de frases complexas que apenas você possa entender. Utilize a primeira letra de cada palavra para formar a senha.</p><br/>
+                    
+                    <p>9. <strong>Utilize Geradores de Senhas:</strong> Considere o uso de geradores de senhas para criar combinações aleatórias e altamente seguras.</p><br/>
+                    
+                    <p>10. <strong>Guarde com Segurança:</strong> Se necessário anotar suas senhas, faça isso em um local seguro e evite armazenamento digital não protegido.</p><br/>
+                    
+                    <p>Ao seguir essas práticas, você cria senhas que oferecem uma camada adicional de segurança, reduzindo o risco de acesso não autorizado às suas contas online.</p><br/>
+                    </div>
                     } />
 
                     <Botao textoBotao="Problemas de Firewall" conteudo={
-                    <div className='textoproblema'>Conteúdo do Botão 1</div>
+                    <div className='textoproblema'><p><strong>Problemas de Firewall</strong></p>
+
+                    <p>O firewall desempenha um papel crucial na proteção do seu computador contra ameaças cibernéticas, mas às vezes podem surgir problemas que comprometem sua eficácia. Aqui estão alguns problemas comuns de firewall e como resolvê-los:</p>
+                    
+                    <p>1. <strong>Configurações Incorretas:</strong> Verifique se as configurações do firewall estão corretas. Configurações inadequadas podem bloquear conexões legítimas ou permitir acessos não autorizados.</p><br/>
+                    
+                    <p>2. <strong>Programas Bloqueados Inadvertidamente:</strong> Se você perceber que programas legítimos estão sendo bloqueados, revise as configurações do firewall para garantir que esses aplicativos sejam permitidos.</p><br/>
+                    
+                    <p>3. <strong>Atualizações Pendentes:</strong> Firewalls precisam ser atualizados regularmente para reconhecer e lidar com novas ameaças. Verifique se o seu firewall está atualizado para a versão mais recente.</p><br/>
+                    
+                    <p>4. <strong>Conflitos com Outros Programas de Segurança:</strong> Certifique-se de que não há conflitos entre o firewall e outros programas de segurança instalados no seu computador. Eles podem interferir nas operações uns dos outros.</p><br/>
+                    
+                    <p>5. <strong>Permissões Excessivas:</strong> Evite conceder permissões excessivas ao firewall, pois isso pode tornar o sistema mais vulnerável. Conceda permissões apenas a aplicativos confiáveis e necessários.</p><br/>
+                    
+                    <p>6. <strong>Firewall Desativado:</strong> Verifique se o firewall está ativado. Às vezes, configurações do sistema ou atualizações podem desativar o firewall, deixando o computador exposto a ameaças.</p><br/>
+                    
+                    <p>7. <strong>Bloqueio de Conexões Legítimas:</strong> Se usuários legítimos estão tendo dificuldades em se conectar, revise as configurações para garantir que suas conexões sejam permitidas.</p><br/>
+                    
+                    <p>8. <strong>Logs de Firewall:</strong> Verifique os logs do firewall para identificar atividades suspeitas. Isso ajuda a entender possíveis ameaças e ajustar as configurações conforme necessário.</p><br/>
+                    
+                    <p>Se você continuar enfrentando problemas com o firewall e não conseguir resolvê-los, considere buscar assistência técnica para garantir a segurança contínua do seu sistema.</p><br/>
+                    </div>
                     } />
 
                     <Botao textoBotao="Autenticação de dois fatores e outras formas de verificação" conteudo={
-                    <div className='textoproblema'>Conteúdo do Botão 1</div>
+                    <div className='textoproblema'><p><strong>Autenticação de Dois Fatores e Outras Formas de Verificação</strong></p>
+
+                    <p>Reforçar a segurança das suas contas online é essencial para proteger seus dados. A autenticação de dois fatores (2FA) e outras formas de verificação adicionam camadas de proteção. Saiba mais sobre esses métodos:</p>
+                    
+                    <p>1. <strong>Autenticação de Dois Fatores (2FA):</strong></p>
+                    <p>A 2FA exige duas formas de verificação para acessar uma conta. Geralmente, combina a senha com um código enviado por mensagem de texto, aplicativo autenticador ou chave física.</p><br/>
+                    
+                    <p>2. <strong>Autenticação de Multi-Fatores (MFA):</strong></p>
+                    <p>Além da 2FA, a MFA inclui mais de dois métodos de autenticação, como impressão digital, reconhecimento facial ou perguntas de segurança. Isso oferece uma camada extra de segurança.</p><br/>
+                    
+                    <p>3. <strong>Códigos de Recuperação:</strong></p>
+                    <p>Códigos de recuperação são códigos únicos fornecidos no momento da ativação da autenticação. Eles servem como uma opção de acesso em caso de perda do dispositivo de autenticação.</p><br/>
+                    
+                    <p>4. <strong>Notificações de Login:</strong></p>
+                    <p>Receber notificações por e-mail ou mensagem sempre que houver uma tentativa de login ajuda a identificar atividades suspeitas e a tomar medidas imediatas.</p><br/>
+                    
+                    <p>5. <strong>Biometria:</strong></p>
+                    <p>O uso de biometria, como impressão digital ou reconhecimento facial, é uma forma eficaz de garantir que apenas você tenha acesso à sua conta.</p><br/>
+                    
+                    <p>6. <strong>Verificação em Duas Etapas (2SV):</strong></p>
+                    <p>A 2SV combina a senha com um método de verificação adicional, mas geralmente não exige a segunda verificação em todas as tentativas de login, oferecendo flexibilidade.</p><br/>
+                    
+                    <p>7. <strong>Chaves de Segurança Físicas:</strong></p>
+                    <p>Dispositivos de chave de segurança física oferecem uma camada robusta de proteção. Eles geralmente se conectam via USB ou usam tecnologia Bluetooth e NFC.</p><br/>
+                    
+                    <p>8. <strong>Configurações de Recuperação:</strong></p>
+                    <p>Defina configurações de recuperação, como endereço de e-mail ou número de telefone alternativo, para garantir que você possa recuperar sua conta em caso de problemas de acesso.</p><br/>
+                    
+                    <p>Ao implementar essas medidas, você fortalece a segurança das suas contas, reduzindo significativamente o risco de acessos não autorizados.</p><br/>
+                    </div>
                     } />
 
                     <Botao textoBotao="Invandiram minha conta, e agora ?" conteudo={
-                    <div className='textoproblema'>Conteúdo do Botão 1</div>
+                    <div className='textoproblema'>Conteúdo do Botão <p><strong>Invadiram Minha Conta, e Agora?</strong></p>
+
+                    <p>Descobrir que sua conta foi invadida é preocupante, mas há medidas que você pode tomar para recuperar o controle e proteger suas informações. Siga essas etapas caso suspeite de uma invasão na sua conta:</p>
+                    
+                    <p>1. <strong>Altere Senhas Imediatamente:</strong> Mude a senha da conta invadida imediatamente. Certifique-se de escolher uma senha forte e única.</p><br/>
+                    
+                    <p>2. <strong>Verifique Atividades Suspeitas:</strong> Analise a atividade recente na sua conta para identificar ações não autorizadas. Muitos serviços online fornecem registros de atividade.</p><br/>
+                    
+                    <p>3. <strong>Revise Configurações de Segurança:</strong> Verifique se as configurações de segurança da sua conta foram alteradas. Isso inclui endereços de e-mail de recuperação, perguntas de segurança, etc.</p><br/>
+                    
+                    <p>4. <strong>Ative Autenticação de Dois Fatores (2FA):</strong> Reforce a segurança ativando a autenticação de dois fatores, se disponível. Isso adiciona uma camada extra de proteção.</p><br/>
+                    
+                    <p>5. <strong>Escaneie Seu Dispositivo:</strong> Realize uma verificação antivírus completa no dispositivo que você usa para acessar a conta. Malware pode comprometer a segurança.</p><br/>
+                    
+                    <p>6. <strong>Informe o Provedor de Serviços:</strong> Entre em contato com o suporte da plataforma ou serviço afetado para relatar a invasão. Eles podem fornecer orientações específicas.</p><br/>
+                    
+                    <p>7. <strong>Revise Outras Contas:</strong> Se usa senhas semelhantes em outras contas, altere-as imediatamente para evitar acessos não autorizados em outros serviços.</p><br/>
+                    
+                    <p>8. <strong>Mantenha-se Vigilante:</strong> Esteja atento a e-mails ou mensagens suspeitas, pois os invasores podem tentar outras formas de acesso ou phishing.</p><br/>
+                    
+                    <p>9. <strong>Considere Assessoria Profissional:</strong> Se a invasão envolver informações sensíveis, como dados financeiros, considere buscar orientação de profissionais de segurança cibernética.</p><br/>
+                    
+                    <p>10. <strong>Aprenda com a Experiência:</strong> Analise como a invasão ocorreu e tome medidas para evitar situações semelhantes no futuro, como melhorar a segurança das senhas e utilizar a autenticação de dois fatores.</p><br/>
+                    
+                    <p>A resposta rápida e ações proativas são cruciais para minimizar danos após uma invasão. Ao seguir essas orientações, você aumenta as chances de recuperar o controle da sua conta e fortalece sua segurança online.</p><br/>
+                    </div>
                     } />
 
                     <Botao textoBotao="Segurança de rede" conteudo={
-                    <div className='textoproblema'>Conteúdo do Botão 1</div>
+                    <div className='textoproblema'><p><strong>Segurança de Rede</strong></p>
+
+                    <p>A segurança de rede é vital para proteger seus dados e dispositivos contra ameaças cibernéticas. Adote práticas eficazes para fortalecer a segurança na sua rede:</p>
+                    
+                    <p>1. <strong>Senha Forte para o Roteador:</strong> Configure uma senha robusta para o seu roteador Wi-Fi. Evite senhas padrão para impedir o acesso não autorizado à sua rede.</p><br/>
+                    
+                    <p>2. <strong>Atualizações Regulares do Roteador:</strong> Mantenha o firmware do seu roteador atualizado. As atualizações frequentes corrigem vulnerabilidades de segurança.</p><br/>
+                    
+                    <p>3. <strong>Rede Wi-Fi Segura:</strong> Utilize a criptografia WPA3 se disponível. Isso protege a comunicação sem fio e impede o acesso não autorizado à sua rede.</p><br/>
+                    
+                    <p>4. <strong>Firewall Ativado:</strong> Certifique-se de que o firewall do seu roteador está ativado. Ele age como uma barreira contra tráfego malicioso.</p><br/>
+                    
+                    <p>5. <strong>Segmentação de Rede:</strong> Se possível, crie redes separadas para dispositivos, como uma para dispositivos domésticos e outra para dispositivos de trabalho. Isso limita o acesso em caso de comprometimento.</p><br/>
+                    
+                    <p>6. <strong>Controle de Acesso:</strong> Configure restrições de acesso ao seu roteador. Permita apenas dispositivos autorizados a se conectar à sua rede.</p><br/>
+                    
+                    <p>7. <strong>Monitoramento de Dispositivos Conectados:</strong> Regularmente verifique a lista de dispositivos conectados ao seu roteador. Identifique e remova dispositivos não reconhecidos.</p><br/>
+                    
+                    <p>8. <strong>VPN para Conexões Remotas:</strong> Se você acessa sua rede de locais remotos, utilize uma VPN (Rede Virtual Privada) para garantir uma conexão segura.</p><br/>
+                    
+                    <p>9. <strong>Auditoria de Segurança:</strong> Realize auditorias de segurança na sua rede. Isso inclui verificar configurações, procurar vulnerabilidades e atualizar senhas periodicamente.</p><br/>
+                    
+                    <p>10. <strong>Sensibilização para Usuários:</strong> Eduque os usuários da rede sobre práticas seguras, como evitar clicar em links suspeitos e usar senhas fortes.</p><br/>
+                    
+                    <p>Investir na segurança de rede é crucial para proteger sua privacidade e garantir a integridade dos dados. Ao implementar essas medidas, você fortalece a defesa contra ameaças online.</p><br/>
+                    </div>
                     } />
 
                     </div>
