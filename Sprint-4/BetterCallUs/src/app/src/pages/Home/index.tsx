@@ -236,23 +236,88 @@ export default class Home extends Component {
                     <div className='botoes'>
                         
                     <Botao textoBotao="Computador não liga" conteudo={
-                    <div className='textoproblema'>Conteúdo do Botão 1</div>
+                    <div className='textoproblema'><p><strong>Resolvendo Problemas: Computador que não Liga</strong></p>
+
+                    <p>Se o seu computador não está ligando, siga estas etapas para diagnosticar e resolver o problema:</p>
+                
+                    <p>1. <strong>Verificação de Alimentação:</strong> Certifique-se de que o cabo de alimentação está corretamente conectado e que a tomada está funcionando. Considere testar com outra fonte de energia.<br/></p>
+                
+                    <p>2. <strong>Botão de Liga/Desliga:</strong> Verifique se o botão de liga/desliga está funcionando corretamente. Às vezes, um mau contato pode impedir a inicialização.<br/></p>
+                
+                    <p>3. <strong>Hardware Conectado Corretamente:</strong> Certifique-se de que todos os componentes internos, como memória RAM e placas, estão firmemente conectados aos slots correspondentes.<br/></p>
+                
+                    <p>4. <strong>Teste com Componentes Mínimos:</strong> Se possível, remova componentes extras e teste apenas com o mínimo necessário para inicialização, como processador, placa-mãe, memória e fonte de alimentação.<br/></p>
+                
+                    <p>Se mesmo após essas etapas o computador ainda não ligar, entre em contato com nossa equipe de suporte técnico. Estamos aqui para ajudar a identificar e resolver esse problema de inicialização.<br/></p></div>
                     } />
 
                     <Botao textoBotao="Dispositivos USB não conectam" conteudo={
-                    <div className='textoproblema'>Conteúdo do Botão 1</div>
+                    <div className='textoproblema'><p><strong>Resolvendo Problemas: Dispositivos USB não Conectam</strong></p>
+
+                    <p>Se os seus dispositivos USB não estão conectando corretamente, siga estas etapas para solucionar o problema:</p>
+                
+                    <p>1. <strong>Verifique as Portas USB:</strong> Certifique-se de que as portas USB não estão danificadas e estão fornecendo energia suficiente. Tente conectar o dispositivo a diferentes portas.<br/></p>
+                
+                    <p>2. <strong>Teste com Outro Dispositivo:</strong> Verifique se o problema está no dispositivo ou na porta USB testando com outro dispositivo. Isso ajudará a isolar a origem do problema.<br/></p>
+                
+                    <p>3. <strong>Atualize Drivers:</strong> Certifique-se de que os drivers USB estejam atualizados. O Gerenciador de Dispositivos pode ser útil para essa verificação e atualização.<br/></p>
+                
+                    <p>4. <strong>Desinstale e Reinstale Drivers:</strong> Se possível, desinstale os drivers USB no Gerenciador de Dispositivos e reinicie o computador para que eles sejam reinstalados automaticamente.<br/></p>
+                
+                    <p>Se o problema persistir, entre em contato com nossa equipe de suporte técnico. Estamos prontos para ajudar a restabelecer a conectividade USB em seu sistema.<br/></p>
+                </div>
                     } />
 
                     <Botao textoBotao="Como saber a saúde do meu HD/SSD ?" conteudo={
-                    <div className='textoproblema'>Conteúdo do Botão 1</div>
+                    <div className='textoproblema'><p><strong>Verificando a Saúde do HD ou SSD</strong></p>
+
+                    <p>Manter o monitoramento regular da saúde do seu HD ou SSD é essencial para prevenir perda de dados. Siga estas etapas para avaliar o estado do seu armazenamento:</p>
+                
+                    <p>1. <strong>Utilize Ferramentas de Diagnóstico:</strong> Diversas ferramentas gratuitas estão disponíveis online. Escolha uma confiável para verificar a integridade e desempenho do seu dispositivo de armazenamento.<br/></p>
+                
+                    <p>2. <strong>Verificação de Bad Blocks:</strong> Execute uma verificação de bad blocks para identificar setores defeituosos no HD. SSDs geralmente possuem mecanismos internos que fazem essa verificação automaticamente.<br/></p>
+                
+                    <p>3. <strong>Análise de Temperatura:</strong> Monitore a temperatura do HD ou SSD, pois temperaturas excessivamente altas podem indicar problemas. Mantenha o dispositivo refrigerado para garantir uma vida útil prolongada.<br/></p>
+                
+                    <p>4. <strong>Cópias de Segurança Regulares:</strong> Realize cópias de segurança periódicas dos seus dados importantes para evitar perda irreparável, independentemente da saúde atual do seu armazenamento.<br/></p>
+                
+                    <p>Se encontrar algum problema durante essas verificações ou se precisar de assistência para interpretar os resultados, entre em contato com nossa equipe de suporte técnico. Estamos aqui para garantir a segurança dos seus dados.<br/></p>
+                
+                </div>
                     } />
 
                     <Botao textoBotao="O computador está aquecendo muito" conteudo={
-                    <div className='textoproblema'>Conteúdo do Botão 1</div>
+                    <div className='textoproblema'><p><strong>Resolvendo Problemas: Computador Aquecendo Muito</strong></p>
+
+                    <p>Se o seu computador está apresentando temperaturas elevadas, siga estas etapas para reduzir o superaquecimento:</p>
+                
+                    <p>1. <strong>Limpeza de Ventoinhas e Dissipadores:</strong> Remova poeira e sujeira acumuladas nos ventiladores e dissipadores de calor para melhorar a dissipação térmica.<br/></p>
+                
+                    <p>2. <strong>Verificação da Pasta Térmica:</strong> Certifique-se de que a pasta térmica entre o processador e o dissipador de calor esteja aplicada corretamente. Substitua se necessário.<br/></p>
+                
+                    <p>3. <strong>Posicionamento e Ventilação:</strong> Coloque o computador em um local bem ventilado, garantindo espaço ao redor para a circulação de ar. Considere a adição de ventoinhas extras se possível.<br/></p>
+                
+                    <p>4. <strong>Monitoramento de Temperatura:</strong> Utilize programas de monitoramento de temperatura para acompanhar as leituras e identificar componentes específicos que possam estar superaquecendo.<br/></p>
+                
+                    <p>Se o problema persistir ou se você não se sentir confortável realizando essas etapas, entre em contato com nossa equipe de suporte técnico. Estamos aqui para ajudar a evitar danos causados pelo superaquecimento em seu computador.<br/></p>
+                
+                </div>
                     } />
 
                     <Botao textoBotao="O computador está fazendo muito barulho" conteudo={
-                    <div className='textoproblema'>Conteúdo do Botão 1</div>
+                    <div className='textoproblema'><p><strong>Resolvendo Problemas: Computador Fazendo Muito Barulho</strong></p>
+
+                    <p>Se o seu computador está gerando um ruído excessivo, siga estas etapas para identificar e resolver o problema:</p>
+                
+                    <p>1. <strong>Limpeza Interna:</strong> Verifique se há acúmulo de poeira nos ventiladores e componentes internos. Faça uma limpeza cuidadosa para garantir o fluxo de ar adequado.<br/></p>
+                
+                    <p>2. <strong>Verificação dos Ventiladores:</strong> Certifique-se de que todos os ventiladores estejam funcionando corretamente. Substitua aqueles que apresentarem falhas ou ruídos anormais.<br/></p>
+                
+                    <p>3. <strong>Posicionamento Adequado:</strong> Confirme que o computador está posicionado em uma superfície plana e nivelada para evitar vibrações e ruídos indesejados.<br/></p>
+                
+                    <p>4. <strong>Verificação do Disco Rígido:</strong> Ruídos provenientes do disco rígido podem indicar problemas. Execute verificações de integridade e considere a substituição se necessário.<br/></p>
+                
+                    <p>Se o barulho persistir e você não conseguir identificar a causa, entre em contato com nossa equipe de suporte técnico. Estamos prontos para ajudar a resolver esse problema sonoro em seu computador.<br/></p></div>
                     } />
 
                     </div>
