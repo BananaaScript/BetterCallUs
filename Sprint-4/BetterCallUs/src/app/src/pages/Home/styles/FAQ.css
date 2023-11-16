@@ -81,7 +81,8 @@
   #conteudo {
     margin: 0 40px;
     background-color: white;
-    border: solid blueviolet 6px;
+    border: solid blueviolet 4px;
+    border-radius: 60px;
   }
 
   .textoproblema {
