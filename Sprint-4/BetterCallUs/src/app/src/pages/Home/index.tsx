@@ -21,105 +21,70 @@ export default class Home extends Component {
                 
                 <div>
                     <p><strong>Introdução:</strong></p>
-                    <p>A conectividade de rede é essencial nos dias de hoje, tanto para uso pessoal quanto profissional. Quando surgem problemas nessa área, podem surgir frustrações e impactos significativos em diversas atividades. Este artigo aborda os principais desafios relacionados à conectividade na rede e fornece soluções práticas para superá-los.</p><br/>
+                    <p>A conectividade de rede é essencial nos dias de hoje, tanto para uso pessoal quanto profissional. Quando surgem problemas nessa área, podem surgir frustrações e impactos significativos em diversas atividades. Este artigo aborda os principais desafios relacionados à conectividade na rede e fornece soluções práticas para superá-los.</p>
                 </div>
                 
                 <div>
                     <p><strong>Identificando o Problema:</strong></p>
-                    <p>O primeiro passo para resolver problemas de conectividade é identificar a origem do issue. Pode ser um problema no hardware, software, configuração da rede ou até mesmo no provedor de serviços. Aqui estão algumas etapas iniciais para diagnosticar o problema:</p><br/>
+                    <p>O primeiro passo para resolver problemas de conectividade é identificar a origem do issue. Pode ser um problema no hardware, software, configuração da rede ou até mesmo no provedor de serviços. Aqui estão algumas etapas iniciais para diagnosticar o problema:</p>
 
                     <p><strong>1 - Verifique a Conexão Física:</strong></p>
-                    <p>•Certifique-se de que todos os cabos estejam devidamente conectados.</p>
-                    <p>•Verifique se há danos visíveis nos cabos ou nos dispositivos de rede.</p>
-                </div><br/>
+                    <p>Certifique-se de que todos os cabos estejam devidamente conectados.</p>
+                    <p>Verifique se há danos visíveis nos cabos ou nos dispositivos de rede.</p>
+                </div>
                 
                 <div>
                     <p><strong>2 - Reinicie Dispositivos:</strong></p>
-                    <p>Reinicie o roteador, modem e o dispositivo que está enfrentando problemas de conectividade.</p><br/>
+                    <p>Reinicie o roteador, modem e o dispositivo que está enfrentando problemas de conectividade.</p>
                 </div>
                 
                 <div>
                     <p><strong>3- Verifique as Configurações de Rede:</strong></p>
-                    <p>Garanta que as configurações de rede, como endereço IP e gateway, estejam configuradas corretamente.</p><br/>
+                    <p>Garanta que as configurações de rede, como endereço IP e gateway, estejam configuradas corretamente.</p>
                 </div>
                 
                 <div>
+                    <p><strong>Soluções Comuns:</strong></p>
                     <p><strong>Problemas de Configuração do Roteador:</strong></p>
-                    <p>•Acesse a interface de administração do roteador digitando seu endereço IP em um navegador web.</p>
-                    <p>•Verifique as configurações de segurança, como senhas e filtros de MAC.</p><br/>
+                    <p>Acesse a interface de administração do roteador digitando seu endereço IP em um navegador web.</p>
+                    <p>Verifique as configurações de segurança, como senhas e filtros de MAC.</p>
                 </div>
                 
                 <div>
                     <p><strong>Atualização de Drivers e Firmware:</strong></p>
-                    <p>•Certifique-se de que os drivers de rede nos dispositivos estão atualizados.</p>
-                    <p>•Verifique se há atualizações de firmware disponíveis para o roteador e modem.</p>
-                </div><br/>
+                    <p>Certifique-se de que os drivers de rede nos dispositivos estão atualizados.</p>
+                    <p>Verifique se há atualizações de firmware disponíveis para o roteador e modem.</p>
+                </div>
                 
                 <div>
                     <p><strong>Problemas de Provedor de Serviços:</strong></p>
-                    <p>•Entre em contato com o provedor de serviços para verificar se há interrupções na área.</p>
-                    <p>•Solicite assistência técnica e forneça detalhes sobre os sintomas.</p>
-                </div><br/>
+                    <p>Entre em contato com o provedor de serviços para verificar se há interrupções na área.</p>
+                    <p>Solicite assistência técnica e forneça detalhes sobre os sintomas.</p>
+                </div>
                 
                 <div>
                     <p><strong>Firewall e Antivírus:</strong></p>
-                    <p>•Desative temporariamente o firewall e o antivírus para ver se eles estão bloqueando a conexão.</p>
-                    <p>•Certifique-se de que as configurações de segurança não estão bloqueando o tráfego de rede.</p>
-                </div><br/>
+                    <p>Desative temporariamente o firewall e o antivírus para ver se eles estão bloqueando a conexão.</p>
+                    <p>Certifique-se de que as configurações de segurança não estão bloqueando o tráfego de rede.</p>
+                </div>
                 
                 <div>
                     <p><strong>Ferramentas de Diagnóstico:</strong></p>
                     <p><strong>Ping e Traceroute:</strong></p>
-                    <p>Utilize comandos como "ping" e "traceroute" para diagnosticar a conectividade e identificar onde o problema pode estar ocorrendo.</p><br/>
+                    <p>Utilize comandos como "ping" e "traceroute" para diagnosticar a conectividade e identificar onde o problema pode estar ocorrendo.</p>
                     <p><strong>Utilize Ferramentas Online:</strong></p>
                     <p>Existem várias ferramentas online que podem ajudar a diagnosticar problemas de conectividade, como testes de velocidade de internet e verificações de ping.</p>
-                </div><br/>
+                </div>
                 
                 <div>
                     <p><strong>Conclusão:</strong></p>
-                    <p>Resolver problemas de conectividade na rede pode ser desafiador, mas seguindo uma abordagem sistemática, é possível identificar e corrigir a maioria dos problemas...</p><br/>
+                    <p>Resolver problemas de conectividade na rede pode ser desafiador, mas seguindo uma abordagem sistemática, é possível identificar e corrigir a maioria dos problemas...</p>
                     <p>Caso as soluções sugeridas não resolvam o problema, é recomendável buscar a ajuda de profissionais de TI ou do provedor de serviços de internet para uma assistência mais especializada.</p>
-                </div><br/></div>
+                </div></div>
                     } />
 
                     <Botao textoBotao="Latência alta frequente" conteudo={
-                    <div className='textoproblema'>
-
-                        <p><strong>O Que é Latência e Por Que É Importante?</strong>
-
-                        <p>Latência refere-se ao atraso percebido entre o envio de um comando ou solicitação e a recepção da resposta. Em ambientes digitais, como jogos online, chamadas de vídeo ou transmissões ao vivo, uma latência alta pode resultar em atrasos significativos, impactando negativamente a experiência do usuário.</p><br/>
-
-                        <p><strong>Possíveis Causas de Latência Alta:</strong></p>
-
-                        <p>•Conexão de Internet Instável: Velocidades de conexão variáveis, perda de pacotes ou interferências podem contribuir para a latência.</p>
-
-                        <p>•Roteador e Configurações de Rede: Configurações inadequadas no roteador, congestionamento de rede ou interferências de dispositivos próximos podem afetar a latência.</p>
-
-                        <p>•Problemas de Provedor de Serviços de Internet (ISP): Questões relacionadas à infraestrutura do ISP, como sobrecarga de servidores, também podem ser responsáveis pela latência.</p><br/>
-
-                        <p><strong>Identificação do Problema:</strong></p>
-
-                        <p>•Teste de Velocidade: Realize testes de velocidade de sua conexão para verificar a largura de banda disponível.</p>
-
-                        <p>•Ping e Traceroute: Utilize comandos como ping e traceroute para diagnosticar onde os atrasos estão ocorrendo.</p>
-
-                        <p>•Monitoramento do Roteador: Verifique as configurações do roteador e monitore o tráfego para identificar possíveis gargalos.</p><br/>
-
-                       <p><strong>Soluções Possíveis:</strong></p>
-
-                       <p>•Atualização de Equipamentos: Certifique-se de que seu roteador e modem estão atualizados. Considere investir em equipamentos mais recentes para melhor desempenho.</p>
-
-                       <p>•Configurações de Qualidade de Serviço (QoS): Configure o QoS no roteador para priorizar o tráfego sensível à latência, como chamadas de voz ou jogos.</p>
-
-                       <p>•Contato com o ISP: Se os problemas persistirem, entre em contato com seu provedor de serviços de internet para verificar possíveis problemas na rede.</p><br/>
-
-                       <p><strong>Contate nosso Suporte Técnico:</strong></p>
-
-                       <p>Se você seguir essas etapas e ainda enfrentar problemas de latência, nossa equipe de suporte técnico está pronta para ajudar. Entre em contato conosco para uma assistência personalizada e rápida.</p>
-
-                       <p>Estamos comprometidos em garantir que você desfrute de uma experiência online sem interrupções, e resolver problemas de latência é fundamental para alcançar esse objetivo.</p>
-</p>
-                    </div>
+                    <div className='textoproblema'>Conteúdo do Botão 1</div>
                     } />
 
                     <Botao textoBotao="Queda constante da internet" conteudo={
@@ -206,23 +171,134 @@ export default class Home extends Component {
                     <div className='botoes'>
                         
                     <Botao textoBotao="Como saber se meu computador está com vírus ?" conteudo={
-                    <div className='textoproblema'>Conteúdo do Botão 1</div>
+                    <div className='textoproblema'><p><strong>Como Saber se Meu Computador Está com Vírus</strong></p>
+
+                    <p>Identificar sinais de infecção por vírus é essencial para agir rapidamente e proteger seu computador. Fique atento a esses indicadores que podem sugerir a presença de malware:</p>
+                    
+                    <p>1. <strong>Desempenho Lento:</strong> Seu computador está mais lento do que o normal? Vírus podem consumir recursos do sistema, impactando o desempenho.</p><br/>
+                    
+                    <p>2. <strong>Pop-ups Inesperados:</strong> Anúncios pop-up frequentes e não solicitados podem indicar a presença de adware ou outros tipos de malware.</p><br/>
+                    
+                    <p>3. <strong>Alterações nas Configurações do Navegador:</strong> Seu navegador tem comportamento estranho? Redirecionamentos para páginas desconhecidas podem ser um sinal de infecção.</p><br/>
+                    
+                    <p>4. <strong>Programas Inesperados:</strong> Se novos programas aparecerem no seu computador sem sua autorização, pode ser um sinal de instalação de malware.</p><br/>
+                    
+                    <p>5. <strong>Problemas com o Sistema Operacional:</strong> Falhas frequentes, congelamentos ou erros inesperados podem ser causados por vírus.</p><br/>
+                    
+                    <p>6. <strong>Atividade de Disco Constante:</strong> Seu disco rígido está constantemente ativo, mesmo quando não está usando o computador? Isso pode indicar atividade maliciosa.</p><br/>
+                    
+                    <p>7. <strong>Alterações nas Configurações de Segurança:</strong> Verifique se as configurações de antivírus e firewall foram alteradas sem a sua permissão.</p><br/>
+                    
+                    <p>8. <strong>E-mails ou Mensagens Suspeitas:</strong> Seus contatos recebem mensagens estranhas de você? Sua conta de e-mail pode ter sido comprometida.</p><br/>
+                    
+                    <p>9. <strong>Uso Elevado da Conexão de Internet:</strong> Se a sua conexão de internet está sendo usada intensivamente quando você não está fazendo downloads grandes, pode ser um sinal de atividade maliciosa.</p><br/>
+                    
+                    <p>10. <strong>Contas Online Comprometidas:</strong> Se suas contas online apresentarem atividade suspeita, como acessos não autorizados, sua segurança pode estar comprometida.</p><br/>
+                    
+                    <p>Se você observar um ou mais desses sinais, é recomendável realizar uma verificação completa do sistema com um antivírus confiável e buscar assistência profissional se necessário.</p><br/>
+                    </div>
                     } />
 
                     <Botao textoBotao="Como se proteger contra virus e malwares" conteudo={
-                    <div className='textoproblema'>Conteúdo do Botão 1</div>
+                    <div className='textoproblema'><p><strong>Como se Proteger contra Vírus e Ameaças</strong></p>
+
+                    <p>Manter a segurança do seu computador é crucial para proteger seus dados e privacidade. Adote práticas preventivas para evitar vírus e ameaças cibernéticas. Siga estas dicas para fortalecer a segurança do seu sistema:</p>
+                    
+                    <p>1. <strong>Utilize um Antivírus Atualizado:</strong> Instale um antivírus confiável e mantenha-o sempre atualizado. Realize verificações regulares para identificar e eliminar possíveis ameaças.</p><br/>
+                    
+                    <p>2. <strong>Mantenha o Sistema Operacional Atualizado:</strong> Instale as atualizações de segurança fornecidas pelo sistema operacional. Isso corrige vulnerabilidades e fortalece a resistência contra ameaças conhecidas.</p><br/>
+                    
+                    <p>3. <strong>Navegue com Cautela:</strong> Evite clicar em links suspeitos ou baixar arquivos de fontes não confiáveis. Esteja alerta a emails e mensagens de remetentes desconhecidos.</p><br/>
+                    
+                    <p>4. <strong>Utilize uma Rede Segura:</strong> Proteja sua rede Wi-Fi com uma senha forte para evitar acessos não autorizados. Isso impede que hackers explorem vulnerabilidades em sua rede.</p><br/>
+                    
+                    <p>5. <strong>Realize Backup Regularmente:</strong> Faça cópias de segurança dos seus dados importantes. Em caso de infecção, você terá uma cópia segura dos seus arquivos.</p><br/>
+                    
+                    <p>6. <strong>Evite Redes Wi-Fi Públicas:</strong> Redes Wi-Fi públicas podem ser inseguras. Evite realizar transações financeiras ou acessar informações sensíveis enquanto estiver conectado a essas redes.</p><br/>
+                    
+                    <p>7. <strong>Utilize Senhas Fortes:</strong> Configure senhas robustas para suas contas online e para o acesso ao seu computador. Isso dificulta o acesso não autorizado.</p><br/>
+                    
+                    <p>8. <strong>Seja Cauteloso com Dispositivos Externos:</strong> Escaneie dispositivos USB e outros dispositivos externos em busca de malware antes de conectá-los ao seu computador.</p><br/>
+                    
+                    <p>9. <strong>Atualize Aplicativos Regularmente:</strong> Além do sistema operacional, mantenha todos os programas e aplicativos atualizados para corrigir possíveis vulnerabilidades de segurança.</p><br/>
+                    
+                    <p>10. <strong>Eduque-se sobre Ameaças Cibernéticas:</strong> Esteja ciente das últimas tendências em cibersegurança e saiba reconhecer práticas suspeitas online.</p><br/>
+                    
+                    <p>Ao incorporar essas práticas de segurança em sua rotina, você contribui significativamente para proteger seu computador contra vírus e ameaças cibernéticas.</p><br/>
+                    </div>
                     } />
 
                     <Botao textoBotao="Como livrar meu computador de vírus e ameaças" conteudo={
-                    <div className='textoproblema'>Conteúdo do Botão 1</div>
+                    <div className='textoproblema'><p><strong>Como Livrar Meu Computador de Vírus e Ameaças</strong></p>
+
+                    <p>Se o seu computador já está infectado, é crucial agir rapidamente para remover vírus e ameaças. Siga estas etapas para livrar seu sistema de infecções:</p>
+                    
+                    <p>1. <strong>Use um Programa Antivírus Atualizado:</strong> Execute uma verificação completa do sistema com um programa antivírus confiável. Certifique-se de que o software está atualizado para garantir detecção eficaz.</p><br/>
+                    
+                    <p>2. <strong>Realize Varreduras Adicionais:</strong> Além do antivírus, utilize programas antimalware adicionais para procurar e remover ameaças que podem passar despercebidas.</p><br/>
+                    
+                    <p>3. <strong>Remova Aplicativos Suspeitos:</strong> Desinstale programas desconhecidos ou suspeitos por meio do Painel de Controle. Isso elimina possíveis fontes de infecção.</p><br/>
+                    
+                    <p>4. <strong>Restaure o Sistema:</strong> Considere restaurar o sistema para um ponto anterior ao início da infecção. Isso pode reverter as configurações do sistema para um estado mais seguro.</p><br/>
+                    
+                    <p>5. <strong>Atualize Senhas:</strong> Mude as senhas de todas as suas contas, pois senhas comprometidas podem ter sido capturadas pelos vírus. Certifique-se de usar senhas fortes e exclusivas.</p><br/>
+                    
+                    <p>6. <strong>Isolamento de Dispositivos:</strong> Desconecte o computador da rede e de dispositivos externos para evitar a propagação de malware. Isso é crucial para proteger outros dispositivos conectados.</p><br/>
+                    
+                    <p>7. <strong>Busque Ajuda Profissional:</strong> Se a infecção persistir, considere buscar a assistência de um profissional de segurança cibernética. Algumas ameaças podem exigir conhecimentos avançados para remoção.</p><br/>
+                    
+                    <p>8. <strong>Previna Futuras Infecções:</strong> Após remover as ameaças, implemente medidas preventivas, como manter programas atualizados, fazer backup regular e evitar comportamentos online arriscados.</p><br/>
+                    
+                    <p>Ao seguir essas etapas, você aumenta as chances de limpar seu computador de infecções e protege contra futuros ataques.</p><br/>
+                    </div>
                     } />
 
                     <Botao textoBotao="Como virus podem afetar meu computador ?" conteudo={
-                    <div className='textoproblema'>Conteúdo do Botão 1</div>
+                    <div className='textoproblema'><p><strong>Como Vírus Podem Afetar Meu Computador?</strong></p>
+
+                    <p>Os vírus podem ter impactos significativos em seu computador, comprometendo a segurança e o desempenho. Entenda as maneiras como os vírus podem afetar seu sistema:</p>
+                    
+                    <p>1. <strong>Roubo de Dados:</strong> Alguns vírus são projetados para coletar e roubar informações pessoais, como senhas e detalhes financeiros, expondo você a riscos de roubo de identidade.</p><br/>
+                    
+                    <p>2. <strong>Corrupção de Arquivos:</strong> Vírus podem corromper ou danificar seus arquivos, tornando-os inacessíveis. Isso pode afetar documentos importantes, fotos e outros dados essenciais.</p><br/>
+                    
+                    <p>3. <strong>Desempenho Lento:</strong> Vírus consomem recursos do sistema, causando lentidão no computador. Isso pode resultar em uma experiência de uso frustrante e menos eficiente.</p><br/>
+                    
+                    <p>4. <strong>Exibição de Publicidade Indesejada:</strong> Certos tipos de malware exibem anúncios intrusivos, prejudicando a experiência de navegação e podendo redirecionar para sites não seguros.</p><br/>
+                    
+                    <p>5. <strong>Ataques de Ransomware:</strong> Vírus ransomware criptografam seus arquivos e exigem pagamento para a sua liberação. Esses ataques podem resultar na perda irreversível de dados valiosos.</p><br/>
+                    
+                    <p>6. <strong>Controle Remoto:</strong> Alguns vírus permitem que hackers controlem seu computador remotamente, podendo realizar ações maliciosas sem o seu conhecimento.</p><br/>
+                    
+                    <p>7. <strong>Propagação para Outros Dispositivos:</strong> Vírus podem se espalhar para outros dispositivos conectados à mesma rede, ampliando o alcance de danos.</p><br/>
+                    
+                    <p>8. <strong>Comprometimento da Segurança Geral:</strong> Vírus podem abrir brechas de segurança, facilitando ataques adicionais e colocando em risco a integridade do sistema operacional.</p><br/>
+                    
+                    <p>Para proteger seu computador, é essencial adotar práticas de segurança, como manter software atualizado, utilizar antivírus confiáveis e evitar comportamentos online arriscados.</p><br/>
+                    </div>
                     } />
 
                     <Botao textoBotao="O que pode causar virus no meu computador ?" conteudo={
-                    <div className='textoproblema'>Conteúdo do Botão 1</div>
+                    <div className='textoproblema'><p><strong>O que Pode Causar Vírus no Meu Computador?</strong></p>
+
+                    <p>A segurança do seu computador é crucial para proteger seus dados e privacidade. Entenda as possíveis causas de infecções por vírus e como evitá-las:</p>
+                    
+                    <p>1. <strong>Downloads de Fontes Não Confiáveis:</strong> Evite baixar software de fontes não confiáveis. Utilize apenas sites oficiais e evite cliques em links suspeitos.</p><br/>
+                    
+                    <p>2. <strong>Emails Phishing:</strong> Esteja atento a emails suspeitos. Não abra anexos ou clique em links de remetentes desconhecidos, pois podem conter malware.</p><br/>
+                    
+                    <p>3. <strong>Falhas de Software Desatualizado:</strong> Mantenha seu sistema operacional e programas atualizados para corrigir vulnerabilidades que os hackers podem explorar.</p><br/>
+                    
+                    <p>4. <strong>Uso de Dispositivos USB Desconhecidos:</strong> Evite conectar dispositivos USB desconhecidos, pois podem conter malware. Escaneie-os antes de usar.</p><br/>
+                    
+                    <p>5. <strong>Navegação em Sites Não Seguros:</strong> Certifique-se de que os sites que visita são seguros, especialmente ao fornecer informações pessoais.</p><br/>
+                    
+                    <p>6. <strong>Senha Fraca ou Não Atualizada:</strong> Use senhas fortes e atualize-as regularmente para proteger suas contas contra acessos não autorizados.</p><br/>
+                    
+                    <p>7. <strong>Ferramentas Antivírus Desatualizadas:</strong> Mantenha seu software antivírus atualizado para garantir a detecção de ameaças mais recentes.</p><br/>
+                    
+                    <p>A prevenção é a melhor forma de evitar infecções por vírus. Ao seguir estas dicas, você contribui para a segurança e integridade do seu sistema.</p><br/>
+                    </div>
                     } />
 
                     </div>
@@ -240,15 +316,16 @@ export default class Home extends Component {
 
                     <p>Se o seu computador não está ligando, siga estas etapas para diagnosticar e resolver o problema:</p>
                 
-                    <p>1. <strong>Verificação de Alimentação:</strong> Certifique-se de que o cabo de alimentação está corretamente conectado e que a tomada está funcionando. Considere testar com outra fonte de energia.<br/></p>
+                    <p>1. <strong>Verificação de Alimentação:</strong> Certifique-se de que o cabo de alimentação está corretamente conectado e que a tomada está funcionando. Considere testar com outra fonte de energia.</p><br/>
                 
-                    <p>2. <strong>Botão de Liga/Desliga:</strong> Verifique se o botão de liga/desliga está funcionando corretamente. Às vezes, um mau contato pode impedir a inicialização.<br/></p>
+                    <p>2. <strong>Botão de Liga/Desliga:</strong> Verifique se o botão de liga/desliga está funcionando corretamente. Às vezes, um mau contato pode impedir a inicialização.</p><br/>
                 
-                    <p>3. <strong>Hardware Conectado Corretamente:</strong> Certifique-se de que todos os componentes internos, como memória RAM e placas, estão firmemente conectados aos slots correspondentes.<br/></p>
+                    <p>3. <strong>Hardware Conectado Corretamente:</strong> Certifique-se de que todos os componentes internos, como memória RAM e placas, estão firmemente conectados aos slots correspondentes.</p><br/>
                 
-                    <p>4. <strong>Teste com Componentes Mínimos:</strong> Se possível, remova componentes extras e teste apenas com o mínimo necessário para inicialização, como processador, placa-mãe, memória e fonte de alimentação.<br/></p>
+                    <p>4. <strong>Teste com Componentes Mínimos:</strong> Se possível, remova componentes extras e teste apenas com o mínimo necessário para inicialização, como processador, placa-mãe, memória e fonte de alimentação.</p><br/>
                 
-                    <p>Se mesmo após essas etapas o computador ainda não ligar, entre em contato com nossa equipe de suporte técnico. Estamos aqui para ajudar a identificar e resolver esse problema de inicialização.<br/></p></div>
+                    <p>Se mesmo após essas etapas o computador ainda não ligar, entre em contato com nossa equipe de suporte técnico. Estamos aqui para ajudar a identificar e resolver esse problema de inicialização.</p><br/>
+                </div>
                     } />
 
                     <Botao textoBotao="Dispositivos USB não conectam" conteudo={
