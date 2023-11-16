@@ -21,70 +21,105 @@ export default class Home extends Component {
                 
                 <div>
                     <p><strong>Introdução:</strong></p>
-                    <p>A conectividade de rede é essencial nos dias de hoje, tanto para uso pessoal quanto profissional. Quando surgem problemas nessa área, podem surgir frustrações e impactos significativos em diversas atividades. Este artigo aborda os principais desafios relacionados à conectividade na rede e fornece soluções práticas para superá-los.</p>
+                    <p>A conectividade de rede é essencial nos dias de hoje, tanto para uso pessoal quanto profissional. Quando surgem problemas nessa área, podem surgir frustrações e impactos significativos em diversas atividades. Este artigo aborda os principais desafios relacionados à conectividade na rede e fornece soluções práticas para superá-los.</p><br/>
                 </div>
                 
                 <div>
                     <p><strong>Identificando o Problema:</strong></p>
-                    <p>O primeiro passo para resolver problemas de conectividade é identificar a origem do issue. Pode ser um problema no hardware, software, configuração da rede ou até mesmo no provedor de serviços. Aqui estão algumas etapas iniciais para diagnosticar o problema:</p>
+                    <p>O primeiro passo para resolver problemas de conectividade é identificar a origem do issue. Pode ser um problema no hardware, software, configuração da rede ou até mesmo no provedor de serviços. Aqui estão algumas etapas iniciais para diagnosticar o problema:</p><br/>
 
                     <p><strong>1 - Verifique a Conexão Física:</strong></p>
-                    <p>Certifique-se de que todos os cabos estejam devidamente conectados.</p>
-                    <p>Verifique se há danos visíveis nos cabos ou nos dispositivos de rede.</p>
-                </div>
+                    <p>•Certifique-se de que todos os cabos estejam devidamente conectados.</p>
+                    <p>•Verifique se há danos visíveis nos cabos ou nos dispositivos de rede.</p>
+                </div><br/>
                 
                 <div>
                     <p><strong>2 - Reinicie Dispositivos:</strong></p>
-                    <p>Reinicie o roteador, modem e o dispositivo que está enfrentando problemas de conectividade.</p>
+                    <p>Reinicie o roteador, modem e o dispositivo que está enfrentando problemas de conectividade.</p><br/>
                 </div>
                 
                 <div>
                     <p><strong>3- Verifique as Configurações de Rede:</strong></p>
-                    <p>Garanta que as configurações de rede, como endereço IP e gateway, estejam configuradas corretamente.</p>
+                    <p>Garanta que as configurações de rede, como endereço IP e gateway, estejam configuradas corretamente.</p><br/>
                 </div>
                 
                 <div>
-                    <p><strong>Soluções Comuns:</strong></p>
                     <p><strong>Problemas de Configuração do Roteador:</strong></p>
-                    <p>Acesse a interface de administração do roteador digitando seu endereço IP em um navegador web.</p>
-                    <p>Verifique as configurações de segurança, como senhas e filtros de MAC.</p>
+                    <p>•Acesse a interface de administração do roteador digitando seu endereço IP em um navegador web.</p>
+                    <p>•Verifique as configurações de segurança, como senhas e filtros de MAC.</p><br/>
                 </div>
                 
                 <div>
                     <p><strong>Atualização de Drivers e Firmware:</strong></p>
-                    <p>Certifique-se de que os drivers de rede nos dispositivos estão atualizados.</p>
-                    <p>Verifique se há atualizações de firmware disponíveis para o roteador e modem.</p>
-                </div>
+                    <p>•Certifique-se de que os drivers de rede nos dispositivos estão atualizados.</p>
+                    <p>•Verifique se há atualizações de firmware disponíveis para o roteador e modem.</p>
+                </div><br/>
                 
                 <div>
                     <p><strong>Problemas de Provedor de Serviços:</strong></p>
-                    <p>Entre em contato com o provedor de serviços para verificar se há interrupções na área.</p>
-                    <p>Solicite assistência técnica e forneça detalhes sobre os sintomas.</p>
-                </div>
+                    <p>•Entre em contato com o provedor de serviços para verificar se há interrupções na área.</p>
+                    <p>•Solicite assistência técnica e forneça detalhes sobre os sintomas.</p>
+                </div><br/>
                 
                 <div>
                     <p><strong>Firewall e Antivírus:</strong></p>
-                    <p>Desative temporariamente o firewall e o antivírus para ver se eles estão bloqueando a conexão.</p>
-                    <p>Certifique-se de que as configurações de segurança não estão bloqueando o tráfego de rede.</p>
-                </div>
+                    <p>•Desative temporariamente o firewall e o antivírus para ver se eles estão bloqueando a conexão.</p>
+                    <p>•Certifique-se de que as configurações de segurança não estão bloqueando o tráfego de rede.</p>
+                </div><br/>
                 
                 <div>
                     <p><strong>Ferramentas de Diagnóstico:</strong></p>
                     <p><strong>Ping e Traceroute:</strong></p>
-                    <p>Utilize comandos como "ping" e "traceroute" para diagnosticar a conectividade e identificar onde o problema pode estar ocorrendo.</p>
+                    <p>Utilize comandos como "ping" e "traceroute" para diagnosticar a conectividade e identificar onde o problema pode estar ocorrendo.</p><br/>
                     <p><strong>Utilize Ferramentas Online:</strong></p>
                     <p>Existem várias ferramentas online que podem ajudar a diagnosticar problemas de conectividade, como testes de velocidade de internet e verificações de ping.</p>
-                </div>
+                </div><br/>
                 
                 <div>
                     <p><strong>Conclusão:</strong></p>
-                    <p>Resolver problemas de conectividade na rede pode ser desafiador, mas seguindo uma abordagem sistemática, é possível identificar e corrigir a maioria dos problemas...</p>
+                    <p>Resolver problemas de conectividade na rede pode ser desafiador, mas seguindo uma abordagem sistemática, é possível identificar e corrigir a maioria dos problemas...</p><br/>
                     <p>Caso as soluções sugeridas não resolvam o problema, é recomendável buscar a ajuda de profissionais de TI ou do provedor de serviços de internet para uma assistência mais especializada.</p>
-                </div></div>
+                </div><br/></div>
                     } />
 
                     <Botao textoBotao="Latência alta frequente" conteudo={
-                    <div className='textoproblema'>Conteúdo do Botão 1</div>
+                    <div className='textoproblema'>
+
+                        <p><strong>O Que é Latência e Por Que É Importante?</strong>
+
+                        <p>Latência refere-se ao atraso percebido entre o envio de um comando ou solicitação e a recepção da resposta. Em ambientes digitais, como jogos online, chamadas de vídeo ou transmissões ao vivo, uma latência alta pode resultar em atrasos significativos, impactando negativamente a experiência do usuário.</p><br/>
+
+                        <p><strong>Possíveis Causas de Latência Alta:</strong></p>
+
+                        <p>•Conexão de Internet Instável: Velocidades de conexão variáveis, perda de pacotes ou interferências podem contribuir para a latência.</p>
+
+                        <p>•Roteador e Configurações de Rede: Configurações inadequadas no roteador, congestionamento de rede ou interferências de dispositivos próximos podem afetar a latência.</p>
+
+                        <p>•Problemas de Provedor de Serviços de Internet (ISP): Questões relacionadas à infraestrutura do ISP, como sobrecarga de servidores, também podem ser responsáveis pela latência.</p><br/>
+
+                        <p><strong>Identificação do Problema:</strong></p>
+
+                        <p>•Teste de Velocidade: Realize testes de velocidade de sua conexão para verificar a largura de banda disponível.</p>
+
+                        <p>•Ping e Traceroute: Utilize comandos como ping e traceroute para diagnosticar onde os atrasos estão ocorrendo.</p>
+
+                        <p>•Monitoramento do Roteador: Verifique as configurações do roteador e monitore o tráfego para identificar possíveis gargalos.</p><br/>
+
+                       <p><strong>Soluções Possíveis:</strong></p>
+
+                       <p>•Atualização de Equipamentos: Certifique-se de que seu roteador e modem estão atualizados. Considere investir em equipamentos mais recentes para melhor desempenho.</p>
+
+                       <p>•Configurações de Qualidade de Serviço (QoS): Configure o QoS no roteador para priorizar o tráfego sensível à latência, como chamadas de voz ou jogos.</p>
+
+                       <p>•Contato com o ISP: Se os problemas persistirem, entre em contato com seu provedor de serviços de internet para verificar possíveis problemas na rede.</p><br/>
+
+                       <p><strong>Contate nosso Suporte Técnico:</strong></p>
+
+                       <p>Se você seguir essas etapas e ainda enfrentar problemas de latência, nossa equipe de suporte técnico está pronta para ajudar. Entre em contato conosco para uma assistência personalizada e rápida.</p>
+
+                       <p>Estamos comprometidos em garantir que você desfrute de uma experiência online sem interrupções, e resolver problemas de latência é fundamental para alcançar esse objetivo.</p>
+</p>
+                    </div>
                     } />
 
                     <Botao textoBotao="Queda constante da internet" conteudo={
