@@ -84,19 +84,99 @@ export default class Home extends Component {
                     } />
 
                     <Botao textoBotao="Latência alta frequente" conteudo={
-                    <div className='textoproblema'>Conteúdo do Botão 1</div>
+                    <div className='textoproblema'><p><strong>Latência Alta Frequente: Como Diagnosticar e Resolver</strong></p>
+
+                    <p>A latência alta pode afetar significativamente a experiência de uso do seu computador, causando atrasos e lentidão nas operações. Aqui estão algumas etapas para diagnosticar e resolver problemas de latência alta frequente:</p>
+                    
+                    <p>1. <strong>Verifique sua Conexão com a Internet:</strong> Teste a velocidade da sua conexão para garantir que você está recebendo a largura de banda que está pagando. Problemas na conexão podem resultar em latência.</p><br/>
+                    
+                    <p>2. <strong>Descongestione Sua Rede Local:</strong> Se vários dispositivos estiverem conectados à mesma rede, isso pode causar congestionamento. Considere desconectar dispositivos desnecessários ou investir em um roteador mais robusto.</p><br/>
+                    
+                    <p>3. <strong>Atualize seus Drivers de Rede:</strong> Drivers desatualizados podem impactar o desempenho da rede. Certifique-se de que os drivers da sua placa de rede estejam atualizados.</p><br/>
+                    
+                    <p>4. <strong>Evite Downloads em Segundo Plano:</strong> Se houver downloads em segundo plano, como atualizações automáticas, isso pode consumir largura de banda e causar latência. Agende downloads para horários menos críticos.</p><br/>
+                    
+                    <p>5. <strong>Reduza o Número de Dispositivos Conectados:</strong> Muitos dispositivos conectados à sua rede podem sobrecarregar a largura de banda. Desconecte dispositivos não essenciais.</p><br/>
+                    
+                    <p>6. <strong>Considere a Utilização de Cabo Ethernet:</strong> Se possível, conecte seu computador diretamente ao roteador usando um cabo Ethernet. Isso pode proporcionar uma conexão mais estável do que o Wi-Fi.</p><br/>
+                    
+                    <p>7. <strong>Verifique a Presença de Malware:</strong> Malware pode consumir recursos do sistema, causando latência. Execute uma verificação completa do sistema com um antivírus confiável.</p><br/>
+                    
+                    <p>8. <strong>Avalie a Configuração do Roteador:</strong> Configure seu roteador para otimizar o desempenho. Isso pode envolver ajustar configurações como QoS (Quality of Service) para priorizar determinados tipos de tráfego.</p><br/>
+                    
+                    <p>Se, após seguir essas etapas, a latência ainda persistir, pode ser útil entrar em contato com seu provedor de internet ou buscar assistência técnica especializada para uma análise mais aprofundada.</p><br/>
+                    </div>
                     } />
 
                     <Botao textoBotao="Queda constante da internet" conteudo={
-                    <div className='textoproblema'>Conteúdo do Botão 1</div>
+                    <div className='textoproblema'><p><strong>Queda Constante da Internet</strong></p>
+
+                    <p>Experimentar quedas frequentes na conexão de internet pode ser frustrante, mas diversos fatores podem contribuir para esse problema. Aqui estão algumas sugestões para diagnosticar e solucionar a queda constante da internet:</p>
+                    
+                    <p>1. <strong>Verifique a Conexão Física:</strong> Certifique-se de que todos os cabos estão conectados corretamente ao modem, roteador e computador. Um cabo solto pode causar desconexões frequentes.</p><br/>
+                    
+                    <p>2. <strong>Reinicie o Modem e o Roteador:</strong> Desligue o modem e o roteador, aguarde alguns minutos e ligue-os novamente. Isso pode resolver problemas temporários de conexão.</p><br/>
+                    
+                    <p>3. <strong>Posicionamento do Roteador:</strong> Certifique-se de que o roteador está localizado em uma posição central e livre de obstruções. Obstáculos físicos podem interferir na qualidade do sinal.</p><br/>
+                    
+                    <p>4. <strong>Verifique Configurações do Roteador:</strong> Acesse as configurações do roteador para garantir que tudo esteja configurado corretamente, incluindo a segurança da rede e o canal Wi-Fi utilizado.</p><br/>
+                    
+                    <p>5. <strong>Atualize Drivers de Rede:</strong> Verifique se os drivers da sua placa de rede estão atualizados. Drivers desatualizados podem causar instabilidade na conexão.</p><br/>
+                    
+                    <p>6. <strong>Verifique por Interferências:</strong> Outros dispositivos eletrônicos, como telefones sem fio e micro-ondas, podem interferir na conexão Wi-Fi. Evite posicioná-los muito próximos ao roteador.</p><br/>
+                    
+                    <p>7. <strong>Entre em Contato com o Provedor de Internet:</strong> Se as quedas persistirem, entre em contato com seu provedor de internet para relatar o problema. Pode ser necessário ajustes na configuração ou reparos na linha.</p><br/>
+                    
+                    <p>8. <strong>Considere uma Atualização:</strong> Se seu roteador é antigo, pode ser hora de considerar uma atualização para um modelo mais recente, capaz de oferecer melhor desempenho e estabilidade.</p><br/>
+                    
+                    <p>Se, após essas verificações, a queda constante da internet continuar, é recomendável buscar assistência técnica para uma análise mais detalhada do problema.</p><br/>
+                    </div>
                     } />
 
                     <Botao textoBotao="Rede sobrecarregada" conteudo={
-                    <div className='textoproblema'>Conteúdo do Botão 1</div>
+                    <div className='textoproblema'><p><strong>Rede Sobrecarregada</strong></p>
+
+                    <p>Problemas de sobrecarga na rede podem resultar em lentidão na conexão, interferindo na eficiência das atividades online. Identificar e resolver esses problemas é essencial para garantir uma experiência de internet mais estável. Aqui estão algumas etapas que você pode seguir para lidar com uma rede sobrecarregada:</p>
+                    
+                    <p>1. <strong>Verifique a Largura de Banda:</strong> Avalie a largura de banda disponível na sua conexão. Se várias pessoas estiverem usando a mesma rede simultaneamente, a largura de banda pode estar sendo compartilhada, causando lentidão.</p><br/>
+                    
+                    <p>2. <strong>Limite Dispositivos Conectados:</strong> Se possível, restrinja o número de dispositivos conectados à sua rede, especialmente aqueles que consomem muita largura de banda, como streaming de vídeos em alta definição.</p><br/>
+                    
+                    <p>3. <strong>Atualize Seu Roteador:</strong> Certifique-se de que seu roteador está atualizado com as últimas firmware. Roteadores mais antigos podem ter dificuldades em lidar com múltiplos dispositivos conectados.</p><br/>
+                    
+                    <p>4. <strong>Reinicie o Roteador:</strong> Às vezes, reiniciar o roteador pode resolver problemas temporários de sobrecarga e melhorar o desempenho da rede.</p><br/>
+                    
+                    <p>5. <strong>Gerencie Atividades de Banda Larga:</strong> Identifique quais aplicativos ou dispositivos estão consumindo mais largura de banda e, se possível, ajuste as configurações para limitar seu uso.</p><br/>
+                    
+                    <p>6. <strong>Considere uma Atualização de Plano:</strong> Se a sobrecarga na rede for frequente, avalie a possibilidade de atualizar seu plano de internet para uma velocidade mais alta, adequada ao número de usuários e atividades.</p><br/>
+                    
+                    <p>7. <strong>Utilize uma Conexão com Fio:</strong> Conexões por cabo geralmente oferecem desempenho mais estável do que conexões Wi-Fi. Se possível, conecte dispositivos diretamente ao roteador.</p><br/>
+                    
+                    <p>8. <strong>Monitore o Tráfego de Rede:</strong> Utilize ferramentas de monitoramento para identificar padrões de tráfego e tomar medidas proativas para evitar sobrecargas recorrentes.</p><br/>
+                    
+                    <p>Se, mesmo após seguir essas orientações, a sobrecarga persistir, entre em contato com seu provedor de internet para avaliar e resolver possíveis problemas na infraestrutura da rede.</p><br/>
+                    </div>
                     } />
 
                     <Botao textoBotao="Senha de rede esquecida" conteudo={
-                    <div className='textoproblema'>Conteúdo do Botão 1</div>
+                    <div className='textoproblema'><p><strong>Senha de Rede Esquecida</strong></p>
+
+                    <p>Esquecer a senha da sua rede Wi-Fi pode ser frustrante, mas há maneiras de recuperar ou redefinir a senha. Siga estas etapas para lidar com uma senha de rede esquecida:</p>
+                    
+                    <p>1. <strong>Verifique o Roteador:</strong> A senha padrão geralmente está impressa no rótulo do seu roteador. Confira se a senha ainda está configurada como a padrão.</p><br/>
+                    
+                    <p>2. <strong>Consulte Dispositivos Conectados:</strong> Verifique dispositivos que já estão conectados à rede. Em alguns casos, você pode encontrar a senha salva nas configurações desses dispositivos.</p><br/>
+                    
+                    <p>3. <strong>Verifique no Computador Conectado:</strong> Se o seu computador está conectado à rede, você pode encontrar a senha salva nas configurações de rede. Procure nas configurações de Wi-Fi no seu sistema operacional.</p><br/>
+                    
+                    <p>4. <strong>Use o Painel de Controle do Roteador:</strong> Acesse o painel de controle do roteador digitando o endereço IP na barra de endereços do navegador. Faça login com as credenciais do roteador e navegue até as configurações de segurança para encontrar ou redefinir a senha.</p><br/>
+                    
+                    <p>5. <strong>Reinicie o Roteador:</strong> Às vezes, reiniciar o roteador pode restaurar as configurações padrão, incluindo a senha original. Certifique-se de que está ciente das configurações antes de realizar essa ação.</p><br/>
+                    
+                    <p>6. <strong>Reset do Roteador:</strong> Como último recurso, você pode realizar um reset completo no roteador para restaurar todas as configurações para as padrões de fábrica. Esteja ciente de que isso apagará todas as configurações personalizadas, incluindo nomes de rede e senhas.</p><br/>
+                    
+                    <p>Se todas essas opções falharem, entre em contato com o suporte técnico do fabricante do roteador para obter assistência na recuperação ou redefinição da senha de rede.</p><br/>
+                    </div>
                     } />
 
                     </div>
