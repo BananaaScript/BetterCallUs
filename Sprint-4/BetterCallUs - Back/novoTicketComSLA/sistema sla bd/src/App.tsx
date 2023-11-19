@@ -2,13 +2,21 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import moment from 'moment-timezone'
 
+
 function App() {
-  const [chamados, setChamados] = useState<Array<{ id: number; area: string; titulo: string; sumario: string; status: string; tempoderesposta: number; estado: string, datacriacao: string; dataatualizacao: string;}>>([]);
+  const [chamados, setChamados] = useState<Array<{ id: number; area: string; titulo: string; sumario: string; status: string; tempoderesposta: number; estado: string, datacriacao: string; dataatualizacao: string, id_cliente: number, nome_equipamento: string;}>>([]);
   const [area, setArea] = useState('');
   const [titulo, setTitulo] = useState('');
   const [sumario, setSumario] = useState('');
   const [status, setStatus] = useState('');
   const [editingTicketId, setEditingTicketId] = useState<number | null>(null);
+  const [equipamentos, setEquipamentos] = useState<Array<string>>([]);
+  const [selectedEquipamento, setSelectedEquipamento] = useState('');
+
+  let idCliente = 2;
+
+  // quando o sistema de login estiver pronto, tem que mudar para = idcliente que fizer login
+
 
   const formatarData = (data: string) => {
     return moment(data).tz('America/Sao_Paulo').format('YYYY-MM-DD HH:mm:ss');
@@ -31,16 +39,27 @@ function App() {
       });
   }, []);
 
+  useEffect(() => {
+    axios.get('http://localhost:3001/equipamentos')
+      .then((response) => {
+        setEquipamentos(response.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
+
   const handleCreate = () => {
     const novoEstado = 'aberto'
 
     if (editingTicketId === null){
-      axios.post('http://localhost:3001/chamados', { area, titulo, sumario, status, estado: novoEstado })
+      axios.post('http://localhost:3001/chamados', { area, titulo, sumario, status, id_cliente: idCliente, nome_equipamento: selectedEquipamento, estado: novoEstado })
         .then(() => {
           setArea('');
           setTitulo('');
           setSumario('');
           setStatus('');
+          setEditingTicketId(null);
           updateChamados();
         })
         .catch((error) => {
@@ -54,6 +73,7 @@ function App() {
         titulo,
         sumario,
         status,
+        id_cliente: idCliente,
       }).then(() => {
         setArea('');
         setTitulo('');
@@ -116,6 +136,7 @@ function App() {
             <th>Data de Atualização</th>
             <th>Área</th>
             <th>Estado</th>
+            <th>Equipamento</th>
             <th>Deletar</th>
             <th>Editar</th>
           </tr>
@@ -132,6 +153,7 @@ function App() {
               <td>{formatarData(chamado.dataatualizacao)}</td>
               <td>{chamado.area}</td>
               <td>{chamado.estado}</td>
+              <td>{chamado.nome_equipamento}</td>
               <td>
                 <button onClick={() => handleDelete(chamado.id)}>Excluir</button>
               </td>
@@ -179,7 +201,18 @@ function App() {
         <option value="Em andamento">Em andamento</option>
         <option value="Finalizado">Finalizado</option>
       </select>
-      <button onClick={handleCreate} disabled={area === "" || titulo === "" || sumario=== "" || status === ""}>Adicionar</button>
+      <select
+        value={selectedEquipamento || ''}
+        onChange={(e) => setSelectedEquipamento(e.target.value)}
+      >
+        <option value="">Equipamento</option>
+        {equipamentos.map((equipamento) => (
+          <option key={equipamento} value={equipamento}>
+            {equipamento}
+          </option>
+        ))}
+      </select>       
+      <button onClick={handleCreate} disabled={area === "" || titulo === "" || sumario=== "" || status === "" || selectedEquipamento === null}>Adicionar</button>
     </div>
   );
 }
