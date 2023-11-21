@@ -28,14 +28,14 @@ export const CadastroSuporte = () =>{
     }, [])
 
     const registrarConta = () =>{
-        const privilegio = '1'
+        const privilegio = 1
         setNomeError('');
         setCPFError('');
         const padraoNome:RegExp = /^[A-Za-z\s]+$/;
         const padraoCpf:RegExp = /^\d+$/
         const padraoEmail:RegExp = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
 
-        if (nome !== '' && padraoNome.test(nome) && nome.trim() !== '' && cpf !== '' && padraoCpf.test(cpf) && cpf.length == 11 && senha !== '' && padraoEmail.test(email) && privilegio === '1'){
+        if (nome !== '' && padraoNome.test(nome) && nome.trim() !== '' && cpf !== '' && padraoCpf.test(cpf) && cpf.length == 11 && senha !== '' && padraoEmail.test(email) && privilegio === 1){
             let ContaSup = new Conta(nome, cpf, senha, privilegio, email)
             contas.push(ContaSup)
             axios.post('http://localhost:3001/registroSup', {nome, cpf, senha, privilegio, email, })

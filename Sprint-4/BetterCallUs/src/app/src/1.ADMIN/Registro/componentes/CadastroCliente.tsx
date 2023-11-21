@@ -29,14 +29,14 @@ export const CadastroCliente = () =>{
     
 
     const registrarConta = () =>{
-        const privilegio = '0'
+        const privilegio = 0
         setNomeError('');
         setCPFError('');
         const padraoNome:RegExp = /^[A-Za-z\s]+$/;
         const padraoCpf:RegExp = /^\d+$/
         const padraoEmail:RegExp = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
 
-        if (nome !== '' && padraoNome.test(nome) && nome.trim() !== '' && cpf !== '' && padraoCpf.test(cpf) && cpf.length == 11 && senha !== '' && email !== '' && padraoEmail.test(email) &&telefone !== '' && nomeSocial !== '' &&privilegio === '0'){
+        if (nome !== '' && padraoNome.test(nome) && nome.trim() !== '' && cpf !== '' && padraoCpf.test(cpf) && cpf.length == 11 && senha !== '' && email !== '' && padraoEmail.test(email) &&telefone !== '' && nomeSocial !== '' &&privilegio === 0){
             let ContaCliente = new Cliente(nome, cpf, senha, privilegio, email, telefone, nomeSocial)
             contas.push(ContaCliente)
             axios.post('http://localhost:3001/registroCliente', {nome, cpf, senha, privilegio, email, telefone, nomeSocial, })

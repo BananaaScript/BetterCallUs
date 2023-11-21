@@ -1,6 +1,7 @@
 const express = require('express')
 const mysql = require('mysql2/promise')
 const cors = require('cors')
+const jwt = require('jsonwebtoken');
 
 const app = express();
 const port = 3001;
@@ -131,50 +132,60 @@ app.delete('/registroEquip/:numeroSerie', async (req, res) => {
     res.json({ message: 'Equipamento excluído com sucesso' });
   });
 
-/* Validar Token */
+
+  app.post('/login', async (req, res) => {
+    const { email, senha } = req.body;
+    const connection = await connect();
+  
+    try {
+      let [rows] = await connection.execute('SELECT * FROM ADM WHERE email = ? AND senha = ?', [email, senha]);
+  
+      if (rows.length > 0) {
+        const token = jwt.sign({ email }, 'segredo_do_jwt');
+        return res.json({ usuario: { ...rows[0], privilegio: rows[0].privilegio }, token });
+      }
+  
+      [rows] = await connection.execute('SELECT * FROM cliente WHERE email = ? AND senha = ?', [email, senha]);
+  
+      if (rows.length > 0) {
+        const token = jwt.sign({ email }, 'segredo_do_jwt');
+        return res.json({ usuario: { ...rows[0], privilegio: rows[0].privilegio }, token });
+      }
+  
+      [rows] = await connection.execute('SELECT * FROM suporte WHERE email = ? AND senha = ?', [email, senha]);
+  
+      if (rows.length > 0) {
+        const token = jwt.sign({ email }, 'segredo_do_jwt');
+        return res.json({ usuario: { ...rows[0], privilegio: rows[0].privilegio }, token });
+      }
+      res.status(401).json({ message: 'Credenciais inválidas' });
+    } catch (error) {
+      console.error('Erro durante a autenticação:', error);
+      res.status(500).json({ message: 'Erro durante a autenticação' });
+    } finally {
+      connection.end();
+    }
+  });
+  
+
+
 app.post('/validate', async (req, res) => {
     const { token } = req.body;
-    res.json({ token });
-});
-
-/* Verificar Conta */
-app.post('/login', async (req, res) => {
-    const { email, senha } = req.body;
-
-    try {
-        const connection = await connect();
-
-        /* Verificar Cliente */
-        const [clienteRows] = await connection.execute('SELECT * FROM cliente WHERE email = ? AND senha = ?', [email, senha]);
-        if (clienteRows.length > 0) {
-            connection.end();
-            return res.json({ usuario: clienteRows, tabela: 'cliente' });
+    
+    jwt.verify(token, 'segredo_do_jwt', (err, decoded) => {
+        if (err) {
+            return res.status(401).json({ message: 'Token inválido' });
         }
-
-        /* Verificar ADM */
-        const [admRows] = await connection.execute('SELECT * FROM ADM WHERE email = ? AND senha = ?', [email, senha]);
-        if (admRows.length > 0) {
-            connection.end();
-            return res.json({ usuario: admRows, tabela: 'ADM' });
-        }
-
-        /* Verificar Suporte */
-        const [suporteRows] = await connection.execute('SELECT * FROM suporte WHERE email = ? AND senha = ?', [email, senha]);
-        if (suporteRows.length > 0) {
-            connection.end();
-            return res.json({ usuario: suporteRows, tabela: 'suporte' });
-        }
-
-        connection.end();
-        res.status(401).json({ error: 'Credenciais inválidas' });
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({ error: 'Erro interno no servidor' });
-    }
+        res.json({ usuario: decoded });
+    });
 });
 
 
-/* print da rota do server */
+app.post('/logout', (req, res) => {
+  res.json({ message: 'Logout bem-sucedido' });
+});
+
+
 app.listen(port, () =>{
     console.log(`Servidor rodando em: http://localhost:${port}`);
 })

@@ -80,15 +80,15 @@ function App() {
         </div>
         </div>
         
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/ticket" element={<RequireAuth><TicketFunction /></RequireAuth>} />
-        <Route path='/edituser' element={<RequireAuth><Edituser /></RequireAuth>} />
-        <Route path='/histuser' element={<RequireAuth><Histuser /></RequireAuth>} />
-        <Route path="/Chamadassup" element={<RequireAuth>{auth.tabela === 'SUP' ? <Chamadassup /> : <Chamadassup />}</RequireAuth>} />
-        <Route path="/Administrador" element={<RequireAuth>{auth.tabela === 'ADM' ? <Adm /> : <Chamadassup />}</RequireAuth>} />
-        <Route path="/Cadastro" element={<RequireAuth><Cadastro></Cadastro></RequireAuth>} />
-      </Routes>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/ticket" element={<RequireAuth><TicketFunction /></RequireAuth>} />
+          <Route path='/edituser' element={<RequireAuth><Edituser /></RequireAuth>} />
+          <Route path='/histuser' element={<RequireAuth><Histuser /></RequireAuth>} />
+          <Route path="/Chamadassup" element={<RequireAuth privilegioNecessario={1}><Chamadassup /></RequireAuth>} />
+          <Route path="/Administrador" element={<RequireAuth privilegioNecessario={2}><Adm /></RequireAuth>} />
+          <Route path="/Cadastro" element={<RequireAuth privilegioNecessario={2}><Cadastro /></RequireAuth>} />
+        </Routes>
 
       
         <footer>
