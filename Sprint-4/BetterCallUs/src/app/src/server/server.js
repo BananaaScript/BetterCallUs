@@ -32,10 +32,10 @@ app.get('/registroSup', async(req, res) => {
 })
 
 app.post('/registroSup', async(req, res) => {
-    const {nome, cpf, senha, privilegio, email, chamados} = req.body;
+    const {nome, cpf, senha, privilegio, email, chamados, chamadosRespondidos} = req.body;
     
     const connection = await connect();
-    await connection.execute('INSERT INTO suporte (nome, cpf, senha, privilegio, email, chamados) VALUES(?, ?, ?, ?, ?, ?)', [nome, cpf, senha, privilegio, email, chamados]);
+    await connection.execute('INSERT INTO suporte (nome, cpf, senha, privilegio, email, chamados, chamadosRespondidos) VALUES(?, ?, ?, ?, ?, ?, ?)', [nome, cpf, senha, privilegio, email, chamados, chamadosRespondidos]);
 
     res.json({message: 'Registro feito com sucesso'});
 })

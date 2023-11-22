@@ -32,6 +32,7 @@ CREATE TABLE IF NOT EXISTS suporte (
     privilegio int,
     email varchar(30),
     chamados int,
+    chamadosRespondidos int,
     UNIQUE KEY uq_cpf_rg (cpf)
 );
 
@@ -91,7 +92,7 @@ CREATE TABLE IF NOT EXISTS equipamentos(
 
 INSERT INTO ADM (`nome`, `cpf`, `senha`, `privilegio`, `email`, `departamento`) 
 VALUES ('Adm', '11111111111', '123!@#qweQWE', 2, 'adm@gmail.com', 'sim');
-INSERT INTO suporte(nome, cpf, senha, privilegio, email, chamados) values('Suporte', '12345678910', 'suporte123', 1, 'suporte@gmail.com', 0);
+INSERT INTO suporte(nome, cpf, senha, privilegio, email, chamados, chamadosRespondidos) values('Suporte', '12345678910', 'suporte123', 1, 'suporte@gmail.com', 0, 0);
 
 select * from cliente;
 select * from suporte;

@@ -25,6 +25,7 @@ export const ListaSuporte: React.FC = () =>{
                         <th>CPF</th>
                         <th>Email</th>
                         <th>Chamados</th>
+                        <th>Chamados Respondidos</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -34,6 +35,7 @@ export const ListaSuporte: React.FC = () =>{
                             <td>{suporte.cpf}</td>
                             <td>{suporte.email}</td>
                             <td>{suporte.chamados}</td>
+                            <td>{suporte.chamadosRespondidos}</td>
                         </tr>
                     ))}
                 </tbody>

@@ -29,7 +29,8 @@ export const CadastroSuporte = () =>{
 
     const registrarConta = () =>{
         const privilegio = 1
-        const chamados = 0
+        let chamados = 0
+        let chamadosRespondidos = 0
         setNomeError('');
         setCPFError('');
         const padraoNome:RegExp = /^[A-Za-z\s]+$/;
@@ -37,9 +38,9 @@ export const CadastroSuporte = () =>{
         const padraoEmail:RegExp = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
 
         if (nome !== '' && padraoNome.test(nome) && nome.trim() !== '' && cpf !== '' && padraoCpf.test(cpf) && cpf.length == 11 && senha !== '' && padraoEmail.test(email) && privilegio === 1){
-            let ContaSup = new Suporte(nome, cpf, senha, privilegio, email, chamados)
+            let ContaSup = new Suporte(nome, cpf, senha, privilegio, email, chamados, chamadosRespondidos)
             contas.push(ContaSup)
-            axios.post('http://localhost:3001/registroSup', {nome, cpf, senha, privilegio, email, chamados, })
+            axios.post('http://localhost:3001/registroSup', {nome, cpf, senha, privilegio, email, chamados, chamadosRespondidos, })
                 .then(()=>{
                     setNome('');
                     setCPF('');
