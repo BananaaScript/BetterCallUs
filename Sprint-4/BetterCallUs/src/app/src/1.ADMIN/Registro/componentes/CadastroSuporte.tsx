@@ -3,10 +3,10 @@ import Cliente from '../../../types/Conta';
 import axios from 'axios';
 import { response } from 'express';
 import "../styles/registro.css"
-import Conta from '../../../types/Conta';
+import { Suporte } from '../../../types/Suporte';
 
 export const CadastroSuporte = () =>{
-    const [contas, setContas] = useState<Array<Conta>>([])
+    const [contas, setContas] = useState<Array<Suporte>>([])
     const [nome, setNome] = useState('');
     const [cpf, setCPF] = useState('');
     const [senha, setSenha] = useState('');
@@ -29,6 +29,7 @@ export const CadastroSuporte = () =>{
 
     const registrarConta = () =>{
         const privilegio = 1
+        const chamados = 0
         setNomeError('');
         setCPFError('');
         const padraoNome:RegExp = /^[A-Za-z\s]+$/;
@@ -36,9 +37,9 @@ export const CadastroSuporte = () =>{
         const padraoEmail:RegExp = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
 
         if (nome !== '' && padraoNome.test(nome) && nome.trim() !== '' && cpf !== '' && padraoCpf.test(cpf) && cpf.length == 11 && senha !== '' && padraoEmail.test(email) && privilegio === 1){
-            let ContaSup = new Conta(nome, cpf, senha, privilegio, email)
+            let ContaSup = new Suporte(nome, cpf, senha, privilegio, email, chamados)
             contas.push(ContaSup)
-            axios.post('http://localhost:3001/registroSup', {nome, cpf, senha, privilegio, email, })
+            axios.post('http://localhost:3001/registroSup', {nome, cpf, senha, privilegio, email, chamados, })
                 .then(()=>{
                     setNome('');
                     setCPF('');
@@ -109,7 +110,7 @@ export const CadastroSuporte = () =>{
             {emailError && <div style={{color: 'red'}}>{emailError}</div>}
 
         <div>
-            <h2>Lista de suporte</h2>
+            <h2>Lista de suportes</h2>
             <table>
                 <thead>
                     <tr>

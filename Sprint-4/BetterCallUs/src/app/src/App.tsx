@@ -18,6 +18,7 @@ import logoTiktok from './styles/img/logoTiktok.png';
 import logoTwitter from './styles/img/logoTwitter.png';
 import logoGithub from './styles/img/logoGithub.png';
 import Cadastro from './1.ADMIN/Registro';
+import { ListaSuporte } from './1.ADMIN/Lista';
 
 
 
@@ -88,6 +89,7 @@ function App() {
         <Route path="/Chamadassup" element={<RequireAuth><Chamadassup /></RequireAuth>} />
         <Route path="/Administrador" element={<RequireAuth><Adm /></RequireAuth>} />
         <Route path="/Cadastro" element={<RequireAuth><Cadastro/></RequireAuth>} />
+        <Route path="/lista" element={<RequireAuth><ListaSuporte/></RequireAuth>} />
       </Routes>
 
       
