@@ -10,7 +10,7 @@ export const UseAPI = () => ({
         const response = await api.post('/login', { email, senha });
         if (response.data.usuario && response.data.token) {
           console.log('User data after login:', response.data);
-          return response.data; // Include both user and token in the response
+          return response.data;
         }
         return { usuario: null, token: null };
       } catch (error) {

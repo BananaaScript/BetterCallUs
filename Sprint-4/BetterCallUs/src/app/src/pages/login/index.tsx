@@ -1,29 +1,17 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { AuthContext } from '../../contexts/Auth/AuthContext';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import './styles/Login.css'
 
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
-  const emailRegex:RegExp = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i; 
+  const emailRegex: RegExp = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
   const auth = useContext(AuthContext);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  useEffect(() => {
-    if (auth.usuario) {
-      const privilegio = auth.usuario.privilegio;
-
-      if (privilegio === 1) {
-        navigate('/Chamadassup');
-      } else if (privilegio === 2) {
-        navigate('/Cadastro');
-      } else {
-        navigate('/');
-      }
-    }
-  }, [auth.usuario, navigate]);
 
   const handleEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
@@ -41,7 +29,6 @@ export default function Login() {
       }
     }
   };
-  
 
   return (
     <div>

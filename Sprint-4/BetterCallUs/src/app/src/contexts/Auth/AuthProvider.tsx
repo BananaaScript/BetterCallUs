@@ -24,6 +24,8 @@ export const AuthProvider = ({ children }: { children: JSX.Element }) => {
     localStorage.setItem('authToken', token);
   };
 
+  
+
   const login = async (email: string, senha: string) => {
     try {
       const data = await api.login(email, senha);
