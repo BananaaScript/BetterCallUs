@@ -22,15 +22,6 @@ async function connect() {
 
 
 
-const calcularEstado = (dataAtualizacao, prioridade) => {
-  const limiteHoras = 2;
-  const dataAtualizacaoTimestamp = new Date(dataAtualizacao).getTime();
-  const agoraTimestamp = new Date().getTime();
-  const diferencaHoras = (agoraTimestamp - dataAtualizacaoTimestamp) / (1000 * 60 * 60);
-
-  return diferencaHoras >= limiteHoras ? 'expirado' : 'aberto';
-};
-
 app.get('/equipamentos', async (req, res) => {
   const connection = await connect();
   const [rows] = await connection.execute('SELECT nome FROM equipamentos');
@@ -46,53 +37,56 @@ app.get('/chamados', async (req, res) => {
   const [rows] = await connection.execute('SELECT * FROM chamado ORDER BY tempoderesposta ASC');
   connection.end();
 
-  const chamadosComEstado = rows.map((chamado) => ({
-    ...chamado,
-    estado: calcularEstado(chamado.dataatualizacao, chamado.prioridade),
-  }));
-
-  res.json(chamadosComEstado);
+  res.json(rows);
 });
 
 
 app.post('/chamados', async (req, res) => {
-  const { area, titulo, sumario, status, estado, id_cliente, nome_equipamento} = req.body; 
-  console.log(estado)
-  console.log(id_cliente)
+  const { area, titulo, sumario, id_cliente, nome_equipamento} = req.body; 
+
 
   let tempoderesposta;
+  let prioridade = '';
+
 
   switch (area) {
     case 'Problema de Conexão':
       tempoderesposta = 1;
+      prioridade = 'Baixa'
       break;
     case 'Falha de Software':
       tempoderesposta = 2;
+      prioridade = 'Alta'
       break;
     case 'Problema de Segurança':
       tempoderesposta = 3;
       break;
     case 'Vírus e Malware':
       tempoderesposta = 4;
+      prioridade = 'Media'
       break;
     case 'Falha de Hardware':
       tempoderesposta = 5;
+      prioridade = 'Alta'
       break;
     case 'Dúvidas de Programação':
       tempoderesposta = 6;
+      prioridade = 'Baixa'
       break;
     case 'Problemas de Impressão':
       tempoderesposta = 7;
+      prioridade = 'Baixa'
       break;
 
     default:
-      tempoderesposta = 8; 
+      tempoderesposta = 8;
+      prioridade = 'Baixa'
   }
 
   // editar os tempos de resposta depois
 
   const connection = await connect();
-  await connection.execute('INSERT INTO chamado (area, titulo, sumario, status, estado, tempoderesposta, id_cliente, nome_equipamento) VALUES (?, ?, ?, ?, ?, ?, ?, ?)', [area || null, titulo, sumario, status, estado, tempoderesposta, id_cliente, nome_equipamento]);
+  await connection.execute('INSERT INTO chamado (area, titulo, sumario, tempoderesposta, id_cliente, nome_equipamento, prioridade) VALUES (?, ?, ?, ?, ?, ?, ?)', [area || null, titulo, sumario,  tempoderesposta, id_cliente, nome_equipamento, prioridade]);
 
   res.json({ message: 'Chamado criado com sucesso' });
 });
@@ -116,7 +110,7 @@ app.listen(port, () => {
 
 app.put('/chamados/:id', async (req, res) => {
   const { id } = req.params;
-  const { prioridade, area, titulo, sumario, status } = req.body;
+  const { prioridade, area, titulo, sumario } = req.body;
 
   const connection = await connect();
 
@@ -131,17 +125,15 @@ app.put('/chamados/:id', async (req, res) => {
     const updatedArea = area !== undefined ? area : existingTicket[0].area;
     const updatedTitulo = titulo !== undefined ? titulo : existingTicket[0].titulo;
     const updatedSumario = sumario !== undefined ? sumario : existingTicket[0].sumario;
-    const updatedStatus = status !== undefined ? status : existingTicket[0].status;
+
 
     await connection.execute(
-      'UPDATE chamado SET prioridade = ?, area = ?, titulo = ?, sumario = ?, status = ?, estado = ?, dataatualizacao = CURRENT_TIMESTAMP WHERE id = ?',
+      'UPDATE chamado SET prioridade = ?, area = ?, titulo = ?, sumario = ?, dataatualizacao = CURRENT_TIMESTAMP WHERE id = ?',
       [
         updatedPrioridade,
         updatedArea,
         updatedTitulo,
         updatedSumario,
-        updatedStatus,
-        calcularEstado(existingTicket[0].data_atualizacao),
         id
       ]
     );
