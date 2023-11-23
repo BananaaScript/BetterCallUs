@@ -8,10 +8,12 @@ import moment from "moment-timezone";
 export const Adm = () => {
     Login()
 
-    const [chamados, setChamados] = useState<Array<{ id: number; area: string; prioridade: string; status: string; tempoderesposta: number; datacriacao: string; dataatualizacao: string, id_cliente: number}>>([]);
+    const [chamados, setChamados] = useState<Array<{ id: number; area: string; tempoderesposta: string; temporesolucao: string; datacriacao: string; dataatualizacao: string, id_cliente: number}>>([]);
     const [area, setArea] = useState('');
-    const [prioridade, setPrioridade] = useState('');
+    const [tempoderesposta, setTempoderesposta] = useState('');
+    const [temporesolucao, setTemporesolucao] = useState('');
     const [status, setStatus] = useState('');
+    const [tipodeproblema, setTipodeproblema] = useState('');
     const [editingTicketId, setEditingTicketId] = useState<number | null>(null);
   
     let idCliente = 2;
@@ -43,11 +45,13 @@ export const Adm = () => {
     const handleCreate = () => {
   
       if (editingTicketId === null){
-        axios.post('http://localhost:3001/chamados', { area, prioridade, status, id_cliente: idCliente})
+        axios.post('http://localhost:3001/chamados', { tempoderesposta, temporesolucao, id_cliente: idCliente})
           .then(() => {
             setArea('');
-            setPrioridade('')
+            setTempoderesposta('')
+            setTemporesolucao('')
             setStatus('');
+            setTipodeproblema('');
             setEditingTicketId(null);
             updateChamados();
           })
@@ -58,14 +62,15 @@ export const Adm = () => {
       else{
         axios
         .put(`http://localhost:3001/chamados/${editingTicketId}`, {
-          area,
-          prioridade,
-          status,
+          tempoderesposta,
+          temporesolucao,
           id_cliente: idCliente,
         }).then(() => {
           setArea('');
-          setPrioridade('')
+          setTempoderesposta('')
+          setTemporesolucao('')
           setStatus('');
+          setTipodeproblema('');
           setEditingTicketId(null);
           updateChamados();
         })
@@ -80,8 +85,8 @@ export const Adm = () => {
       const ticketToEdit = chamados.find((chamado) => chamado.id === id);
       if (ticketToEdit) {
         setEditingTicketId(id);
-        setPrioridade(ticketToEdit.prioridade);
-        setStatus(ticketToEdit.status);
+        setTempoderesposta(ticketToEdit.tempoderesposta);
+        setTemporesolucao(ticketToEdit.temporesolucao);
       }
     };
   
@@ -137,22 +142,19 @@ const pagCadastro = () => {
         <table>
           <thead>
             <tr>
-              <th>Status</th>
+              <th>Tipo de Problema</th>
               <th>Prioridade</th>
               <th>Tempo de Resposta</th>
-              <th>Data de Criação</th>
-              <th>Data de Atualização</th>
-              <th>Área</th>
-              <th>Deletar</th>
-              <th>Editar</th>
+              <th>Tempo de Resolução</th>
             </tr>
           </thead>
           <tbody>
             {chamados.map((chamado) => (
               <tr key={chamado.id}>
-                <td>{chamado.status}</td>
-                <td>{chamado.prioridade}</td>
+                <td>{chamado.tempoderesposta}</td>
                 <td>Horas: {chamado.tempoderesposta}</td>
+                <td>{chamado.temporesolucao}</td>
+                <td>Horas: {chamado.temporesolucao}</td>
                 <td>{formatarData(chamado.datacriacao)}</td>
                 <td>{formatarData(chamado.dataatualizacao)}</td>
                 <td>{chamado.area}</td>
@@ -168,25 +170,69 @@ const pagCadastro = () => {
         </table>
         <h2>Editar</h2>
         <select
-          value={prioridade}
-          onChange={(e) => setPrioridade(e.target.value)}
+          value={tipodeproblema}
+          onChange={(e) => setTipodeproblema(e.target.value)}
         >
-          <option value="">Prioridade</option>
-          <option value="Alta">Alta</option>
-          <option value="Média">Média</option>
-          <option value="Baixa">Baixa</option>
-        </select>
+          <option value="">Tipo de Problema</option>
+          <option value="Problemadeconexao">Problema de conexão</option>
+          <option value="Falhadesoftware">Falha de Software</option>
+          <option value="Problemadeseguranca">Problema de Segurança</option>
+          <option value="Virusemalware">Virus e Malware</option>
+          <option value="Falhadehardware">Falha de Hardware</option>
+          <option value="Duvidasdeprogramacao">Dúvidas de Programação</option>
+          <option value="Problemasdeimpressao">Problemas de Impressão</option>
+          <option value="Outro">Outro</option>
+        </select>   
         <select
           value={status}
           onChange={(e) => setStatus(e.target.value)}
         >
-          <option value="">Status</option>
-          <option value="Em aguardo">Em aguardo</option>
-          <option value="Em andamento">Em andamento</option>
-          <option value="Finalizado">Finalizado</option>
+          <option value="">Prioridade</option>
+          <option value="Baixa">Baixa</option>
+          <option value="Media">Média</option>
+          <option value="Alta">Alta</option>
+          <option value="Urgente">Urgente</option>
+        </select>   
+        <select
+          value={tempoderesposta}
+          onChange={(e) => setTempoderesposta(e.target.value)}
+        >
+          <option value="">Tempo de resposta</option>
+          <option value="30min">30min</option>
+          <option value="1hr">1 hora</option>
+          <option value="2hrs">2 horas</option>
+          <option value="3hrs">3 horas</option>
+          <option value="4hrs">4 horas</option>
+          <option value="6hrs">6 horas</option>
+          <option value="8hrs">8 horas</option>
+          <option value="12hrs">12 horas</option>
+          <option value="1dia">1 dia</option>
+          <option value="2dias">2 dias</option>
+          <option value="3dias">3 dias</option>
+          <option value="5dias">5 dias</option>
+          <option value="1semana">1 semana</option>
+        </select>
+        <select
+          value={temporesolucao}
+          onChange={(e) => setTemporesolucao(e.target.value)}
+        >
+          <option value="">Tempo de resolução</option>
+          <option value="30min">30min</option>
+          <option value="1hr">1 hora</option>
+          <option value="2hrs">2 horas</option>
+          <option value="3hrs">3 horas</option>
+          <option value="4hrs">4 horas</option>
+          <option value="6hrs">6 horas</option>
+          <option value="8hrs">8 horas</option>
+          <option value="12hrs">12 horas</option>
+          <option value="1dia">1 dia</option>
+          <option value="2dias">2 dias</option>
+          <option value="3dias">3 dias</option>
+          <option value="5dias">5 dias</option>
+          <option value="1semana">1 semana</option>
         </select>
       
-        <button onClick={handleCreate} disabled={prioridade === ""}>Adicionar</button>
+        <button onClick={handleCreate} disabled={tempoderesposta === ""}>Adicionar</button>
       </div>
     </div>
 
