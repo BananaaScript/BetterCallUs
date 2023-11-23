@@ -40,10 +40,6 @@ function App() {
     handleLogout();
   }
 
-  const isChamadassupPage = window.location.pathname === '/Chamadassup';
-  const isEdituserPage = window.location.pathname === '/edituser';
-  const isHistuserPage = window.location.pathname === '/histuser'
-
   return (
     <div className='bodyAPP'>
         <div>
