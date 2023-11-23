@@ -26,7 +26,6 @@ app.get('/equipamentos', async (req, res) => {
   const [rows] = await connection.execute('SELECT nome FROM equipamentos');
 
   const nomesEquipamentos = rows.map((equipamento) => equipamento.nome);
-  console.log(nomesEquipamentos)
 
   connection.end();
   res.json(nomesEquipamentos);
