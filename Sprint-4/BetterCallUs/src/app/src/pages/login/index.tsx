@@ -20,7 +20,7 @@ export default function Login() {
   const handleSenha = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSenha(e.target.value);
   }
-
+  
   const handleLogin = async () => {
     if (email && senha) {
       const logado = await auth.login(email, senha);

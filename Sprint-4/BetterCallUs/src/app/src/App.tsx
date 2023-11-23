@@ -1,6 +1,9 @@
 
 import React, { useContext } from 'react';
 import { useEffect, useState } from 'react';
+
+import FormDoTicket from './componentes/formDoTicket/formDoTicket';
+import { formatDate } from './util/dataUtil';
 import { Link, Route, Routes, useNavigate } from 'react-router-dom';
 import Home from './pages/Home';  
 import { RequireAuth } from './contexts/Auth/RequireAuth';
@@ -40,6 +43,10 @@ function App() {
     handleLogout();
   }
 
+  const isChamadassupPage = window.location.pathname === '/Chamadassup';
+  const isEdituserPage = window.location.pathname === '/edituser';
+  const isHistuserPage = window.location.pathname === '/histuser'
+
   return (
     <div className='bodyAPP'>
         <div>
@@ -74,16 +81,16 @@ function App() {
         </div>
         </div>
         
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/ticket" element={<RequireAuth><TicketFunction /></RequireAuth>} />
-        <Route path='/edituser' element={<RequireAuth><Edituser /></RequireAuth>} />
-        <Route path='/histuser' element={<RequireAuth><Histuser /></RequireAuth>} />
-        <Route path="/Chamadassup" element={<RequireAuth><Chamadassup /></RequireAuth>} />
-        <Route path="/Administrador" element={<RequireAuth><Adm /></RequireAuth>} />
-        <Route path="/Cadastro" element={<RequireAuth><Cadastro/></RequireAuth>} />
-        <Route path="/lista" element={<RequireAuth><ListaSuporte/></RequireAuth>} />
-      </Routes>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/ticket" element={<RequireAuth><TicketFunction /></RequireAuth>} />
+          <Route path='/edituser' element={<RequireAuth><Edituser /></RequireAuth>} />
+          <Route path='/histuser' element={<RequireAuth><Histuser /></RequireAuth>} />
+          <Route path="/Chamadassup" element={<RequireAuth><Chamadassup /></RequireAuth>} />
+          <Route path="/Administrador" element={<RequireAuth><Adm /></RequireAuth>} />
+          <Route path="/Cadastro" element={<RequireAuth><Cadastro/></RequireAuth>} />
+          <Route path="/lista" element={<RequireAuth><ListaSuporte/></RequireAuth>} />
+        </Routes>
 
       
         <footer>
