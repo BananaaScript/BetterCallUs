@@ -36,31 +36,23 @@ CREATE TABLE IF NOT EXISTS suporte (
     UNIQUE KEY uq_cpf_rg (cpf)
 );
 
-CREATE TABLE IF NOT EXISTS Ticket (
+CREATE TABLE chamado (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    cliente_id INT,
-    suporte_id INT,
-    adm_id INT,
-    assunto VARCHAR(100),
-    descricao TEXT,
-    prioridade INT,
-    area_problema VARCHAR(100),
-    status ENUM('Aberto', 'Em Andamento', 'Finalizado'),
-    data_envio DATETIME,
-    data_finalizacao DATETIME,
-    historico TEXT,
-    FOREIGN KEY (cliente_id) REFERENCES Cliente(id),
-    FOREIGN KEY (suporte_id) REFERENCES Suporte(id),
-    FOREIGN KEY (adm_id) REFERENCES ADM(id)
-);
-
-CREATE TABLE IF NOT EXISTS SLA (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    ticket_id INT,
-    tempo_resposta INT,
-    prioridade INT,
-    categoria_problema VARCHAR(50),
-    FOREIGN KEY (ticket_id) REFERENCES Ticket(id)
+    area VARCHAR(255),
+    titulo VARCHAR(50),
+    estado VARCHAR(10) DEFAULT 'aberto',
+    sumario TEXT,
+    equipamento VARCHAR(100) DEFAULT 'nenhum',
+    status ENUM('Em aguardo', 'Em andamento', 'Finalizado'),
+    datacriacao DATETIME DEFAULT CURRENT_TIMESTAMP,
+    dataatualizacao DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    prioridade VARCHAR(255),
+    tempoderesposta INT,
+    nome_equipamento VARCHAR(50),
+    id_cliente INT,
+    id_suporte INT,
+    FOREIGN KEY (id_cliente) REFERENCES cliente(id),
+    FOREIGN KEY (id_suporte) REFERENCES suporte(id)
 );
 
 CREATE TABLE IF NOT EXISTS CategoriasProblemas (
@@ -93,6 +85,13 @@ CREATE TABLE IF NOT EXISTS equipamentos(
 INSERT INTO ADM (`nome`, `cpf`, `senha`, `privilegio`, `email`, `departamento`) 
 VALUES ('Adm', '11111111111', '123!@#qweQWE', 2, 'adm@gmail.com', 'sim');
 INSERT INTO suporte(nome, cpf, senha, privilegio, email, chamados, chamadosRespondidos) values('Suporte', '12345678910', 'suporte123', 1, 'suporte@gmail.com', 0, 0);
+
+INSERT INTO equipamentos (numeroSerie, nome, descricao) VALUES
+('ABC123', 'Mouse', 'Mouse sem fio'),
+('DEF456', 'Teclado', 'Teclado mecânico'),
+('GHI789', 'Computador', 'Desktop de última geração'),
+('JKL012', 'Monitor', 'Monitor LED de 27 polegadas'),
+('MNO345', 'Cabo de Rede', 'Cabo Ethernet de alta velocidade');
 
 select * from cliente;
 select * from suporte;

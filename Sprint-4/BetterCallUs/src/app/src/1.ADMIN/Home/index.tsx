@@ -3,146 +3,192 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import '../Home/styles/adm.css'
 import { link } from "fs";
+import moment from "moment-timezone";
 
 export const Adm = () => {
     Login()
 
-
-const [chamados, setChamados] = useState<Array<{ id: number; prioridade: string; area: string; tempoderesposta: number}>>([]);
-const [prioridade, setPrioridade] = useState('');
-const [area, setArea] = useState('');
-
-useEffect(() => {
-  axios.get('http://localhost:3002/chamados')
-    .then((response) => {
-      setChamados(response.data);
-    })
-    .catch((error) => {
-      console.error(error);
-    });
-}, []);
-
-const handleCreate = () => {
-  axios.post('http://localhost:3002/chamados', { prioridade, area })
-    .then(() => {
-      setPrioridade('');
-      setArea('');
-      updateChamados();
-    })
-    .catch((error) => {
-      console.error(error);
-    });
-};
-
-
-const handleDelete = (id: number) => {
-  axios.delete(`http://localhost:3002/chamados/${id}`)
-    .then(() => {
-      updateChamados();
-    })
-    .catch((error) => {
-      console.error(error);
-    });
-};
-
-const updateChamados = () => {
-  axios.get('http://localhost:3002/chamados')
-    .then((response) => {
-      setChamados(response.data);
-    })
-    .catch((error) => {
-      console.error(error);
-    });
-};
+    const [chamados, setChamados] = useState<Array<{ id: number; area: string; prioridade: string; status: string; tempoderesposta: number; datacriacao: string; dataatualizacao: string, id_cliente: number}>>([]);
+    const [area, setArea] = useState('');
+    const [prioridade, setPrioridade] = useState('');
+    const [status, setStatus] = useState('');
+    const [editingTicketId, setEditingTicketId] = useState<number | null>(null);
+  
+    let idCliente = 2;
+  
+    // quando o sistema de login estiver pronto, tem que mudar para = idcliente que fizer login
+  
+  
+    const formatarData = (data: string) => {
+      return moment(data).tz('America/Sao_Paulo').format('YYYY-MM-DD HH:mm:ss');
+    };
+  
+    useEffect(() => {
+      const intervalId = setInterval(() => {
+        updateChamados();
+      }, 5000);
+      return () => clearInterval(intervalId);
+    }, []);
+  
+    useEffect(() => {
+      axios.get('http://localhost:3001/chamados')
+        .then((response) => {
+          setChamados(response.data);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }, []);
+  
+    const handleCreate = () => {
+  
+      if (editingTicketId === null){
+        axios.post('http://localhost:3001/chamados', { area, prioridade, status, id_cliente: idCliente})
+          .then(() => {
+            setArea('');
+            setPrioridade('')
+            setStatus('');
+            setEditingTicketId(null);
+            updateChamados();
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+      }
+      else{
+        axios
+        .put(`http://localhost:3001/chamados/${editingTicketId}`, {
+          area,
+          prioridade,
+          status,
+          id_cliente: idCliente,
+        }).then(() => {
+          setArea('');
+          setPrioridade('')
+          setStatus('');
+          setEditingTicketId(null);
+          updateChamados();
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+  
+      }
+    };
+  
+    const handleEdit = (id: number) => {
+      const ticketToEdit = chamados.find((chamado) => chamado.id === id);
+      if (ticketToEdit) {
+        setEditingTicketId(id);
+        setPrioridade(ticketToEdit.prioridade);
+        setStatus(ticketToEdit.status);
+      }
+    };
+  
+    const handleDelete = (id: number) => {
+      axios.delete(`http://localhost:3001/chamados/${id}`)
+        .then(() => {
+          updateChamados(); 
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    };
+    
+  
+    const updateChamados = () => {
+      axios.get('http://localhost:3001/chamados')
+        .then((response) => {
+          setChamados(response.data);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }
     
 const pagCadastro = () => {
   window.location.href = "/Cadastro";
 }
 
 
-        return(
-            <div className="bodyAdm">
-                <div className="privAdm">
-                    <h3>Bem vindo! Selecione uma das opções abaixo: </h3>
-                    <div className="opcAdm">
-                      
-                        <button className="btnAdm" onClick={pagCadastro}>
-                            Editar Privilegios
-                        </button>
-                      
+  return(
+    <div className="bodyAdm">
+      <div className="privAdm">
+            <h3>Bem vindo! Selecione uma das opções abaixo: </h3>
+            <div className="opcAdm">
+              
+                <button className="btnAdm" onClick={pagCadastro}>
+                    Editar Privilegios
+                </button>
+              
 
-                        <button className="btnAdm">
-                            Definir Service Level Agreement (SLA)
-                        </button>
-                        <button className="btnAdm">
-                            Adicionar tópicos ao FAQ
-                        </button>
-                    </div>
-
-                </div>
-
-                <div className="slaAdm">
-                    <h1 className='SLAName'>SLA</h1>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Tempo de Resposta</th>
-                                    <th>Prioridade</th>
-                                    <th>Área</th>
-                                    <th>Ações</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {chamados.map((chamado) => (
-                                    <tr key={chamado.id}>
-                                        <td>{chamado.id}</td>
-                                        <td>Horas: {chamado.tempoderesposta}</td>
-                                        <td>{chamado.prioridade}</td>
-                                        <td>{chamado.area}</td>
-                                        <td>
-                                            <button className='SLAButton' onClick={() => handleDelete(chamado.id)}>Excluir</button>
-                                        </td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                        <h2>Adicionar</h2>
-                            <select
-                                className='SLASelect'
-                                value={prioridade}
-                                onChange={(e) => setPrioridade(e.target.value)}
-                            >
-                                <option value="">Prioridade</option>
-                                <option value="Alta">Alta</option>
-                                <option value="Média">Média</option>
-                                <option value="Baixa">Baixa</option>
-                            </select>
-      
-                            <select
-                                className='SLASelect'
-                                value={area}
-                                onChange={(e) => setArea(e.target.value)}
-                            >
-                                <option value="">Área</option>
-                                <option value="Problema de Conexão">Problema de Conexão</option>
-                                <option value="Falha de Software">Falha de Software</option>
-                                <option value="Problema de Segurança">Problema de Segurança</option>
-                                <option value="Vírus e Malware">Vírus e Malware</option>
-                                <option value="Falha de Hardware">Falha de Hardware</option>
-                                <option value="Dúvidas de Programação">Dúvidas de Programação</option>
-                                <option value="Problemas de Impressão">Problemas de Impressão</option>
-                                <option value="Outro">Outro</option>
-                            </select>
-
-                            <button className='SLAButton' onClick={handleCreate} disabled={area === "" || prioridade === ""}>Adicionar</button>
-                    
-
-                </div>
+                <button className="btnAdm">
+                    Definir Service Level Agreement (SLA)
+                </button>
+                <button className="btnAdm">
+                    Adicionar tópicos ao FAQ
+                </button>
             </div>
 
+      </div>
 
+      <div>
+        <h1>SLA</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>Status</th>
+              <th>Prioridade</th>
+              <th>Tempo de Resposta</th>
+              <th>Data de Criação</th>
+              <th>Data de Atualização</th>
+              <th>Área</th>
+              <th>Deletar</th>
+              <th>Editar</th>
+            </tr>
+          </thead>
+          <tbody>
+            {chamados.map((chamado) => (
+              <tr key={chamado.id}>
+                <td>{chamado.status}</td>
+                <td>{chamado.prioridade}</td>
+                <td>Horas: {chamado.tempoderesposta}</td>
+                <td>{formatarData(chamado.datacriacao)}</td>
+                <td>{formatarData(chamado.dataatualizacao)}</td>
+                <td>{chamado.area}</td>
+                <td>
+                  <button onClick={() => handleDelete(chamado.id)}>Excluir</button>
+                </td>
+                <td>
+                  <button onClick={() => handleEdit(chamado.id)}>Editar</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <h2>Editar</h2>
+        <select
+          value={prioridade}
+          onChange={(e) => setPrioridade(e.target.value)}
+        >
+          <option value="">Prioridade</option>
+          <option value="Alta">Alta</option>
+          <option value="Média">Média</option>
+          <option value="Baixa">Baixa</option>
+        </select>
+        <select
+          value={status}
+          onChange={(e) => setStatus(e.target.value)}
+        >
+          <option value="">Status</option>
+          <option value="Em aguardo">Em aguardo</option>
+          <option value="Em andamento">Em andamento</option>
+          <option value="Finalizado">Finalizado</option>
+        </select>
+      
+        <button onClick={handleCreate} disabled={prioridade === ""}>Adicionar</button>
+      </div>
+    </div>
 
-
-            )
-        }
+  )
+}

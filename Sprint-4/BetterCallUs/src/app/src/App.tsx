@@ -1,9 +1,6 @@
 
 import React, { useContext } from 'react';
 import { useEffect, useState } from 'react';
-
-import FormDoTicket from './componentes/formDoTicket/formDoTicket';
-import { formatDate } from './util/dataUtil';
 import { Link, Route, Routes, useNavigate } from 'react-router-dom';
 import Home from './pages/Home';  
 import { RequireAuth } from './contexts/Auth/RequireAuth';
