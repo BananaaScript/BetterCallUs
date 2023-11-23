@@ -46,6 +46,7 @@ app.post('/chamados', async (req, res) => {
 
   let tempoderesposta;
   let prioridade = '';
+  let status = 'Em aguardo';
 
 
   switch (area) {
@@ -85,7 +86,7 @@ app.post('/chamados', async (req, res) => {
   // editar os tempos de resposta depois
 
   const connection = await connect();
-  await connection.execute('INSERT INTO chamado (area, titulo, sumario, tempoderesposta, nome_equipamento, prioridade) VALUES (?, ?, ?, ?, ?, ?)', [area || null, titulo, sumario,  tempoderesposta, nome_equipamento, prioridade]);
+  await connection.execute('INSERT INTO chamado (area, titulo, sumario, tempoderesposta, status, nome_equipamento, prioridade) VALUES (?, ?, ?, ?, ?, ?, ?)', [area || null, titulo, sumario,  tempoderesposta, status, nome_equipamento, prioridade]);
 
   res.json({ message: 'Chamado criado com sucesso' });
 });
