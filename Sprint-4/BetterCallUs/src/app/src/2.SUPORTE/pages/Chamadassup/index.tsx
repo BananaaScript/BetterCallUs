@@ -10,7 +10,7 @@ import moment from 'moment-timezone'
 export const Chamadassup = () => {
   Login()
 
-  const [chamados, setChamados] = useState<Array<{ id: number; area: string; titulo: string; sumario: string; tempoderesposta: number; datacriacao: string; dataatualizacao: string, id_cliente: number, nome_equipamento: string;}>>([]);
+  const [chamados, setChamados] = useState<Array<{ id: number; area: string; titulo: string; sumario: string; tempoderesposta: number; datacriacao: string; dataatualizacao: string, status: string, id_cliente: number, nome_equipamento: string;}>>([]);
   const [area, setArea] = useState('');
   const [titulo, setTitulo] = useState('');
   const [sumario, setSumario] = useState('');
@@ -97,6 +97,7 @@ export const Chamadassup = () => {
           <th>Tempo de Resposta</th>
           <th>Data de Criação</th>
           <th>Área</th>
+          <th>Status</th>
           <th>Equipamento</th>
           <th>Editar</th>
         </tr>
@@ -110,6 +111,7 @@ export const Chamadassup = () => {
             <td>Horas: {chamado.tempoderesposta}</td>
             <td>{formatarData(chamado.datacriacao)}</td>
             <td>{chamado.area}</td>
+            <td>{chamado.status}</td>
             <td>{chamado.nome_equipamento}</td>
             <td>
               <button onClick={() => handleEdit(chamado.id)}>Editar</button>
