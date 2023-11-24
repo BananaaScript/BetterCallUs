@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import moment from 'moment-timezone'
 import Login from "../../login"
 import Voltar from "../editaruser/index"
+import { AuthContext } from '../../../contexts/Auth/AuthContext';
 import './style/hist.css'
 
 export const Histuser = () => {
     Login()
-    const [chamados, setChamados] = useState<Array<{ id: number; area: string; titulo: string; sumario: string; tempoderesposta: number; datacriacao: string; dataatualizacao: string, id_cliente: number, nome_equipamento: string, status: string;}>>([]);
+    const auth = useContext(AuthContext)
+    const [chamados, setChamados] = useState<Array<{ id: number; area: string; titulo: string; sumario: string; tempoderesposta: number; datacriacao: string; dataatualizacao: string, email_cliente: number, nome_equipamento: string, status: string;}>>([]);
   const [area, setArea] = useState('');
   const [status, setStatus] = useState('');
   const [titulo, setTitulo] = useState('');
@@ -17,6 +19,9 @@ export const Histuser = () => {
   const [selectedEquipamento, setSelectedEquipamento] = useState('');
 
   let idCliente = 2;
+
+  // quando o sistema de login estiver pronto, tem que mudar para = idcliente que fizer login
+
 
   const formatarData = (data: string) => {
     return moment(data).tz('America/Sao_Paulo').format('YYYY-MM-DD HH:mm:ss');
@@ -45,6 +50,7 @@ export const Histuser = () => {
       });
   }, []);
 
+
   useEffect(() => {
     axios.get('http://localhost:3001/equipamentos')
       .then((response) => {
@@ -58,7 +64,7 @@ export const Histuser = () => {
   const handleCreate = () => {
 
     if (editingTicketId === null){
-      axios.post('http://localhost:3001/chamados', { area, titulo, sumario, status, id_cliente: idCliente, nome_equipamento: selectedEquipamento})
+      axios.post('http://localhost:3001/chamados', { area, titulo, sumario, status, email_cliente: emailCliente, nome_equipamento: selectedEquipamento})
         .then(() => {
           setArea('');
           setTitulo('');
@@ -78,7 +84,7 @@ export const Histuser = () => {
         titulo,
         sumario,
         status,
-        id_cliente: idCliente,
+        email_cliente: emailCliente,
       }).then(() => {
         setArea('');
         setTitulo('');
@@ -115,7 +121,7 @@ export const Histuser = () => {
           titulo: chamado.titulo,
           sumario: chamado.sumario,
           status: 'Em aguardo',  
-          id_cliente: idCliente,
+          email_cliente: emailCliente,
         })
         .then(() => {
           setEditingTicketId(null);
@@ -149,57 +155,46 @@ export const Histuser = () => {
       });
   };
 
-return (
-  <div className={`Tabela`}>
-    <h1>Histórico</h1>
-    <table>
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Título</th>
-          <th>Sumário</th>
-          <th>Tempo de Resposta</th>
-          <th>Data de Criação</th>
-          <th>Data de Atualização</th>
-          <th>Área</th>
-          <th>Status</th>
-          <th>Equipamento</th>
-          <th>Reenviar</th>
-        </tr>
-      </thead>
-      <tbody>
-        {chamados.map((chamado) => (
-          <tr key={chamado.id}>
-            <td>{chamado.id}</td>
-            <div className='textos'>
-            <td
-              onClick={() => handleExpansaoSumario(chamado.id)}
-              className={expandedSumarioId === chamado.id ? 'expandido' : ''}
-            >
-              {expandedSumarioId === chamado.id ? chamado.titulo : `${chamado.titulo.slice(0, 50)}...`}
-            </td>
-            <td
-              onClick={() => handleExpansaoSumario(chamado.id)}
-              className={expandedSumarioId === chamado.id ? 'expandido' : ''}
-            >
-              {expandedSumarioId === chamado.id ? chamado.sumario : `${chamado.sumario.slice(0, 50)}...`}
-            </td>
-            </div>
-            <td>Horas: {chamado.tempoderesposta}</td>
-            <td>{formatarData(chamado.datacriacao)}</td>
-            <td>{formatarData(chamado.dataatualizacao)}</td>
-            <td>{chamado.area}</td>
-            <td>{chamado.status}</td>
-            <td>{chamado.nome_equipamento}</td>
-            <td>
-              <button onClick={() => HandleReenviar(chamado.id)} disabled={chamado.status !== 'Finalizado'}>
-                Reenviar
-              </button>
-            </td>
+  return (
+    <div>
+      <h1>Tickets</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Titulo</th>
+            <th>Sumario</th>
+            <th>Tempo de Resposta</th>
+            <th>Data de Criação</th>
+            <th>Data de Atualização</th>
+            <th>Área</th>
+            <th>Status</th>
+            <th>Equipamento</th>
+            <th>Reenviar</th>
           </tr>
-        ))}
-      </tbody>
-    </table>
-  </div>
+        </thead>
+        <tbody>
+          {chamados.map((chamado) => (
+            <tr key={chamado.id}>
+              <td>{chamado.id}</td>
+              <td>{chamado.titulo}</td>
+              <td>{chamado.sumario}</td>
+              <td>Horas: {chamado.tempoderesposta}</td>
+              <td>{formatarData(chamado.datacriacao)}</td>
+              <td>{formatarData(chamado.dataatualizacao)}</td>
+              <td>{chamado.area}</td>
+              <td>{chamado.status}</td>
+              <td>{chamado.nome_equipamento}</td>
+              <td> 
+              <button onClick={() => HandleReenviar(chamado.id)}
+                disabled={chamado.status !== "Finalizado"}
+                >Reenviar</button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      
+    </div>
   );
 };
