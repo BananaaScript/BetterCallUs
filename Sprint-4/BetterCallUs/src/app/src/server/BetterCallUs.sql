@@ -51,8 +51,6 @@ CREATE TABLE chamado (
     nome_equipamento VARCHAR(50),
     email_cliente varchar(50),
     email_suporte varchar(50) DEFAULT null,
-    FOREIGN KEY (email_cliente) REFERENCES cliente(email),
-    FOREIGN KEY (email_suporte) REFERENCES suporte(email)
 );
 
 CREATE TABLE IF NOT EXISTS CategoriasProblemas (
