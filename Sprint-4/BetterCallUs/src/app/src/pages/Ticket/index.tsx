@@ -3,15 +3,16 @@ import  Login from '../login';
 import { Link } from 'react-router-dom';
 import './styles/Ticket.css'
 import { link } from 'fs';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import axios from 'axios'
+import { AuthContext } from '../../contexts/Auth/AuthContext';
 import moment from 'moment-timezone'
 
 function TicketFunction(){
 
     Login()
-
-    const [chamados, setChamados] = useState<Array<{ id: number; area: string; titulo: string; sumario: string; tempoderesposta: number; datacriacao: string; dataatualizacao: string, id_cliente: number, nome_equipamento: string;}>>([]);
+    const auth = useContext(AuthContext)
+    const [chamados, setChamados] = useState<Array<{ id: number; area: string; titulo: string; sumario: string; tempoderesposta: number; datacriacao: string; dataatualizacao: string, email_cliente: number, nome_equipamento: string;}>>([]);
     const [area, setArea] = useState('');
     const [titulo, setTitulo] = useState('');
     const [sumario, setSumario] = useState('');
@@ -19,9 +20,9 @@ function TicketFunction(){
     const [equipamentos, setEquipamentos] = useState<Array<string>>([]);
     const [selectedEquipamento, setSelectedEquipamento] = useState('');
   
-    let idCliente = 2;
+    let emailCliente = auth.usuario?.email;
   
-    // quando o sistema de login estiver pronto, tem que mudar para = idcliente que fizer login
+    // quando o sistema de login estiver pronto, tem que mudar para = emailCliente que fizer login
   
   
     const formatarData = (data: string) => {
@@ -58,7 +59,7 @@ function TicketFunction(){
     const handleCreate = () => {
   
       if (editingTicketId === null){
-        axios.post('http://localhost:3001/chamados', { area, titulo, sumario, id_cliente: idCliente, nome_equipamento: selectedEquipamento})
+        axios.post('http://localhost:3001/chamados', { area, titulo, sumario, email_cliente: emailCliente, nome_equipamento: selectedEquipamento})
           .then(() => {
             setArea('');
             setTitulo('');
@@ -76,7 +77,7 @@ function TicketFunction(){
           area,
           titulo,
           sumario,
-          id_cliente: idCliente,
+          email_cliente: emailCliente,
         }).then(() => {
           setArea('');
           setTitulo('');

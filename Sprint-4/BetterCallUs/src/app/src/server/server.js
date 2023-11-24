@@ -31,6 +31,7 @@ app.get('/equipamentos', async (req, res) => {
   res.json(nomesEquipamentos);
 });
 
+
 app.get('/chamados', async (req, res) => {
   const connection = await connect();
   const [rows] = await connection.execute('SELECT * FROM chamado ORDER BY tempoderesposta ASC');
@@ -41,12 +42,12 @@ app.get('/chamados', async (req, res) => {
 
 
 app.post('/chamados', async (req, res) => {
-  const { area, titulo, sumario, nome_equipamento} = req.body; 
+  const { area, titulo, sumario, nome_equipamento, email_cliente} = req.body; 
 
 
   let tempoderesposta;
   let prioridade = '';
-  let status = 'Em aguardo';
+  let status = 'Finalizado';
 
 
   switch (area) {
@@ -86,7 +87,7 @@ app.post('/chamados', async (req, res) => {
   // editar os tempos de resposta depois
 
   const connection = await connect();
-  await connection.execute('INSERT INTO chamado (area, titulo, sumario, tempoderesposta, status, nome_equipamento, prioridade) VALUES (?, ?, ?, ?, ?, ?, ?)', [area || null, titulo, sumario,  tempoderesposta, status, nome_equipamento, prioridade]);
+  await connection.execute('INSERT INTO chamado (area, titulo, sumario, tempoderesposta, status, nome_equipamento, prioridade, email_cliente) VALUES (?, ?, ?, ?, ?, ?, ?, ?)', [area || null, titulo, sumario,  tempoderesposta, status, nome_equipamento, prioridade, email_cliente]);
 
   res.json({ message: 'Chamado criado com sucesso' });
 });
