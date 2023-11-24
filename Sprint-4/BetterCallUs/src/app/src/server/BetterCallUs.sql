@@ -83,15 +83,15 @@ CREATE TABLE IF NOT EXISTS equipamentos(
 );
 
 INSERT INTO ADM (`nome`, `cpf`, `senha`, `privilegio`, `email`, `departamento`) 
-VALUES ('Adm', '11111111111', '123!@#qweQWE', 2, 'adm@gmail.com', 'sim');
+VALUES ('Adm', '11111111111', 'adm123', 2, 'adm@gmail.com', 'sim');
 INSERT INTO suporte(nome, cpf, senha, privilegio, email, chamados, chamadosRespondidos) values('Suporte', '12345678910', 'suporte123', 1, 'suporte@gmail.com', 0, 0);
 
 INSERT INTO equipamentos (numeroSerie, nome, descricao) VALUES
-('ABC123', 'Mouse', 'Mouse sem fio'),
-('DEF456', 'Teclado', 'Teclado mecânico'),
-('GHI789', 'Computador', 'Desktop de última geração'),
-('JKL012', 'Monitor', 'Monitor LED de 27 polegadas'),
-('MNO345', 'Cabo de Rede', 'Cabo Ethernet de alta velocidade');
+('ABC123', 'Computador', 'Desktop Modelo Lenovo'),
+('DEF456', 'Switch', 'Modelo da cisco'),
+('GHI789', 'Notebook', 'Modelo vision'),
+('JKL012', 'Televisão', 'Modelo samsung'),
+('MNO345', 'Acess Point', 'Modelo da intelbras');
 
 select * from cliente;
 select * from suporte;
