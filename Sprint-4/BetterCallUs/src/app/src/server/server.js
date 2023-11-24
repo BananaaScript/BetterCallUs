@@ -254,7 +254,8 @@ app.delete('/registroEquip/:numeroSerie', async (req, res) => {
   res.json({ message: 'Equipamento excluído com sucesso' });
 });
 
-
+/* ================================================ */
+/* Login */
 app.post('/login', async (req, res) => {
   const { email, senha } = req.body;
   const connection = await connect();
@@ -305,6 +306,40 @@ app.post('/validate', async (req, res) => {
 
 app.post('/logout', (req, res) => {
 res.json({ message: 'Logout bem-sucedido' });
+});
+
+
+/* ===================================================== */
+/* SLA */
+app.get('/sla', async (req, res) => {
+  const connection = await connect();
+  const[rows] = await connection.execute('SELECT * FROM sla')
+  connection.end();
+
+  res.json(rows)
+})
+
+app.post('/sla', async(req, res) => {
+  const {area, prioridade, TempoResposta, TempoResolucao} = req.body;
+
+  const connection = await connect();
+  await connection.execute('INSERT INTO sla(area, prioridade, TempoResposta, TempoResolucao) VALUES (?, ?, ?, ?)', [area, prioridade, TempoResposta, TempoResolucao]);
+
+  res.json({message: 'Envio de dados feito com sucesso'})
+})
+
+app.put('/sla/:id', async (req, res) => {
+  const { area, prioridade, TempoResposta, TempoResolucao } = req.body;
+  const id = req.params.id;
+
+  const connection = await connect();
+  await connection.execute(
+      'UPDATE sla SET area = ?, prioridade = ?, TempoResposta = ?, TempoResolucao = ? WHERE id = ?',
+      [area, prioridade, TempoResposta, TempoResolucao, id]
+  );
+
+  const [updateRow] = await connection.execute ('SELECT * FROM sla WHERE id = ?', [id]);
+  res.json(updateRow[0])
 });
 
 app.listen(port, () => {

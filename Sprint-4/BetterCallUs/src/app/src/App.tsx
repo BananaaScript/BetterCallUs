@@ -16,6 +16,8 @@ import logoTwitter from './styles/img/logoTwitter.png';
 import logoGithub from './styles/img/logoGithub.png';
 import Cadastro from './1.ADMIN/Registro';
 import { ListaSuporte } from './1.ADMIN/Lista';
+import { SLA } from './types/sla';
+import { SLAsistema } from './1.ADMIN/sla/sla';
 
 
 
@@ -83,6 +85,7 @@ function App() {
           <Route path="/Administrador" element={<RequireAuth><Adm /></RequireAuth>} />
           <Route path="/Cadastro" element={<RequireAuth><Cadastro/></RequireAuth>} />
           <Route path="/lista" element={<RequireAuth><ListaSuporte/></RequireAuth>} />
+          <Route path="/sla" element={<RequireAuth><SLAsistema/></RequireAuth>} />
         </Routes>
 
       
