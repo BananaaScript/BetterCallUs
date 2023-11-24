@@ -142,6 +142,7 @@ img#logo {
 }
 
 footer {
+  font-family: fonte;
   color: white;
   background-color: blueviolet;
   display: flex;

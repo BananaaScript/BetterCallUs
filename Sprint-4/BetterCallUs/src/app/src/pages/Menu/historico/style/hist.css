@@ -1,0 +1,83 @@
+.Tabela {
+    font-family: fonte;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+  
+  .Tabela table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .Tabela th, .Tabela td {
+    padding: 8px;
+    border: 1px solid #ddd;
+  }
+  
+  .Tabela thead, .Tabela tbody {
+    display: block;
+  }
+  
+  .Tabela tbody {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  
+  .textos{
+    cursor: pointer;
+  }
+  .Tabela td {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  
+  .Tabela td.expandido {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: inherit;
+  }
+.Tabela {
+  font-family: fonte;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.Tabela table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.Tabela th,
+.Tabela td {
+  padding: 8px;
+  border: 1px solid #ddd;
+  vertical-align: top; /* Ajusta a alinhamento vertical para o topo */
+}
+
+.Tabela thead,
+.Tabela tbody {
+  display: block;
+}
+
+.Tabela tbody {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.Tabela td {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.Tabela td.expandido {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: inherit;
+}
+  
+.Tabela th{
+    background-color: blueviolet;
+}
+

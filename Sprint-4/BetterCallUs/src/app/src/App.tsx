@@ -94,10 +94,10 @@ function App() {
             </div>
 
             <div className='parte2'>
-              <a href="https://github.com/CODE1na/BetterCallUs"> <img src={logoGithub} alt="Github" title="Logo Github" /></a>
-              <a href="https://www.instagram.com/bettercallus.code/?next=%2F"> <img src={logoInsta} alt="Instagram" title="Logo Instagram" /></a>
-              <a href="https://www.tiktok.com/@bettercallus.code"> <img src={logoTiktok} alt="Tiktok" /></a>
-              <a href="https://twitter.com/better_code_us"> <img src={logoTwitter} alt="Twitter" /></a>
+              <a href="https://github.com/CODE1na/BetterCallUs" target='blank'> <img src={logoGithub} alt="Github" title="Logo Github" /></a>
+              <a href="https://www.instagram.com/bettercallus.code/?next=%2F" target='blank'> <img src={logoInsta} alt="Instagram" title="Logo Instagram" /></a>
+              <a href="https://www.tiktok.com/@bettercallus.code" target='blank'> <img src={logoTiktok} alt="Tiktok" /></a>
+              <a href="https://twitter.com/better_code_us" target='blank'> <img src={logoTwitter} alt="Twitter" /></a>
               </div>
 
               <div className='parte3'>
