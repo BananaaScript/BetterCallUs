@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS cliente (
     cpf VARCHAR(11),
     senha VARCHAR(100),
     privilegio int,
-    email VARCHAR(50),
+    email VARCHAR(50) unique,
     telefone VARCHAR(20),
     nomeSocial VARCHAR(50),
     UNIQUE KEY uq_cpf_rg (cpf)
@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS ADM (
     cpf varchar(11),
     senha VARCHAR(100),
     privilegio int,
-    email varchar(30),
+    email varchar(50) unique,
     departamento VARCHAR(50),
     UNIQUE KEY uq_cpf_rg (cpf)
 );
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS suporte (
     cpf varchar(11),
     senha VARCHAR(100),
     privilegio int,
-    email varchar(30),
+    email varchar(50) unique,
     chamados int,
     chamadosRespondidos int,
     UNIQUE KEY uq_cpf_rg (cpf)
@@ -49,10 +49,10 @@ CREATE TABLE chamado (
     prioridade VARCHAR(255),
     tempoderesposta INT,
     nome_equipamento VARCHAR(50),
-    id_cliente INT,
-    id_suporte INT,
-    FOREIGN KEY (id_cliente) REFERENCES cliente(id),
-    FOREIGN KEY (id_suporte) REFERENCES suporte(id)
+    email_cliente varchar(50),
+    email_suporte varchar(50) DEFAULT null,
+    FOREIGN KEY (email_cliente) REFERENCES cliente(email),
+    FOREIGN KEY (email_suporte) REFERENCES suporte(email)
 );
 
 CREATE TABLE IF NOT EXISTS CategoriasProblemas (
@@ -83,16 +83,20 @@ CREATE TABLE IF NOT EXISTS equipamentos(
 );
 
 INSERT INTO ADM (`nome`, `cpf`, `senha`, `privilegio`, `email`, `departamento`) 
-VALUES ('Adm', '11111111111', 'adm123', 2, 'adm@gmail.com', 'sim');
+VALUES ('Adm', '11111111111', '123!@#qweQWE', 2, 'adm@gmail.com', 'sim');
 INSERT INTO suporte(nome, cpf, senha, privilegio, email, chamados, chamadosRespondidos) values('Suporte', '12345678910', 'suporte123', 1, 'suporte@gmail.com', 0, 0);
 
-INSERT INTO equipamentos (numeroSerie, nome, descricao) VALUES
-('ABC123', 'Computador', 'Desktop Modelo Lenovo'),
-('DEF456', 'Switch', 'Modelo da cisco'),
-('GHI789', 'Notebook', 'Modelo vision'),
-('JKL012', 'Televisão', 'Modelo samsung'),
-('MNO345', 'Acess Point', 'Modelo da intelbras');
+INSERT INTO cliente (`nome`, `cpf`, `senha`, `privilegio`, `email`) 
+VALUES ('cliente', '22222222222', 'cliente123', 0, 'cliente@gmail.com');
 
+INSERT INTO equipamentos (numeroSerie, nome, descricao) VALUES
+('ABC123', 'Mouse', 'Mouse sem fio'),
+('DEF456', 'Teclado', 'Teclado mecânico'),
+('GHI789', 'Computador', 'Desktop de última geração'),
+('JKL012', 'Monitor', 'Monitor LED de 27 polegadas'),
+('MNO345', 'Cabo de Rede', 'Cabo Ethernet de alta velocidade');
+
+select * from chamado;
 select * from cliente;
 select * from suporte;
 select * from ADM;
