@@ -12,7 +12,7 @@ app.use(cors());
 const dbConfig = {
   host: 'localhost',
   user: 'root',
-  password: 'fatec',
+  password: 'Gst4v0!!',
   database: 'bettercallus',
 };
 
@@ -59,7 +59,7 @@ app.post('/chamados', async (req, res) => {
   let status = 'Em aguardo';
 
 
-  switch (area) {
+/*   switch (area) {
     case 'Problema de Conexão':
       tempoderesposta = 1;
       prioridade = 'Baixa'
@@ -91,7 +91,7 @@ app.post('/chamados', async (req, res) => {
     default:
       tempoderesposta = 8;
       prioridade = 'Baixa'
-  }
+  } */
 
   // editar os tempos de resposta depois
 
@@ -116,7 +116,7 @@ app.delete('/chamados/:id', async (req, res) => {
 
 app.put('/chamados/:id', async (req, res) => {
   const { id } = req.params;
-  const { prioridade, area, status } = req.body;
+  const { prioridade, nome_area, status } = req.body;
 
   const connection = await connect();
 
@@ -333,7 +333,7 @@ app.post('/registroArea', async(req, res) => {
 })
 
 app.delete('/registroArea/:id', async (req, res) => {
-  const { numeroSerie } = req.params;
+  const { id } = req.params;
 
   const connection = await connect();
   await connection.execute('DELETE FROM areas WHERE id = ?', [id]);
