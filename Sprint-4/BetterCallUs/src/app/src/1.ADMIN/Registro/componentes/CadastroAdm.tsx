@@ -35,9 +35,6 @@ export const CadastroAdm = () =>{
         const padraoEmail:RegExp = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
         
         if (nome !== '' && padraoNome.test(nome) && nome.trim() !== '' && cpf !== '' && padraoCpf.test(cpf) && cpf.length == 11 && departamento !== '' && senha !== '' && padraoEmail.test(email) &&privilegio === 2){
-            let ContaAdm = new ADM(nome, cpf, senha, privilegio, email, departamento)
-            contas.push(ContaAdm)
-            
             axios.post('http://localhost:3001/registroAdm', {nome, cpf, senha, privilegio, email, departamento})
                 .then(() =>{
                     setNome('');
@@ -45,9 +42,15 @@ export const CadastroAdm = () =>{
                     setEmail('');
                     setSenha('');
                     setDepartamento('');
+                    let ContaAdm = new ADM(nome, cpf, senha, privilegio, email, departamento)
+                    contas.push(ContaAdm)
             })
             .catch((error) =>{
-                console.error(error)
+                if(error.response && error.response.data && error.response.data.error === 'CPF já cadastrado'){
+                    setCPFError('CPF já cadastrado, tente um CPF diferente!')
+                }else{
+                    console.error(error)
+                }
             })
         }
         else{
@@ -73,23 +76,23 @@ export const CadastroAdm = () =>{
         <h2>Registro de conta administrador</h2>
         <div>
             <label>Nome: </label><br />
-            <input className='inputCadUser' type='text' value={nome} onChange={(e) => setNome(e.target.value)} />
+            <input className='inputCadUser' type='text' placeholder='Nome completo.' value={nome} onChange={(e) => setNome(e.target.value)} />
         </div>
         <div>
             <label>Email: </label><br />
-            <input className='inputCadUser' type='email' value={email} onChange={(e) => setEmail(e.target.value)} />
+            <input className='inputCadUser' type='email' value={email} placeholder='exemplo@gmail.com' onChange={(e) => setEmail(e.target.value)} />
         </div>
         <div>
             <label>CPF: </label><br />
-            <input className='inputCadUser' type='text' maxLength={11} value={cpf} onChange={(e) => setCPF(e.target.value)} />
+            <input className='inputCadUser' type='text' maxLength={11} placeholder='Apenas números.' value={cpf} onChange={(e) => setCPF(e.target.value)} />
         </div>
         <div>
             <label>Senha: </label><br />
-            <input className='inputCadUser' type='password' value={senha} onChange={(e) => setSenha(e.target.value)} />
+            <input className='inputCadUser' type='password' value={senha} placeholder='Senha forte de preferência.' onChange={(e) => setSenha(e.target.value)} />
         </div>
         <div>
             <label>Departamento: </label><br />
-            <input className='inputCadUser' type='text' value={departamento} onChange={(e) => setDepartamento(e.target.value)} />
+            <input className='inputCadUser' type='text' value={departamento} placeholder='Departamento atribuído.' onChange={(e) => setDepartamento(e.target.value)} />
         </div>
         <br />
         <button className='buttonCadUser' type='button' onClick={registrarConta}>Registrar</button>

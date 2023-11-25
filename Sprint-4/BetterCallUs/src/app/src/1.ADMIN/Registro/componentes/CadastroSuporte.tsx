@@ -38,17 +38,21 @@ export const CadastroSuporte = () =>{
         const padraoEmail:RegExp = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
 
         if (nome !== '' && padraoNome.test(nome) && nome.trim() !== '' && cpf !== '' && padraoCpf.test(cpf) && cpf.length == 11 && senha !== '' && padraoEmail.test(email) && privilegio === 1){
-            let ContaSup = new Suporte(nome, cpf, senha, privilegio, email, chamados, chamadosRespondidos)
-            contas.push(ContaSup)
             axios.post('http://localhost:3001/registroSup', {nome, cpf, senha, privilegio, email, chamados, chamadosRespondidos, })
                 .then(()=>{
                     setNome('');
                     setCPF('');
                     setSenha('');
                     setEmail('');
+                    let ContaSup = new Suporte(nome, cpf, senha, privilegio, email, chamados, chamadosRespondidos)
+                    contas.push(ContaSup)
                 })
                 .catch((error) =>{
-                    console.error(error)
+                    if(error.response && error.response.data && error.response.data.error === 'CPF já cadastrado'){
+                        setCPFError('CPF já cadastrado, tente um CPF diferente!')
+                    }else{
+                        console.error(error)
+                    }
                 })
         }
         else{
@@ -90,19 +94,19 @@ export const CadastroSuporte = () =>{
         <h2>Registro de conta suporte</h2>
         <div>
             <label>Nome: </label><br />
-            <input className='inputCadUser' type='text' value={nome} onChange={(e) => setNome(e.target.value)} />
+            <input className='inputCadUser' type='text' placeholder='Nome completo.'value={nome} onChange={(e) => setNome(e.target.value)} />
         </div>
         <div>
             <label>Email: </label><br />
-            <input className='inputCadUser' type='email' value={email} onChange={(e) => setEmail(e.target.value)} />
+            <input className='inputCadUser' type='email' placeholder = 'exemplo@gmail.com'value={email} onChange={(e) => setEmail(e.target.value)} />
         </div>
         <div>
             <label>CPF: </label><br />
-            <input className='inputCadUser' type='text' maxLength={11} value={cpf} onChange={(e) => setCPF(e.target.value)} />
+            <input className='inputCadUser' type='text' maxLength={11} placeholder='Apenas números.' value={cpf} onChange={(e) => setCPF(e.target.value)} />
         </div>
         <div>
             <label>Senha: </label><br />
-            <input className='inputCadUser' type='password' value={senha} onChange={(e) => setSenha(e.target.value)} />
+            <input className='inputCadUser' type='password' value={senha} placeholder='Senha forte de preferência.' onChange={(e) => setSenha(e.target.value)} />
         </div>
         <button className='buttonCadUser' type='button' onClick={registrarConta}>Registrar</button>
             {campoError && <div style={{color: 'red'}}>{campoError}</div>}

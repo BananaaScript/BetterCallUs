@@ -1,9 +1,7 @@
-import Login from "../../App"
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import '../Home/styles/adm.css'
 import { SLA } from "../../types/sla";
-import { error } from "console";
 
 export const SLAsistema = () => {
 

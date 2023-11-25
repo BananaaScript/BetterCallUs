@@ -21,9 +21,8 @@ export const CadastroEquipamento = () =>{
     }, [])
 
     const RegistrarEquipamento = () =>{
-        const padraoNome:RegExp = /^[A-Za-z\s]+$/;
         
-        if (nome !== '' && padraoNome.test(nome) && descricao !== '' && numeroSerie !== ''){
+        if (nome !== '' && descricao !== '' && numeroSerie !== ''){
             let CadEquip = new equipamento(numeroSerie, nome, descricao)
             equipamentos.push(CadEquip)
             axios.post('http://localhost:3001/registroEquip', {numeroSerie ,nome, descricao, })
@@ -37,9 +36,6 @@ export const CadastroEquipamento = () =>{
             })
         }
         else{
-            if(nome === '' || !nome.match(padraoNome) || nome.trim() == '' ){
-                setNomeError('Coloque um nome com apenas letras e espaços.');
-              }
             if (nome === '' || descricao === ''){
                 setCampoError('Preencha todos os campos')
             }
@@ -68,15 +64,15 @@ export const CadastroEquipamento = () =>{
         <h2>Registro de equipamento</h2>
         <div>
             <label>Número de série: </label><br />
-            <input className='inputCadUser' type='text' maxLength={10} value={numeroSerie} onChange={(e) => setNumeroSerie(e.target.value)} />
+            <input className='inputCadUser' type='text' maxLength={10} placeholder="Número de série do equipamento" value={numeroSerie} onChange={(e) => setNumeroSerie(e.target.value)} />
         </div>
         <div>
             <label>Nome: </label><br />
-            <input className='inputCadUser' type='text' value={nome} onChange={(e) => setNome(e.target.value)} />
+            <input className='inputCadUser' type='text' value={nome} placeholder="Nome do equipamento" onChange={(e) => setNome(e.target.value)} />
         </div>
         <div>
             <label>Descrição: </label><br />
-            <input className='inputCadUser' type='text' value={descricao} onChange={(e) => setDescricao(e.target.value)} />
+            <input className='inputCadUser' type='text' value={descricao} placeholder="Breve descrição, exemplo: marca do dispositivo" onChange={(e) => setDescricao(e.target.value)} />
         </div>
         <button className="buttonCadUser" type='button' onClick={RegistrarEquipamento}>Registrar</button>
             {campoError && <div style={{color: 'red'}}>{campoError}</div>}

@@ -30,15 +30,14 @@ export const CadastroCliente = () =>{
 
     const registrarConta = () =>{
         const privilegio = 0
+        const nomeSocial = 'Nenhum'
         setNomeError('');
         setCPFError('');
         const padraoNome:RegExp = /^[A-Za-z\s]+$/;
         const padraoCpf:RegExp = /^\d+$/
         const padraoEmail:RegExp = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
 
-        if (nome !== '' && padraoNome.test(nome) && nome.trim() !== '' && cpf !== '' && padraoCpf.test(cpf) && cpf.length == 11 && senha !== '' && email !== '' && padraoEmail.test(email) &&telefone !== '' && nomeSocial !== '' &&privilegio === 0){
-            let ContaCliente = new Cliente(nome, cpf, senha, privilegio, email, telefone, nomeSocial)
-            contas.push(ContaCliente)
+        if (nome !== '' && padraoNome.test(nome) && nome.trim() !== '' && cpf !== '' && padraoCpf.test(cpf) && cpf.length == 11 && senha !== '' && email !== '' && padraoEmail.test(email) &&telefone !== '' && privilegio === 0){
             axios.post('http://localhost:3001/registroCliente', {nome, cpf, senha, privilegio, email, telefone, nomeSocial, })
             .then(()=>{
                 setNome('');
@@ -47,9 +46,15 @@ export const CadastroCliente = () =>{
                 setEmail('');
                 setCPF('');
                 setSenha('');
+                let ContaCliente = new Cliente(nome, cpf, senha, privilegio, email, telefone, nomeSocial)
+                contas.push(ContaCliente)
             })
             .catch((error) =>{
-                console.error(error)
+                if(error.response && error.response.data && error.response.data.error === 'CPF já cadastrado'){
+                    setCPFError('CPF já cadastrado, tente um CPF diferente!')
+                }else{
+                    console.error(error)
+                }
             })
         }
         else{
@@ -62,7 +67,7 @@ export const CadastroCliente = () =>{
             }
 
             
-            if (nome === '' || senha === '' || cpf === '' || email === '' || telefone === '' || nomeSocial === ''){
+            if (nome === '' || senha === '' || cpf === '' || email === '' || telefone === ''){
                 setCampoError('Todos os campos devem ser preenchidos.')
             }
 
@@ -97,27 +102,27 @@ export const CadastroCliente = () =>{
         <h2>Registro de conta cliente</h2>
         <div>
             <label>Nome: </label><br />
-            <input className='inputCadUser' type='text' value={nome} onChange={(e) => setNome(e.target.value)} />
+            <input className='inputCadUser' placeholder='Nome completo.' type='text' value={nome} onChange={(e) => setNome(e.target.value)} />
         </div>
         <div>
             <label>Nome Social: </label><br />
-            <input className='inputCadUser' type='text' value={nomeSocial} onChange={(e) => setNomeSocial(e.target.value)} />
+            <input className='inputCadUser' type='text' placeholder='Deixe vazio se não existir.' value={nomeSocial} onChange={(e) => setNomeSocial(e.target.value)} />
         </div>
         <div>
             <label>Email: </label><br />
-            <input className='inputCadUser' type='email' value={email} onChange={(e) => setEmail(e.target.value)} />
+            <input className='inputCadUser' type='email' placeholder='exemplo@gmail.com' value={email} onChange={(e) => setEmail(e.target.value)} />
         </div>
         <div>
             <label>Telefone: </label><br />
-            <input className='inputCadUser' type='text' value={telefone} onChange={(e) => setTelefone(e.target.value)} />
+            <input className='inputCadUser' type='text' placeholder='(99)9999-9999' maxLength={15} value={telefone} onChange={(e) => setTelefone(e.target.value)} />
         </div>
         <div>
             <label>CPF: </label><br />
-            <input className='inputCadUser' type='text' maxLength={11} value={cpf} onChange={(e) => setCPF(e.target.value)} />
+            <input className='inputCadUser' type='text' maxLength={11} placeholder='Apenas números.' value={cpf} onChange={(e) => setCPF(e.target.value)} />
         </div>
         <div>
             <label>Senha: </label><br />
-            <input className='inputCadUser' type='password' value={senha} onChange={(e) => setSenha(e.target.value)} />
+            <input className='inputCadUser' type='password' value={senha} placeholder='Senha forte de preferência.' onChange={(e) => setSenha(e.target.value)} />
         </div>
         <button className='buttonCadUser' type='button' onClick={registrarConta}>Registrar</button>
             {campoError && <div style={{color: 'red'}}>{campoError}</div>}
