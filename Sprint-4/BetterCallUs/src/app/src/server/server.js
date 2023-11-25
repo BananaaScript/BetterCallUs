@@ -12,7 +12,7 @@ app.use(cors());
 const dbConfig = {
   host: 'localhost',
   user: 'root',
-  password: 'fatec',
+  password: 'adm123',
   database: 'bettercallus',
 };
 
@@ -67,36 +67,37 @@ app.post('/chamados', async (req, res) => {
 
   switch (area) {
     case 'Problema de Conexão':
-      tempoderesposta = 1;
-      prioridade = 'Baixa'
+      tempoderesposta = '1';
+      prioridade = '10'
       break;
     case 'Falha de Software':
-      tempoderesposta = 2;
-      prioridade = 'Alta'
+      tempoderesposta = '2';
+      prioridade = '09'
       break;
     case 'Problema de Segurança':
-      tempoderesposta = 3;
+      tempoderesposta = '3';
+      prioridade = '08'
       break;
     case 'Vírus e Malware':
-      tempoderesposta = 4;
-      prioridade = 'Media'
+      tempoderesposta = '4';
+      prioridade = '06'
       break;
     case 'Falha de Hardware':
-      tempoderesposta = 5;
-      prioridade = 'Alta'
+      tempoderesposta = '5';
+      prioridade = '05'
       break;
     case 'Dúvidas de Programação':
-      tempoderesposta = 6;
-      prioridade = 'Baixa'
+      tempoderesposta = '6';
+      prioridade = '04'
       break;
     case 'Problemas de Impressão':
-      tempoderesposta = 7;
-      prioridade = 'Baixa'
+      tempoderesposta = '7';
+      prioridade = '03'
       break;
 
     default:
-      tempoderesposta = 8;
-      prioridade = 'Baixa'
+      tempoderesposta = '2';
+      prioridade = '07'
   }
 
   // editar os tempos de resposta depois

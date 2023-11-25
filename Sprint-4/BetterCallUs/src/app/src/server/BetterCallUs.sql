@@ -47,7 +47,7 @@ CREATE TABLE chamado (
     datacriacao DATETIME DEFAULT CURRENT_TIMESTAMP,
     dataatualizacao DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     prioridade VARCHAR(255),
-    tempoderesposta INT,
+    tempoderesposta varchar(20),
     TempoResolucao varchar(20),
     nome_equipamento VARCHAR(50),
     email_cliente varchar(50),
@@ -116,3 +116,5 @@ select * from cliente;
 select * from suporte;
 select * from ADM;
 select * from equipamentos;
+select * from sla;
+SELECT area, prioridade, tempoderesposta, TempoResolucao FROM chamado WHERE estado = 'aberto'
