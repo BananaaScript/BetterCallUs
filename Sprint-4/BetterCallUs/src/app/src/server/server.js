@@ -164,6 +164,10 @@ app.post('/registroSup', async(req, res) => {
   if (rows.length > 0){
     return res.status(400).json({error: 'CPF já cadastrado'})
   }
+  const [rows2] = await connection.execute('SELECT email FROM suporte WHERE email = ?', [email]);
+  if(rows2.length > 0){
+    return res.status(400).json({error: 'email já cadastrado'})
+  }
   await connection.execute('INSERT INTO suporte (nome, cpf, senha, privilegio, email, chamados, chamadosRespondidos) VALUES(?, ?, ?, ?, ?, ?, ?)', [nome, cpf, senha, privilegio, email, chamados, chamadosRespondidos]);
 
   res.json({message: 'Registro feito com sucesso'});
@@ -198,6 +202,11 @@ app.post('/registroAdm', async(req, res) => {
   if (rows.length > 0){
     return res.status(400).json({error: 'CPF já cadastrado'})
   }
+  const [rows2] = await connection.execute('SELECT email FROM ADM WHERE email = ?', [email]);
+  if(rows2.length > 0){
+    return res.status(400).json({error: 'email já cadastrado'})
+  }
+
   await connection.execute('INSERT INTO ADM (nome, cpf, senha, privilegio, email, departamento) VALUES(?, ?, ?, ?, ?, ?)', [nome, cpf, senha, privilegio, email, departamento]);
 
   res.json({message: 'Registro feito com sucesso'});
@@ -221,6 +230,10 @@ app.post('/registroCliente', async(req, res) => {
   const [rows] = await connection.execute('SELECT cpf FROM cliente WHERE cpf = ?' , [cpf]);
   if (rows.length > 0){
     return res.status(400).json({error: 'CPF já cadastrado'})
+  }
+  const [rows2] = await connection.execute('SELECT email FROM cliente WHERE email = ?', [email]);
+  if(rows2.length > 0){
+    return res.status(400).json({error: 'email já cadastrado'})
   }
 
   await connection.execute('INSERT INTO cliente(nome, cpf, senha, privilegio, email, telefone, nomeSocial) VALUES (?, ?, ?, ?, ?, ?, ?)', [nome, cpf, senha, privilegio, email, telefone, nomeSocial]);

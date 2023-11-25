@@ -48,7 +48,11 @@ export const CadastroAdm = () =>{
             .catch((error) =>{
                 if(error.response && error.response.data && error.response.data.error === 'CPF já cadastrado'){
                     setCPFError('CPF já cadastrado, tente um CPF diferente!')
-                }else{
+                }
+                else if(error.response && error.response.data && error.response.data.error === 'email já cadastrado'){
+                    setEmailError('email já cadastrado, tente outro email!')
+                }    
+                else{
                     console.error(error)
                 }
             })
