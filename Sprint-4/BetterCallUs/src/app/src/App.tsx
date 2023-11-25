@@ -16,9 +16,7 @@ import logoTwitter from './styles/img/logoTwitter.png';
 import logoGithub from './styles/img/logoGithub.png';
 import Cadastro from './1.ADMIN/Registro';
 import { ListaSuporte } from './1.ADMIN/Lista';
-import { SLA } from './types/sla';
 import { SLAsistema } from './1.ADMIN/sla/sla';
-
 
 
 

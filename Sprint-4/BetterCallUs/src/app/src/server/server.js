@@ -68,35 +68,43 @@ app.post('/chamados', async (req, res) => {
   switch (area) {
     case 'Problema de Conexão':
       tempoderesposta = '1';
+      TempoResolucao = '2'
       prioridade = '10'
       break;
     case 'Falha de Software':
       tempoderesposta = '2';
+      TempoResolucao = '4'
       prioridade = '09'
       break;
     case 'Problema de Segurança':
       tempoderesposta = '3';
+      TempoResolucao = '6'
       prioridade = '08'
       break;
     case 'Vírus e Malware':
       tempoderesposta = '4';
+      TempoResolucao = '8'
       prioridade = '06'
       break;
     case 'Falha de Hardware':
       tempoderesposta = '5';
+      TempoResolucao = '7'
       prioridade = '05'
       break;
     case 'Dúvidas de Programação':
       tempoderesposta = '6';
+      TempoResolucao = '12'
       prioridade = '04'
       break;
     case 'Problemas de Impressão':
       tempoderesposta = '7';
+      TempoResolucao = '14'
       prioridade = '03'
       break;
 
     default:
       tempoderesposta = '2';
+      TempoResolucao = '4'
       prioridade = '07'
   }
 
@@ -104,8 +112,8 @@ app.post('/chamados', async (req, res) => {
 
   connection = await connect();
   await connection.execute(
-    'INSERT INTO chamado (area, titulo, sumario, tempoderesposta, status, nome_equipamento, prioridade, email_cliente, nome_cliente, cpf_cliente, telefone_cliente, nomeSocial_cliente) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
-    [area || null, titulo, sumario, tempoderesposta, status, nome_equipamento, prioridade, email_cliente, nome, cpf, telefone, nomeSocial]
+    'INSERT INTO chamado (area, titulo, sumario, tempoderesposta,TempoResolucao, status, nome_equipamento, prioridade, email_cliente, nome_cliente, cpf_cliente, telefone_cliente, nomeSocial_cliente) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+    [area || null, titulo, sumario, tempoderesposta,TempoResolucao, status, nome_equipamento, prioridade, email_cliente, nome, cpf, telefone, nomeSocial]
   );
   res.json({ message: 'Chamado criado com sucesso' });
 });
@@ -444,6 +452,12 @@ app.put('/sla/:id', async (req, res) => {
   const [updateRow] = await connection.execute ('SELECT * FROM sla WHERE id = ?', [id]);
   res.json(updateRow[0])
 });
+
+app.get('/chamados/abertos', async(req, res) =>{
+  const connection = await connect()
+  const[rows] = await connection.execute('SELECT area, prioridade, tempoderesposta, TempoResolucao FROM chamado WHERE estado = ?', ['aberto'])
+  res.json(rows)
+})
 
 app.listen(port, () => {
   console.log(`Servidor rodando em http://localhost:${port}`);
