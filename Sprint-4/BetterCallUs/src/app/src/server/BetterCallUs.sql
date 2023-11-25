@@ -50,7 +50,7 @@ CREATE TABLE chamado (
     tempoderesposta INT,
     nome_equipamento VARCHAR(50),
     email_cliente varchar(50),
-    email_suporte varchar(50) DEFAULT null,
+    email_suporte varchar(50) DEFAULT null
 );
 
 CREATE TABLE IF NOT EXISTS CategoriasProblemas (
