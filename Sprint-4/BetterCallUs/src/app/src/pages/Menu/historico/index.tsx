@@ -38,14 +38,15 @@ export const Histuser = () => {
   }, []);
 
   useEffect(() => {
-    axios.get('http://localhost:3001/chamados')
+    axios.get(`http://localhost:3001/chamadosdocliente?emailCliente=${emailCliente}`)
       .then((response) => {
         setChamados(response.data);
       })
       .catch((error) => {
         console.error(error);
       });
-  }, []);
+  }, [emailCliente]);
+  
 
   useEffect(() => {
     axios.get('http://localhost:3001/equipamentos')
@@ -75,7 +76,7 @@ export const Histuser = () => {
     }
     else{
       axios
-      .put(`http://localhost:3001/chamados/${editingTicketId}`, {
+      .put(`http://localhost:3001/chamadosdocliente/${editingTicketId}`, {
         area,
         titulo,
         sumario,
@@ -142,7 +143,7 @@ export const Histuser = () => {
   
 
   const updateChamados = () => {
-    axios.get('http://localhost:3001/chamados')
+    axios.get(`http://localhost:3001/chamadosdocliente?emailCliente=${emailCliente}`)
       .then((response) => {
         setChamados(response.data);
       })

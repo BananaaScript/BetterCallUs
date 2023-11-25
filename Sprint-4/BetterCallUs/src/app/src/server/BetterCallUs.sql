@@ -50,7 +50,12 @@ CREATE TABLE chamado (
     tempoderesposta INT,
     nome_equipamento VARCHAR(50),
     email_cliente varchar(50),
-    email_suporte varchar(50) DEFAULT null
+    email_suporte varchar(50) DEFAULT null,
+    nome_cliente varchar(50),
+    cpf_cliente varchar(11),
+    telefone_cliente varchar(20),
+    nomeSocial_cliente varchar(50)
+
 );
 
 CREATE TABLE IF NOT EXISTS CategoriasProblemas (
@@ -93,8 +98,9 @@ INSERT INTO ADM (`nome`, `cpf`, `senha`, `privilegio`, `email`, `departamento`)
 VALUES ('Adm', '11111111111', '123!@#qweQWE', 2, 'adm@gmail.com', 'sim');
 INSERT INTO suporte(nome, cpf, senha, privilegio, email, chamados, chamadosRespondidos) values('Suporte', '12345678910', 'suporte123', 1, 'suporte@gmail.com', 0, 0);
 
-INSERT INTO cliente (`nome`, `cpf`, `senha`, `privilegio`, `email`) 
-VALUES ('cliente', '22222222222', 'cliente123', 0, 'cliente@gmail.com');
+INSERT INTO cliente (`nome`, `cpf`, `senha`, `privilegio`, `email`, `telefone`, `nomeSocial`) 
+VALUES ('cliente', '22222222222', 'cliente123', 0, 'cliente@gmail.com', '1234', 'cliente social');
+
 
 INSERT INTO equipamentos (numeroSerie, nome, descricao) VALUES
 ('ABC123', 'Mouse', 'Mouse sem fio'),

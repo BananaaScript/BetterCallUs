@@ -10,7 +10,7 @@ import moment from 'moment-timezone'
 export const Chamadassup = () => {
   Login()
 
-  const [chamados, setChamados] = useState<Array<{ id: number; area: string; titulo: string; sumario: string; tempoderesposta: number; datacriacao: string; dataatualizacao: string, status: string, id_cliente: number, nome_equipamento: string;}>>([]);
+  const [chamados, setChamados] = useState<Array<{ id: number; area: string; titulo: string; sumario: string; tempoderesposta: number; datacriacao: string; dataatualizacao: string, status: string, email_cliente: string, nome_cliente: string, nomeSocial_cliente: string, cpf_cliente: string, telefone_cliente: string, nome_equipamento: string;}>>([]);
   const [area, setArea] = useState('');
   const [titulo, setTitulo] = useState('');
   const [sumario, setSumario] = useState('');
@@ -99,6 +99,10 @@ export const Chamadassup = () => {
           <th>Área</th>
           <th>Status</th>
           <th>Equipamento</th>
+          <th>Nome do cliente</th>
+          <th>Cpf do cliente</th>
+          <th>Telefone do cliente</th>
+          <th>E-mail do cliente</th>
           <th>Editar</th>
         </tr>
       </thead>
@@ -113,6 +117,10 @@ export const Chamadassup = () => {
             <td>{chamado.area}</td>
             <td>{chamado.status}</td>
             <td>{chamado.nome_equipamento}</td>
+            <td>{chamado.nome_cliente}</td>
+            <td>{chamado.cpf_cliente}</td>
+            <td>{chamado.telefone_cliente}</td>
+            <td>{chamado.email_cliente}</td>
             <td>
               <button onClick={() => handleEdit(chamado.id)}>Editar</button>
             </td>

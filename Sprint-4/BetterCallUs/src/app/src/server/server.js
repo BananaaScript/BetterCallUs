@@ -40,14 +40,29 @@ app.get('/chamados', async (req, res) => {
   res.json(rows);
 });
 
+app.get('/chamadosdocliente', async (req, res) => {
+  const connection = await connect();
+  const emailCliente = req.query.emailCliente; 
+
+  if (emailCliente) {
+    const [rows] = await connection.execute('SELECT * FROM chamado WHERE email_cliente = ? ORDER BY tempoderesposta ASC', [emailCliente]);
+
+    connection.end();
+    res.json(rows);
+  } 
+});
 
 app.post('/chamados', async (req, res) => {
   const { area, titulo, sumario, nome_equipamento, email_cliente} = req.body; 
+  let connection = await connect();
+  const clienteQuery = await connection.execute('SELECT nome, cpf, telefone, nomeSocial FROM cliente WHERE email = ?', [email_cliente]);
+  const [clienteData] = clienteQuery[0];
 
+  const { nome, cpf, telefone, nomeSocial } = clienteData;
 
   let tempoderesposta;
   let prioridade = '';
-  let status = 'Finalizado';
+  let status = 'Em aguardo';
 
 
   switch (area) {
@@ -86,9 +101,11 @@ app.post('/chamados', async (req, res) => {
 
   // editar os tempos de resposta depois
 
-  const connection = await connect();
-  await connection.execute('INSERT INTO chamado (area, titulo, sumario, tempoderesposta, status, nome_equipamento, prioridade, email_cliente) VALUES (?, ?, ?, ?, ?, ?, ?, ?)', [area || null, titulo, sumario,  tempoderesposta, status, nome_equipamento, prioridade, email_cliente]);
-
+  connection = await connect();
+  await connection.execute(
+    'INSERT INTO chamado (area, titulo, sumario, tempoderesposta, status, nome_equipamento, prioridade, email_cliente, nome_cliente, cpf_cliente, telefone_cliente, nomeSocial_cliente) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+    [area || null, titulo, sumario, tempoderesposta, status, nome_equipamento, prioridade, email_cliente, nome, cpf, telefone, nomeSocial]
+  );
   res.json({ message: 'Chamado criado com sucesso' });
 });
 
