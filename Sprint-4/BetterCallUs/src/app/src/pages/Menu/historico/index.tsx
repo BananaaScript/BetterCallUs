@@ -9,7 +9,7 @@ import './style/hist.css'
 export const Histuser = () => {
     Login()
     const auth = useContext(AuthContext)
-    const [chamados, setChamados] = useState<Array<{ id: number; area: string; titulo: string; sumario: string; tempoderesposta: number; datacriacao: string; dataatualizacao: string, email_cliente: number, nome_equipamento: string, status: string;}>>([]);
+    const [chamados, setChamados] = useState<Array<{ id: number; area: string; titulo: string; sumario: string; tempoderesposta: number; datacriacao: string; dataatualizacao: string, email_cliente: number, nome_equipamento: string, resposta: string, status: string;}>>([]);
   const [area, setArea] = useState('');
   const [status, setStatus] = useState('');
   const [titulo, setTitulo] = useState('');
@@ -167,6 +167,7 @@ return (
           <th>Área</th>
           <th>Status</th>
           <th>Equipamento</th>
+          <th>Resposta</th>
           <th>Reenviar</th>
         </tr>
       </thead>
@@ -194,6 +195,7 @@ return (
             <td>{chamado.area}</td>
             <td>{chamado.status}</td>
             <td>{chamado.nome_equipamento}</td>
+            <td>{chamado.resposta}</td>
             <td>
               <button onClick={() => HandleReenviar(chamado.id)} disabled={chamado.status !== 'Finalizado'}>
                 Reenviar

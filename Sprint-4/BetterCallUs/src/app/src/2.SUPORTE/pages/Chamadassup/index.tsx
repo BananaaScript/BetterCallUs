@@ -3,14 +3,16 @@ import Login from '../../../pages/login';
 import { Link } from 'react-router-dom';
 import './styles/Ticket.css'
 import '../../../pages/Ticket/index'
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
+import { AuthContext } from '../../../contexts/Auth/AuthContext';
 import axios from 'axios';
 import moment from 'moment-timezone'
 
 export const Chamadassup = () => {
   Login()
-
+  const auth = useContext(AuthContext)
   const [chamados, setChamados] = useState<Array<{ id: number; area: string; titulo: string; sumario: string; tempoderesposta: number; datacriacao: string; dataatualizacao: string, status: string, email_cliente: string, nome_cliente: string, nomeSocial_cliente: string, cpf_cliente: string, telefone_cliente: string, nome_equipamento: string;}>>([]);
+  const [respostaTextArea, setRespostaTextArea] = useState('');
   const [area, setArea] = useState('');
   const [titulo, setTitulo] = useState('');
   const [sumario, setSumario] = useState('');
@@ -18,7 +20,7 @@ export const Chamadassup = () => {
   const [equipamentos, setEquipamentos] = useState<Array<string>>([]);
   const [selectedEquipamento, setSelectedEquipamento] = useState('');
 
-  let idCliente = 2;
+  let emailSuporte = auth.usuario?.email
 
   // quando o sistema de login estiver pronto, tem que mudar para = idcliente que fizer login
 
@@ -74,6 +76,45 @@ export const Chamadassup = () => {
       });
   };
   
+  const HandleAceitar = (id: number) => {
+    const chamado = chamados.find((chamado) => chamado.id === id);
+  
+    if (chamado) {
+      axios
+        .put(`http://localhost:3001/aceitarchamado/${id}`, {
+          status: 'Em andamento',
+          email_suporte: emailSuporte 
+
+        })
+        .then(() => {
+          setEditingTicketId(null);
+          updateChamados();
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }
+  };
+
+  const handleResponder = (id: number) => {
+    const chamado = chamados.find((chamado) => chamado.id === id);
+
+    if (chamado) {
+      axios
+        .put(`http://localhost:3001/responderchamado/${id}`, {
+          status: 'Finalizado',
+          resposta: respostaTextArea,
+        })
+        .then(() => {
+          setEditingTicketId(null);
+          setRespostaTextArea('');
+          updateChamados();
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }
+  };
 
   const updateChamados = () => {
     axios.get('http://localhost:3001/chamados')
@@ -103,6 +144,7 @@ export const Chamadassup = () => {
           <th>Cpf do cliente</th>
           <th>Telefone do cliente</th>
           <th>E-mail do cliente</th>
+          <th>Aceitar</th>
           <th>Editar</th>
         </tr>
       </thead>
@@ -122,12 +164,25 @@ export const Chamadassup = () => {
             <td>{chamado.telefone_cliente}</td>
             <td>{chamado.email_cliente}</td>
             <td>
-              <button onClick={() => handleEdit(chamado.id)}>Editar</button>
+              <button onClick={() => HandleAceitar(chamado.id)} disabled={chamado.status !== 'Em aguardo'}> Aceitar
+              </button>
+            </td>
+            <td>
+              <button onClick={() => handleResponder(chamado.id)} disabled={chamado.status !== 'Em andamento'}>Responder</button>
             </td>
           </tr>
         ))}
       </tbody>
     </table>
+
+    <div>
+      <label htmlFor="respostaTextArea">Resposta:</label>
+      <textarea
+        id="respostaTextArea"
+        value={respostaTextArea}
+        onChange={(e) => setRespostaTextArea(e.target.value)}
+      />
+    </div>
   </div>
 
 )

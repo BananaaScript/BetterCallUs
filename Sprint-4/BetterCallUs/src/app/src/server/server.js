@@ -125,7 +125,7 @@ app.delete('/chamados/:id', async (req, res) => {
 app.put('/chamados/:id', async (req, res) => {
   const { id } = req.params;
   const { prioridade, area, status } = req.body;
-
+  let resposta = '';
   const connection = await connect();
 
   try {
@@ -139,10 +139,11 @@ app.put('/chamados/:id', async (req, res) => {
     const updatedStatus = status !== undefined ? status : existingTicket[0].status;
 
     await connection.execute(
-      'UPDATE chamado SET prioridade = ?, status = ?, dataatualizacao = CURRENT_TIMESTAMP WHERE id = ?',
+      'UPDATE chamado SET prioridade = ?, status = ?, resposta = ?, dataatualizacao = CURRENT_TIMESTAMP WHERE id = ?',
       [
         updatedPrioridade,
         updatedStatus,
+        resposta,
         id
       ]
     );
@@ -160,6 +161,62 @@ app.put('/chamados/:id', async (req, res) => {
     connection.end();
   }
 });
+
+
+
+/* =================ACEITANDO CHAMADO COMO SUPORTE==================== */
+
+app.put('/aceitarchamado/:id', async (req, res) => {
+  const { id } = req.params;
+  const { status, email_suporte } = req.body;
+  const connection = await connect();
+  try {
+    
+
+    await connection.execute('UPDATE chamado SET status = ?, email_suporte = ? WHERE id = ?', [status, email_suporte, id]);
+
+
+    const [updatedChamado] = await connection.execute('SELECT id, prioridade, tempoderesposta, datacriacao, dataatualizacao FROM chamado WHERE id = ?', [id]);
+
+    res.json({
+      chamado: updatedChamado[0],
+      message: 'Chamado atualizado com sucesso',
+    });
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Erro ao atualizar o chamado');
+  }finally{
+    connection.end();
+  }
+});
+
+
+app.put('/responderchamado/:id', async (req, res) => {
+  const { id } = req.params;
+  const { status, resposta } = req.body;
+  const connection = await connect();
+  try {
+ 
+
+    await connection.execute('UPDATE chamado SET status = ?, resposta = ? WHERE id = ?', [status, resposta, id]);
+
+
+    const [updatedChamado] = await connection.execute('SELECT id, prioridade, tempoderesposta, datacriacao, dataatualizacao FROM chamado WHERE id = ?', [id]);
+
+    res.json({
+      chamado: updatedChamado[0],
+      message: 'Chamado atualizado com sucesso',
+    });
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Erro ao atualizar o chamado');
+  }finally{
+    connection.end();
+  }
+});
+
+
+
 /* ======================================================== */
 
 /* Registro suporte */

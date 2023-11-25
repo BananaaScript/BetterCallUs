@@ -48,13 +48,15 @@ CREATE TABLE chamado (
     dataatualizacao DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     prioridade VARCHAR(255),
     tempoderesposta INT,
+    TempoResolucao varchar(20),
     nome_equipamento VARCHAR(50),
     email_cliente varchar(50),
     email_suporte varchar(50) DEFAULT null,
     nome_cliente varchar(50),
     cpf_cliente varchar(11),
     telefone_cliente varchar(20),
-    nomeSocial_cliente varchar(50)
+    nomeSocial_cliente varchar(50),
+    resposta TEXT DEFAULT NULL
 
 );
 
