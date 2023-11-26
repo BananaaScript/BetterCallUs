@@ -9,7 +9,7 @@ import './style/hist.css'
 export const Histuser = () => {
     Login()
     const auth = useContext(AuthContext)
-    const [chamados, setChamados] = useState<Array<{ id: number; area: string; titulo: string; sumario: string; tempoderesposta: number; datacriacao: string; dataatualizacao: string, email_cliente: number, nome_equipamento: string, resposta: string, status: string;}>>([]);
+    const [chamados, setChamados] = useState<Array<{ id: number; area: string; titulo: string; sumario: string; tempoderesposta: number; datacriacao: string; dataatualizacao: string, email_cliente: number, nome_equipamento: string, resposta: string, status: string, nome_suporte: number}>>([]);
   const [area, setArea] = useState('');
   const [status, setStatus] = useState('');
   const [titulo, setTitulo] = useState('');
@@ -161,6 +161,7 @@ return (
           <th>ID</th>
           <th>Título</th>
           <th>Sumário</th>
+          <th>Suporte</th>
           <th>Tempo de Resposta</th>
           <th>Data de Criação</th>
           <th>Data de Atualização</th>
@@ -189,6 +190,7 @@ return (
               {expandedSumarioId === chamado.id ? chamado.sumario : `${chamado.sumario.slice(0, 50)}...`}
             </td>
             </div>
+            <td>{chamado.nome_suporte}</td>
             <td>Horas: {chamado.tempoderesposta}</td>
             <td>{formatarData(chamado.datacriacao)}</td>
             <td>{formatarData(chamado.dataatualizacao)}</td>

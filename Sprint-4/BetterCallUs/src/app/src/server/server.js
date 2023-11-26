@@ -199,10 +199,14 @@ app.put('/aceitarchamado/:id', async (req, res) => {
   const { id } = req.params;
   const { status, email_suporte } = req.body;
   const connection = await connect();
+  const suporteQuery = await connection.execute('SELECT nome, cpf FROM suporte WHERE email = ?', [email_suporte]);
+  const [suporteData] = suporteQuery[0]
+  const {nome, cpf} = suporteData
+
   try {
     
 
-    await connection.execute('UPDATE chamado SET status = ?, email_suporte = ? WHERE id = ?', [status, email_suporte, id]);
+    await connection.execute('UPDATE chamado SET nome_suporte = ?, status = ?, email_suporte = ? WHERE id = ?', [nome, status, email_suporte, id]);
 
 
     const [updatedChamado] = await connection.execute('SELECT id, prioridade, tempoderesposta, datacriacao, dataatualizacao FROM chamado WHERE id = ?', [id]);

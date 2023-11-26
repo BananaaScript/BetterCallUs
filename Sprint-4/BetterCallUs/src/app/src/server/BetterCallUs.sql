@@ -51,11 +51,12 @@ CREATE TABLE chamado (
     TempoResolucao varchar(20),
     nome_equipamento VARCHAR(50),
     email_cliente varchar(50),
-    email_suporte varchar(50) DEFAULT null,
     nome_cliente varchar(50),
     cpf_cliente varchar(11),
     telefone_cliente varchar(20),
     nomeSocial_cliente varchar(50),
+	email_suporte varchar(50) DEFAULT null,
+    nome_suporte varchar(50) DEFAULT null,
     resposta TEXT DEFAULT NULL
 
 );
