@@ -82,6 +82,11 @@ export const Chamadassup = () => {
     
   }));
 }; 
+const [expandedSumarioId, setExpandedSumarioId] = useState<number | null>(null);
+
+  const handleExpansaoSumario = (id: number) => {
+    setExpandedSumarioId(expandedSumarioId === id ? null : id);
+  };
 
   const updateChamados = () => {
     axios.get('http://localhost:3001/chamados').then((response) => {
@@ -175,6 +180,7 @@ export const Chamadassup = () => {
 
   return (
     <div className="corpo">
+      <div className={`Tabela`}>
       <h1>Tickets abertos</h1>
       <table>
         <thead>
@@ -227,7 +233,8 @@ export const Chamadassup = () => {
           ))}
         </tbody>
       </table>
-
+      </div>
+      <div className={`Tabela2`}>
       <h1>Tickets do Suporte</h1>
       <table>
         <thead>
@@ -280,6 +287,7 @@ export const Chamadassup = () => {
           ))}
         </tbody>
       </table>
+    </div>
     </div>
   );
 };

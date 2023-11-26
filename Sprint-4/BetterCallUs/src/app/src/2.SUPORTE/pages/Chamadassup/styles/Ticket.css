@@ -1,6 +1,16 @@
+.Tabela {
+  font-family: fonte;
+  max-width: 100%;
+  overflow-x: auto;
+}
+.Tabela2 {
+  font-family: fonte;
+  max-width: 100%;
+  overflow-x: auto;
+}
 
 .bodyTicket {
-    font-family: "fonte";
+    font-family: fonte;
     display:flex;
 
     justify-content: center;
@@ -8,6 +18,7 @@
   }
   
   body {
+    font-family: "fonte";
     font-family: "Lato", sans-serif;
   }
   
