@@ -52,6 +52,26 @@ app.get('/chamadosdocliente', async (req, res) => {
   } 
 });
 
+app.get('/chamadosdosuporte', async (req, res) => {
+  const connection = await connect();
+  const emailSuporte = req.query.emailSuporte; 
+
+  if (emailSuporte) {
+    const [rows] = await connection.execute('SELECT * FROM chamado WHERE email_suporte = ? ORDER BY tempoderesposta ASC', [emailSuporte]);
+
+    connection.end();
+    res.json(rows);
+  } 
+});
+
+app.get('/chamadossemresposta', async (req, res) => {
+  const connection = await connect();
+  const [rows] = await connection.execute("SELECT * FROM chamado WHERE status = 'Em aguardo' ORDER BY tempoderesposta ASC");
+  connection.end();
+
+  res.json(rows);
+});
+
 app.post('/chamados', async (req, res) => {
   const { area, titulo, sumario, nome_equipamento, email_cliente} = req.body; 
   let connection = await connect();
