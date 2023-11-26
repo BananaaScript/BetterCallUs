@@ -5,6 +5,7 @@
     text-align: center ;
     flex-direction: row;
     margin-bottom: 3%;
+    font-family: fonte;
 }
 
 .privAdm {
@@ -19,6 +20,9 @@
 }
 
 .btnAdm {
+    box-shadow: 5px 5px rgba(158, 61, 248, 0.377);
+    border-radius: 5px;
+    font-family: fonte;
     width: 60%;
     padding: 25px;
     margin: 10px;
