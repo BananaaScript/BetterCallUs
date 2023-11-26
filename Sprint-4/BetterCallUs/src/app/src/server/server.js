@@ -12,7 +12,7 @@ app.use(cors());
 const dbConfig = {
   host: 'localhost',
   user: 'root',
-  password: '852456',
+  password: 'Gst4v0!!',
   database: 'bettercallus',
 };
 
@@ -57,7 +57,7 @@ app.get('/chamadosdosuporte', async (req, res) => {
   const emailSuporte = req.query.emailSuporte; 
 
   if (emailSuporte) {
-    const [rows] = await connection.execute('SELECT * FROM chamado WHERE email_suporte = ? ORDER BY tempoderesposta ASC', [emailSuporte]);
+    const [rows] = await connection.execute('SELECT * FROM chamado WHERE email_suporte = ? AND status <> "Em aguardo" ORDER BY tempoderesposta ASC', [emailSuporte]);
 
     connection.end();
     res.json(rows);
