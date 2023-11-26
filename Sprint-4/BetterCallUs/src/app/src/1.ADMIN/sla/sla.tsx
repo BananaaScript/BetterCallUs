@@ -2,7 +2,6 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 
 export const SLAsistema = () => {
-
    const [chamado, setChamado] = useState<Array<{id:number; area:string; prioridade:string; tempoderesposta:string; TempoResolucao:string}>>([]);
    const [area, setArea] = useState('');
    const [prioridade, setPrioridade] = useState('');
@@ -62,7 +61,7 @@ export const SLAsistema = () => {
          </thead>
          <tbody>
            {chamado.map((chamado) => (
-             <tr>
+             <tr key={chamado.id}>
                <td>{chamado.id}</td>
                <td>{chamado.area}</td>
                <td>{chamado.prioridade}</td>
@@ -149,7 +148,7 @@ export const SLAsistema = () => {
        ):
        (
            <>
-              
+            
            </>
        )}   
      </div>

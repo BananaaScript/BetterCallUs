@@ -149,6 +149,7 @@ export const Chamadassup = () => {
           console.error(error);
         });
     }
+    window.location.reload();
   };
 
   const handleResponder = (id: number) => {
@@ -169,6 +170,7 @@ export const Chamadassup = () => {
           console.error(error);
         });
     }
+    window.location.reload();
   };
 
   return (

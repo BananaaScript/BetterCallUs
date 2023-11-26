@@ -454,6 +454,8 @@ app.get('/sla', async (req, res) => {
   res.json(rows)
 })
 
+
+/* Não é usado, mas deixe aqui! */
 app.post('/sla', async(req, res) => {
   const {area, prioridade, TempoResposta, TempoResolucao} = req.body;
 

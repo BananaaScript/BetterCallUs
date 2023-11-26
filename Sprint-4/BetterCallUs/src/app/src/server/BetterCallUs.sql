@@ -88,15 +88,6 @@ CREATE TABLE IF NOT EXISTS equipamentos(
     unique key nSerie (numeroSerie)
 );
 
-create table if not exists sla(
-	id int auto_increment primary key,
-    area varchar(70),
-    prioridade varchar(10),
-    TempoResposta varchar(20),
-    TempoResolucao varchar(20)
-);
-
-
 INSERT INTO ADM (`nome`, `cpf`, `senha`, `privilegio`, `email`, `departamento`) 
 VALUES ('Adm', '11111111111', '123!@#qweQWE', 2, 'adm@gmail.com', 'sim');
 INSERT INTO suporte(nome, cpf, senha, privilegio, email, chamados, chamadosRespondidos) values('Suporte', '12345678910', 'suporte123', 1, 'suporte@gmail.com', 0, 0);
@@ -116,6 +107,3 @@ select * from chamado;
 select * from cliente;
 select * from suporte;
 select * from ADM;
-select * from equipamentos;
-select * from sla;
-SELECT area, prioridade, tempoderesposta, TempoResolucao FROM chamado WHERE estado = 'aberto'
