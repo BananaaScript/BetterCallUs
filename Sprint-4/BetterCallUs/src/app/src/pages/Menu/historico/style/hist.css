@@ -30,6 +30,7 @@
     cursor: pointer;
   }
   .Tabela td {
+    word-break: break-all;
     cursor: pointer;
     overflow: hidden;
     white-space: nowrap;
