@@ -104,8 +104,35 @@ function TicketFunction(){
   
 
     return (
-      <div>
-        <h2>Adicionar</h2>
+      <div className='divzona'>
+        <h3>Enviar Solicitação</h3>
+
+        <input
+            type="text"
+            placeholder="Título"
+            value={titulo}
+            onChange={(e) => setTitulo(e.target.value)}
+            maxLength={50}
+          />
+          <textarea
+            placeholder="Sumário"
+            value={sumario}
+            onChange={(e) => setSumario(e.target.value)}
+            maxLength={1000}
+          />
+          <div className="doiss">
+          <select
+            value={selectedEquipamento || ''}
+            onChange={(e) => setSelectedEquipamento(e.target.value)}
+          >
+            <option value="">Equipamento</option>
+            {equipamentos.map((equipamento) => (
+              <option key={equipamento} value={equipamento}>
+                {equipamento}
+              </option>
+            ))}
+          </select> 
+
           <select
             value={area}
             onChange={(e) => setArea(e.target.value)}
@@ -120,31 +147,9 @@ function TicketFunction(){
             <option value="Problemas de Impressão">Problemas de Impressão</option>
             <option value="Outro">Outro</option>
           </select>
-          <input
-            type="text"
-            placeholder="Título"
-            value={titulo}
-            onChange={(e) => setTitulo(e.target.value)}
-            maxLength={50}
-          />
-          <textarea
-            placeholder="Sumário"
-            value={sumario}
-            onChange={(e) => setSumario(e.target.value)}
-            maxLength={1000}
-          />
-          <select
-            value={selectedEquipamento || ''}
-            onChange={(e) => setSelectedEquipamento(e.target.value)}
-          >
-            <option value="">Equipamento</option>
-            {equipamentos.map((equipamento) => (
-              <option key={equipamento} value={equipamento}>
-                {equipamento}
-              </option>
-            ))}
-          </select>       
-          <button onClick={handleCreate} disabled={area === "" || titulo === "" || sumario=== "" || selectedEquipamento === null}>Adicionar</button>
+          </div>
+
+          <button className="buttonTicket" onClick={handleCreate} disabled={area === "" || titulo === "" || sumario=== "" || selectedEquipamento === null}>Enviar</button>
     </div>
     )
 }

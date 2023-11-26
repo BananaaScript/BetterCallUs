@@ -12,7 +12,7 @@ app.use(cors());
 const dbConfig = {
   host: 'localhost',
   user: 'root',
-  password: 'adm123',
+  password: '852456',
   database: 'bettercallus',
 };
 

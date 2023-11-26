@@ -97,7 +97,7 @@ tr:nth-child(even) {
 }
 
 th {
-  background-color: #360e36;
+  background-color: #7c24e7;
   color: white;
 }
 
@@ -113,4 +113,17 @@ th {
 
 .SLASelect {
   border: 1px solid #ddd;
+}
+
+.corpo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+h1{
+  font-size: 22px;
+  margin: 40px;
 }

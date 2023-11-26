@@ -174,7 +174,7 @@ export const Chamadassup = () => {
   };
 
   return (
-    <div>
+    <div className="corpo">
       <h1>Tickets abertos</h1>
       <table>
         <thead>
