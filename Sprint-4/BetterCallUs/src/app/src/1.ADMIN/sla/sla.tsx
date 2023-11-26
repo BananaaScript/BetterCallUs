@@ -3,10 +3,10 @@ import { useEffect, useState } from 'react';
 
 export const SLAsistema = () => {
 
-   const [chamado, setChamado] = useState<Array<{id?:any; area:string; prioridade:string; tempoderesposta:string; TempoResolucao:string}>>([]);
+   const [chamado, setChamado] = useState<Array<{id:number; area:string; prioridade:string; tempoderesposta:string; TempoResolucao:string}>>([]);
    const [area, setArea] = useState('');
    const [prioridade, setPrioridade] = useState('');
-   const [TempoResposta, setTempoResposta] = useState('');
+   const [tempoderesposta, setTempoResposta] = useState('');
    const [TempoResolucao, setTempoResolucao] = useState('');
    const [editando, setEditando] = useState(false);
    const [editId, setEditId] = useState('');
@@ -23,16 +23,17 @@ export const SLAsistema = () => {
  
 
    const handleUpdate = () =>{
-           axios.post(`http://localhost:3001/sla`, {area, prioridade, TempoResposta, TempoResolucao})
-            .then(()=>{
-               setEditando(false)
-               setEditId('');
-               window.location.reload();
-            })
-            .catch((error) =>{
-               console.error(error)
-            })
-       
+          if(area && prioridade && tempoderesposta && TempoResolucao){
+            axios.put(`http://localhost:3001/sla/${editId}`, {area, prioridade, tempoderesposta, TempoResolucao})
+              .then(()=>{
+                setEditando(false)
+                setEditId('');
+                window.location.reload();
+              })
+              .catch((error) =>{
+                console.error(error)
+              })
+          }  
    }
 
    const Editar = (id:any, area:string, prioridade:string, tempoderesposta:string, TempoResolucao:string) =>{
@@ -45,15 +46,13 @@ export const SLAsistema = () => {
        
        setEditando(true)
    }
-   const VerSla = () =>{
-     window.location.href = '/sla'
-   }
- return(
+  return(
      <div>
        <h1>Chamados abertos</h1>
        <table>
          <thead>
            <tr>
+             <th>ID</th>
              <th>Tipo de Problema</th>
              <th>Prioridade</th>
              <th>Tempo de Resposta</th>
@@ -64,6 +63,7 @@ export const SLAsistema = () => {
          <tbody>
            {chamado.map((chamado) => (
              <tr>
+               <td>{chamado.id}</td>
                <td>{chamado.area}</td>
                <td>{chamado.prioridade}</td>
                <td>{chamado.tempoderesposta}</td>
@@ -107,7 +107,7 @@ export const SLAsistema = () => {
                <option value="01">01</option>      
                </select>   
                <select
-               value={TempoResposta}
+               value={tempoderesposta}
                onChange={(e) => setTempoResposta(e.target.value)}
                >
                <option value="">Tempo de resposta</option>

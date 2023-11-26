@@ -424,7 +424,7 @@ res.json({ message: 'Logout bem-sucedido' });
 /* SLA */
 app.get('/sla', async (req, res) => {
   const connection = await connect();
-  const[rows] = await connection.execute('SELECT * FROM sla')
+  const[rows] = await connection.execute('SELECT id, area, prioridade, tempoderesposta, TempoResolucao FROM chamado WHERE estado = ?', ['aberto'])
   connection.end();
 
   res.json(rows)
@@ -440,22 +440,22 @@ app.post('/sla', async(req, res) => {
 })
 
 app.put('/sla/:id', async (req, res) => {
-  const { area, prioridade, TempoResposta, TempoResolucao } = req.body;
+  const { area, prioridade, tempoderesposta, TempoResolucao } = req.body;
   const id = req.params.id;
 
   const connection = await connect();
   await connection.execute(
-      'UPDATE sla SET area = ?, prioridade = ?, TempoResposta = ?, TempoResolucao = ? WHERE id = ?',
-      [area, prioridade, TempoResposta, TempoResolucao, id]
+      'UPDATE chamado SET area = ?, prioridade = ?, tempoderesposta = ?, TempoResolucao = ? WHERE id = ?',
+      [area, prioridade, tempoderesposta, TempoResolucao, id]
   );
 
-  const [updateRow] = await connection.execute ('SELECT * FROM sla WHERE id = ?', [id]);
+  const [updateRow] = await connection.execute ('SELECT * FROM chamado WHERE id = ?', [id]);
   res.json(updateRow[0])
 });
 
 app.get('/chamados/abertos', async(req, res) =>{
   const connection = await connect()
-  const[rows] = await connection.execute('SELECT area, prioridade, tempoderesposta, TempoResolucao FROM chamado WHERE estado = ?', ['aberto'])
+  const[rows] = await connection.execute('SELECT id, area, prioridade, tempoderesposta, TempoResolucao FROM chamado WHERE estado = ?', ['aberto'])
   res.json(rows)
 })
 
