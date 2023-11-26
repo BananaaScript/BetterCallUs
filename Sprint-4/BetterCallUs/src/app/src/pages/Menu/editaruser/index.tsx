@@ -21,7 +21,7 @@ export const Edituser = () => {
             <h3>Dados do Usuario:</h3>
             <input className='inputEditUser' type='text'  placeholder="Email Atual: *********@*****" />
             <input className='inputEditUser' type='text'  placeholder="Senha Atual: *********" />
-            <h4>Opicional:</h4>
+            <h4>Opcional:</h4>
             <input className='inputEditUser' type='text'  placeholder="Nome Civil Atual: ********* **** ********" />
             <input className='inputEditUser' type='text'  placeholder="CPF Atual: *********" />
             <input className='inputEditUser' type='text'  placeholder="RG Atual: ********* **** ********" />
