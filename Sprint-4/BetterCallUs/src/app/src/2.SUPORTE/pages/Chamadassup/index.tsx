@@ -197,7 +197,6 @@ const [expandedSumarioId, setExpandedSumarioId] = useState<number | null>(null);
             <th>Cpf do cliente</th>
             <th>Telefone do cliente</th>
             <th>E-mail do cliente</th>
-            <th>Resposta</th>
             <th>Aceitar</th>
           </tr>
         </thead>
@@ -216,14 +215,6 @@ const [expandedSumarioId, setExpandedSumarioId] = useState<number | null>(null);
               <td>{chamado.cpf_cliente}</td>
               <td>{chamado.telefone_cliente}</td>
               <td>{chamado.email_cliente}</td>
-              <td>
-                {/* Componente de entrada de texto para a resposta do chamado */}
-                <input
-                  type="text"
-                  value={respostas[chamado.id] || ''}
-                  onChange={(e) => handleRespostaChange(chamado.id, e.target.value)}
-                />
-              </td>
               <td>
                 <button onClick={() => handleAceitar(chamado.id)} disabled={chamado.status !== 'Em aguardo'}>
                   Aceitar
@@ -271,12 +262,15 @@ const [expandedSumarioId, setExpandedSumarioId] = useState<number | null>(null);
               <td>{chamado.telefone_cliente}</td>
               <td>{chamado.email_cliente}</td>
               <td>
-                {/* Componente de entrada de texto para a resposta do chamado */}
-                <input
-                  type="text"
-                  value={respostas[chamado.id] || ''}
-                  onChange={(e) => handleRespostaChange(chamado.id, e.target.value)}
-                />
+                <div>
+                  <label htmlFor="respostaTextArea">Resposta:</label>
+                  <textarea
+                    id="respostaTextArea"
+                    value={respostaTextArea}
+                    onChange={(e) => setRespostaTextArea(e.target.value)}
+                    disabled={chamado.status !== 'Em andamento'}
+                  />
+                </div>
               </td>
               <td>
                 <button onClick={() => handleResponder(chamado.id)} disabled={chamado.status !== 'Em andamento'}>
