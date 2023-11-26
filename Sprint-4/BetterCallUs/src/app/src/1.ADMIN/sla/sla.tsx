@@ -110,14 +110,14 @@ export const SLAsistema = () => {
                onChange={(e) => setTempoResposta(e.target.value)}
                >
                <option value="">Tempo de resposta</option>
-               <option value="30 min">30min</option>
-               <option value="1 hrs">1 hora</option>
-               <option value="2 hrs">2 horas</option>
-               <option value="3 hrs">3 horas</option>
-               <option value="4 hrs">4 horas</option>
-               <option value="6 hrs">6 horas</option>
-               <option value="8 hrs">8 horas</option>
-               <option value="12 hrs">12 horas</option>
+               <option value="30 minutos">30min</option>
+               <option value="1 hora">1 hora</option>
+               <option value="2 horas">2 horas</option>
+               <option value="3 horas">3 horas</option>
+               <option value="4 horas">4 horas</option>
+               <option value="6 horas">6 horas</option>
+               <option value="8 horas">8 horas</option>
+               <option value="12 horas">12 horas</option>
                <option value="1 dia">1 dia</option>
                <option value="2 dias">2 dias</option>
                <option value="3 dias">3 dias</option>

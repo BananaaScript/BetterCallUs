@@ -12,7 +12,7 @@ app.use(cors());
 const dbConfig = {
   host: 'localhost',
   user: 'root',
-  password: 'Gst4v0!!',
+  password: 'adm123',
   database: 'bettercallus',
 };
 
@@ -87,44 +87,44 @@ app.post('/chamados', async (req, res) => {
 
   switch (area) {
     case 'Problema de Conexão':
-      tempoderesposta = '1';
-      TempoResolucao = '2'
+      tempoderesposta = '1 hora';
+      TempoResolucao = '2 horas'
       prioridade = '10'
       break;
     case 'Falha de Software':
-      tempoderesposta = '2';
-      TempoResolucao = '4'
+      tempoderesposta = '2 horas';
+      TempoResolucao = '4 horas'
       prioridade = '09'
       break;
     case 'Problema de Segurança':
-      tempoderesposta = '3';
-      TempoResolucao = '6'
+      tempoderesposta = '3 horas';
+      TempoResolucao = '6 horas'
       prioridade = '08'
       break;
     case 'Vírus e Malware':
-      tempoderesposta = '4';
-      TempoResolucao = '8'
+      tempoderesposta = '4 horas';
+      TempoResolucao = '8 horas'
       prioridade = '06'
       break;
     case 'Falha de Hardware':
-      tempoderesposta = '5';
-      TempoResolucao = '7'
+      tempoderesposta = '5 horas';
+      TempoResolucao = '7 horas'
       prioridade = '05'
       break;
     case 'Dúvidas de Programação':
-      tempoderesposta = '6';
-      TempoResolucao = '12'
+      tempoderesposta = '6 horas';
+      TempoResolucao = '12 horas'
       prioridade = '04'
       break;
     case 'Problemas de Impressão':
-      tempoderesposta = '7';
-      TempoResolucao = '14'
+      tempoderesposta = '7 horas';
+      TempoResolucao = '14 horas'
       prioridade = '03'
       break;
 
     default:
-      tempoderesposta = '2';
-      TempoResolucao = '4'
+      tempoderesposta = '2 horas';
+      TempoResolucao = '4 horas'
       prioridade = '07'
   }
 
