@@ -425,6 +425,35 @@ app.delete('/registroEquip/:numeroSerie', async (req, res) => {
   res.json({ message: 'Equipamento excluído com sucesso' });
 });
 
+/* Registro de FAQ */
+
+app.get('/registroFaq', async (req, res) => {
+  const connection = await connect();
+  const[rows] = await connection.execute('SELECT id FROM topicos')
+  connection.end();
+
+  res.json(rows)
+})
+
+app.post('/registroFaq', async(req, res) => {
+  const {id, titulo, descricao} = req.body;
+
+  const connection = await connect();
+  await connection.execute('INSERT INTO topicos(id, titulo, descricao) VALUES (?, ?, ?)', [id, titulo, descricao]);
+
+  res.json({message: 'Registro feito com sucesso'});
+})
+
+app.delete('/registroFaq/:id', async (req, res) => {
+  const { id } = req.params;
+
+  const connection = await connect();
+  await connection.execute('DELETE FROM topicos WHERE id = ?', [id]);
+  connection.end();
+
+  res.json({ message: 'Equipamento excluído com sucesso' });
+});
+
 /* ================================================ */
 /* Login */
 app.post('/login', async (req, res) => {
