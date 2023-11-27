@@ -14,7 +14,7 @@
 
 ## Execução
 
-## Server.js
+### Server.js
   Entre na no arquivo **server.js** (Pode ser encontrado no caminho: "\Sprint-4\BetterCallUs\src\app\src\server") e na linha 15, onde está escrito: password: '---', altere a senha para a de seu usuario do MySql
 
 ### MySQL
