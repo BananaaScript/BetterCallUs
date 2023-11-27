@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import './style/sla.css'
 
 export const SLAsistema = () => {
-   const [chamado, setChamado] = useState<Array<{id:number; area:string; prioridade:string; tempoderesposta:string; TempoResolucao:string}>>([]);
+   const [chamado, setChamado] = useState<Array<{id:number; titulo:string; area:string; prioridade:string; tempoderesposta:string; TempoResolucao:string}>>([]);
    const [area, setArea] = useState('');
    const [prioridade, setPrioridade] = useState('');
    const [tempoderesposta, setTempoResposta] = useState('');
@@ -53,6 +53,7 @@ export const SLAsistema = () => {
          <thead>
            <tr>
              <th>ID</th>
+             <th>Título</th>
              <th>Tipo de Problema</th>
              <th>Prioridade</th>
              <th>Tempo de Resposta</th>
@@ -64,6 +65,7 @@ export const SLAsistema = () => {
            {chamado.map((chamado) => (
              <tr key={chamado.id}>
                <td>{chamado.id}</td>
+               <td>{chamado.titulo}</td>
                <td>{chamado.area}</td>
                <td>{chamado.prioridade}</td>
                <td>{chamado.tempoderesposta}</td>
