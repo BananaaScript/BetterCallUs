@@ -108,9 +108,9 @@ function App() {
           <Route path='/histuser' element={<ElementoCliente><Histuser /></ElementoCliente>} />
           <Route path="/Chamadassup" element={<ElementoSuporte><Chamadassup /></ElementoSuporte>} />
           <Route path="/Administrador" element={<ElementoAdm><Adm /></ElementoAdm>} />
-          <Route path="/Cadastro" element={<ElementoAdm><Cadastro/></ElementoAdm>} />
-          <Route path="/lista" element={<ElementoAdm><ListaSuporte/></ElementoAdm>} />
-          <Route path="/sla" element={<ElementoAdm><SLAsistema/></ElementoAdm>} />
+          <Route path="/Cadastro" element={<Cadastro/>} />
+          <Route path="/lista" element={<ListaSuporte/>} />
+          <Route path="/sla" element={<SLAsistema/>} />
           <Route path='*' element={<div>Page not found</div>}></Route>
         </Routes>
 
