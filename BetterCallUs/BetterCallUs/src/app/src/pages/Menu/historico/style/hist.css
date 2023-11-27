@@ -1,0 +1,53 @@
+
+
+
+.Tabela {
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 200px;
+}
+
+
+h1{
+  font-size: 36px;
+}
+
+thead th {
+  background-color: blueviolet;
+}
+
+table, th, td {
+  border: 1px solid white;
+  }
+  
+  table {
+  border-collapse: collapse;
+  margin: auto;
+  
+  }
+  
+  th, td{
+  padding: 10px;
+  text-align: center;
+  min-width: 75px;
+  max-width: 300px;
+  word-wrap: break-word;
+  }
+  
+  th{
+  font-weight: bold;
+  }
+  
+  tr:hover:nth-child(1n + 2) {
+  background-color: rgb(168, 131, 255);
+
+  cursor: pointer;
+  }
+  
+  textarea {
+    width: 75%;
+    height: 100%;
+    resize: vertical; /* Isso permite que o usuário redimensione verticalmente o textarea */
+  }
