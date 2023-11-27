@@ -1,0 +1,93 @@
+.quadrado {
+    width: 170px; 
+    height: 170px;
+    font-family: fonte;
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    margin: 30px 30px;
+    box-shadow: 5px 5px 20px rgba(21, 11, 22, 0.2);
+  }
+
+.botoes{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: #F1EEF5;
+}
+
+.iconebotao{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.icone{
+    width: 60px;
+}
+
+.textobotao{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 8%;
+}
+
+@font-face {
+    font-family: "fonte";
+    src: url("./fonts/JosefinSans-Regular.ttf");
+  }
+
+.problemasHome {
+    margin: 50px;
+}
+.problemasHome h3 {
+    margin-left: 10%;
+}
+
+.pesquisaAPP input {
+    margin: 1%;
+    width: 30%;
+    padding: 5px;
+    text-align: center;
+    border-radius: 20px;
+    border-color: blueviolet;
+    border-style: solid;
+  }
+
+
+
+
+  .conteudo-escondido {
+    display: none;
+  }
+
+
+
+
+  #conteudo {
+    margin: 0 40px;
+    background-color: white;
+    border: solid blueviolet 4px;
+    border-radius: 60px;
+  }
+
+  .textoproblema {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    margin: 80px;
+  }

@@ -1,0 +1,92 @@
+
+  
+  .bodyLogin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: rgb(217,109,216);
+    background: linear-gradient(90deg, rgb(245, 111, 243) 4%, rgb(92, 179, 250) 100%);
+    padding: 10%;
+    background-size: 150% 10%;
+    animation: degrade 2s infinite alternate ;
+  }
+  
+  @keyframes degrade{
+    0%{background-position-x: 0% }
+    100%{background-position-x: 100% }
+  }
+
+  .boxLogin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 480px;
+    width: 600px;
+    max-width: 100%;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 5px 5px 20px rgba(21, 11, 22, 0.3);
+  }
+  
+  .boxLogin a {
+    margin-top: 2%;
+    margin-right: 85%;
+  }
+
+  .boxLogin a button {
+    border-color: aliceblue;
+    border-style: solid;
+  }
+
+
+  #tituloLogin{
+    font-family: fonte;
+    font-size: 45px;
+    font-weight: bold;
+    margin-bottom: 0%;
+  }
+  
+  .boxLogin p {
+    font-family: fonte;
+    font-size: 16px;
+  }
+  
+  .inputLogin {
+    height: 4%;
+    width: 75%;
+    font-size: medium;
+  
+    padding: 2%;
+    border-style: solid;
+    border-radius: 20px;
+    border-color: blueviolet;
+  
+  
+  }
+  
+  .buttonLogin {
+    margin: 10%;
+    height: 60px;
+    width: 300px;
+    max-width: 90%;
+    font-size: 22px;
+    padding: 6px;
+    border-radius: 200px;
+    background: linear-gradient(90deg, #352D42, #2B3946);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+  }
+  
+  #esquerda{
+    margin-left: -65%;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    font-size: 18px;
+  }
+  
+  
+  
+  
