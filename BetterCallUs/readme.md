@@ -14,6 +14,9 @@
 
 ## Execução
 
+## Server.js
+  Entre na no arquivo **server.js** (Pode ser encontrado no caminho: "\Sprint-4\BetterCallUs\src\app\src\server") e na linha 15, onde está escrito: password: '---', altere a senha para a de seu usuario do MySql
+
 ### MySQL
   Você deve executar todas as linhas do arquivo **BetterCallUs.sql** (Ele pode ser encontrado no caminho: "\Sprint-4\BetterCallUs\src\app\src\server") dentro do MySQL Workbench, selecionando todo as linhas dentro do arquivo, para saber como abrir o arquivo acesse [aqui](https://pt.wikihow.com/Abrir-um-Arquivo-SQL) e para executar o script inteiro você deve clicar e segurar, um atrás do outro, e soltar no útimo o botão, **ctrl + shift + enter**.
 
