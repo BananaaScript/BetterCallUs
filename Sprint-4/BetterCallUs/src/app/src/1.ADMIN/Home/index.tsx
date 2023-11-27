@@ -18,7 +18,7 @@ export const Adm = () => {
             <div className="opcAdm">
               
                 <button className="btnAdm" onClick={pagCadastro}>
-                    Editar Privilegios
+                    Editar Privilégios
                 </button>
               
 

@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import './style/sla.css'
 
 export const SLAsistema = () => {
    const [chamado, setChamado] = useState<Array<{id:number; area:string; prioridade:string; tempoderesposta:string; TempoResolucao:string}>>([]);
@@ -46,7 +47,7 @@ export const SLAsistema = () => {
        setEditando(true)
    }
   return(
-     <div>
+     <div className='Body'>
        <h1>Chamados abertos</h1>
        <table>
          <thead>
@@ -152,6 +153,5 @@ export const SLAsistema = () => {
            </>
        )}   
      </div>
-
  )
 }
