@@ -9,8 +9,6 @@ import { AuthContext } from '../../contexts/Auth/AuthContext';
 import moment from 'moment-timezone'
 
 function TicketFunction(){
-
-    Login()
     const auth = useContext(AuthContext)
     const [chamados, setChamados] = useState<Array<{ id: number; area: string; titulo: string; sumario: string; tempoderesposta: number; datacriacao: string; dataatualizacao: string, email_cliente: number, nome_equipamento: string;}>>([]);
     const [area, setArea] = useState('');

@@ -6,7 +6,6 @@ import moment from 'moment-timezone';
 import './styles/Ticket.css';
 
 export const Chamadassup = () => {
-  Login();
   const auth = useContext(AuthContext);
   const [chamados, setChamados] = useState<Array<{
     id: number;

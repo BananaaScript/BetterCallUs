@@ -8,6 +8,7 @@ import { AuthContext } from './contexts/Auth/AuthContext';
 import  TicketFunction  from './pages/Ticket';
 import { Chamadassup } from './2.SUPORTE/pages/Chamadassup';
 import { Adm } from './1.ADMIN/Home/'
+import Login from './pages/login';
 import { Edituser } from './pages/Menu/editaruser';
 import { Histuser } from './pages/Menu/historico';
 import logoInsta from './styles/img/logoInsta.png';
@@ -40,14 +41,40 @@ function App() {
     handleLogout();
   }
 
+  interface Botão {
+    caminho: string;
+    label: string;
+    privilegio?: number;
+  }
+  
+  const botoes: Botão[] = [
+    { caminho: '/ticket', label: 'Enviar ticket', privilegio: 0 },
+    { caminho: '/login', label: 'Login', privilegio: undefined },
+  ];
+
+  const renderizarBotoes = () => {
+    return botoes.map((botao) => {
+      const renderizar =
+        (botao.privilegio === undefined && auth.usuario?.privilegio === undefined) ||
+        (botao.privilegio !== undefined && auth.usuario?.privilegio === botao.privilegio);
+
+
+      return renderizar ? (
+        <div key={botao.caminho} className='buttonAPP'>
+          <Link to={botao.caminho}>
+            <button>{botao.label}</button>
+          </Link>
+        </div>
+      ) : null;
+    });
+  };
+
   return (
     <div className='bodyAPP'>
         <div>
           <div className='headAPP'>
           <div className='um'>
-          <div className='buttonAPP'>
-            <Link to='/ticket'><button>Enviar ticket</button></Link>
-          </div>
+          {renderizarBotoes()}
           <div className='logoApp'>
             <Link to='/'><img id='logo' alt='logo' src='logo.png' /></Link>
             
@@ -61,10 +88,9 @@ function App() {
             </button>
             {menuAberto && (
               <div className='menuHome'>
-                <div className='opcMenuHome'><Link to='/Chamadassup'><button onClick={abrirMenu}>Acessar Interface de Suporte</button></Link></div>
-                <div className='opcMenuHome'><Link to='/Administrador'><button onClick={abrirMenu}>Acessar Interface de Administrador</button></Link></div>
-                <div className='opcMenuHome'><Link to='/edituser'><button onClick={abrirMenu}>Editar Creedenciais</button></Link></div>
-                <div className='opcMenuHome'><Link to='/Histuser'><button onClick={abrirMenu}>Historico de Chamadas</button></Link></div>
+                <div className='opcMenuHome'><Link to='/Chamadassup'>{auth.usuario && auth.usuario.privilegio === 1 &&<button onClick={abrirMenu}>Acessar Interface de Suporte</button>}</Link></div>
+                <div className='opcMenuHome'><Link to='/Administrador'>{auth.usuario && auth.usuario.privilegio === 2 &&<button onClick={abrirMenu}>Acessar Interface de Administrador</button>}</Link></div>
+                <div className='opcMenuHome'><Link to='/histuser'>{auth.usuario?.privilegio === 0 &&<button onClick={abrirMenu}>Historico de Chamadas</button>}</Link></div>
                 <div className='opcMenuHome'>{auth.usuario && <button onClick={fecharMenu}>Sair</button>}</div>
               </div>
                )}
@@ -76,14 +102,14 @@ function App() {
         
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/ticket" element={<RequireAuth><TicketFunction /></RequireAuth>} />
-          <Route path='/edituser' element={<RequireAuth><Edituser /></RequireAuth>} />
-          <Route path='/histuser' element={<RequireAuth><Histuser /></RequireAuth>} />
-          <Route path="/Chamadassup" element={<RequireAuth><Chamadassup /></RequireAuth>} />
-          <Route path="/Administrador" element={<RequireAuth><Adm /></RequireAuth>} />
-          <Route path="/Cadastro" element={<RequireAuth><Cadastro/></RequireAuth>} />
-          <Route path="/lista" element={<RequireAuth><ListaSuporte/></RequireAuth>} />
-          <Route path="/sla" element={<RequireAuth><SLAsistema/></RequireAuth>} />
+          <Route path='/login' element={<RequireAuth><Login /></RequireAuth>} />
+          <Route path="/ticket" element={<TicketFunction />} />
+          <Route path='/histuser' element={<Histuser />} />
+          <Route path="/Chamadassup" element={<Chamadassup />} />
+          <Route path="/Administrador" element={<Adm />} />
+          <Route path="/Cadastro" element={<Cadastro/>} />
+          <Route path="/lista" element={<ListaSuporte/>} />
+          <Route path="/sla" element={<SLAsistema/>} />
         </Routes>
 
       

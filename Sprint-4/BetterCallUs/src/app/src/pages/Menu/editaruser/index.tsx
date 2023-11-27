@@ -9,8 +9,7 @@ export default function Voltar () {
 };
 
 export const Edituser = () => {
-    Login()
-    
+
 
         return(
         <>

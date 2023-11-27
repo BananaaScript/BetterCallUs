@@ -2,7 +2,6 @@ import Login from "../../App"
 import '../Home/styles/adm.css'
 
 export const Adm = () => {
-    Login()
  
   const pagCadastro = () => {
     window.location.href = "/Cadastro";
