@@ -8,7 +8,6 @@ import { AuthContext } from './contexts/Auth/AuthContext';
 import  TicketFunction  from './pages/Ticket';
 import { Chamadassup } from './2.SUPORTE/pages/Chamadassup';
 import { Adm } from './1.ADMIN/Home/'
-import { Edituser } from './pages/Menu/editaruser';
 import { Histuser } from './pages/Menu/historico';
 import logoInsta from './styles/img/logoInsta.png';
 import logoTiktok from './styles/img/logoTiktok.png';
@@ -63,7 +62,6 @@ function App() {
               <div className='menuHome'>
                 <div className='opcMenuHome'><Link to='/Chamadassup'><button onClick={abrirMenu}>Acessar Interface de Suporte</button></Link></div>
                 <div className='opcMenuHome'><Link to='/Administrador'><button onClick={abrirMenu}>Acessar Interface de Administrador</button></Link></div>
-                <div className='opcMenuHome'><Link to='/edituser'><button onClick={abrirMenu}>Editar Creedenciais</button></Link></div>
                 <div className='opcMenuHome'><Link to='/Histuser'><button onClick={abrirMenu}>Historico de Chamadas</button></Link></div>
                 <div className='opcMenuHome'>{auth.usuario && <button onClick={fecharMenu}>Sair</button>}</div>
               </div>
@@ -77,7 +75,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/ticket" element={<RequireAuth><TicketFunction /></RequireAuth>} />
-          <Route path='/edituser' element={<RequireAuth><Edituser /></RequireAuth>} />
           <Route path='/histuser' element={<RequireAuth><Histuser /></RequireAuth>} />
           <Route path="/Chamadassup" element={<RequireAuth><Chamadassup /></RequireAuth>} />
           <Route path="/Administrador" element={<RequireAuth><Adm /></RequireAuth>} />

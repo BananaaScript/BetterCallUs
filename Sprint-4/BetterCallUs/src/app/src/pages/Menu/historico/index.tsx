@@ -3,7 +3,6 @@ import axios from 'axios';
 import moment from 'moment-timezone'
 import Login from "../../login"
 import { AuthContext } from '../../../contexts/Auth/AuthContext';
-import Voltar from "../editaruser/index"
 import './style/hist.css'
 
 export const Histuser = () => {
@@ -155,7 +154,8 @@ export const Histuser = () => {
 return (
   <div className={`Tabela`}>
     <h1>Histórico</h1>
-    <table>
+    <table width={200} border={1} cellPadding={2}>
+
       <thead>
         <tr>
           <th>ID</th>
@@ -171,51 +171,71 @@ return (
           <th>Resposta</th>
           <th>Reenviar</th>
         </tr>
-      </thead>
-      <tbody>
+
+        </thead>
+
+
+        <tbody>
+
   {chamados.map((chamado) => (
     <tr key={chamado.id}>
+
       <td onClick={() => handleExpansaoSumario(chamado.id)} className={expandedSumarioId === chamado.id ? 'expandido' : ''}>
         {chamado.id}
       </td>
+
       <td onClick={() => handleExpansaoSumario(chamado.id)} className={expandedSumarioId === chamado.id ? 'expandido' : ''}>
         {expandedSumarioId === chamado.id ? chamado.titulo : `${chamado.titulo.slice(0, 50)}...`}
       </td>
+
       <td onClick={() => handleExpansaoSumario(chamado.id)} className={expandedSumarioId === chamado.id ? 'expandido' : ''}>
         {expandedSumarioId === chamado.id ? chamado.sumario : `${chamado.sumario.slice(0, 50)}...`}
       </td>
+
       <td onClick={() => handleExpansaoSumario(chamado.id)} className={expandedSumarioId === chamado.id ? 'expandido' : ''}>
         {chamado.nome_suporte}
       </td>
+
       <td onClick={() => handleExpansaoSumario(chamado.id)} className={expandedSumarioId === chamado.id ? 'expandido' : ''}>
         Horas: {chamado.tempoderesposta}
       </td>
+
       <td onClick={() => handleExpansaoSumario(chamado.id)} className={expandedSumarioId === chamado.id ? 'expandido' : ''}>
         {formatarData(chamado.datacriacao)}
       </td>
+
       <td onClick={() => handleExpansaoSumario(chamado.id)} className={expandedSumarioId === chamado.id ? 'expandido' : ''}>
         {formatarData(chamado.dataatualizacao)}
       </td>
+
       <td onClick={() => handleExpansaoSumario(chamado.id)} className={expandedSumarioId === chamado.id ? 'expandido' : ''}>
         {chamado.area}
       </td>
+
       <td onClick={() => handleExpansaoSumario(chamado.id)} className={expandedSumarioId === chamado.id ? 'expandido' : ''}>
         {chamado.status}
       </td>
+
       <td onClick={() => handleExpansaoSumario(chamado.id)} className={expandedSumarioId === chamado.id ? 'expandido' : ''}>
         {chamado.nome_equipamento}
       </td>
+      
       <td onClick={() => handleExpansaoSumario(chamado.id)} className={expandedSumarioId === chamado.id ? 'expandido' : ''}>
         {chamado.resposta}
       </td>
+
       <td>
         <button onClick={() => HandleReenviar(chamado.id)} disabled={chamado.status !== 'Finalizado'}>
           Reenviar
         </button>
       </td>
+
+      
+
     </tr>
   ))}
-</tbody>
+      </tbody>
+
 
     </table>
   </div>
