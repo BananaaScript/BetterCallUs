@@ -12,7 +12,7 @@ Nessa finalização do projeto, concluimos o nosso site de gerenciamento de cham
 <br>**Valor 2**: Relevante, mas não é necessario. Se houver tempo deve ser feito.
 <br>**Valor 1**: Dispensavel, não prejudica o projeto com sua falta.
 
-<img src=''>
+<img src='https://github.com/CODE1na/BetterCallUs/blob/Sprint4/Sprint-4/BetterCallUs/doc/BacklogSprint4.png'>
 <hr>
 
 ##  Burndown 
@@ -22,7 +22,7 @@ Nessa finalização do projeto, concluimos o nosso site de gerenciamento de cham
 <br>**Linha Azul**: Ideal de Tasks por Tempo
 
 ### Burndown da Sprint
-<img src=''>
+<img src='https://github.com/CODE1na/BetterCallUs/blob/Sprint4/Sprint-4/BetterCallUs/doc/BurndownSprint4.png'>
 
 <hr>
  :desktop_computer:Teconologias utilizadas na sprint
