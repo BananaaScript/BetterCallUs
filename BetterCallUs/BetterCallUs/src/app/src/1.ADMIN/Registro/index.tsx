@@ -15,9 +15,9 @@ const Cadastro = () =>{
     return(
         
         <div className="bodyCadUser">
-
+            <h2>Escolha o tipo de cadastro: </h2>
             <div className="tipoCad">
-                <h2>Escolha o tipo de cadastro: </h2> 
+                 
                 <button className="buttonCadUser" onClick={() => EscolherCadastro('cliente') }>Cliente</button>
                 <button className="buttonCadUser" onClick={()=> EscolherCadastro('suporte')}>Suporte</button>
                 <button className="buttonCadUser" onClick={() => EscolherCadastro('adm')}>Administrador</button>

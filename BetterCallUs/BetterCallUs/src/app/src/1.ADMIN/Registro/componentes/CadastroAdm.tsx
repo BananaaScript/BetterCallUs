@@ -76,36 +76,46 @@ export const CadastroAdm = () =>{
         }
     }
     return(
-        <div className='bodyCad'>
-        <h2>Registro de conta administrador</h2>
-        <div>
-            <label>Nome: </label><br />
-            <input className='inputCadUser' type='text' placeholder='Nome completo.' value={nome} onChange={(e) => setNome(e.target.value)} />
-        </div>
-        <div>
-            <label>Email: </label><br />
-            <input className='inputCadUser' type='email' value={email} placeholder='exemplo@gmail.com' onChange={(e) => setEmail(e.target.value)} />
-        </div>
-        <div>
-            <label>CPF: </label><br />
-            <input className='inputCadUser' type='text' maxLength={11} placeholder='Apenas números.' value={cpf} onChange={(e) => setCPF(e.target.value)} />
-        </div>
-        <div>
-            <label>Senha: </label><br />
-            <input className='inputCadUser' type='password' value={senha} placeholder='Senha forte de preferência.' onChange={(e) => setSenha(e.target.value)} />
-        </div>
-        <div>
-            <label>Departamento: </label><br />
-            <input className='inputCadUser' type='text' value={departamento} placeholder='Departamento atribuído.' onChange={(e) => setDepartamento(e.target.value)} />
-        </div>
-        <br />
-        <button className='buttonCadUser' type='button' onClick={registrarConta}>Registrar</button>
-            {campoError && <div style={{color: 'red'}}>{campoError}</div>}
-            {nomeError && <div style={{color: 'red'}}>{nomeError}</div>}
-            {cpfError && <div style={{color: 'red'}}>{cpfError}</div>}
-            {emailError && <div style={{color: 'red'}}>{emailError}</div>}
+        <div className='parts'>
+            <div className='part1'>
 
-        <div>
+
+            <div className='bodyCad'>
+                <h2>Registro de conta administrador</h2>
+                <div>
+                    <label>Nome: </label><br />
+                    <input className='inputCadUser' type='text' placeholder='Nome completo.' value={nome} onChange={(e) => setNome(e.target.value)} />
+                </div>
+                <div>
+                    <label>Email: </label><br />
+                    <input className='inputCadUser' type='email' value={email} placeholder='exemplo@gmail.com' onChange={(e) => setEmail(e.target.value)} />
+                </div>
+                <div>
+                    <label>CPF: </label><br />
+                    <input className='inputCadUser' type='text' maxLength={11} placeholder='Apenas números.' value={cpf} onChange={(e) => setCPF(e.target.value)} />
+                </div>
+                <div>
+                    <label>Senha: </label><br />
+                    <input className='inputCadUser' type='password' value={senha} placeholder='Senha forte de preferência.' onChange={(e) => setSenha(e.target.value)} />
+                </div>
+                <div>
+                    <label>Departamento: </label><br />
+                    <input className='inputCadUser' type='text' value={departamento} placeholder='Departamento atribuído.' onChange={(e) => setDepartamento(e.target.value)} />
+                </div>
+                <br />
+                <button className='buttonCadUser' type='button' onClick={registrarConta}>Registrar</button>
+                    {campoError && <div style={{color: 'red'}}>{campoError}</div>}
+                    {nomeError && <div style={{color: 'red'}}>{nomeError}</div>}
+                    {cpfError && <div style={{color: 'red'}}>{cpfError}</div>}
+                    {emailError && <div style={{color: 'red'}}>{emailError}</div>}
+
+
+            </div>
+            </div>
+            <div className='part2'>
+
+
+            <div>
             <h2>Lista de administradores</h2>
             <table>
                 <thead>
@@ -129,6 +139,12 @@ export const CadastroAdm = () =>{
                 </table>
         </div>
 
+
+
+            </div>
+        
+        
+        
         </div>
     )
 }

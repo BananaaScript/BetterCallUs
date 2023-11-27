@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import { Suporte } from "../../types/Suporte";
+import "../Lista/styles/list.css"
 
 export const ListaSuporte: React.FC = () =>{
     const [contas, setContas] = useState<Array<Suporte>>([]);
@@ -16,7 +17,7 @@ export const ListaSuporte: React.FC = () =>{
     }, []);
 
     return(
-        <div className="bodyCad">
+        <div className="tabela">
             <h2>Lista de suportes cadastrados</h2>
             <table>
                 <thead>
@@ -24,7 +25,7 @@ export const ListaSuporte: React.FC = () =>{
                         <th>Nome</th>
                         <th>CPF</th>
                         <th>Email</th>
-                        <th>Chamados</th>
+                        <th>Chamados Ativos</th>
                         <th>Chamados Respondidos</th>
                     </tr>
                 </thead>

@@ -2,19 +2,22 @@
     align-items: center;
     justify-content: center;
     display: flex;
-    align-items: baseline;
-    flex-direction: row;
+    flex-direction: column;
     font-family: fonte;
 }
 
 .opcCadUser {
-    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
 }
 
 .tipoCad {
-    max-width: 50%;
-
-    margin-bottom: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
 .buttonCadUser {
@@ -27,6 +30,7 @@
     background-color: blueviolet;
     color: antiquewhite;
     width: 140px;
+    margin-right: 10px;
 }
 
 .inputCadUser {
@@ -39,9 +43,20 @@
     width: 300px;
 }
 
-.bodyCad {
+.parts {
     display: flex;
+    flex-direction: row;
+    align-items: baseline;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    margin-bottom: 100px;
+}
+
+.part1 {
+    margin-right: 50px;
+    width: 40%;
+}
+
+.part2 {
+
+    width: 40%;
 }

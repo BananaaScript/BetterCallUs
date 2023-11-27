@@ -94,7 +94,11 @@ export const CadastroSuporte = () =>{
       };
 
     return(
-        <div className='bodyCad'>
+        <div className='parts'>
+
+            <div className='part1'>
+
+            <div className='bodyCad'>
         <h2>Registro de conta suporte</h2>
         <div>
             <label>Nome: </label><br />
@@ -118,7 +122,12 @@ export const CadastroSuporte = () =>{
             {cpfError && <div style={{color: 'red'}}>{cpfError}</div>}
             {emailError && <div style={{color: 'red'}}>{emailError}</div>}
 
-        <div>
+        
+            </div>
+            </div>
+
+            <div className='part2'>
+            <div>
             <h2>Lista de suportes</h2>
             <table>
                 <thead>
@@ -143,6 +152,14 @@ export const CadastroSuporte = () =>{
                 </tbody>
                 </table>
         </div>
+
+            </div>
+
         </div>
+
+
+       
+           
+        
     )
 }

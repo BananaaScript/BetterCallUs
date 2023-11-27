@@ -60,7 +60,12 @@ export const CadastroEquipamento = () =>{
           });
     };
     return(
-        <div className="bodyCad">
+
+        <div className='parts'>
+
+            <div className='part1'>
+
+<div className="bodyCad">
         <h2>Registro de equipamento</h2>
         <div>
             <label>Número de série: </label><br />
@@ -77,6 +82,11 @@ export const CadastroEquipamento = () =>{
         <button className="buttonCadUser" type='button' onClick={RegistrarEquipamento}>Registrar</button>
             {campoError && <div style={{color: 'red'}}>{campoError}</div>}
             {nomeError && <div style={{color: 'red'}}>{nomeError}</div>}
+
+            </div>
+            </div>
+
+        <div className="part2">
 
         <div>
             <h2>Lista de equipamentos</h2>
@@ -103,6 +113,10 @@ export const CadastroEquipamento = () =>{
                 </tbody>
                 </table>
         </div>
+
+
+        </div>
+
         </div>
     )
 }

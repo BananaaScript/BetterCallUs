@@ -9,6 +9,9 @@ export const Adm = () => {
   const redirectSLA = () =>{
     window.location.href = "/sla"
   }
+  const redirectlist = () =>{
+    window.location.href = "/lista"
+  }
 
   return(
     <div className="bodyAdm">
@@ -20,10 +23,15 @@ export const Adm = () => {
                     Editar Privilégios
                 </button>
               
+                <button className="btnAdm" onClick={redirectlist}>
+                    Verificar Produtividade dos Suportes
+                </button>
 
                 <button className="btnAdm" onClick={redirectSLA}>
                     Definir Service Level Agreement (SLA)
                 </button>
+
+
 
             </div>
 
