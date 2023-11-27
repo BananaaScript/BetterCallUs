@@ -102,6 +102,8 @@ function App() {
         </div>
         
         <Routes>
+
+
           <Route path="/" element={<RequireAuth><Home /></RequireAuth>} />
           <Route path='/login' element={<RequireAuth><Login /></RequireAuth>} />
           <Route path="/ticket" element={<ElementoCliente><TicketFunction /></ElementoCliente>} />

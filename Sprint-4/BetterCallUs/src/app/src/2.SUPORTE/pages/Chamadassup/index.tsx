@@ -3,7 +3,7 @@ import Login from '../../../pages/login';
 import { AuthContext } from '../../../contexts/Auth/AuthContext';
 import axios from 'axios';
 import moment from 'moment-timezone';
-import './styles/Ticket.css';
+import '../Chamadassup/styles/Ticket.css';
 
 export const Chamadassup = () => {
   const auth = useContext(AuthContext);
@@ -249,7 +249,7 @@ const [expandedSumarioId, setExpandedSumarioId] = useState<number | null>(null);
 
       </table>
       </div>
-      <div className={`Tabela2`}>
+      <div className={`Tabela`}>
       <h1>Tickets do Suporte</h1>
       <table>
         <thead>
@@ -258,12 +258,9 @@ const [expandedSumarioId, setExpandedSumarioId] = useState<number | null>(null);
             <th>Titulo</th>
             <th>Sumario</th>
             <th>Tempo de Resposta</th>
-            <th>Data de Criação</th>
             <th>Área</th>
             <th>Status</th>
             <th>Equipamento</th>
-            <th>Nome do cliente</th>
-            <th>Cpf do cliente</th>
             <th>Telefone do cliente</th>
             <th>E-mail do cliente</th>
             <th>Resposta</th>
@@ -277,18 +274,15 @@ const [expandedSumarioId, setExpandedSumarioId] = useState<number | null>(null);
               <td>{chamado.titulo}</td>
               <td>{chamado.sumario}</td>
               <td>Horas: {chamado.tempoderesposta}</td>
-              <td>{formatarData(chamado.datacriacao)}</td>
               <td>{chamado.area}</td>
               <td>{chamado.status}</td>
               <td>{chamado.nome_equipamento}</td>
-              <td>{chamado.nome_cliente}</td>
-              <td>{chamado.cpf_cliente}</td>
               <td>{chamado.telefone_cliente}</td>
               <td>{chamado.email_cliente}</td>
               <td>
                 <div>
                   <label htmlFor="respostaTextArea">Resposta:</label>
-                  <textarea
+                  <textarea 
                     id="respostaTextArea"
                     value={respostaTextArea}
                     onChange={(e) => setRespostaTextArea(e.target.value)}
