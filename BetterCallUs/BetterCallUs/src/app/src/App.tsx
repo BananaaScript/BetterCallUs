@@ -65,7 +65,9 @@ function App() {
           <Link to={botao.caminho}>
             <button>{botao.label}</button>
           </Link>
+          
         </div>
+        
       ) : null;
     });
   };
@@ -74,8 +76,10 @@ function App() {
     <div className='bodyAPP'>
         <div>
           <div className='headAPP'>
-          <div className='um'>
-          {renderizarBotoes()}
+            <div className='buttonAPP'>
+              {renderizarBotoes()}
+            </div>
+          
           <div className='logoApp'>
             <Link to='/'><img id='logo' alt='logo' src='logo.png' /></Link>
             
@@ -98,7 +102,7 @@ function App() {
           </div>
           </div>
           
-        </div>
+        
         </div>
         
         <Routes>
