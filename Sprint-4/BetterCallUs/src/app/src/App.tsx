@@ -15,6 +15,7 @@ import logoInsta from './styles/img/logoInsta.png';
 import logoTiktok from './styles/img/logoTiktok.png';
 import logoTwitter from './styles/img/logoTwitter.png';
 import logoGithub from './styles/img/logoGithub.png';
+import erroimg from './styles/img/erro.png'
 import Cadastro from './1.ADMIN/Registro';
 import { ListaSuporte } from './1.ADMIN/Lista';
 import { SLAsistema } from './1.ADMIN/sla/sla';
@@ -65,7 +66,9 @@ function App() {
           <Link to={botao.caminho}>
             <button>{botao.label}</button>
           </Link>
+          
         </div>
+        
       ) : null;
     });
   };
@@ -74,8 +77,10 @@ function App() {
     <div className='bodyAPP'>
         <div>
           <div className='headAPP'>
-          <div className='um'>
-          {renderizarBotoes()}
+            <div className='buttonAPP'>
+              {renderizarBotoes()}
+            </div>
+          
           <div className='logoApp'>
             <Link to='/'><img id='logo' alt='logo' src='logo.png' /></Link>
             
@@ -98,7 +103,7 @@ function App() {
           </div>
           </div>
           
-        </div>
+        
         </div>
         
         <Routes>
@@ -113,7 +118,13 @@ function App() {
           <Route path="/Cadastro" element={<Cadastro/>} />
           <Route path="/lista" element={<ListaSuporte/>} />
           <Route path="/sla" element={<SLAsistema/>} />
-          <Route path='*' element={<div>Page not found</div>}></Route>
+          <Route path='*' element={
+          <div className='Erro'>
+          <div className='erro'><img alt='Erro' src={erroimg} /><h1>Página Não Encontrada :(</h1></div>
+            
+          </div>
+          
+          }></Route>
         </Routes>
 
       
