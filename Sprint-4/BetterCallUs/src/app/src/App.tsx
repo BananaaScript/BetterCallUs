@@ -1,5 +1,5 @@
 
-import React, { useContext } from 'react';
+import React, { useContext, ReactNode, Children } from 'react';
 import { useEffect, useState } from 'react';
 import { Link, Route, Routes, useNavigate } from 'react-router-dom';
 import Home from './pages/Home';  
@@ -18,8 +18,9 @@ import logoGithub from './styles/img/logoGithub.png';
 import Cadastro from './1.ADMIN/Registro';
 import { ListaSuporte } from './1.ADMIN/Lista';
 import { SLAsistema } from './1.ADMIN/sla/sla';
-
-
+import ElementoCliente from './routes/cliente';
+import ElementoSuporte from './routes/suporte';
+import ElementoAdm from './routes/adm';
 
 function App() {
   const auth = useContext(AuthContext);
@@ -101,15 +102,16 @@ function App() {
         </div>
         
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<RequireAuth><Home /></RequireAuth>} />
           <Route path='/login' element={<RequireAuth><Login /></RequireAuth>} />
-          <Route path="/ticket" element={<TicketFunction />} />
-          <Route path='/histuser' element={<Histuser />} />
-          <Route path="/Chamadassup" element={<Chamadassup />} />
-          <Route path="/Administrador" element={<Adm />} />
-          <Route path="/Cadastro" element={<Cadastro/>} />
-          <Route path="/lista" element={<ListaSuporte/>} />
-          <Route path="/sla" element={<SLAsistema/>} />
+          <Route path="/ticket" element={<ElementoCliente><TicketFunction /></ElementoCliente>} />
+          <Route path='/histuser' element={<ElementoCliente><Histuser /></ElementoCliente>} />
+          <Route path="/Chamadassup" element={<ElementoSuporte><Chamadassup /></ElementoSuporte>} />
+          <Route path="/Administrador" element={<ElementoAdm><Adm /></ElementoAdm>} />
+          <Route path="/Cadastro" element={<ElementoAdm><Cadastro/></ElementoAdm>} />
+          <Route path="/lista" element={<ElementoAdm><ListaSuporte/></ElementoAdm>} />
+          <Route path="/sla" element={<ElementoAdm><SLAsistema/></ElementoAdm>} />
+          <Route path='*' element={<div>Page not found</div>}></Route>
         </Routes>
 
       

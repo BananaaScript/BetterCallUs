@@ -21,6 +21,42 @@ async function connect() {
   return connection;
 }
 
+/* Puxar privilégio */
+
+app.post('/login', async (req, res) => {
+  const { email, senha } = req.body;
+  const connection = await connect();
+
+  try {
+    let [rows] = await connection.execute('SELECT * FROM ADM WHERE email = ? AND senha = ?', [email, senha]);
+
+    if (rows.length > 0) {
+      const token = jwt.sign({ email, privilegio: rows[0].privilegio }, 'segredo_do_jwt');
+      return res.json({ usuario: { ...rows[0], privilegio: rows[0].privilegio }, token });
+    }
+
+    [rows] = await connection.execute('SELECT * FROM cliente WHERE email = ? AND senha = ?', [email, senha]);
+
+    if (rows.length > 0) {
+      const token = jwt.sign({ email, privilegio: rows[0].privilegio }, 'segredo_do_jwt');
+      return res.json({ usuario: { ...rows[0], privilegio: rows[0].privilegio }, token });
+    }
+
+    [rows] = await connection.execute('SELECT * FROM suporte WHERE email = ? AND senha = ?', [email, senha]);
+
+    if (rows.length > 0) {
+      const token = jwt.sign({ email, privilegio: rows[0].privilegio }, 'segredo_do_jwt');
+      return res.json({ usuario: { ...rows[0], privilegio: rows[0].privilegio }, token });
+    }
+    res.status(401).json({ message: 'Credenciais inválidas' });
+  } catch (error) {
+    console.error('Erro durante a autenticação:', error);
+    res.status(500).json({ message: 'Erro durante a autenticação' });
+  } finally {
+    connection.end();
+  }
+});
+
 app.get('/equipamentos', async (req, res) => {
   const connection = await connect();
   const [rows] = await connection.execute('SELECT nome FROM equipamentos');
