@@ -28,7 +28,7 @@ A partir do desafio acadêmico proposto pelo cliente interno, o projeto consiste
 <br>**Valor 2**: Relevante, mas não é necessario. Se houver tempo deve ser feito.
 <br>**Valor 1**: Dispensavel, não prejudica o projeto com sua falta.
 ### Backlog do produto
-<img src='https://github.com/CODE1na/BetterCallUs/blob/main/documents/imgs/Backlog%20Sprint%2003.PNG'>
+<img src='https://github.com/CODE1na/BetterCallUs/blob/main/documents/imgs/Backlog%20geral.png'>
 
 ## :desktop_computer: Tecnologias Utilizadas <a name = tecnologias></a>
 <img src='https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white'> <img src='https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white'> <img src='https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white'> <img src='https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=Jira&logoColor=white'> <img src='https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white'> <img src='https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E'> <img src='https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white'> <img src='https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white'> <img src='https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white'> <img src='https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB'> <img src='https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white'>
