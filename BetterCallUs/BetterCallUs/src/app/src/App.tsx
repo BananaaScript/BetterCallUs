@@ -15,6 +15,7 @@ import logoInsta from './styles/img/logoInsta.png';
 import logoTiktok from './styles/img/logoTiktok.png';
 import logoTwitter from './styles/img/logoTwitter.png';
 import logoGithub from './styles/img/logoGithub.png';
+import erroimg from './styles/img/erro.png'
 import Cadastro from './1.ADMIN/Registro';
 import { ListaSuporte } from './1.ADMIN/Lista';
 import { SLAsistema } from './1.ADMIN/sla/sla';
@@ -117,7 +118,13 @@ function App() {
           <Route path="/Cadastro" element={<Cadastro/>} />
           <Route path="/lista" element={<ListaSuporte/>} />
           <Route path="/sla" element={<SLAsistema/>} />
-          <Route path='*' element={<div>Page not found</div>}></Route>
+          <Route path='*' element={
+          <div className='Erro'>
+          <div className='erro'><img alt='Erro' src={erroimg} /><h1>Página Não Encontrada :(</h1></div>
+            
+          </div>
+          
+          }></Route>
         </Routes>
 
       

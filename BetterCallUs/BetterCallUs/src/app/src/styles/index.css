@@ -220,3 +220,17 @@ footer {
   font-family: fonte ;
 }
 
+.Erro {
+  margin-bottom: 100px;
+}
+
+.erro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.erro img {
+  width: 40%;
+}
