@@ -24,9 +24,7 @@ export const Adm = () => {
                 <button className="btnAdm" onClick={redirectSLA}>
                     Definir Service Level Agreement (SLA)
                 </button>
-                <button className="btnAdm">
-                    Adicionar tópicos ao FAQ
-                </button>
+
             </div>
 
       </div>
