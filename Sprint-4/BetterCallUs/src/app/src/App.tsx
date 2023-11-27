@@ -1,5 +1,5 @@
 
-import React, { useContext } from 'react';
+import React, { useContext, ReactNode, Children } from 'react';
 import { useEffect, useState } from 'react';
 import { Link, Route, Routes, useNavigate } from 'react-router-dom';
 import Home from './pages/Home';  
@@ -8,6 +8,8 @@ import { AuthContext } from './contexts/Auth/AuthContext';
 import  TicketFunction  from './pages/Ticket';
 import { Chamadassup } from './2.SUPORTE/pages/Chamadassup';
 import { Adm } from './1.ADMIN/Home/'
+import Login from './pages/login';
+import { Edituser } from './pages/Menu/editaruser';
 import { Histuser } from './pages/Menu/historico';
 import logoInsta from './styles/img/logoInsta.png';
 import logoTiktok from './styles/img/logoTiktok.png';
@@ -16,8 +18,9 @@ import logoGithub from './styles/img/logoGithub.png';
 import Cadastro from './1.ADMIN/Registro';
 import { ListaSuporte } from './1.ADMIN/Lista';
 import { SLAsistema } from './1.ADMIN/sla/sla';
-
-
+import ElementoCliente from './routes/cliente';
+import ElementoSuporte from './routes/suporte';
+import ElementoAdm from './routes/adm';
 
 function App() {
   const auth = useContext(AuthContext);
@@ -39,14 +42,40 @@ function App() {
     handleLogout();
   }
 
+  interface Botão {
+    caminho: string;
+    label: string;
+    privilegio?: number;
+  }
+  
+  const botoes: Botão[] = [
+    { caminho: '/ticket', label: 'Enviar ticket', privilegio: 0 },
+    { caminho: '/login', label: 'Login', privilegio: undefined },
+  ];
+
+  const renderizarBotoes = () => {
+    return botoes.map((botao) => {
+      const renderizar =
+        (botao.privilegio === undefined && auth.usuario?.privilegio === undefined) ||
+        (botao.privilegio !== undefined && auth.usuario?.privilegio === botao.privilegio);
+
+
+      return renderizar ? (
+        <div key={botao.caminho} className='buttonAPP'>
+          <Link to={botao.caminho}>
+            <button>{botao.label}</button>
+          </Link>
+        </div>
+      ) : null;
+    });
+  };
+
   return (
     <div className='bodyAPP'>
         <div>
           <div className='headAPP'>
           <div className='um'>
-          <div className='buttonAPP'>
-            <Link to='/ticket'><button>Enviar ticket</button></Link>
-          </div>
+          {renderizarBotoes()}
           <div className='logoApp'>
             <Link to='/'><img id='logo' alt='logo' src='logo.png' /></Link>
             
@@ -60,9 +89,9 @@ function App() {
             </button>
             {menuAberto && (
               <div className='menuHome'>
-                <div className='opcMenuHome'><Link to='/Chamadassup'><button onClick={abrirMenu}>Acessar Interface de Suporte</button></Link></div>
-                <div className='opcMenuHome'><Link to='/Administrador'><button onClick={abrirMenu}>Acessar Interface de Administrador</button></Link></div>
-                <div className='opcMenuHome'><Link to='/Histuser'><button onClick={abrirMenu}>Historico de Chamadas</button></Link></div>
+                <div className='opcMenuHome'><Link to='/Chamadassup'>{auth.usuario && auth.usuario.privilegio === 1 &&<button onClick={abrirMenu}>Acessar Interface de Suporte</button>}</Link></div>
+                <div className='opcMenuHome'><Link to='/Administrador'>{auth.usuario && auth.usuario.privilegio === 2 &&<button onClick={abrirMenu}>Acessar Interface de Administrador</button>}</Link></div>
+                <div className='opcMenuHome'><Link to='/histuser'>{auth.usuario?.privilegio === 0 &&<button onClick={abrirMenu}>Historico de Chamadas</button>}</Link></div>
                 <div className='opcMenuHome'>{auth.usuario && <button onClick={fecharMenu}>Sair</button>}</div>
               </div>
                )}
@@ -73,14 +102,18 @@ function App() {
         </div>
         
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/ticket" element={<RequireAuth><TicketFunction /></RequireAuth>} />
-          <Route path='/histuser' element={<RequireAuth><Histuser /></RequireAuth>} />
-          <Route path="/Chamadassup" element={<RequireAuth><Chamadassup /></RequireAuth>} />
-          <Route path="/Administrador" element={<RequireAuth><Adm /></RequireAuth>} />
-          <Route path="/Cadastro" element={<RequireAuth><Cadastro/></RequireAuth>} />
-          <Route path="/lista" element={<RequireAuth><ListaSuporte/></RequireAuth>} />
-          <Route path="/sla" element={<RequireAuth><SLAsistema/></RequireAuth>} />
+
+
+          <Route path="/" element={<RequireAuth><Home /></RequireAuth>} />
+          <Route path='/login' element={<RequireAuth><Login /></RequireAuth>} />
+          <Route path="/ticket" element={<ElementoCliente><TicketFunction /></ElementoCliente>} />
+          <Route path='/histuser' element={<ElementoCliente><Histuser /></ElementoCliente>} />
+          <Route path="/Chamadassup" element={<ElementoSuporte><Chamadassup /></ElementoSuporte>} />
+          <Route path="/Administrador" element={<ElementoAdm><Adm /></ElementoAdm>} />
+          <Route path="/Cadastro" element={<ElementoAdm><Cadastro/></ElementoAdm>} />
+          <Route path="/lista" element={<ElementoAdm><ListaSuporte/></ElementoAdm>} />
+          <Route path="/sla" element={<ElementoAdm><SLAsistema/></ElementoAdm>} />
+          <Route path='*' element={<div>Page not found</div>}></Route>
         </Routes>
 
       

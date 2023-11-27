@@ -6,7 +6,6 @@ import { AuthContext } from '../../../contexts/Auth/AuthContext';
 import './style/hist.css'
 
 export const Histuser = () => {
-    Login()
     const auth = useContext(AuthContext)
     const [chamados, setChamados] = useState<Array<{ id: number; area: string; titulo: string; sumario: string; tempoderesposta: number; datacriacao: string; dataatualizacao: string, email_cliente: number, nome_equipamento: string, resposta: string, status: string, nome_suporte: number}>>([]);
   const [area, setArea] = useState('');
