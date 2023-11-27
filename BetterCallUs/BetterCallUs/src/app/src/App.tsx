@@ -1,6 +1,6 @@
 
-import React, { useContext, ReactNode, Children } from 'react';
-import { useEffect, useState } from 'react';
+import React, { useContext } from 'react';
+import { useState } from 'react';
 import { Link, Route, Routes, useNavigate } from 'react-router-dom';
 import Home from './pages/Home';  
 import { RequireAuth } from './contexts/Auth/RequireAuth';
@@ -9,7 +9,6 @@ import  TicketFunction  from './pages/Ticket';
 import { Chamadassup } from './2.SUPORTE/pages/Chamadassup';
 import { Adm } from './1.ADMIN/Home/'
 import Login from './pages/login';
-import { Edituser } from './pages/Menu/editaruser';
 import { Histuser } from './pages/Menu/historico';
 import logoInsta from './styles/img/logoInsta.png';
 import logoTiktok from './styles/img/logoTiktok.png';
@@ -115,9 +114,9 @@ function App() {
           <Route path='/histuser' element={<ElementoCliente><Histuser /></ElementoCliente>} />
           <Route path="/Chamadassup" element={<ElementoSuporte><Chamadassup /></ElementoSuporte>} />
           <Route path="/Administrador" element={<ElementoAdm><Adm /></ElementoAdm>} />
-          <Route path="/Cadastro" element={<Cadastro/>} />
-          <Route path="/lista" element={<ListaSuporte/>} />
-          <Route path="/sla" element={<SLAsistema/>} />
+          <Route path="/Cadastro" element={<ElementoAdm><Cadastro/></ElementoAdm>} />
+          <Route path="/lista" element={<ElementoAdm><ListaSuporte/></ElementoAdm>} />
+          <Route path="/sla" element={<ElementoAdm><SLAsistema/></ElementoAdm>} />
           <Route path='*' element={
           <div className='Erro'>
           <div className='erro'><img alt='Erro' src={erroimg} /><h1>Página Não Encontrada :(</h1></div>

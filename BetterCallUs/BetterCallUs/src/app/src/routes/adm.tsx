@@ -11,7 +11,7 @@ function ElementoAdm({ children }: ElementoAdmProps): JSX.Element | null {
     const auth = useContext(AuthContext);
     const privilegio = auth.usuario?.privilegio;
 
-    if (privilegio === 2) {
+    if (privilegio !== 0 && privilegio !== 1) {
         return <>{children}</>;
     } else {
         return <Navigate to={'/'}/>

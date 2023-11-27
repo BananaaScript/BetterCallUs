@@ -12,7 +12,7 @@ app.use(cors());
 const dbConfig = {
   host: 'localhost',
   user: 'root',
-  password: 'root',
+  password: 'fatec',
   database: 'bettercallus',
 };
 
