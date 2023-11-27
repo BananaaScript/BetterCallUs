@@ -8,7 +8,7 @@ A partir do desafio acadêmico proposto pelo cliente interno, o projeto consiste
 
 > _Projeto baseado na metodologia ágil SCRUM._
 
-#### :pushpin: Status do projeto: Em desenvolvimento :arrows_clockwise:
+#### :pushpin: Status do projeto: Concluido :heavy_check_mark:
 
 ### :checkered_flag: Entregas das Sprints
 | Links | Período | Status |
@@ -16,7 +16,7 @@ A partir do desafio acadêmico proposto pelo cliente interno, o projeto consiste
 | <a href='https://github.com/CODE1na/BetterCallUs/blob/Sprint1/README.md'>Sprint 1 </a> | 04/09/2023 - 24/09/2023 | Entregue :heavy_check_mark: |
 | <a href='https://github.com/CODE1na/BetterCallUs/blob/Sprint2/README.md'>Sprint 2 </a>| 25/09/2023 - 15/10/2023 | Entregue :heavy_check_mark: |  
 | <a href='https://github.com/CODE1na/BetterCallUs/blob/Sprint03/README.md'>Sprint 3 </a> | 16/10/2023 - 05/11/2023 | Entregue :heavy_check_mark: | 
-| Sprint 4 | 06/11/2023 - 26/11/2023 | Pendente :hourglass: |  
+|  <a href='https://github.com/CODE1na/BetterCallUs/blob/Sprint4/README.md'>Sprint 4 | 06/11/2023 - 26/11/2023 | Entregue :heavy_check_mark: |  
 
 | :arrow_up: [Voltar ao topo](#topo) |
 
