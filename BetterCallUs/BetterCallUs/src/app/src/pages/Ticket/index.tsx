@@ -117,6 +117,7 @@ function TicketFunction(){
             value={sumario}
             onChange={(e) => setSumario(e.target.value)}
             maxLength={1000}
+            
           />
           <div className="doiss">
           <select

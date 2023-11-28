@@ -122,10 +122,16 @@ img#logo {
     flex-direction: column-reverse;
   }
   .menuAPP {
-    margin-right: 0px;
+    margin-left: 70%;
+    margin-top: 5px;
   }
   .buttonAPP {
-    margin: 0px;
+    margin: 5px;
+  }
+
+  .parte2 a img {
+    margin: 5px;
+    width: 25px;
   }
 
 }
@@ -168,6 +174,7 @@ footer {
   margin: 1% 2%;
   background-color: rgb(112, 16, 202);
   border-radius: 1000px;
+  padding: 5px;
 }
 
 .parte2{
@@ -190,6 +197,7 @@ footer {
   align-items: center;
   text-align: center;
   margin: 1% 2%;
+  padding: 5px;
   background-color: rgb(112, 16, 202);
   border-radius: 1000px;
 }

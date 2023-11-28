@@ -37,7 +37,7 @@ export default function Login() {
         
         
         <div className="boxLogin">
-        <a href="/"><button >Voltar</button></a>
+        
         
           <p id="tituloLogin">Log-in</p>
           <p id='esquerda'>E-MAIL:</p>

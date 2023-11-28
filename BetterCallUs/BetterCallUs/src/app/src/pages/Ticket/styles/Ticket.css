@@ -1,16 +1,24 @@
 textarea {
   font-family: fonte;
   padding-top: 1%;
-  padding-bottom: 1%;
+  padding-bottom: 100px;
   padding-left: 1%;
   padding-right: 1%;
   width: 800px;
   border: 2px solid rgb(149, 20, 188);
   border-radius: 10px;
   font-size: 14px;
-  resize: none;
-  height:240px; 
-  margin: 30px;
+  height: fit-content;
+  margin: 20px;
+}
+
+input {
+  font-family: fonte;
+  padding: 5px;
+  border: 2px solid rgb(149, 20, 188);
+  border-radius: 10px;
+  font-size: 18px;
+  width: 250px;
 }
 
 select {
@@ -21,6 +29,7 @@ select {
   border-radius: 100px;
   text-align: center;
   margin: 0 20px;
+  margin: 2%;
 }
 
 .problemaTicket{
@@ -72,5 +81,15 @@ h1{
 
 .doiss{
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: row;
+  
+}
+
+@media screen and (max-width: 800px) {
+  .doiss{
+    flex-wrap: wrap;
+  }
+  
 }

@@ -6,10 +6,13 @@
     flex-direction: row;
     margin-bottom: 3%;
     font-family: fonte;
+    margin-bottom: 250px;
 }
 
 .privAdm {
-    width: 60%;
+    display: flex;
+    flex-direction: column;
+    flex: 5;
 }
 
 .opcAdm {
@@ -23,7 +26,7 @@
     box-shadow: 5px 5px rgba(158, 61, 248, 0.377);
     border-radius: 5px;
     font-family: fonte;
-    width: 60%;
+    width: 80%;
     padding: 25px;
     margin: 10px;
     background-color: blueviolet;
@@ -35,6 +38,4 @@
     cursor: pointer;
 }
 
-.slaAdm {
-    width: 40%;
-}
+
