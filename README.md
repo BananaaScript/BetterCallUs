@@ -15,7 +15,7 @@ Além disso entregamos tambem funcionalidades como o cadastro de contas com priv
 <br>**Valor 4**: Obrigatoria, a primeira a ser feita. Aquilo que tem mais valor aos olhos do cliente.
 <br>**Valor 3**: Necessaria, muito importante e relevante. Aquilo que tem um valor menor aos olhos do cliente.
 <br>**Valor 2**: Relevante, mas não é necessario. Se houver tempo deve ser feito.
-<br>**Valor 1**: Dispensavel, não prejudica o projeto com sua falta.
+<br>**Valor 1**: Dispensavel, adiciona ao projeto como um todo mas não possui muita relevância.
 
 <img src='https://github.com/CODE1na/BetterCallUs/blob/Sprint4/Sprint-4/BetterCallUs/doc/BacklogSprint4.png'>
 <hr>
