@@ -2,6 +2,11 @@
 > Projeto desenvolvido pela equipe <a href='https://github.com/CODE1na'>CODEina</a>.
 # :scroll: Sobre<a name = 'sobre'></a>
 Nessa finalização do projeto, concluimos o nosso site de gerenciamento de chamadas de serviço.
+
+## Entrega de Valor (MVP):
+
+Nessa ultima Sprint nosso objetivo foi entregar todo o caminho percorrido por um ticket, desde sua criação até que ele se encontre como finalizado.
+Além disso entregamos tambem funcionalidades como o cadastro de contas com privilegios de Cliente, Suporte e Administrador, alem do Faq com resoluções completas para os clientes.
   
 ## 📑: Backlog da sprint
 ### :open_book: Dicionário:
