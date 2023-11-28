@@ -97,11 +97,11 @@ VALUES ('cliente', '22222222222', 'cliente123', 0, 'cliente@gmail.com', '1234', 
 
 
 INSERT INTO equipamentos (numeroSerie, nome, descricao) VALUES
-('ABC123', 'Desktop', 'Computador desktop marca lenovo'),
-('DEF456', 'Switch', 'Switch modelo cisco'),
-('GHI789', 'Notebook', 'Notebook marca samsung'),
-('JKL012', 'Televisão', 'Televisão smart da marca vision'),
-('MNO345', 'Acess Point', 'AP marca intelbras');
+('1001001', 'NotebookAcadêmico', 'Notebook para uso Acadêmico: Sala02'),
+('1001002', 'NotebookAcadêmico', 'Notebook para uso Acadêmico: Sala02'),
+('1002001', 'NotebookAcadêmico', 'Notebook para uso Acadêmico: Sala03'),
+('1002002', 'NotebookAcadêmico', 'Notebook para uso Acadêmico: Sala03'),
+('2001001', 'DesktopTécnico', 'Desktop para uso dos Profissionais');
 
 select * from chamado;
 select * from cliente;
